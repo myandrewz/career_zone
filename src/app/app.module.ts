@@ -17,7 +17,7 @@ import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
 import {SuiModule} from 'ng2-semantic-ui';
-import { FlexLayoutModule } from '@angular/flex-layout';
+//import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [

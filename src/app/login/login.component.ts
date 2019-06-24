@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../core/auth.service'
+import { AuthService } from '../core/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -11,7 +11,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
 
   loginForm: FormGroup;
-  errorMessage: string = '';
+  errorMessage = '';
+  isLoading = false;
 
   constructor(
     public authService: AuthService,
@@ -49,13 +50,16 @@ export class LoginComponent {
     })
   }
 
-  tryLogin(value){
-    this.authService.doLogin(value)
+  tryLogin(){
+
+    this.isLoading = true;
+    console.log(this.loginForm.value);
+    this.authService.doLogin(this.loginForm.value)
     .then(res => {
       this.router.navigate(['/user']);
     }, err => {
       console.log(err);
       this.errorMessage = err.message;
-    })
+    });
   }
 }

@@ -26,6 +26,8 @@ import {SuiModule} from 'ng2-semantic-ui';
     UserComponent,
     RegisterComponent,
     NewProfileComponent
+
+    
   ],
   imports: [
     BrowserModule,

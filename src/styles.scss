@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+
+$base-font-size:1em;
+
+._fqsand{
+  font-family: 'quicksand' !important
+}
+
+._fs20{
+  font-size: $base-font-size !important;
+}
+
+._h60{
+  height: 60px !important;
+}
+
+._mt10{
+  margin-top: 10px !important
+}
+
+._mt20{
+  margin-top: 20px !important
+}
+
+._mt30{
+  margin-top: 30px !important
+}
+
+._w50{
+  width: 49% !important;
+}

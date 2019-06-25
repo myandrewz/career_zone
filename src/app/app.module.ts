@@ -17,7 +17,8 @@ import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
 import {SuiModule} from 'ng2-semantic-ui';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { DashboardComponent } from './dashboard/dashboard.component';
+//import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     LoginComponent,
     UserComponent,
     RegisterComponent,
-    NewProfileComponent
+    NewProfileComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

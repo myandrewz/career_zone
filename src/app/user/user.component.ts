@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../core/user.service';
 import { AuthService } from '../core/auth.service';
+import { Router, Params } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -20,6 +21,7 @@ export class UserComponent implements OnInit{
     public userService: UserService,
     public authService: AuthService,
     private route: ActivatedRoute,
+    private router: Router,
     private location : Location,
     private fb: FormBuilder
   ) {
@@ -38,14 +40,19 @@ export class UserComponent implements OnInit{
 
   createForm(name) {
     this.profileForm = this.fb.group({
-      name: [name, Validators.required ]
+      name: [name, Validators.required ],
+      email: [name, Validators.required ],
+      dob: [name, Validators.required ],
+      sex: [name, Validators.required ],
+      role: [name, Validators.required ],
+      image: [name, Validators.required ]
     });
   }
 
   save(value){
     this.userService.updateCurrentUser(value)
     .then(res => {
-      console.log(res);
+      this.router.navigate(['/new-profile']);
     }, err => console.log(err))
   }
 

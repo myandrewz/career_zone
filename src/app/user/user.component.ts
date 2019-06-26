@@ -15,7 +15,7 @@ import { FirebaseUserModel } from '../core/user.model';
 export class UserComponent implements OnInit{
 
   user: FirebaseUserModel = new FirebaseUserModel();
-  profileForm: FormGroup;
+  displayprofileForm: FormGroup;
 
   constructor(
     public userService: UserService,
@@ -39,13 +39,14 @@ export class UserComponent implements OnInit{
   }
 
   createForm(name) {
-    this.profileForm = this.fb.group({
+    this.displayprofileForm = this.fb.group({
+      
+      image: [name, Validators.required ],
       name: [name, Validators.required ],
-      email: [name, Validators.required ],
-      dob: [name, Validators.required ],
-      sex: [name, Validators.required ],
-      role: [name, Validators.required ],
-      image: [name, Validators.required ]
+     // email: [name, Validators.required ],
+      //dob: [name, Validators.required ],
+      //sex: [name, Validators.required ],
+      //role: [name, Validators.required ]
     });
   }
 

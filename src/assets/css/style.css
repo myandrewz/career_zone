@@ -204,6 +204,7 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+
 /*-- main --*/
 
 h1 {
@@ -646,7 +647,6 @@ body h2 {
     padding-top: 6em;
 }
 
-
 a {
     color: #585858;
     margin: 0em;
@@ -956,4 +956,14 @@ ul.w3layouts-icons li a.vk:hover {
     }
 }
 
+/*login paragrah*/
+.content-outer-info{
+    padding-left: 1px !important;
+    padding-top:2em;
+    font-family: 'Times New Roman', Times, serif;
+    text-align:left;
+    padding-left:105px;
+    color:white;
+    font-size: 25px;
+}
 /*--//responsive--*/

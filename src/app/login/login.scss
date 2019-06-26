@@ -3,6 +3,9 @@
   font-size: 30px;
   margin-bottom: 40px;
 }
+.container{
+  background-color: red;
+}
 
 .row{
   margin-top: 10px;
@@ -13,5 +16,20 @@
 }
 
 ._social_buttons{
-  width: 21% !important
+  width: 31% !important
+}
+
+
+._login__p{
+  padding-left: 103px;
+}
+
+.nssf-title{
+  font-size: 101%;
+  color: white;
+}
+
+.ui.facebook, .ui.google, .ui.twitter{
+  padding-left:35px;
+  padding-right:30px;
 }

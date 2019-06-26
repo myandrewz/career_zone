@@ -1,7 +1,7 @@
-<h1 class="header">Create an account with Firebase or Social Providers</h1>
+<h1 class="header">Create an account</h1>
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-4 col-md-offset-3">
       <form [formGroup]="registerForm">
         <div class="form-group">
           <label>Email address</label>
@@ -13,28 +13,40 @@
           <label class="error">{{errorMessage}}</label>
           <label class="success">{{successMessage}}</label>
         </div>
-        <button type="submit" (click)="tryRegister(registerForm.value)" class="btn btn-default">Register</button>
+        
+        
+        <button type="submit" (click)="tryRegister(registerForm.value)" class="positive ui button"><div class="register">Register</div></button>
+        
+
+        <!---<button type="submit" (click)="tryRegister(registerForm.value)" class="positive ui button">Register</button>--->
       </form>
     </div>
   </div>
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Register with Facebook</button>
+      
+      <button type="button" class="ui circular facebook icon button" (click)="tryFacebookLogin()"><i class="facebook icon"></i>Register with facebook</button>
+    
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <button type="button" class="ui circular google plus icon button" (click)="tryGoogleLogin()"><i class="google plus icon"></i>Register with Google</button>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      
+      <button type="button" class="ui circular twitter icon button" (click)="tryTwitterLogin()"><i class="twitter icon"></i>Register with Twitter</button>
+    
     </div>
   </div>
   <div class="row">
+    
     <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Register with Google</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-info btn-block" (click)="tryTwitterLogin()">Register with Twitter</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <p>Already have an account? <a href="/login">Login</a></p>
+      <p class="already">Already have an account? <a href="/login">Login</a></p>
     </div>
   </div>
 </div>

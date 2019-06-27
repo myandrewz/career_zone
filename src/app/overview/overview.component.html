@@ -4,26 +4,11 @@
  <!--header begins-->
    <div class="header-section">
          <!--menu-right-->
-         <div class="top_menu">
-
-                 <div class="main-search">
-                   <form>
-                      <input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
-                     <input type="submit" value="">
-                   </form>
-               <div class="close"><img src="../../assets/images/cross.png" /></div>
-             </div>
+         <div class="top_menu" style="padding: -9px;">
                <div class="srch"><button></button></div>
-     <script type="text/javascript">
-       $('.main-search').hide();
-       $('button').click(function (){
-       $('.main-search').show();
-       $('.main-search text').focus();
-       });
-       $('.close').click(function(){
-       $('.main-search').hide();
-       });
-               </script>
+     <div class = "topnav">
+      <input type="text" placeholder="Search..">
+     </div>
                
            <!--/profile_details-->
            <div class="profile_details_left">
@@ -425,17 +410,40 @@
                      <!--Career opportunities container-->
                      <div class="stats-grid">
                        <div class="stats-head">
-                         <div class="col-md-10" >
+                         <div class="col-md-6 chrt-three" >
                            <h4 class="sub-title3">Career Opportunities</h4>
-                                 <ul class="list-unstyled">
-                                   <li>Apple Inc. Careers<div class="text-success pull-right"><i class="fa fa-level-up"></i></div></li>
-                                   <li>MTN internships<div class="text-success pull-right"><i class="fa fa-level-up"></i></div></li>
-                                   <li>KPMG Graduate recruitment<div class="text-success pull-right"><i class="fa fa-level-up"></i></div></li>
-                                   <li>Stanbic Bank interns<div class="text-danger pull-right"><i class="fa fa-level-down"></i></div></li>
-                                   <li>Bank Of Uganda<div class="text-danger pull-right"><i class="fa fa-level-down"></i></div></li>
-                                   <li>Andela training<div class="text-success pull-right"><i class="fa fa-level-up"></i></div></li>
-                                   <li class="last">Others<div class="text-success pull-right"><i class="fa fa-level-up"></i></div></li> 
-                                 </ul>
+                           <div class="tables">
+                            <table class="table"> 
+                            <thead>
+                             <tr> 
+                              <th>#</th> 
+                              <th>Company</th>
+                               <th>date of post</th> 
+                               <th>Link Logo</th> 
+                            </tr> 
+                            </thead> 
+                      <tbody> 
+                          <tr> 
+                          <th scope="row">1</th> 
+                          <td>Apple Inc Careers</td> 
+                          <td>07/09/2018</td> 
+                          <td>@mdo</td> 
+                        </tr>
+                         <tr> 
+                          <th scope="row">2</th> 
+                          <td>KPMG</td> 
+                          <td>01/04/2019</td> 
+                          <td>@fat</td> 
+                        </tr> 
+                        <tr> 
+                          <th scope="row">3</th> 
+                          <td>Stanbic Bank</td> 
+                          <td>18/12/2018</td> 
+                          <td>@twitter</td> 
+                        </tr> 
+                      </tbody> 
+                    </table>
+                    </div>
                            </div>
                          </div>
                      </div>
@@ -443,28 +451,12 @@
                      <!--Career opportunities container-->
                        
                    <!--images and videos container-->  
-         <div class="area">
-                     <div class="col-md-10">
-                       <div class="images">
-           <h3 class="sub-title">Images and Videos</h3>
-           </div>
-             <figure>
-                                 <img srcset="https://cdn-images-1.medium.com/max/800/1*2H0HPHmFNs2t78Zog8kd9w.png 300w,
-                                             https://cdn-images-1.medium.com/max/800/1*2H0HPHmFNs2t78Zog8kd9w.png 600w,
-                                             https://cdn-images-1.medium.com/max/800/1*2H0HPHmFNs2t78Zog8kd9w.png 1000w,
-                                             https://cdn-images-1.medium.com/max/800/1*2H0HPHmFNs2t78Zog8kd9w.png 2000w"
-                                              sizes="(max-width: 800px) 400px,(max-height: 1170px) 700px 1400px" 
-                                             src="https://cdn-images-1.medium.com/max/800/1*2H0HPHmFNs2t78Zog8kd9w.png" alt="How to create an image gallery with CSS Grid">
-                           </figure>
-                     </div>	
-                       <div class="clearfix"> </div>	
-                             
-                     </div>
+         
                    <!--images and videos container-->
                        
        <!--Reports table-->
-       <div class="graph">
-                       <div class="col-md-6 panel-chrt">
+       <div class="tables">
+                       <div class="col-md-5 chrt-two">
                            <h3 class="sub-tittle">Reports</h3>
                  
                             <div class="tables">
@@ -502,6 +494,7 @@
                          </div>
                        </div>
                      </div>
+                    
                  <!--Reports table-->
                            
                  <!--timelines-->
@@ -576,7 +569,7 @@
 
                <div class="col-md-4 dev-col">                                    
                <div class="dev-widget dev-widget-transparent">
-               <h2 class="inner one">Server Usage</h2>
+               <h3 class="inner one">Server Usage</h3>
                <p>Today server usage in percentages</p>                                        
                <div class="dev-stat"><span class="counter">68</span>%</div> 
 

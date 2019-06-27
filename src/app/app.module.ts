@@ -17,6 +17,14 @@ import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
 import {SuiModule} from 'ng2-semantic-ui';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { StudentUserComponent } from './student-user/student-user.component';
+import { MentorComponent } from './mentor/mentor.component';
+import { CareerJobsComponent } from './career-jobs/career-jobs.component';
+import { BlogsComponent } from './blogs/blogs.component';
+import { ImagesVideosComponent } from './images-videos/images-videos.component';
+import { ReportsComponent } from './reports/reports.component';
+import { OverviewComponent } from './overview/overview.component';
 //import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -25,9 +33,15 @@ import {SuiModule} from 'ng2-semantic-ui';
     LoginComponent,
     UserComponent,
     RegisterComponent,
-    NewProfileComponent
-
-    
+    NewProfileComponent,
+    DashboardComponent,
+    StudentUserComponent,
+    MentorComponent,
+    CareerJobsComponent,
+    BlogsComponent,
+    ImagesVideosComponent,
+    ReportsComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,

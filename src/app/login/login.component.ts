@@ -13,6 +13,8 @@ export class LoginComponent {
   loginForm: FormGroup;
   errorMessage = '';
   isLoading = false;
+  isForgotPassword: boolean;
+  emailInput: string;
 
   constructor(
     public authService: AuthService,
@@ -35,6 +37,21 @@ export class LoginComponent {
       this.router.navigate(['/user']);
     })
   }
+
+  forgotPassword() {
+    this.authService.sendPasswordResetEmail(this.emailInput)
+      .then(res => {
+        console.log(res);
+        this.isForgotPassword = false;
+        this.showMessage("success", "Please Check Your Email");
+      }, err => {
+        this.showMessage("danger", err.message);
+      });
+  }
+  showMessage(arg0: string, arg1: string) {
+    throw new Error("Method not implemented.");
+  }
+
 
   tryTwitterLogin(){
     this.authService.doTwitterLogin()

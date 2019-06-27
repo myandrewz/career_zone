@@ -17,29 +17,23 @@ import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
 import {SuiModule} from 'ng2-semantic-ui';
-<<<<<<< HEAD
 import { DashboardComponent } from './dashboard/dashboard.component';
-=======
->>>>>>> 55abec7683661b6e73998672a0f3b947f951c87e
+import { from } from 'rxjs';
 //import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+   
     UserComponent,
     RegisterComponent,
-<<<<<<< HEAD
     NewProfileComponent,
     DashboardComponent
-=======
-    NewProfileComponent
-
-    
->>>>>>> 55abec7683661b6e73998672a0f3b947f951c87e
   ],
   imports: [
     BrowserModule,
+    
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
@@ -49,6 +43,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SuiModule,
    // FlexLayoutModule
   ],
+  
   providers: [AuthService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent]
 })

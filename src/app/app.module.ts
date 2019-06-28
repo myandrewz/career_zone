@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
 import {SuiModule} from 'ng2-semantic-ui';
 import { DashboardComponent } from './dashboard/dashboard.component';
+
 import { StudentUserComponent } from './student-user/student-user.component';
 import { MentorComponent } from './mentor/mentor.component';
 import { CareerJobsComponent } from './career-jobs/career-jobs.component';
@@ -31,6 +32,7 @@ import { OverviewComponent } from './overview/overview.component';
   declarations: [
     AppComponent,
     LoginComponent,
+   
     UserComponent,
     RegisterComponent,
     NewProfileComponent,
@@ -45,6 +47,7 @@ import { OverviewComponent } from './overview/overview.component';
   ],
   imports: [
     BrowserModule,
+    
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
@@ -54,7 +57,9 @@ import { OverviewComponent } from './overview/overview.component';
     SuiModule,
    // FlexLayoutModule
   ],
+  
   providers: [AuthService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

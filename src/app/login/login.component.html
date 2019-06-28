@@ -66,53 +66,49 @@
                           <label class="success">{{successMessage}}</label>
 
                           <div class="links _mt20" fxLayout="row">
-                              <p><a href="#" class="_fs20 _fqsand ">Forgot Password?</a>
+                            <a href="javascript:void(0)" class = "_fs20 _fqsand" (click)="this.isForgotPassword= true;"  >Forgot
+                              Password?</a>
+                   
                           </div>
+                          <div class="form-group" *ngIf="isForgotPassword">
+                   
+                            <button type="button" class="btn" (click)="this.isForgotPassword=
+                              false;">Cancel</button>
+                            <button type="button" class="btn btn-primary"
+                              (click)="this.isForgotPassword=true;">Get email to reset password</button>
+                              
+                          </div>
+                        
+                   
+
+
 
                           <div class="bottom _mt20">
                               <button class="btn _h60 _w50" (click)="tryLogin()" type="submit">Log In</button>
-                              <button class="btn reg _h60 _w50" type="reset"><a href="/register" style= "text-decoration:">sign up</a> </button>
+
+                              <button class="btn reg _h60 _w50" type="reset"><a href="/register" style="text-decoration: none">sign up</a> </button>
+
                           </div>
 
                         </form>
                   </div>
 
               </div>
-
-            
-
-              <!-- <div class="_mt30">
-                <button class="ui blue button _h60 social_buttons">
-                  Use Facebook
-                </button>
-
-                <button class="ui  button _h60 social_buttons">
-                  Okay
-                </button>
-
-                <button class="ui  button _h60 social_buttons">
-                  Okay
-                </button>
-
-          </div> -->
-          <!-- copyright -->
-          <!---728x90--->
-
           
           <div class="content-outer-info ">
             <p class="_login__p"> LOGIN WITH </p>
             
-            <button class="ui facebook button">
+            <button class="ui facebook button" (click)="tryFacebookLogin()">
               <i class="ui.facebook"></i>
               Facebook
             </button>
            
-            <button class="ui twitter button">
+            <button class="ui twitter button" (click)="tryTwitterLogin()">
               <i class="ui.twitter"></i>
               Twitter
             </button>
             
-            <button class="ui google plus button">
+            <button class="ui google plus button" (click)="tryGoogleLogin()">
               <i class="ui.google"></i>
               Google Plus
             </button>

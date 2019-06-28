@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { RegisterComponent } from './register/register.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
+import { NewStudentComponent } from './new-student/new-student.component';
+import { NewMentorComponent } from './new-mentor/new-mentor.component';
 import { UserResolver } from './user/user.resolver';
 import { AuthGuard } from './core/auth.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';

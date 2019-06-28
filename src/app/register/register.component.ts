@@ -13,6 +13,7 @@ export class RegisterComponent {
   registerForm: FormGroup;
   errorMessage: string = '';
   successMessage: string = '';
+  isLoading = false;
 
   constructor(
     public authService: AuthService,
@@ -54,12 +55,17 @@ export class RegisterComponent {
    }
 
    tryRegister(value){
+     this.isLoading = true;
      this.authService.doRegister(value)
      .then(res => {
-       console.log(res);
-       this.errorMessage = "";
-       this.successMessage = "Your account has been created";
+      this.isLoading = false;
+      localStorage.setItem('authenticated_user', JSON.stringify(res.user));
+      this.router.navigate(['/user']);
+      console.log(res);
+      this.errorMessage = "";
+      this.successMessage = "Your account has been created";
      }, err => {
+       this.isLoading = false;
        console.log(err);
        this.errorMessage = err.message;
        this.successMessage = "";

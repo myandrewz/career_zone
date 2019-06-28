@@ -16,6 +16,7 @@ export class UserComponent implements OnInit{
 
   user: FirebaseUserModel = new FirebaseUserModel();
   displayprofileForm: FormGroup;
+  authenticated_user: any;
 
   constructor(
     public userService: UserService,
@@ -31,11 +32,21 @@ export class UserComponent implements OnInit{
   ngOnInit(): void {
     this.route.data.subscribe(routeData => {
       let data = routeData['data'];
+
+      //console.log(data)
       if (data) {
         this.user = data;
         this.createForm(this.user.name);
       }
+
+      var _authuser  = localStorage.getItem('authenticated_user')
+      if(_authuser){
+        this.authenticated_user = JSON.parse(_authuser);
+        console.log(this.authenticated_user.uid)
+      }
     })
+
+
   }
 
   createForm(name) {

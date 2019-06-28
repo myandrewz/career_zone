@@ -3,12 +3,19 @@ import 'rxjs/add/operator/toPromise';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
 
   constructor(
    public afAuth: AngularFireAuth
  ){}
+
+
+ async sendPasswordResetEmail(passwordResetEmail: string) {
+  return await this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail);
+}
 
   doFacebookLogin(){
     return new Promise<any>((resolve, reject) => {
@@ -38,6 +45,8 @@ export class AuthService {
     })
   }
 
+
+  
   doGoogleLogin(){
     return new Promise<any>((resolve, reject) => {
       let provider = new firebase.auth.GoogleAuthProvider();

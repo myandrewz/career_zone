@@ -66,12 +66,30 @@
                           <label class="success">{{successMessage}}</label>
 
                           <div class="links _mt20" fxLayout="row">
+<<<<<<< HEAD
                               <p><a href="#" class="_fs20 _fqsand ">Forgot Password?</a></p>
+=======
+                            <a href="javascript:void(0)" class = "_fs20 _fqsand" (click)="this.isForgotPassword= true;"  >Forgot
+                              Password?</a>
+                   
+>>>>>>> 708974dd613945b0b3b4cc9d56b42c30fb9df1db
                           </div>
+                          <div class="form-group" *ngIf="isForgotPassword">
+                   
+                            <button type="button" class="btn" (click)="this.isForgotPassword=
+                              false;">Cancel</button>
+                            <button type="button" class="btn btn-primary"
+                              (click)="this.isForgotPassword=true;">Get email to reset password</button>
+                              
+                          </div>
+                        
+                   
+
+
 
                           <div class="bottom _mt20">
                               <button class="btn _h60 _w50" (click)="tryLogin()" type="submit">Log In</button>
-                              <button class="btn reg _h60 _w50" type="reset"><a href="/register" style="text-decoration: none;">sign up</a> </button>
+                              <button class="btn reg _h60 _w50" type="reset"><a href="/register" style="text-decoration:navy ">sign up</a> </button>
                           </div>
 
                         </form>
@@ -138,7 +156,7 @@
   <div class="row">
 
   </div>
-  <!-- <div class="row">
+  <div class="row">
     <div class="col-md-4 col-md-offset-4">
       <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook</button>
     </div>

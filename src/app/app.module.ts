@@ -17,24 +17,49 @@ import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
 import {SuiModule} from 'ng2-semantic-ui';
+<<<<<<< HEAD
 import { NewStudentComponent } from './new-student/new-student.component';
 import { NewMentorComponent } from './new-mentor/new-mentor.component';
+=======
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { StudentUserComponent } from './student-user/student-user.component';
+import { MentorComponent } from './mentor/mentor.component';
+import { CareerJobsComponent } from './career-jobs/career-jobs.component';
+import { BlogsComponent } from './blogs/blogs.component';
+import { ImagesVideosComponent } from './images-videos/images-videos.component';
+import { ReportsComponent } from './reports/reports.component';
+import { OverviewComponent } from './overview/overview.component';
+>>>>>>> 708974dd613945b0b3b4cc9d56b42c30fb9df1db
 //import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+   
     UserComponent,
     RegisterComponent,
     NewProfileComponent,
+<<<<<<< HEAD
     NewStudentComponent,
     NewMentorComponent
 
     
+=======
+    DashboardComponent,
+    StudentUserComponent,
+    MentorComponent,
+    CareerJobsComponent,
+    BlogsComponent,
+    ImagesVideosComponent,
+    ReportsComponent,
+    OverviewComponent
+>>>>>>> 708974dd613945b0b3b4cc9d56b42c30fb9df1db
   ],
   imports: [
     BrowserModule,
+    
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
@@ -44,7 +69,9 @@ import { NewMentorComponent } from './new-mentor/new-mentor.component';
     SuiModule,
    // FlexLayoutModule
   ],
+  
   providers: [AuthService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

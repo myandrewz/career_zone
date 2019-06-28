@@ -40,11 +40,28 @@ export class UserService {
     })
   }
   createUser(value, authenticated_user_uid){
-    return this.db.collection('Users').add({
+    return this.db.collection('User').add({
       id:authenticated_user_uid,
       dob: value.dob,
       sex: value.sex,
       role: value.role
+    });
+  }
+  createStudent(value, authenticated_user_uid){
+    return this.db.collection('Student').add({
+      id:authenticated_user_uid,
+      course: value.course,
+      interest: value.interest,
+      email: value.email
+    });
+  }
+  createMentor(value, authenticated_user_uid){
+    return this.db.collection('Mentor').add({
+      id:authenticated_user_uid,
+      employer: value.employer,
+      profession: value.profession,
+      skills: value.skills,
+      email: value.email
     });
   }
 }

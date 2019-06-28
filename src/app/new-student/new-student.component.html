@@ -50,22 +50,19 @@
                       <form class="ui form" [formGroup]="studentProfileForm" [ngClass]="{'loading': isLoading}">
 
                           <div class="form-group">
-                            <label>Date Of Birth</label>
-                            <input type="date" formControlName="dob" class="form-control">
+                            <label>Course</label>
+                            <input type="text" formControlName="course" class="form-control">
                           </div> 
                           <div class="form-group">
-                            <label for="sel1">Sex :</label>
-                            <select class="form-control" formControlName="sex" id="sel1">
-                              <option>Female</option>
-                              <option>Male</option>
+                            <label for="sel1">Interest :</label>
+                            <select class="form-control" formControlName="interest" id="sel1">
+                              <option>Knowledge</option>
+                              <option>Hobby</option>
                             </select>
                           </div>
                           <div class="form-group">
-                            <label for="sel1">Role :</label>
-                            <select class="form-control" formControlName="role" id="sel1">
-                              <option>Student</option>
-                              <option>Mentor</option>
-                            </select>
+                            <label>Email</label>
+                            <input type="email" formControlName="email" class="form-control">
                           </div>
                           <div class="bottom">
                               <button class="btn" (click)="newstudentprofile()" type="submit">Update</button>

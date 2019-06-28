@@ -28,9 +28,9 @@ export class NewStudentComponent implements OnInit {
   }
   createForm() {
     this.studentProfileForm = this.fb.group({
-      dob: ['', Validators.required ],
-      sex: ['',Validators.required],
-      role: ['',Validators.required]
+      course: ['', Validators.required ],
+      interest: ['',Validators.required],
+      email: ['',Validators.required]
     });
   }
 
@@ -40,6 +40,29 @@ export class NewStudentComponent implements OnInit {
       this.authenticated_user = JSON.parse(_authuser);
       console.log(this.authenticated_user.uid)
     }
+  }
+  newstudentprofile(){
+
+    this.isLoading = true;
+    console.log(this.studentProfileForm.value);
+    this.userService.createStudent(this.studentProfileForm.value, this.authenticated_user.uid)
+    .then(
+      res => {
+          this.isLoading = false;
+          this.router.navigate(['/new-student']);
+      }, (error) =>{
+        this.router.navigate(['/new-student']);
+      }
+    )
+  }
+
+  logout(){
+    this.authService.doLogout()
+    .then((res) => {
+      this.location.back();
+    }, (error) => {
+      console.log("Logout error", error);
+    });
   }
 
 }

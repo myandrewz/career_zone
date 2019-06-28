@@ -18,7 +18,14 @@ import { AppComponent } from './app.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
 import {SuiModule} from 'ng2-semantic-ui';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { from } from 'rxjs';
+
+import { StudentUserComponent } from './student-user/student-user.component';
+import { MentorComponent } from './mentor/mentor.component';
+import { CareerJobsComponent } from './career-jobs/career-jobs.component';
+import { BlogsComponent } from './blogs/blogs.component';
+import { ImagesVideosComponent } from './images-videos/images-videos.component';
+import { ReportsComponent } from './reports/reports.component';
+import { OverviewComponent } from './overview/overview.component';
 //import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -29,7 +36,14 @@ import { from } from 'rxjs';
     UserComponent,
     RegisterComponent,
     NewProfileComponent,
-    DashboardComponent
+    DashboardComponent,
+    StudentUserComponent,
+    MentorComponent,
+    CareerJobsComponent,
+    BlogsComponent,
+    ImagesVideosComponent,
+    ReportsComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,
@@ -48,3 +62,4 @@ import { from } from 'rxjs';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

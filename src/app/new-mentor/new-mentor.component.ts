@@ -4,16 +4,14 @@ import { Location } from '@angular/common';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../core/user.service';
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 @Component({
-  selector: 'app-new-profile',
-  templateUrl: './new-profile.component.html',
-  styleUrls: ['./new-profile.component.scss']
+  selector: 'app-new-mentor',
+  templateUrl: './new-mentor.component.html',
+  styleUrls: ['./new-mentor.component.scss']
 })
-export class NewProfileComponent implements OnInit {
-
-  profileForm: FormGroup;
+export class NewMentorComponent implements OnInit {
+  mentorProfileForm: FormGroup;
   errorMessage = '';
   isLoading = false;
   authenticated_user: any;
@@ -29,10 +27,11 @@ export class NewProfileComponent implements OnInit {
     this.createForm();
   }
   createForm() {
-    this.profileForm = this.fb.group({
-      dob: ['', Validators.required ],
-      sex: ['',Validators.required],
-      role: ['',Validators.required]
+    this.mentorProfileForm = this.fb.group({
+      employer: ['', Validators.required ],
+      profession: ['',Validators.required],
+      skills: ['',Validators.required],
+      email: ['',Validators.required]
     });
   }
 
@@ -43,21 +42,17 @@ export class NewProfileComponent implements OnInit {
       console.log(this.authenticated_user.uid)
     }
   }
-  newprofile(){
+  newmentorprofile(){
 
     this.isLoading = true;
-    console.log(this.profileForm.value);
-    this.userService.createUser(this.profileForm.value, this.authenticated_user.uid)
+    console.log(this.mentorProfileForm.value);
+    this.userService.createMentor(this.mentorProfileForm.value, this.authenticated_user.uid)
     .then(
       res => {
-        if(this.profileForm.value.role == "Student"){
-          this.isLoading = false;
-          this.router.navigate(['/new-student']);
-        }
-        else{
           this.isLoading = false;
           this.router.navigate(['/new-mentor']);
-        }
+      }, (error) =>{
+        this.router.navigate(['/new-student']);
       }
     )
   }

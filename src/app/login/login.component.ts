@@ -26,8 +26,8 @@ export class LoginComponent {
 
   createForm() {
     this.loginForm = this.fb.group({
-      email: ['', Validators.required ],
-      password: ['',Validators.required]
+      email: ['me@me.org', Validators.required ],
+      password: ['Password1',Validators.required]
     });
   }
 
@@ -70,11 +70,17 @@ export class LoginComponent {
   tryLogin(){
 
     this.isLoading = true;
-    console.log(this.loginForm.value);
+    //console.log(this.loginForm.value);
     this.authService.doLogin(this.loginForm.value)
     .then(res => {
+      this.isLoading = false;
+
+      //console.log(res);
+
+      localStorage.setItem('authenticated_user', JSON.stringify(res.user));
       this.router.navigate(['/user']);
     }, err => {
+      this.isLoading = false
       console.log(err);
       this.errorMessage = err.message;
     });

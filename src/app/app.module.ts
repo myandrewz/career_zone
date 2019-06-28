@@ -17,8 +17,9 @@ import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
 import {SuiModule} from 'ng2-semantic-ui';
+import { NewStudentComponent } from './new-student/new-student.component';
+import { NewMentorComponent } from './new-mentor/new-mentor.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
 import { StudentUserComponent } from './student-user/student-user.component';
 import { MentorComponent } from './mentor/mentor.component';
 import { CareerJobsComponent } from './career-jobs/career-jobs.component';

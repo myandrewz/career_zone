@@ -29,3 +29,9 @@ $base-font-size:1em;
 ._w50{
   width: 49% !important;
 }
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+.fancyFont {
+  font-family: 'Montserrat';
+  font-weight: 500;
+}

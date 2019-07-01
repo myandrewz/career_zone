@@ -56,7 +56,7 @@
               <div class="content-w3layouts-main">
 
                   <div class="form-w3ls-left-info">
-                      <form class="ui form" [formGroup]="loginForm" [ngClass]="{'loading': isLoading}">
+                      <form class="ui form" [formGroup]="loginForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
 
                           <input class="_h60" type="email" placeholder="Email Address" required="" formControlName="email" />
                           <input class="_h60 _mt10" type="password" placeholder="Password" required="" formControlName="password" />
@@ -82,7 +82,7 @@
 
 
                           <div class="bottom _mt20">
-                              <button class="btn _h60 _w50" (click)="tryLogin()" type="submit">Log In</button>
+                              <button class="btn _h60 _w50" (click)="tryLogin()" type="submit" [disabled]="!myForm.form.valid">Log In</button>
 
                               <button class="btn reg _h60 _w50" type="reset"><a href="/register" style="text-decoration: none">sign up</a> </button>
 

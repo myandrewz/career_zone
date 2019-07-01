@@ -14,6 +14,8 @@ export class RegisterComponent {
   errorMessage: string = '';
   successMessage: string = '';
   isLoading = false;
+  sendEmail: string = '';
+
 
   constructor(
     public authService: AuthService,
@@ -60,10 +62,31 @@ export class RegisterComponent {
      .then(res => {
       this.isLoading = false;
       localStorage.setItem('authenticated_user', JSON.stringify(res.user));
+
+      if (res.user){
+        
+
+        res.user.sendWelcomeEmail(res.user.email, res.user.displayName).subscribe(
+          res =>{
+            console.log(res)
+          },
+          err =>{
+            console.log(err)
+          }
+        )
+
+      }
+      else {
+        this.errorMessage = "";
+      }
+
+    
       this.router.navigate(['/user']);
       console.log(res);
       this.errorMessage = "";
       this.successMessage = "Your account has been created";
+     // this.sendEmail = "Welcome to the Expo";
+
      }, err => {
        this.isLoading = false;
        console.log(err);

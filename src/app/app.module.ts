@@ -27,6 +27,8 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { ImagesVideosComponent } from './images-videos/images-videos.component';
 import { ReportsComponent } from './reports/reports.component';
 import { OverviewComponent } from './overview/overview.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 //import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -37,6 +39,8 @@ import { OverviewComponent } from './overview/overview.component';
     UserComponent,
     RegisterComponent,
     NewProfileComponent,
+    NewMentorComponent,
+    NewStudentComponent,
     DashboardComponent,
     StudentUserComponent,
     MentorComponent,
@@ -48,7 +52,6 @@ import { OverviewComponent } from './overview/overview.component';
   ],
   imports: [
     BrowserModule,
-    
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
@@ -56,6 +59,12 @@ import { OverviewComponent } from './overview/overview.component';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     SuiModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      //positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    })
    // FlexLayoutModule
   ],
   

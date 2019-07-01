@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../core/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'page-login',
@@ -12,6 +13,7 @@ export class LoginComponent {
 
   loginForm: FormGroup;
   errorMessage = '';
+  successMessage = '';
   isLoading = false;
   isForgotPassword: boolean;
   emailInput: string;
@@ -19,9 +21,13 @@ export class LoginComponent {
   constructor(
     public authService: AuthService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private toastr: ToastrService
   ) {
     this.createForm();
+  }
+  ngOnInit() {
+      
   }
 
   createForm() {
@@ -74,15 +80,15 @@ export class LoginComponent {
     this.authService.doLogin(this.loginForm.value)
     .then(res => {
       this.isLoading = false;
-
+      this.toastr.success("Login Successful !!!","Notification");
       //console.log(res);
-
       localStorage.setItem('authenticated_user', JSON.stringify(res.user));
       this.router.navigate(['/user']);
     }, err => {
       this.isLoading = false
-      console.log(err);
-      this.errorMessage = err.message;
+      this.toastr.error(err.message, "Warning", {enableHtml :  true });
+      //console.log(err);
+      //this.errorMessage = err.message;
     });
   }
 }

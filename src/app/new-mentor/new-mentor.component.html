@@ -47,7 +47,7 @@
               <div class="content-w3layouts-main">
 
                   <div class="form-w3ls-left-info">
-                      <form class="ui form" [formGroup]="mentorProfileForm" [ngClass]="{'loading': isLoading}">
+                      <form class="ui form" [formGroup]="mentorProfileForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
 
                           <div class="form-group">
                             <label>Current Employer</label>
@@ -69,7 +69,7 @@
                             <input type="email" formControlName="email" class="form-control">
                           </div>
                           <div class="bottom">
-                              <button class="btn" (click)="newmentorprofile()" type="submit">Update</button>
+                              <button class="btn" (click)="newmentorprofile()" type="submit" [disabled]="!myForm.form.valid">Update</button>
                           </div>
 
                       </form>

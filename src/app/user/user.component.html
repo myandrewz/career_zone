@@ -25,13 +25,6 @@
                     </nav>
                 </div>
                 <div class="buttons mt-lg-0 mt-3 ml-auto">
-                    <div class="form-w3layouts-grid">
-                        <form  class="newsletter">
-                            <input class="search" type="search" placeholder="" required="">
-                            <button class="form-control btn" value=""><span class="fa fa-search"></span></button>
-                            <div class="clear"></div>
-                        </form>
-                    </div>
                 </div>
                 <div class="clear"></div>
   
@@ -50,7 +43,7 @@
                       <!-- profile form -->
                       <img style="width: 200px" class="card-img-top image" [src]="user.image" *ngIf="user.image" alt="User image">
 
-                        <form class="ui form" [formGroup]="displayprofileForm" [ngClass]="{'loading': isLoading}">
+                        <form class="ui form" [formGroup]="displayprofileForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
   
                             <div class="form-group">
                                 <label>Upload</label>
@@ -61,7 +54,7 @@
                               <input type="text" *ngIf="user.image" formControlName="name" class="form-control" required>
                             </div>
                             <div class="bottom">
-                                <button class="btn"  (click)="save(displayprofileForm.value)" type="submit">Save</button>
+                                <button class="btn"  (click)="save(displayprofileForm.value)" type="submit" [disabled]="!myForm.form.valid">Save</button>
                             </div>
   
                         </form>

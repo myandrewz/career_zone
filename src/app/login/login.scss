@@ -3,9 +3,6 @@
   font-size: 30px;
   margin-bottom: 40px;
 }
-.container{
-  background-color: red;
-}
 
 .row{
   margin-top: 10px;
@@ -16,91 +13,5 @@
 }
 
 ._social_buttons{
-  width: 31% !important
+  width: 21% !important
 }
-
-
-._login__p{
-  padding-left: 103px;
-}
-
-.nssf-title{
-  font-size: 101%;
-  color: white;
-}
-
-.ui.facebook, .ui.google, .ui.twitter{
-  padding-left:35px;
-  padding-right:30px;
-}
-
-.btn-primary{
-  color: #fff;
-background-color: #337ab7;
-border-color: #2e6da4;
-}
-
-
-  .btn {
-    display: inline-block;
-    padding: 6px 6px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
-
-a[_ngcontent-dxm-c1]:focus, a[_ngcontent-dxm-c1]:hover {
-  color: white;
-  text-decoration: none;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-._fs20 {
-  font-size: 2em !important;
-}
-
-a[_ngcontent-ucj-c1]:focus, a[_ngcontent-ucj-c1]:hover {
-  color: white;
-  text-decoration: none;
-}
-a:focus, a:hover {
-  color:white;
-  text-decoration: underline;
-}
-
-.form-w3ls-left-info button.btn {
-  background: #412e97;
-  color: #fff;
-  font-size: 14px;
-  text-transform: uppercase;
-  padding: 0.1em 2em;
-  letter-spacing: 1px;
-  transition: 0.5s all;
-  -webkit-transition: 0.5s all;
-  -moz-transition: 0.5s all;
-  -o-transition: 0.5s all;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  
-}
-

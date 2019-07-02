@@ -3,7 +3,6 @@
       <!-- header -->
       <div class="wrapper">
         <header>
-          <div class="fancyFont">"
           <div class="header-w3layouts">
               <h1>
                   <a class="navbar-brand logo" href="index.html">
@@ -35,7 +34,7 @@
           </div>
          
           <div class="clear"></div>
-        </div>
+
 
       </header>
           <!-- //header -->
@@ -82,10 +81,10 @@
 
 
                           <div class="bottom _mt20">
+                              <button class="btn _h60 _w50" (click)="tryLogin()" type="submit" [disabled]="!myForm.form.valid">Log In</button>
 
-                              <button class="btn _h60 _w50 fancyFont" (click)="tryLogin()" type="submit">Log In</button>
+                              <button class="btn reg _h60 _w50" type="reset"><a href="/register" style="text-decoration: none">sign up</a> </button>
 
-                              <button class="btn reg _h60 _w50 fancyFont" type="reset"><a href="/register">sign up</a> </button>
                           </div>
 
                         </form>

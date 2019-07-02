@@ -47,7 +47,7 @@
                 <div class="content-w3layouts-main">
   
                     <div class="form-w3ls-left-info">
-                        <form class="ui form" [formGroup]="profileForm" [ngClass]="{'loading': isLoading}">
+                        <form class="ui form" [formGroup]="profileForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
   
                             <div class="form-group">
                               <label>Date Of Birth</label>
@@ -68,7 +68,7 @@
                               </select>
                             </div>
                             <div class="bottom">
-                                <button class="btn" (click)="newprofile()" type="submit">Update</button>
+                                <button class="btn" (click)="newprofile()" type="submit" [disabled]="!myForm.form.valid">Update</button>
                             </div>
   
                         </form>

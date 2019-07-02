@@ -1,105 +1,228 @@
-<div class="main-top-intro">
-    <div class="bg-layer">
-        <!-- header -->
-        <div class="wrapper">
-            <header>
-                <div class="header-w3layouts">
-                    <h1>
-                        <a class="navbar-brand logo" href="index.html">
-                            NSSF CAREER <br>
-                        <br> EXPO
-                        </a>
-                    </h1>
-                </div>
-                <div class="nav_w3pvt">
-                    <nav>
-                        <label for="drop" class="toggle mt-lg-0 mt-2"><span class="fa fa-bars" aria-hidden="true"></span></label>
-                        <input type="checkbox" id="drop" />
-                        <ul class="menu">
-                            <li  (click)="logout()" class="active">
-                                <div class="container">
-                                  <a (click)="logout()" class="navbar-text navbar-right navbar-link">Logout</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="buttons mt-lg-0 mt-3 ml-auto">
-                    <div class="form-w3layouts-grid">
-                        <form  class="newsletter">
-                            <input class="search" type="search" placeholder="" required="">
-                            <button class="form-control btn" value=""><span class="fa fa-search"></span></button>
-                            <div class="clear"></div>
-                        </form>
-                    </div>
-                </div>
-                <div class="clear"></div>
-  
-            </header>
-            <!-- //header -->
-            <!---728x90--->
-  
-            <div class="content-inner-info">
-                <h2>UPDATE DISPLAY PROFILE</h2>
-                <p>{{authenticated_user.uid}}</p>
-                <!---728x90--->
-  
-                <div class="content-w3layouts-main">
-  
-                    <div class="form-w3ls-left-info">
-                      <!-- profile form -->
-                      <img style="width: 200px" class="card-img-top image" [src]="user.image" *ngIf="user.image" alt="User image">
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+  </button>
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    
 
-                        <form class="ui form" [formGroup]="displayprofileForm" [ngClass]="{'loading': isLoading}">
-  
-                            <div class="form-group">
-                                <label>Upload</label>
-                                <input type="file" formControlName="image" style="border-radius: 5px;">
-                            </div>
-                            <div class="form-group">
-                              <label>Your name</label>
-                              <input type="text" *ngIf="user.image" formControlName="name" class="form-control" required>
-                            </div>
-                            <div class="bottom">
-                                <button class="btn"  (click)="save(displayprofileForm.value)" type="submit">Save</button>
-                            </div>
-  
-                        </form>
 
-                    </div>
-  
-                </div>
-  
-            <div class="copy-w3layouts-inf">
-                <p>© 2019
-                    NSSF. All rights reserved |
-              
-                </p>
-                <ul class="list-unstyled w3layouts-icons">
-                    <li>
-                        <a href="#" class="face-b">
-                            <span class="fa fa-facebook-f"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="twit">
-                            <span class="fa fa-twitter"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="dribble">
-                            <span class="fa fa-dribbble"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="vk">
-                            <span class="fa fa-vk"></span>
-                        </a>
-                    </li>
-                </ul>
-                <div class="clear"></div>
-            </div>
-            <!-- //copyright -->
+      <!---first input-->
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>CHOOSE</ng-template>
+        
+        <button class="ui secondary button">
+           I AM A STUDENT
+        </button>
+
+        <button class="ui secondary button">
+         I AM A MENTOR
+        </button>
+
+
+        
+        
+        <div>
+          <button mat-button matStepperNext>Next</button>
         </div>
-    </div>
-  </div>
+      </form>
+    </mat-step>
+    
+
+
+  
+      <!---second input-->
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>STUDENT DETAILS</ng-template>
+      
+        <h4 class="ui dividing header">Bio Data</h4>
+        
+        <div class="ui form">
+          <div class="three fields">
+            <div class="field">
+              <label>First name</label>
+              <input type="text" placeholder="First Name">
+            </div>
+            <div class="field">
+              <label>Last name</label>
+              <input type="text" placeholder="Last Name">
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input type="text" placeholder="Email">
+            </div>
+          </div>
+        </div>
+        
+        <div class="ui form">
+        <div class="two fields">
+          <div class="field">
+            <label>Gender</label>
+            <input type="text" placeholder="Gender">
+          </div>
+          <div class="field">
+            <label>University</label>
+            <input type="text" placeholder="University">
+          </div>
+          </div>
+        </div>
+
+        <div class="ui form">
+            <div class="two fields">
+              <div class="field">
+                <label>Course Of Study</label>
+                <input type="text" placeholder="Course Of Study">
+              </div>
+              <div class="field">
+                  <label>Year Of Joining</label>
+                  <input type="text" placeholder="Year">
+                </div>
+              </div>
+            </div>
+
+        <h4 class="ui dividing header">Interests</h4>
+           <div class="field">
+            <label>Select</label>
+            <div class="ui fluid multiple search selection dropdown">
+              <input type="hidden" name="receipt">
+              <i class="dropdown icon"></i>
+              <div class="default text">Select From</div>
+             
+            </div>
+          </div>
+          <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    
+    
+
+    <!---third input-->
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>MENTOR DETAILS</ng-template>
+        
+        
+        <form class="ui form">
+          <h4 class="ui dividing header">Bio Data</h4>
+          <div class="ui form">
+              <div class="two fields">
+                <div class="field">
+                  <label>First name</label>
+                  <input type="text" placeholder="First Name">
+                </div>
+                <div class="field">
+                  <label>Last Name</label>
+                  <input type="text" placeholder="Last Name">
+                </div>
+              </div>
+            </div>
+            
+
+          <div class="ui form">
+            <div class="field">
+              <label>Age</label>
+              <input type="text" placeholder="Age">
+            </div>
+          </div>
+
+
+      
+      
+          <h4 class="ui dividing header">Place Of Work</h4>
+          <div class="ui form">
+              <div class="four fields">
+                <div class="field">
+                  <label>Location</label>
+                  <input type="text" placeholder="Location">
+                </div>
+                <div class="field">
+                  <label>Company</label>
+                  <input type="text" placeholder="Company">
+                </div>
+                <div class="field">
+                    <label>Title At Place Of Work</label>
+                    <input type="text" placeholder="Title">
+                </div>
+                    <div class="field">
+                        <label>Duration At Place Of Work</label>
+                        <input type="text" placeholder="Duration">
+                      </div>
+                  
+                </div>
+              </div>
+      
+          
+           
+            
+            
+          
+           <h4 class="ui dividing header">Skills</h4>
+           <div class="field">
+            <label>Select</label>
+            <div class="ui fluid multiple search selection dropdown">
+              <input type="hidden" name="receipt">
+              <i class="dropdown icon"></i>
+              <div class="default text">Select From</div>
+             
+            </div>
+          </div>
+        </form>
+        
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    
+    
+
+      <!---fourth input-->
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>USER PROFILE</ng-template>
+        
+          <div class="ui inverted segment">
+            <div class="ui inverted form">
+              <div class="two fields">
+                <div class="field">
+                  <label>First Name</label>
+                  <input placeholder="First Name" type="text">
+                </div>
+                <div class="field">
+                  <label>Last Name</label>
+                  <input placeholder="Last Name" type="text">
+                </div>
+              </div>
+              <div class="inline field">
+                <div class="ui checkbox">
+                  <input type="checkbox" tabindex="0" class="hidden">
+                  <label>I agree to the terms and conditions</label>
+                </div>
+              </div>
+              <div class="ui submit button">Submit</div>
+            </div>
+          </div>
+          
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+    
+    
+  
+      <!---fifth input-->
+    <mat-step>
+      <ng-template matStepLabel>DONE</ng-template>
+      You are now done. Thank You!!!
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>

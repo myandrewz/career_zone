@@ -51,7 +51,7 @@
                 <div class="content-w3layouts-main">
   
                     <div class="form-w3ls-left-info">
-                        <form class="ui form" [formGroup]="registerForm" [ngClass]="{'loading': isLoading}">
+                        <form class="ui form" [formGroup]="registerForm" [ngClass]="{'loading': isLoading}"  #myForm="ngForm">
 
                             <div class ="_registerr">
                                 <p style="color: white"> EMAIL </p>
@@ -66,7 +66,7 @@
   
                             <div class="bottom _mt20">
 
-                              <button class="btn reg _h60 _w50 fancyFont" (click)="tryRegister(registerForm.value)" type="submit">
+                              <button class="btn reg _h60 _w50 fancyFont" (click)="tryRegister(registerForm.value)" type="submit"  [disabled]="!myForm.form.valid">
                                 <a href="/register">sign up</a> </button>
                             </div>
 

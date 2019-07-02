@@ -43,8 +43,6 @@ sup,
 tt,
 var,
 b,
-u,
-i,
 dl,
 dt,
 dd,
@@ -52,7 +50,6 @@ ol,
 nav ul,
 nav li,
 fieldset,
-form,
 label,
 legend,
 table,
@@ -267,11 +264,13 @@ header {
 
 .header-w3layouts {
     float: left;
+    padding-top: 10px;
 }
 
 .nav_w3pvt {
     float: left;
-    width: 50%;
+    width: 80%;
+    padding-bottom: 50px
 }
 
 .buttons {
@@ -289,7 +288,7 @@ a.navbar-brand {
     font-weight: 800;
 }
 
-a.navbar-brand.logo span.fa {
+a.navbar-brand.o span.fa {
     color: #fff;
 }
 
@@ -673,7 +672,7 @@ a {
 
 .form-w3ls-left-info input[type="email"] {
     outline: none;
-    font-size: 14px;
+    font-size: 50px;
     color: #888;
     border: none;
     width: 92%;
@@ -686,7 +685,7 @@ a {
 
 .form-w3ls-left-info input[type="password"] {
     outline: none;
-    font-size: 14px;
+    font-size: 50px;
     color: #888;
     border: none;
     width: 92%;
@@ -701,7 +700,7 @@ a {
 .form-w3ls-left-info button.btn {
     background: #f54785;
     color: #fff;
-    font-size: 14px;
+    font-size: 20px;
     text-transform: uppercase;
     padding: 0.8em 2em;
     letter-spacing: 1px;
@@ -753,7 +752,7 @@ button.btn.reg {
 /*-- copyright --*/
 .copy-w3layouts-inf {
     margin-top: 2em;
-    padding: 2em 0;
+    padding: 10px 0;
 }
 
 .copy-w3layouts-inf p {
@@ -890,13 +889,9 @@ ul.w3layouts-icons li a.vk:hover {
 }
 
 
-@media(max-width:600px) {
+@media(max-width:400px) {
     .content-inner-info {
-        padding-top: 8em;
-    }
-
-    .content-inner-info {
-        padding-top: 8em;
+        padding-top: 3em;
     }
 
     .form-w3layouts-grid .search {
@@ -924,7 +919,7 @@ ul.w3layouts-icons li a.vk:hover {
 
     .form-w3ls-left-info input[type="email"],
     .form-w3ls-left-info input[type="password"] {
-        width: 91%;
+        width: 90%;
     }
 
     .nav_w3pvt {
@@ -934,7 +929,7 @@ ul.w3layouts-icons li a.vk:hover {
     }
 }
 
-@media(max-width:384px) {
+@media(max-width:370px) {
     body h2 {
         font-size: 1.75em;
         margin: 2em 0 0 0;
@@ -946,7 +941,7 @@ ul.w3layouts-icons li a.vk:hover {
     }
 
     .content-inner-info {
-        padding-top: 7em;
+        padding-top: 3em;
     }
 }
 

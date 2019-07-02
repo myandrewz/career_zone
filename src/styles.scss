@@ -1,17 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
-$base-font-size:1em;
+$base-font-size:9px;
 
 ._fqsand{
   font-family: 'quicksand' !important
 }
 
 ._fs20{
-  font-size: $base-font-size !important;
+  font-size: $base-font-size*2 !important;
 }
 
 ._h60{
   height: 60px !important;
+  
+}
+
+.password{
+  letter-spacing: 1px;
+  font-size: 13px
+
 }
 
 ._mt10{
@@ -26,10 +33,27 @@ $base-font-size:1em;
   margin-top: 30px !important
 }
 
+._loginwith{
+  padding-top: 35px;
+  padding-bottom: 15px;
+}
+
+._registerr{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.hello{
+  padding-top: 27px!important
+}
+
+.inputs{
+  padding-top:10px
+}
+
 ._w50{
   width: 49% !important;
 }
-
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
 .fancyFont {
   font-family: 'Montserrat';

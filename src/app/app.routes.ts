@@ -32,6 +32,8 @@ export const rootRouterConfig: Routes = [
 
   ]},
   { path: 'new-profile', component: NewProfileComponent},
+  { path: 'new-student', component: NewStudentComponent},
+  { path: 'new-mentor', component: NewMentorComponent},
 
 
 ];

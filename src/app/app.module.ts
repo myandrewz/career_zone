@@ -27,13 +27,18 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { ImagesVideosComponent } from './images-videos/images-videos.component';
 import { ReportsComponent } from './reports/reports.component';
 import { OverviewComponent } from './overview/overview.component';
+import { ToastrModule } from 'ngx-toastr';
 //import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogComponent } from './dialog/dialog.component';
+//import { DialogComponent } from './dialog/dialog.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-   
+    
     UserComponent,
     RegisterComponent,
     NewProfileComponent,
@@ -44,10 +49,12 @@ import { OverviewComponent } from './overview/overview.component';
     BlogsComponent,
     ImagesVideosComponent,
     ReportsComponent,
-    OverviewComponent
+    OverviewComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     
     ReactiveFormsModule,
     FormsModule,

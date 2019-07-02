@@ -64,19 +64,24 @@
                           <label class="success">{{successMessage}}</label>
 
                           <div class="links _mt20" fxLayout="row">
-                            <a href="javascript:void(0)" class = "_fs20 _fqsand" (click)="this.isForgotPassword= true;"  >Forgot
+                            <a href="javascript:void(0)" class = "_fs20 _fqsand" (click)="showDialog = !showDialog"  >Forgot
                               Password?</a>
                    
                           </div>
-                          <div class="form-group" *ngIf="isForgotPassword">
-                   
-                            <button type="button" class="btn" (click)="this.isForgotPassword=
-                              false;">Cancel</button>
-                            <button type="button" class="btn btn-primary"
-                              (click)="this.isForgotPassword=true;">Get email to reset password</button>
+                          
+                          <app-dialog [(visible)]="showDialog">
+                       <!--  <div class="form-group" *ngIf="isForgotPassword">
+                    -->  
+
+                    <button type="button" class="btn btn-primary" (click)="this.isForgotPassword=true;">Get email to reset password</button>
+                            <p></p> <p></p> <p></p> <p></p> <p></p> <p></p> <p></p><br>
+                            <p></p>
+                            <p></p>
+                           <p> <button type="button" class="btn" (click)="showDialog = !showDialog"
+                            >Cancel</button></p> 
                               
-                          </div>
-                        
+                        <!--  </div> -->
+                        </app-dialog>
                    
 
 

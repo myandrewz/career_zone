@@ -13,7 +13,7 @@ import { UserResolver } from './user/user.resolver';
 import { AuthGuard } from './core/auth.guard';
 import { AuthService } from './core/auth.service';
 import { UserService } from './core/user.service';
-import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
 import {SuiModule} from 'ng2-semantic-ui';
@@ -27,7 +27,8 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { ImagesVideosComponent } from './images-videos/images-videos.component';
 import { ReportsComponent } from './reports/reports.component';
 import { OverviewComponent } from './overview/overview.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MaterialModule} from './material'
 import { ToastrModule } from 'ngx-toastr';
 //import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -52,8 +53,13 @@ import { ToastrModule } from 'ngx-toastr';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
+    MaterialModule,
     FormsModule,
+  
+   
+    
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features

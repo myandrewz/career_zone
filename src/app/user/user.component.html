@@ -185,27 +185,56 @@
         <form [formGroup]="secondFormGroup">
           <ng-template matStepLabel>USER PROFILE</ng-template>
         
-          <div class="ui inverted segment">
-            <div class="ui inverted form">
-              <div class="two fields">
-                <div class="field">
-                  <label>First Name</label>
-                  <input placeholder="First Name" type="text">
-                </div>
-                <div class="field">
-                  <label>Last Name</label>
-                  <input placeholder="Last Name" type="text">
-                </div>
-              </div>
-              <div class="inline field">
-                <div class="ui checkbox">
-                  <input type="checkbox" tabindex="0" class="hidden">
-                  <label>I agree to the terms and conditions</label>
-                </div>
-              </div>
-              <div class="ui submit button">Submit</div>
-            </div>
-          </div>
+          <section class="container">
+              <section class="wrapper">
+                <header>
+                  
+                  <h1> update profile picture </h1>
+                </header>
+                <section class="main-content">
+                      <div class="profile-img-content">
+                          <div class="profile-img">
+                            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzMjA0ODk1OF5BMl5BanBnXkFtZTcwMTA4ODM3OQ@@._V1_UY256_CR5,0,172,256_AL_.jpg" alt="User avatar">
+                        </div>
+                     </div>
+                     <div class="ui form">
+                         <div class="field">
+                           <label>IMAGE</label>
+                           <input type="file">
+                         </div>
+                     </div>
+                    <div class="ui form">
+                        <div class="field">
+                          <label>USER NAME</label>
+                          <input type="text" placeholder="Username">
+                        </div>
+                    </div>
+                </section>
+                <footer>
+                  <button class="next">Next</button>
+                  <button class="follow">Follow</button>
+                </footer>
+              </section>
+          </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           
           <div>
             <button mat-button matStepperPrevious>Back</button>

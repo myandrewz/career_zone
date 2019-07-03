@@ -71,7 +71,7 @@ import { DialogComponent } from './dialog/dialog.component';
     SuiModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 10000,
+      timeOut: 5000,
       //positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     })

@@ -1,7 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AuthService } from '../core/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import {SuiModalService, TemplateModalConfig, ModalTemplate} from 'ng2-semantic-ui';
+
+
+export interface IContext {
+  data:string;
+}
 
 @Component({
   selector: 'page-login',
@@ -10,8 +17,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent {
 
+  @ViewChild('modalTemplate')
+  public modalTemplate:ModalTemplate<IContext, string, string>
+
   loginForm: FormGroup;
   errorMessage = '';
+  successMessage = '';
   isLoading = false;
   isForgotPassword: boolean;
   emailInput: string;
@@ -19,9 +30,14 @@ export class LoginComponent {
   constructor(
     public authService: AuthService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private toastr: ToastrService,
+    public modalService:SuiModalService
   ) {
     this.createForm();
+  }
+  ngOnInit() {
+      
   }
 
   createForm() {
@@ -74,15 +90,29 @@ export class LoginComponent {
     this.authService.doLogin(this.loginForm.value)
     .then(res => {
       this.isLoading = false;
-
+      this.toastr.success("Login Successful !!!","Notification");
       //console.log(res);
-
       localStorage.setItem('authenticated_user', JSON.stringify(res.user));
       this.router.navigate(['/user']);
     }, err => {
       this.isLoading = false
-      console.log(err);
-      this.errorMessage = err.message;
+      this.toastr.error(err.message, "Warning", {enableHtml :  true });
+      //console.log(err);
+      //this.errorMessage = err.message;
     });
   }
+
+  openForgotPasswordModal(dynamicContent:string = "Example") {
+    const config = new TemplateModalConfig<IContext, string, string>(this.modalTemplate);
+
+    config.closeResult = "closed!";
+    config.context = { data: dynamicContent };
+    config.size = 'tiny'
+    config.mustScroll = true;
+
+    this.modalService
+        .open(config)
+        .onApprove(result => { /* approve callback */ })
+        .onDeny(result => { /* deny callback */});
+}
 }

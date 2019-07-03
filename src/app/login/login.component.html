@@ -60,28 +60,36 @@
 
                           <input class="_h60" type="email" placeholder="Email Address" required="" formControlName="email" />
                           <input class="_h60 _mt10" type="password" placeholder="Password" required="" formControlName="password" />
-                          <label class="error">{{errorMessage}}</label>
-                          <label class="success">{{successMessage}}</label>
+                          <!--
+                            <label class="error">{{errorMessage}}</label>
+                            <label class="success">{{successMessage}}</label>
+                          -->
 
                           <div class="links _mt20" fxLayout="row">
-                            <a href="javascript:void(0)" class = "_fs20 _fqsand" (click)="showDialog = !showDialog"  >Forgot
+                            <a href="javascript:void(0)" class = "_fs20 _fqsand" (click)=" openForgotPasswordModal()"  >Forgot
                               Password?</a>
                    
                           </div>
                           
-                          <app-dialog [(visible)]="showDialog">
+                         <!--<app-dialog [(visible)]="showDialog">--> 
                        <!--  <div class="form-group" *ngIf="isForgotPassword">
                     -->  
 
-                    <button type="button" class="btn btn-primary" (click)="this.isForgotPassword=true;">Get email to reset password</button>
-                            <p></p> <p></p> <p></p> <p></p> <p></p> <p></p> <p></p><br>
-                            <p></p>
-                            <p></p>
-                           <p> <button type="button" class="btn" (click)="showDialog = !showDialog"
-                            >Cancel</button></p> 
-                              
+                    <!-- <div class="ui modal transition active visible normal"> 
+                       <sui-modal *ngIf="show" [isClosable]="true"  (dismissed)="show = false" #modal>
+
+                      <button type="button" class="btn btn-primary"   (click)="modal.approve()">Get email to reset password</button>
+                              <p></p> <p></p> <p></p> <p></p> <p></p> <p></p> <p></p><br>
+                              <p></p>
+                              <p></p>
+                             <p> <button type="button" class="btn"  (click)="modal.deny()"
+                              >Cancel</button></p> 
+                            </sui-modal>
+                          
+                          </div> -->
+                  
                         <!--  </div> -->
-                        </app-dialog>
+                       <!-- </app-dialog>--> 
                    
 
 
@@ -151,30 +159,20 @@
   </div>
 </div>
 
-<!--
-<h1 class="header">Login</h1>
-<div class="container">
-  <div class="row">
-
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook</button>
+<ng-template let-context let-modal="modal" #modalTemplate>
+    <div class="header">Reset Password</div>
+ <!-- <div class="content">
+        <p>{{ context.data }}</p>
+    </div> -->  
+    <div class="actions">
+      <div class="form-w3ls-left-info"> 
+          <form class="ui form" [formGroup]="loginForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm"></form>
+        <p >Please Enter Your Email</p><br>
+      
+        <input class="_h60" type="email" placeholder="Email Address" required="" formControlName="email" />
+      </div><br>
+    
+        <button class="ui red button" (click)="modal.deny('denied')">Cancel</button>
+        <button class="ui green button" (click)="modal.approve('approved')" autofocus>OK</button>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Login with Google</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-info btn-block" (click)="tryTwitterLogin()">Login with Twitter</button>
-    </div>
-  </div> -->
-  <!-- <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <p>No account yet? <a href="/register">Create an account</a></p>
-    </div>
-  </div>
-</div> --> 
+</ng-template>

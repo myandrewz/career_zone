@@ -94,7 +94,7 @@ export class LoginComponent {
       this.toastr.success("Login Successful !!!","Notification");
       //console.log(res);
       localStorage.setItem('authenticated_user', JSON.stringify(res.user));
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/user']);
     }, err => {
       this.isLoading = false
       this.toastr.error(err.message, "Error", {enableHtml :  true });

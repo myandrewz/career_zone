@@ -55,10 +55,8 @@ export class RegisterComponent {
      .then(res =>{
         this.toastr.success("Registration Successful !!!","Notification");
         this.router.navigate(['/user']);
-     }, err =>{ 
-        this.toastr.error(err.message, "Error", {enableHtml :  true });
-        console.log(err)
-    })
+     }, err => console.log(err)
+     )
    }
 
    tryRegister(value){

@@ -35,15 +35,7 @@
                   </ul>
               </nav>
           </div>
-          <div class="buttons mt-lg-0 mt-3 ml-auto">
-              <div class="form-w3layouts-grid">
-                  <form  class="newsletter">
-                      <input class="search" type="search" placeholder="" required="">
-                      <button class="form-control btn" value=""><span class="fa fa-search"></span></button>
-                      <div class="clear"></div>
-                  </form>
-              </div>
-          </div>
+         
           <div class="clear"></div>
 
 
@@ -51,27 +43,36 @@
           <!-- //header -->
           <!---728x90--->
 
-          <div class="content-inner-info">
-              <h2> Hello !!!</h2>
+        <div class="fancyFont">
+          <div>
+            <div class="hello">
+              <h2>Welcome!!!</h2>
+              </div>
               <!---728x90--->
 
               <div class="content-w3layouts-main">
 
                   <div class="form-w3ls-left-info">
-                      <form class="ui form" [formGroup]="loginForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
 
-                          <input class="_h60" type="email" placeholder="Email Address" required="" formControlName="email" />
-                          <input class="_h60 _mt10" type="password" placeholder="Password" required="" formControlName="password" />
+                      <form class="ui form" [formGroup]="loginForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
+                          <div class ="_registerr">
+                              <p style="color: white"> EMAIL </p>
+                           </div>
+                          <input class="_h60 _fs20 " type="email" placeholder="Email Address" required="" formControlName="email" /><div class="inputs">
+                              <div class ="_registerr">
+                                  <p style="color: white"> PASSWORD </p>
+                               </div>
+                          <input class="_h60 _fs20" type="password" placeholder="Password" required="" formControlName="password" /></div>
                           <!--
-                            <label class="error">{{errorMessage}}</label>
-                            <label class="success">{{successMessage}}</label>
+                          <label class="error">{{errorMessage}}</label>
+                          <label class="success">{{successMessage}}</label>
                           -->
 
                           <div class="links _mt20" fxLayout="row">
-                            <a href="javascript:void(0)" class = "_fs20 _fqsand" (click)="this.isForgotPassword= true;"  >Forgot
-                              Password?</a>
-                   
+                            <a style="color: white" href="javascript:void(0)" class = "fancyFont password" (click)="this.isForgotPassword= true;"  ><u>Forgot
+                              Password?</u></a>
                           </div>
+
                           <div class="form-group" *ngIf="isForgotPassword">
                    
                             <button type="button" class="btn" (click)="this.isForgotPassword=

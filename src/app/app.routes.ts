@@ -20,7 +20,7 @@ export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
-  { path: 'user', component: UserComponent,  resolve: { data: UserResolver}},
+  { path: 'user', component: UserComponent},
   { path: 'dashboard', component: DashboardComponent,
    children: [
     { path: 'Overview', component: OverviewComponent},
@@ -32,6 +32,8 @@ export const rootRouterConfig: Routes = [
 
   ]},
   { path: 'new-profile', component: NewProfileComponent},
+  { path: 'new-student', component: NewStudentComponent},
+  { path: 'new-mentor', component: NewMentorComponent},
 
 
 ];

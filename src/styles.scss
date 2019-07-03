@@ -2,19 +2,27 @@
 
 
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-$base-font-size:1em;
+$base-font-size:9px;
 
 ._fqsand{
   font-family: 'quicksand' !important
 }
 
 ._fs20{
-  font-size: $base-font-size !important;
+  font-size: $base-font-size*2 !important;
 }
 
 ._h60{
   height: 60px !important;
+  
+}
+
+.password{
+  letter-spacing: 1px;
+  font-size: 13px
+
 }
 
 ._mt10{
@@ -29,10 +37,26 @@ $base-font-size:1em;
   margin-top: 30px !important
 }
 
+._loginwith{
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+._registerr{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.inputs{
+  padding-top:10px
+}
+
 ._w50{
   width: 49% !important;
 }
 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
 .fancyFont {
   font-family: 'Montserrat';

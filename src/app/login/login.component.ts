@@ -79,6 +79,7 @@ export class LoginComponent {
   tryGoogleLogin(){
     this.authService.doGoogleLogin()
     .then(res => {
+      this.toastr.success("Login Successful !!!","Notification");
       this.router.navigate(['/user']);
     })
   }
@@ -96,7 +97,7 @@ export class LoginComponent {
       this.router.navigate(['/user']);
     }, err => {
       this.isLoading = false
-      this.toastr.error(err.message, "Warning", {enableHtml :  true });
+      this.toastr.error(err.message, "Error", {enableHtml :  true });
       //console.log(err);
       //this.errorMessage = err.message;
     });

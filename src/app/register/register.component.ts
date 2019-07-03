@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../core/auth.service'
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,8 @@ export class RegisterComponent {
   constructor(
     public authService: AuthService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private toastr: ToastrService
   ) {
     this.createForm();
    }
@@ -51,7 +53,8 @@ export class RegisterComponent {
    tryGoogleLogin(){
      this.authService.doGoogleLogin()
      .then(res =>{
-       this.router.navigate(['/user']);
+        this.toastr.success("Registration Successful !!!","Notification");
+        this.router.navigate(['/user']);
      }, err => console.log(err)
      )
    }
@@ -61,6 +64,7 @@ export class RegisterComponent {
      this.authService.doRegister(value)
      .then(res => {
       this.isLoading = false;
+      this.toastr.success("Registration Successful !!!","Notification");
       localStorage.setItem('authenticated_user', JSON.stringify(res.user));
 
       if (res.user){
@@ -83,16 +87,17 @@ export class RegisterComponent {
     
       this.router.navigate(['/user']);
       console.log(res);
-      this.errorMessage = "";
-      this.successMessage = "Your account has been created";
-     // this.sendEmail = "Welcome to the Expo";
-
+      //this.errorMessage = "";
+      //this.successMessage = "Your account has been created";
      }, err => {
        this.isLoading = false;
+       this.toastr.error(err.message, "Error", {enableHtml :  true });
        console.log(err);
-       this.errorMessage = err.message;
-       this.successMessage = "";
+      // this.errorMessage = err.message;
+      // this.successMessage = "";
      })
    }
+
+   
 
 }

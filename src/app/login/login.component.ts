@@ -113,7 +113,10 @@ export class LoginComponent {
 
     this.modalService
         .open(config)
-        .onApprove(result => { /* approve callback */ })
+        .onApprove(result => { /* approve callback */ 
+          this.toastr.info("Check your email Inbox !!!","Info");
+          
+        })
         .onDeny(result => { /* deny callback */});
 }
 }

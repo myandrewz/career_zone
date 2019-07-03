@@ -29,8 +29,7 @@ import { ReportsComponent } from './reports/reports.component';
 import { OverviewComponent } from './overview/overview.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule} from './material'
-
-
+import { ToastrModule } from 'ngx-toastr';
 //import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -41,6 +40,8 @@ import { MaterialModule} from './material'
     UserComponent,
     RegisterComponent,
     NewProfileComponent,
+    NewMentorComponent,
+    NewStudentComponent,
     DashboardComponent,
     StudentUserComponent,
     MentorComponent,
@@ -63,7 +64,13 @@ import { MaterialModule} from './material'
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
-    SuiModule
+    SuiModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      //positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    })
    // FlexLayoutModule
   ],
   

@@ -2,11 +2,14 @@ import { Injectable } from "@angular/core";
 import 'rxjs/add/operator/toPromise';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
+import { functions } from 'firebase/app';
+import { auth } from 'firebase';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  
 
   constructor(
    public afAuth: AngularFireAuth
@@ -16,6 +19,19 @@ export class AuthService {
  async sendPasswordResetEmail(passwordResetEmail: string) {
   return await this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail);
 }
+
+
+
+//  dosendWelcomeEmail = functions.auth.user().onCreate((user) => {
+//   // [END onCreateTrigger]
+//     // [START eventAttributes]
+//     const email = user.email; // The email of the user.
+//     const displayName = user.displayName; // The display name of the user.
+//     // [END eventAttributes]
+  
+//     //return this.sendWelcomeEmail(email, displayName);
+//   });
+
 
   doFacebookLogin(){
     return new Promise<any>((resolve, reject) => {
@@ -30,6 +46,10 @@ export class AuthService {
       })
     })
   }
+
+
+
+
 
   doTwitterLogin(){
     return new Promise<any>((resolve, reject) => {
@@ -47,6 +67,7 @@ export class AuthService {
 
 
   
+
   doGoogleLogin(){
     return new Promise<any>((resolve, reject) => {
       let provider = new firebase.auth.GoogleAuthProvider();
@@ -63,8 +84,14 @@ export class AuthService {
     })
   }
 
+
+
+
+   
+
   doRegister(value){
     return new Promise<any>((resolve, reject) => {
+      firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
       firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
       .then(res => {
         resolve(res);

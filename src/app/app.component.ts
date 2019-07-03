@@ -8,7 +8,13 @@ import { ToastrService } from 'ngx-toastr';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  emailInput: string;
+  title = 'angulartoastr';
+  constructor(private toastr: ToastrService) {}
+  showSuccess() {
+    this.toastr.success('Hello world!', 'Toastr fun!',
+    {timeOut: 2000});;
+  }
+  
 
   
 }

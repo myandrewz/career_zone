@@ -67,20 +67,11 @@
                           -->
 
                           <div class="links _mt20" fxLayout="row">
-                            <a style="color: white" href="javascript:void(0)" class = "fancyFont password" (click)="this.isForgotPassword= true;"  ><u>Forgot
+                            
+                            <a style="color: white" href="javascript:void(0)" class = "fancyFont password"  class = "_fs20 _fqsand" (click)=" openForgotPasswordModal()"  ><u>Forgot
                               Password?</u></a>
-                          </div>
-
-                          <div class="form-group" *ngIf="isForgotPassword">
                    
-                            <button type="button" class="btn" (click)="this.isForgotPassword=
-                              false;">Cancel</button>
-                            <button type="button" class="btn btn-primary"
-                              (click)="this.isForgotPassword=true;">Get email to reset password</button>
-                              
                           </div>
-                        
-                   
 
 
 
@@ -150,30 +141,21 @@
   </div>
 </div>
 
-<!--
-<h1 class="header">Login</h1>
-<div class="container">
-  <div class="row">
-
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Login with Facebook</button>
+<ng-template let-context let-modal="modal" #modalTemplate>
+    <div class="header">Reset Password</div>
+ <!-- <div class="content">
+        <p>{{ context.data }}</p>
+    </div> -->  
+    <div class="actions">
+      <div class="form-w3ls-left-info"> 
+          <form class="this-form"  ></form>
+        <p font size= "6" >Please Enter Your Email</p><br>
+      
+        <input class="_h60" type="email" placeholder="Email Address" required="" formControlName="email" />
+      </div><br>
+    
+        
+        <button class="ui green button" (click)="modal.approve('approved')" autofocus>OK</button>
+        <button class="ui red button" (click)="modal.deny('denied')">Cancel</button>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-danger btn-block" (click)="tryGoogleLogin()">Login with Google</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button type="button" class="btn btn-info btn-block" (click)="tryTwitterLogin()">Login with Twitter</button>
-    </div>
-  </div> -->
-  <!-- <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <p>No account yet? <a href="/register">Create an account</a></p>
-    </div>
-  </div>
-</div> --> 
+</ng-template>

@@ -39,3 +39,15 @@ r {
   text-align: left;
 }
 
+.form-w3ls-left-info input[type="email"] {
+  outline: none;
+  font-size: 14px;
+  color: #888;
+  border: solid;
+  width: 92%;
+  display: inline-block;
+  letter-spacing: 2px;
+  margin: 0 0 1em;
+  padding: 1em 1em;
+  background: #fff;
+}

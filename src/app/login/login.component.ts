@@ -1,8 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AuthService } from '../core/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import {SuiModalService, TemplateModalConfig, ModalTemplate} from 'ng2-semantic-ui';
+
+
+export interface IContext {
+  data:string;
+}
 
 @Component({
   selector: 'page-login',
@@ -10,6 +16,9 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['login.scss']
 })
 export class LoginComponent {
+
+  @ViewChild('modalTemplate')
+  public modalTemplate:ModalTemplate<IContext, string, string>
 
   loginForm: FormGroup;
   errorMessage = '';
@@ -22,7 +31,8 @@ export class LoginComponent {
     public authService: AuthService,
     private router: Router,
     private fb: FormBuilder,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    public modalService:SuiModalService
   ) {
     this.createForm();
   }
@@ -92,4 +102,18 @@ export class LoginComponent {
       //this.errorMessage = err.message;
     });
   }
+
+  openForgotPasswordModal(dynamicContent:string = "Example") {
+    const config = new TemplateModalConfig<IContext, string, string>(this.modalTemplate);
+
+    config.closeResult = "closed!";
+    config.context = { data: dynamicContent };
+    config.size = 'tiny'
+    config.mustScroll = true;
+
+    this.modalService
+        .open(config)
+        .onApprove(result => { /* approve callback */ })
+        .onDeny(result => { /* deny callback */});
+}
 }

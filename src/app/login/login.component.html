@@ -167,12 +167,13 @@
     <div class="actions">
       <div class="form-w3ls-left-info"> 
           <form class="this-form"  ></form>
-        <p >Please Enter Your Email</p><br>
+        <p font size= "6" >Please Enter Your Email</p><br>
       
         <input class="_h60" type="email" placeholder="Email Address" required="" formControlName="email" />
       </div><br>
     
-        <button class="ui red button" (click)="modal.deny('denied')">Cancel</button>
+        
         <button class="ui green button" (click)="modal.approve('approved')" autofocus>OK</button>
+        <button class="ui red button" (click)="modal.deny('denied')">Cancel</button>
     </div>
 </ng-template>

@@ -25,7 +25,7 @@ element {
   margin-top: -49px;
 }
 
-.ui.modal {
+ .ui.modal {
   width: 600px;
   margin: 0 0 0 -450px;
 
@@ -35,11 +35,11 @@ r {
   width:73%;
 }
 
-.ui.modal > .actions {
+::ng-deep .ui.modal > .actions {
   text-align: left;
 }
 
-.form-w3ls-left-info input[type="email"] {
+::ng-deep .form-w3ls-left-info input[type="email"] {
   outline: none;
   font-size: 14px;
   color: #888;
@@ -50,4 +50,14 @@ r {
   margin: 0 0 1em;
   padding: 1em 1em;
   background: #fff;
+
+
+}
+
+::ng-deep.form-w3ls-left-info p {
+  color: #000;
+  display: inline-block;
+  margin: 20px 0;
+  letter-spacing: 1px;
+  font-size: medium;
 }

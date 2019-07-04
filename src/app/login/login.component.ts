@@ -118,5 +118,5 @@ export class LoginComponent {
           
         })
         .onDeny(result => { /* deny callback */});
-}
+  }
 }

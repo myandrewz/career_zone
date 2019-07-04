@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { AuthService } from '../core/auth.service';
 import { Router, Params } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators ,AbstractControl} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import {SuiModalService, TemplateModalConfig, ModalTemplate} from 'ng2-semantic-ui';
 
@@ -26,6 +26,7 @@ export class LoginComponent {
   isLoading = false;
   isForgotPassword: boolean;
   emailInput: string;
+  form: FormGroup;
 
   constructor(
     public authService: AuthService,
@@ -37,6 +38,9 @@ export class LoginComponent {
     this.createForm();
   }
   ngOnInit() {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email], this.checkValidEmail]
+    })
       
   }
 
@@ -45,6 +49,17 @@ export class LoginComponent {
       email: ['me@me.org', Validators.required ],
       password: ['Password1',Validators.required]
     });
+  }
+
+  checkValidEmail(control: AbstractControl) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === 'super@secret.com') {
+            resolve({ emailIsTaken: true })
+        } else {resolve(null)}
+      }, 2000)
+    })
+
   }
 
   tryFacebookLogin(){

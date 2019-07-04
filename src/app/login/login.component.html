@@ -67,20 +67,11 @@
                           -->
 
                           <div class="links _mt20" fxLayout="row">
-                            <a style="color: white" href="javascript:void(0)" class = "fancyFont password" (click)="this.isForgotPassword= true;"  ><u>Forgot
+                            
+                            <a style="color: white" href="javascript:void(0)" class = "fancyFont password"  class = "_fs20 _fqsand" (click)=" openForgotPasswordModal()"  ><u>Forgot
                               Password?</u></a>
-                          </div>
-
-                          <div class="form-group" *ngIf="isForgotPassword">
                    
-                            <button type="button" class="btn" (click)="this.isForgotPassword=
-                              false;">Cancel</button>
-                            <button type="button" class="btn btn-primary"
-                              (click)="this.isForgotPassword=true;">Get email to reset password</button>
-                              
                           </div>
-                        
-                   
 
 
 
@@ -156,15 +147,20 @@
         <p>{{ context.data }}</p>
     </div> -->  
     <div class="actions">
+            <form  [formGroup]="form" >
       <div class="form-w3ls-left-info"> 
-          <form class="this-form"  ></form>
+         
         <p font size= "6" >Please Enter Your Email</p><br>
       
-        <input class="_h60" type="email" placeholder="Email Address" required="" formControlName="email" />
+        <input class="form-control" type="email" placeholder="Email Address" required="" formControlName="email"  required/>
       </div><br>
     
         
-        <button class="ui green button" (click)="modal.approve('approved')" autofocus>OK</button>
+        <button class="ui green button" (click)="modal.approve('approved')"[disabled]="form.invalid">OK</button>
+        <div *ngIf="form.get('email').pending">
+                <img src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif" width="50px" alt="">
+              </div>
         <button class="ui red button" (click)="modal.deny('denied')">Cancel</button>
+    </form>
     </div>
 </ng-template>

@@ -54,8 +54,8 @@ export class RegisterComponent implements OnInit{
 
    createForm() {
      this.registerForm = this.fb.group({
-       email: ['', Validators.required ],
-       password: ['',Validators.required]
+       email: ['me@me.org', Validators.required ],
+       password: ['Password1',Validators.required]
      });
    }
 
@@ -91,6 +91,10 @@ export class RegisterComponent implements OnInit{
       this.isLoading = false;
       this.toastr.success("Registration Successful !!!","Notification");
       localStorage.setItem('authenticated_user', JSON.stringify(res.user));
+      this.router.navigate(['/user']);
+      console.log(res);
+      //this.errorMessage = "";
+      //this.successMessage = "Your account has been created";
 
       if (res.user){
         
@@ -108,12 +112,7 @@ export class RegisterComponent implements OnInit{
       else {
         this.errorMessage = "";
       }
-
-    
-      this.router.navigate(['/user']);
-      console.log(res);
-      //this.errorMessage = "";
-      //this.successMessage = "Your account has been created";
+      
      }, err => {
        this.isLoading = false;
        this.toastr.error(err.message, "Error", {enableHtml :  true });

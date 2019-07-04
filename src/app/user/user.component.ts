@@ -19,18 +19,80 @@ export class UserComponent implements OnInit{
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+  forthFormGroup: FormGroup;
+  authenticated_user: any;
 
-constructor (private _formBuilder: FormBuilder) {}
+  urls = new Array<string>();
+  image:any;
+
+  constructor(
+    private fb: FormBuilder
+  ) {
+    this.createForm();
+  }
 
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
+    var _authuser  = localStorage.getItem('authenticated_user')
+    if(_authuser){
+      this.authenticated_user = JSON.parse(_authuser);
+      console.log(this.authenticated_user.uid)
+    }
+    /*
+      this.firstFormGroup = this._formBuilder.group({
+        firstCtrl: ['', Validators.required]
+      });
+      this.secondFormGroup = this._formBuilder.group({
+        secondCtrl: ['', Validators.required]
+      });
+    */
   }
+
+  createForm() {
+    this.firstFormGroup = this.fb.group({
+      role: [name, Validators.required ],
+
+      //student
+      firstname: [name, Validators.required],
+      lastname: [name, Validators.required],
+      email: [name, Validators.required],
+      gender: [name, Validators.required],
+      university: [name, Validators.required],
+      course: [name, Validators.required],
+      yearOfJoining: [name, Validators.required],
+      interests: [name, Validators.required],
+
+      //mentor
+      dob: [name, Validators.required],
+      location: [name, Validators.required],
+      company: [name, Validators.required],
+      title: [name, Validators.required],
+      duration: [name, Validators.required],
+      skills: [name, Validators.required],
+
+      //userprofile,
+      image: [name, Validators.required],
+      username: [name, Validators.required]
+    })
+  }
+
+  detectFiles(event) {
+    this.urls = [];
+    let files = event.target.files;
+    if (files) {
+      for (let file of files) {
+        let reader = new FileReader();
+        reader.onload = (e: any) => {
+          this.urls.push(e.target.result);
+        }
+        reader.readAsDataURL(file);
+      }
+      this.image=true;
+    }
+  }
+
+
 }
 
   //createForm(name) {

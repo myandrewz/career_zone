@@ -157,5 +157,5 @@ export class LoginComponent implements OnInit{
           
         })
         .onDeny(result => { /* deny callback */});
-}
+  }
 }

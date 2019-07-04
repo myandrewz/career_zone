@@ -32,6 +32,8 @@ import { MaterialModule} from './material'
 import { ToastrModule } from 'ngx-toastr';
 //import { FlexLayoutModule } from '@angular/flex-layout';
 import { DialogComponent } from './dialog/dialog.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 //import { DialogComponent } from './dialog/dialog.component';
 
 
@@ -39,7 +41,6 @@ import { DialogComponent } from './dialog/dialog.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    
     UserComponent,
     RegisterComponent,
     NewProfileComponent,
@@ -53,7 +54,9 @@ import { DialogComponent } from './dialog/dialog.component';
     ImagesVideosComponent,
     ReportsComponent,
     OverviewComponent,
-    DialogComponent
+    DialogComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

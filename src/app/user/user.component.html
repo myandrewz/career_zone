@@ -1,38 +1,40 @@
+<p>{{authenticated_user.uid}}</p>
 <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
     {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-  </button>
+</button>
+
+<form class="ui form" [formGroup]="firstFormGroup">
   <mat-horizontal-stepper [linear]="isLinear" #stepper>
-    
 
 
       <!---first input-->
-    <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
+      <mat-step [stepControl]="firstFormGroup">
         <ng-template matStepLabel>CHOOSE</ng-template>
-        
         <button class="ui secondary button">
-           I AM A STUDENT
+          I AM A STUDENT
         </button>
 
         <button class="ui secondary button">
-         I AM A MENTOR
+        I AM A MENTOR
         </button>
 
-
-        
+        <div class="form-group">
+          <label for="sel1">Role :</label>
+          <select class="form-control" formControlName="role" id="sel1">
+            <option>Student</option>
+            <option>Mentor</option>
+          </select>
+        </div>
         
         <div>
           <button mat-button matStepperNext>Next</button>
         </div>
-      </form>
-    </mat-step>
-    
 
-
-  
+      </mat-step>
+      
+      
       <!---second input-->
-    <mat-step [stepControl]="secondFormGroup">
-      <form [formGroup]="secondFormGroup">
+      <mat-step [stepControl]="secondFormGroup">
         <ng-template matStepLabel>STUDENT DETAILS</ng-template>
       
         <h4 class="ui dividing header">Bio Data</h4>
@@ -81,31 +83,27 @@
             </div>
 
         <h4 class="ui dividing header">Interests</h4>
-           <div class="field">
+          <div class="field">
             <label>Select</label>
             <div class="ui fluid multiple search selection dropdown">
               <input type="hidden" name="receipt">
               <i class="dropdown icon"></i>
               <div class="default text">Select From</div>
-             
+            
             </div>
           </div>
           <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
         </div>
-      </form>
-    </mat-step>
-    
-    
+      </mat-step>
 
-    <!---third input-->
-    <mat-step [stepControl]="secondFormGroup">
-      <form [formGroup]="secondFormGroup">
+
+      <!---third input-->
+      <mat-step [stepControl]="thirdFormGroup">
         <ng-template matStepLabel>MENTOR DETAILS</ng-template>
         
-        
-        <form class="ui form">
+        <!--<form class="ui form">-->
           <h4 class="ui dividing header">Bio Data</h4>
           <div class="ui form">
               <div class="two fields">
@@ -119,7 +117,6 @@
                 </div>
               </div>
             </div>
-            
 
           <div class="ui form">
             <div class="field">
@@ -128,130 +125,99 @@
             </div>
           </div>
 
-
-      
-      
           <h4 class="ui dividing header">Place Of Work</h4>
           <div class="ui form">
-              <div class="four fields">
-                <div class="field">
-                  <label>Location</label>
-                  <input type="text" placeholder="Location">
-                </div>
-                <div class="field">
-                  <label>Company</label>
-                  <input type="text" placeholder="Company">
-                </div>
-                <div class="field">
-                    <label>Title At Place Of Work</label>
-                    <input type="text" placeholder="Title">
-                </div>
-                    <div class="field">
-                        <label>Duration At Place Of Work</label>
-                        <input type="text" placeholder="Duration">
-                      </div>
-                  
-                </div>
+            <div class="four fields">
+              <div class="field">
+                <label>Location</label>
+                <input type="text" placeholder="Location">
               </div>
-      
-          
-           
-            
-            
-          
-           <h4 class="ui dividing header">Skills</h4>
-           <div class="field">
+              <div class="field">
+                <label>Company</label>
+                <input type="text" placeholder="Company">
+              </div>
+              <div class="field">
+                  <label>Title At Place Of Work</label>
+                  <input type="text" placeholder="Title">
+              </div>
+                  <div class="field">
+                    <label>Duration At Place Of Work</label>
+                    <input type="text" placeholder="Duration">
+                  </div>
+                
+              </div>
+            </div>
+
+          <h4 class="ui dividing header">Skills</h4>
+          <div class="field">
             <label>Select</label>
             <div class="ui fluid multiple search selection dropdown">
               <input type="hidden" name="receipt">
               <i class="dropdown icon"></i>
               <div class="default text">Select From</div>
-             
+            
             </div>
           </div>
-        </form>
+        <!--</form>-->
         
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button matStepperNext>Next</button>
         </div>
-      </form>
-    </mat-step>
-    
-    
+      </mat-step>
+        
 
       <!---fourth input-->
-      <mat-step [stepControl]="secondFormGroup">
-        <form [formGroup]="secondFormGroup">
-          <ng-template matStepLabel>USER PROFILE</ng-template>
-        
-          <section class="container">
-              <section class="wrapper">
-                <header>
-                  
-                  <h1> update profile picture </h1>
-                </header>
-                <section class="main-content">
-                      <div class="profile-img-content">
-                          <div class="profile-img">
-                            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzMjA0ODk1OF5BMl5BanBnXkFtZTcwMTA4ODM3OQ@@._V1_UY256_CR5,0,172,256_AL_.jpg" alt="User avatar">
-                        </div>
-                     </div>
-                     <div class="ui form">
-                         <div class="field">
-                           <label>IMAGE</label>
-                           <input type="file">
-                         </div>
-                     </div>
-                    <div class="ui form">
-                        <div class="field">
-                          <label>USER NAME</label>
-                          <input type="text" placeholder="Username">
-                        </div>
-                    </div>
-                </section>
-                <footer>
-                  <button class="next">Next</button>
-                  <button class="follow">Follow</button>
-                </footer>
+      <mat-step [stepControl]="forthFormGroup">
+        <ng-template matStepLabel>USER PROFILE</ng-template>
+      
+        <section class="container">
+            <section class="wrapper">
+              <header>
+                
+                <h1> update profile picture </h1>
+              </header>
+              <section class="main-content">
+                    <div class="profile-img-content">
+                        <div class="profile-img">
+                          <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzMjA0ODk1OF5BMl5BanBnXkFtZTcwMTA4ODM3OQ@@._V1_UY256_CR5,0,172,256_AL_.jpg" alt="User avatar">
+                      </div>
+                  </div>
+                  <div class="ui form">
+                      <div class="field">
+                        <label>IMAGE</label>
+                        <input type="file" name="image"t formControlName="image">
+                      </div>
+                  </div>
+                  <div class="ui form">
+                      <div class="field">
+                        <label>USER NAME</label>
+                        <input type="text" placeholder="Username">
+                      </div>
+                  </div>
               </section>
-          </section>
+              <footer>
+                <button class="next">Next</button>
+                <button class="follow">Follow</button>
+              </footer>
+            </section>
+        </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-          <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
-          </div>
-        </form>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
       </mat-step>
-    
-    
-  
+      
+      
       <!---fifth input-->
-    <mat-step>
-      <ng-template matStepLabel>DONE</ng-template>
-      You are now done. Thank You!!!
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
-      </div>
-    </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>DONE</ng-template>
+        You are now done. Thank You!!!
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
   </mat-horizontal-stepper>
+</form>

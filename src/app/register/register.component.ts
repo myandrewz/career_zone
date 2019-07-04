@@ -85,12 +85,7 @@ export class RegisterComponent {
       else {
         this.errorMessage = "";
       }
-
-    
-      this.router.navigate(['/user']);
-      console.log(res);
-      //this.errorMessage = "";
-      //this.successMessage = "Your account has been created";
+      
      }, err => {
        this.isLoading = false;
        this.toastr.error(err.message, "Error", {enableHtml :  true });

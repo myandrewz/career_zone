@@ -19,31 +19,40 @@ export class UserComponent implements OnInit{
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  authenticated_user: any;
 
-constructor (private _formBuilder: FormBuilder) {}
+constructor (
+  private fb: FormBuilder
+  ) {
+  this.createForm();
+}
 
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
+    var _authuser  = localStorage.getItem('authenticated_user')
+    if(_authuser){
+      this.authenticated_user = JSON.parse(_authuser);
+      console.log(this.authenticated_user.uid)
+    }
+    /*this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
   }
-}
 
-  //createForm(name) {
-    //this.displayprofileForm = this.fb.group({
+  createForm(name) {
+    this.firstFormGroup = this.fb.group({
       
       //image: [name, Validators.required ],
       //name: [name, Validators.required ],
      // email: [name, Validators.required ],
       //dob: [name, Validators.required ],
       //sex: [name, Validators.required ],
-      //role: [name, Validators.required ]
-    //});
-  //}
+      role: [name, Validators.required ]
+    });
+  }
 
   //save(value){
     //this.userService.updateCurrentUser(value)

@@ -1,10 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit, HostListener, Inject } from '@angular/core';
 import { AuthService } from '../core/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators ,AbstractControl} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import {SuiModalService, TemplateModalConfig, ModalTemplate} from 'ng2-semantic-ui';
-
+import { trigger, state, transition, style, animate } from '@angular/animations';
+import { DOCUMENT } from '@angular/common';
 
 export interface IContext {
   data:string;
@@ -13,9 +14,18 @@ export interface IContext {
 @Component({
   selector: 'page-login',
   templateUrl: 'login.component.html',
-  styleUrls: ['login.scss']
+  styleUrls: ['login.scss'],
+  animations:[ 
+    trigger('fade',
+    [ 
+      state('void', style({ opacity : 0})),
+      transition(':enter',[ animate(200)]),
+      transition(':leave',[ animate(400)]),
+    ]
+)]
 })
-export class LoginComponent {
+
+export class LoginComponent implements OnInit{
 
   @ViewChild('modalTemplate')
   public modalTemplate:ModalTemplate<IContext, string, string>
@@ -28,21 +38,35 @@ export class LoginComponent {
   emailInput: string;
   form: FormGroup;
 
+  
+
   constructor(
     public authService: AuthService,
     private router: Router,
     private fb: FormBuilder,
     private toastr: ToastrService,
-    public modalService:SuiModalService
-  ) {
+    public modalService:SuiModalService,
+    @Inject(DOCUMENT) document
+    ) 
+  {
     this.createForm();
   }
+
   ngOnInit() {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email], this.checkValidEmail]
-    })
-      
-  }
+    }) }
+
+  @HostListener('window:scroll', ['$event'])
+    onWindowScroll(e) {
+       if (window.pageYOffset > 50) {
+         let element = document.getElementById('navbar');
+         element.classList.add('sticky');
+       } else {
+        let element = document.getElementById('navbar');
+          element.classList.remove('sticky'); 
+       }
+    }
 
   createForm() {
     this.loginForm = this.fb.group({

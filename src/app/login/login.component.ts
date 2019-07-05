@@ -119,21 +119,21 @@ export class LoginComponent implements OnInit{
     this.authService.doGoogleLogin()
     .then(res => {
       this.toastr.success("Login Successful !!!","Notification");
-      this.router.navigate(['/user']);
+      this.router.navigate(['/dashboard']);
     })
   }
 
   tryLogin(){
 
     this.isLoading = true;
-    //console.log(this.loginForm.value);
+    ///console.log(this.loginForm.value);
     this.authService.doLogin(this.loginForm.value)
     .then(res => {
       this.isLoading = false;
       this.toastr.success("Login Successful !!!","Notification");
       //console.log(res);
       localStorage.setItem('authenticated_user', JSON.stringify(res.user));
-      this.router.navigate(['/user']);
+      this.router.navigate(['/dashboard']);
     }, err => {
       this.isLoading = false
       this.toastr.error(err.message, "Error", {enableHtml :  true });

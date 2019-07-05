@@ -31,6 +31,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule} from './material'
 import { ToastrModule } from 'ngx-toastr';
 //import { FlexLayoutModule } from '@angular/flex-layout';
+import { HashLocationStrategy } from "@angular/common";
+import { Location } from "@angular/common";
+import { LocationStrategy } from "@angular/common";
 import { DialogComponent } from './dialog/dialog.component';
 //import { DialogComponent } from './dialog/dialog.component';
 
@@ -78,7 +81,13 @@ import { DialogComponent } from './dialog/dialog.component';
    // FlexLayoutModule
   ],
   
-  providers: [AuthService, UserService, UserResolver, AuthGuard],
+  providers: [AuthService, UserService, UserResolver,
+    Location,
+		{
+			provide: LocationStrategy,
+			useClass: HashLocationStrategy
+},
+    AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

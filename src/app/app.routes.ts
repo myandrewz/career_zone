@@ -18,8 +18,8 @@ import { OverviewComponent } from './overview/overview.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
-  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent },
   { path: 'user', component: UserComponent},
   { path: 'dashboard', component: DashboardComponent,
    children: [

@@ -4,11 +4,20 @@ import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators ,AbstractControl} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import {SuiModalService, TemplateModalConfig, ModalTemplate} from 'ng2-semantic-ui';
+import "firebase/auth";
+
 
 
 export interface IContext {
   data:string;
 }
+
+interface User {
+	id: string;
+	email: string;
+}
+
+type View = "loading" | "login" | "sent" | "authenticate" | "home";
 
 @Component({
   selector: 'page-login',
@@ -27,6 +36,8 @@ export class LoginComponent {
   isForgotPassword: boolean;
   emailInput: string;
   form: FormGroup;
+  user: any;
+  view: string;
 
   constructor(
     public authService: AuthService,
@@ -36,7 +47,23 @@ export class LoginComponent {
     public modalService:SuiModalService
   ) {
     this.createForm();
+    this.errorMessage = null;
+		this.user = null;
+		this.view = "loading";
+
   }
+
+
+  public authenticate( email: string ) : void {
+
+
+
+
+
+
+  }
+
+  
   ngOnInit() {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email], this.checkValidEmail]
@@ -44,6 +71,9 @@ export class LoginComponent {
       
   }
 
+
+
+  
   createForm() {
     this.loginForm = this.fb.group({
       email: ['me@me.org', Validators.required ],
@@ -129,6 +159,7 @@ export class LoginComponent {
     this.modalService
         .open(config)
         .onApprove(result => { /* approve callback */ 
+          this.authService.sendPasswordResetEmail(this.emailInput);  
           this.toastr.info("Check your email Inbox !!!","Info");
           
         })

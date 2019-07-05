@@ -4,6 +4,8 @@ import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
+import * as emailjs from 'emailjs-com';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -29,8 +31,8 @@ export class RegisterComponent {
 
    createForm() {
      this.registerForm = this.fb.group({
-       email: ['', Validators.required ],
-       password: ['',Validators.required]
+       email: ['myandrewz@gmail.com', Validators.required ],
+       password: ['password23',Validators.required]
      });
    }
 
@@ -60,43 +62,63 @@ export class RegisterComponent {
    }
 
    tryRegister(value){
+    alert('i get here')
+
+    
      this.isLoading = true;
-     this.authService.doRegister(value)
-     .then(res => {
-      this.isLoading = false;
+     this.authService.doRegister(value).then(res => {
+
       this.toastr.success("Registration Successful !!!","Notification");
       localStorage.setItem('authenticated_user', JSON.stringify(res.user));
 
-      if (res.user){
-        
 
-        res.user.sendWelcomeEmail(res.user.email, res.user.displayName).subscribe(
-          res =>{
-            console.log(res)
-          },
-          err =>{
-            console.log(err)
-          }
-        )
+      if (res.user){
+        const parameters = {
+          'reply_to': 'res.user.email',
+          'from_name':' Career Zone',
+          'from_email':'noreply@careerzone.nsssfug.org',
+          'to_name': 'New User',
+          'to_email':res.user.email,
+          'subject':'welcome to career zone'
+        }
+
+        console.log(parameters)
+
+        this.sendWelcomeEmail(parameters);
+        this.isLoading = false;
+         
+       this.router.navigate(['/user']);
+      
+        
 
       }
       else {
         this.errorMessage = "";
       }
 
-    
-      this.router.navigate(['/user']);
-      console.log(res);
+   
       //this.errorMessage = "";
       //this.successMessage = "Your account has been created";
      }, err => {
+
+      console.log(err);
        this.isLoading = false;
-       this.toastr.error(err.message, "Error", {enableHtml :  true });
-       console.log(err);
-      // this.errorMessage = err.message;
-      // this.successMessage = "";
+       this.toastr.info(err.message, "Info", {enableHtml :  true });
+       
+    
      })
    }
+
+
+  sendWelcomeEmail(parameters) {
+    
+        emailjs.send('gmail','template_k4ep89Si', parameters,  'user_4gGTxYufsWsj6crQu2fdt')
+        .then((response) => {
+          console.log('SUCCESS!', response.status, response.text);
+        }, (err) => {
+          console.log('FAILED...', err);
+        });
+  }
 
    
 

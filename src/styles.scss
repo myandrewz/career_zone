@@ -54,10 +54,18 @@ $base-font-size:9px;
 ._w50{
   width: 49% !important;
 }
+.sticky {
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 3px 12px 0 rgba(0,0,0,.08);
+  position: fixed;
+  top: 0;
+  height: 120px;
+  width: 100%;
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600");
 .fancyFont {
   font-family: 'Montserrat';
   font-weight: 500;

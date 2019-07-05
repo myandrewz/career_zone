@@ -126,7 +126,7 @@ export class LoginComponent implements OnInit{
   tryLogin(){
 
     this.isLoading = true;
-    //console.log(this.loginForm.value);
+    ///console.log(this.loginForm.value);
     this.authService.doLogin(this.loginForm.value)
     .then(res => {
       this.isLoading = false;

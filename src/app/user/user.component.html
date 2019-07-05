@@ -1,6 +1,8 @@
-<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+<!---<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
     {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-  </button>
+  </button>--->
+
+ 
   <mat-horizontal-stepper [linear]="isLinear" #stepper>
     
 
@@ -18,9 +20,6 @@
          I AM A MENTOR
         </button>
 
-
-        
-        
         <div>
           <button mat-button matStepperNext>Next</button>
         </div>
@@ -211,34 +210,14 @@
                     </div>
                 </section>
                 <footer>
-                  <button class="next">Next</button>
-                  <button class="follow">Follow</button>
+                    <button mat-button matStepperNext>Submit</button>
                 </footer>
               </section>
           </section>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
           <div>
             <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
           </div>
         </form>
       </mat-step>

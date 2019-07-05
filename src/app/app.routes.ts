@@ -18,7 +18,7 @@ import { OverviewComponent } from './overview/overview.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent},
+  { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'user', component: UserComponent},
   { path: 'dashboard', component: DashboardComponent,
@@ -31,7 +31,7 @@ export const rootRouterConfig: Routes = [
     { path: 'imagesvideos', component: ImagesVideosComponent},
 
   ]},
-  { path: 'new-profile', component: NewProfileComponent},
+  { path: 'new-profile', component: NewProfileComponent, canActivate: [AuthGuard]},
   { path: 'new-student', component: NewStudentComponent},
   { path: 'new-mentor', component: NewMentorComponent},
 

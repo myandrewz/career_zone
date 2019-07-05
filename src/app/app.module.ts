@@ -35,6 +35,8 @@ import { HashLocationStrategy } from "@angular/common";
 import { Location } from "@angular/common";
 import { LocationStrategy } from "@angular/common";
 import { DialogComponent } from './dialog/dialog.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 //import { DialogComponent } from './dialog/dialog.component';
 
 
@@ -42,7 +44,6 @@ import { DialogComponent } from './dialog/dialog.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    
     UserComponent,
     RegisterComponent,
     NewProfileComponent,
@@ -56,7 +57,9 @@ import { DialogComponent } from './dialog/dialog.component';
     ImagesVideosComponent,
     ReportsComponent,
     OverviewComponent,
-    DialogComponent
+    DialogComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

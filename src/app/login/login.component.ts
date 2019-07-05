@@ -1,12 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit, HostListener, Inject } from '@angular/core';
 import { AuthService } from '../core/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators ,AbstractControl} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import {SuiModalService, TemplateModalConfig, ModalTemplate} from 'ng2-semantic-ui';
-import "firebase/auth";
-
-
+import { trigger, state, transition, style, animate } from '@angular/animations';
+import { DOCUMENT } from '@angular/common';
 
 export interface IContext {
   data:string;
@@ -22,9 +21,18 @@ type View = "loading" | "login" | "sent" | "authenticate" | "home";
 @Component({
   selector: 'page-login',
   templateUrl: 'login.component.html',
-  styleUrls: ['login.scss']
+  styleUrls: ['login.scss'],
+  animations:[ 
+    trigger('fade',
+    [ 
+      state('void', style({ opacity : 0})),
+      transition(':enter',[ animate(200)]),
+      transition(':leave',[ animate(400)]),
+    ]
+)]
 })
-export class LoginComponent {
+
+export class LoginComponent implements OnInit{
 
   @ViewChild('modalTemplate')
   public modalTemplate:ModalTemplate<IContext, string, string>
@@ -40,13 +48,17 @@ export class LoginComponent {
   view: string;
   is_resetting_password= false 
 
+  
+
   constructor(
     public authService: AuthService,
     private router: Router,
     private fb: FormBuilder,
     private toastr: ToastrService,
-    public modalService:SuiModalService
-  ) {
+    public modalService:SuiModalService,
+    @Inject(DOCUMENT) document
+    ) 
+  {
     this.createForm();
     this.errorMessage = null;
 		this.user = null;
@@ -64,13 +76,21 @@ export class LoginComponent {
 
   }
 
-  
   ngOnInit() {
     this.resetPasswordForm = this.fb.group({
       email: ['', [Validators.required, Validators.email], this.checkValidEmail]
-    })
-      
-  }
+    }) }
+
+  @HostListener('window:scroll', ['$event'])
+    onWindowScroll(e) {
+       if (window.pageYOffset > 50) {
+         let element = document.getElementById('navbar');
+         element.classList.add('sticky');
+       } else {
+        let element = document.getElementById('navbar');
+          element.classList.remove('sticky'); 
+       }
+    }
 
 
 
@@ -126,21 +146,21 @@ export class LoginComponent {
     this.authService.doGoogleLogin()
     .then(res => {
       this.toastr.success("Login Successful !!!","Notification");
-      this.router.navigate(['/user']);
+      this.router.navigate(['/dashboard']);
     })
   }
 
   tryLogin(){
 
     this.isLoading = true;
-    //console.log(this.loginForm.value);
+    ///console.log(this.loginForm.value);
     this.authService.doLogin(this.loginForm.value)
     .then(res => {
       this.isLoading = false;
       this.toastr.success("Login Successful !!!","Notification");
       //console.log(res);
       localStorage.setItem('authenticated_user', JSON.stringify(res.user));
-      this.router.navigate(['/user']);
+      this.router.navigate(['/dashboard']);
     }, err => {
       this.isLoading = false
       this.toastr.error(err.message, "Error", {enableHtml :  true });

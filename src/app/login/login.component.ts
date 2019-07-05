@@ -35,9 +35,10 @@ export class LoginComponent {
   isLoading = false;
   isForgotPassword: boolean;
   emailInput: string;
-  form: FormGroup;
+  resetPasswordForm: FormGroup;
   user: any;
   view: string;
+  is_resetting_password= false 
 
   constructor(
     public authService: AuthService,
@@ -65,7 +66,7 @@ export class LoginComponent {
 
   
   ngOnInit() {
-    this.form = this.fb.group({
+    this.resetPasswordForm = this.fb.group({
       email: ['', [Validators.required, Validators.email], this.checkValidEmail]
     })
       
@@ -159,10 +160,26 @@ export class LoginComponent {
     this.modalService
         .open(config)
         .onApprove(result => { /* approve callback */ 
-          this.authService.sendPasswordResetEmail(this.emailInput);  
-          this.toastr.info("Check your email Inbox !!!","Info");
+        
           
         })
         .onDeny(result => { /* deny callback */});
+}
+
+resetPassword(){
+  this.is_resetting_password = true
+          console.log(this.resetPasswordForm.value)
+          this.authService.sendPasswordResetEmail(this.resetPasswordForm.value.email).then(
+            res =>{
+              console.log(res)
+              this. successMessage = 'Done';
+            },
+            err=>{
+              console.log(err)
+              this.errorMessage = ''
+            }
+          ) 
+          this.toastr.info("Check your email Inbox !!!","Info");
+          
 }
 }

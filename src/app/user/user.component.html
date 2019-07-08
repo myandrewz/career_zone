@@ -1,3 +1,4 @@
+
 <p>{{authenticated_user.uid}}</p>
 <!--
 <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
@@ -8,6 +9,7 @@
 <form class="ui form" [formGroup]="profileForm">
   <mat-horizontal-stepper  class ="stepper" [linear]="isLinear" #stepper>
   <!--<mat-horizontal-stepper  class ="stepper" linear #stepper>-->
+
 
       <!---first input-->
       <mat-step [stepControl]="firstFormGroup">
@@ -163,7 +165,7 @@
                     <div class="profile-img-content">
                         <div class="profile-img">
                           <img *ngFor="let url of urls" [src]="url" height="200" width="200" alt="User avatar">
-                          <img *ngIf="!image" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzMjA0ODk1OF5BMl5BanBnXkFtZTcwMTA4ODM3OQ@@._V1_UY256_CR5,0,172,256_AL_.jpg" height="200" width="200" alt="User avatar">
+                          <img *ngIf="!image" src="https://png.pngtree.com/svg/20161212/f93e57629c.svg" height="200" width="200" alt="User avatar">
                         </div>
                   </div>
                   <div class="ui form">

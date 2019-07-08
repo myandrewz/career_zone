@@ -40,12 +40,41 @@ export class UserService {
     })
   }
   createUser(value, authenticated_user_uid){
-    return this.db.collection('User').add({
-      id:authenticated_user_uid,
-      dob: value.dob,
-      sex: value.sex,
-      role: value.role
-    });
+    if(value.role == "Student"){
+      return this.db.collection('User').add({
+        id:authenticated_user_uid,
+        role: value.role,
+        firstname: value.firstname,
+        lastname: value.lastname,
+        email: value.email,
+        dob: value.dob,
+        gender: value.gender,
+        image:value.image,
+        username:value.username,
+        university:value.university,
+        course:value.course,
+        yearOfJoining:value.yearOfJoining,
+        interests:value.interests
+      });
+    }else{
+      return this.db.collection('User').add({
+        id:authenticated_user_uid,
+        role: value.role,
+        firstname: value.firstname,
+        lastname: value.lastname,
+        email: value.email,
+        dob: value.dob,
+        gender: value.gender,
+        image:value.image,
+        username:value.username,
+        location:value.location,
+        company:value.company,
+        title:value.title,
+        duration:value.duration,
+        skills:value.skills
+      });
+    }
+    
   }
   createStudent(value, authenticated_user_uid){
     return this.db.collection('Student').add({

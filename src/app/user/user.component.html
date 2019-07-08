@@ -1,27 +1,56 @@
-<!---<p>{{authenticated_user.uid}}</p>--->
 
+<p>{{authenticated_user.uid}}</p>
+<!--
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button>
+-->
 
-
-<form class="ui form profile-form" [formGroup]="firstFormGroup">
-
-    <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-        {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-    </button>
- 
-  <mat-horizontal-stepper [linear]="isLinear" class="mat-horizontal-content-container"  #stepper style="background: #f3f0f0">
+<form class="ui form" [formGroup]="profileForm">
+  <mat-horizontal-stepper  class ="stepper" [linear]="isLinear" #stepper>
+  <!--<mat-horizontal-stepper  class ="stepper" linear #stepper>-->
 
 
       <!---first input-->
       <mat-step [stepControl]="firstFormGroup">
         <ng-template matStepLabel>CHOOSE</ng-template>
-        <button class="ui secondary button">
-          I AM A STUDENT
-        </button>
+        
 
-        <button class="ui secondary button">
-        I AM A MENTOR
-        </button>
+        <h4 class="ui dividing header">Bio Data</h4>
+        <div class="ui form">
+          <div class="two fields">
+            <div class="field">
+              <label>First name</label>
+              <input type="text" placeholder="First Name" formControlName="firstname">
+            </div>
+            <div class="field">
+              <label>Last Name</label>
+              <input type="text" placeholder="Last Name" formControlName="lastname">
+            </div>
+          </div>
+        </div>
 
+        <div class="ui form">
+          <div class="two fields">
+            <div class="field">
+              <label>Date Of Birth</label>
+              <input type="date" placeholder="me@me.org" formControlName="dob">
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input type="email" placeholder="me@me.org" formControlName="email">
+            </div>
+            </div>
+        </div>
+        
+        <div class="field">
+          <label>Gender :</label>
+          <select class="form-control" formControlName="gender">
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+        
         <div class="form-group">
           <label>Role :</label>
           <select class="form-control" formControlName="role">
@@ -31,49 +60,21 @@
         </div>
         
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext (click)="skipStepper()" type="button">Next</button>
         </div>
 
       </mat-step>
       
       
       <!---second input-->
-      <mat-step [stepControl]="secondFormGroup">
+      <mat-step [stepControl]="secondFormGroup" *ngIf="enableStudent">
         <ng-template matStepLabel>STUDENT DETAILS</ng-template>
       
         <h4 class="ui dividing header">Bio Data</h4>
         
-        <div class="ui form">
-          <div class="three fields">
-            <div class="field">
-              <label>First name</label>
-              <input type="text" placeholder="First Name" formControlName="firstname">
-            </div>
-            <div class="field">
-              <label>Last name</label>
-              <input type="text" placeholder="Last Name" formControlName="lastname">
-            </div>
-            <div class="field">
-              <label>Email</label>
-              <input type="email" placeholder="Email" formControlName="email">
-            </div>
-          </div>
-        </div>
-        
-        <div class="ui form">
-        <div class="two fields">
-          <div class="field">
-            <label>Gender</label>
-            <select class="form-control" formControlName="interests">
-              <option>Knowledge</option>
-              <option>Hobby</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>University</label>
-            <input type="text" placeholder="University" formControlName="university">
-          </div>
-          </div>
+        <div class="field">
+          <label>University</label>
+          <input type="text" placeholder="University" formControlName="university">
         </div>
 
         <div class="ui form">
@@ -105,30 +106,10 @@
 
 
       <!---third input-->
-      <mat-step [stepControl]="thirdFormGroup">
+      <mat-step [stepControl]="thirdFormGroup" *ngIf="enableMentor">
         <ng-template matStepLabel>MENTOR DETAILS</ng-template>
         
         <!--<form class="ui form">-->
-          <h4 class="ui dividing header">Bio Data</h4>
-          <div class="ui form">
-              <div class="two fields">
-                <div class="field">
-                  <label>First name</label>
-                  <input type="text" placeholder="First Name" formControlName="firstname">
-                </div>
-                <div class="field">
-                  <label>Last Name</label>
-                  <input type="text" placeholder="Last Name" formControlName="lastname">
-                </div>
-              </div>
-            </div>
-
-          <div class="ui form">
-            <div class="field">
-              <label>Date of Birth</label>
-              <input type="date" placeholder="D.O.B" formControlName="dob">
-            </div>
-          </div>
 
           <h4 class="ui dividing header">Place Of Work</h4>
           <div class="ui form">
@@ -142,11 +123,11 @@
                 <input type="text" placeholder="Company" formControlName="company">
               </div>
               <div class="field">
-                  <label>Title At Place Of Work</label>
+                  <label>Profession</label>
                   <input type="text" placeholder="Title" formControlName="title">
               </div>
                   <div class="field">
-                    <label>Duration At Place Of Work</label>
+                    <label>working Experience</label>
                     <input type="text" placeholder="Duration" formControlName="duration">
                   </div>
                 
@@ -218,6 +199,9 @@
       <mat-step>
         <ng-template matStepLabel>DONE</ng-template>
         You are now done. Thank You!!!
+        <div class="bottom _mt20">
+          <button class="btn reg _h60 _w50" (click)="registerProfile()" type="submit">Submit</button>
+        </div>
         <div>
           <button mat-button matStepperPrevious>Back</button>
           <button mat-button (click)="stepper.reset()">Reset</button>

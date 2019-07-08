@@ -6,6 +6,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FirebaseUserModel } from '../core/user.model';
+import { ToastrService } from 'ngx-toastr';
+import { trigger, state, transition, style, animate } from '@angular/animations';
 
 
 
@@ -16,7 +18,8 @@ import { FirebaseUserModel } from '../core/user.model';
 })
 export class UserComponent implements OnInit{
 
-  isLinear = false;
+  isLinear = true;
+  profileForm: FormGroup;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
@@ -25,9 +28,16 @@ export class UserComponent implements OnInit{
 
   urls = new Array<string>();
   image:any;
+  enableStudent = false;
+  enableMentor = false;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    public authService: AuthService,
+    private location : Location,
+    private router: Router,
+    public userService:UserService,
+    private toastr: ToastrService
   ) {
     this.createForm();
   }
@@ -40,38 +50,45 @@ export class UserComponent implements OnInit{
       console.log(this.authenticated_user.uid)
     }
     /*
-      this.firstFormGroup = this._formBuilder.group({
+      this.firstFormGroup = this.fb.group({
         firstCtrl: ['', Validators.required]
       });
-      this.secondFormGroup = this._formBuilder.group({
+      this.secondFormGroup = this.fb.group({
         secondCtrl: ['', Validators.required]
       });
-    */
+      this.thirdFormGroup = this.fb.group({
+        thirdCtrl: ['', Validators.required]
+      });
+      this.thirdFormGroup = this.fb.group({
+        forthCtrl: ['', Validators.required]
+      });
+      */
   }
 
   createForm() {
-    this.firstFormGroup = this.fb.group({
+    this.profileForm = this.fb.group({
+      //general
       role: [name, Validators.required ],
-
-      //student
       firstname: [name, Validators.required],
       lastname: [name, Validators.required],
       email: [name, Validators.required],
+      dob: [name, Validators.required],
       gender: [name, Validators.required],
+
+      //student
       university: [name, Validators.required],
       course: [name, Validators.required],
       yearOfJoining: [name, Validators.required],
       interests: [name, Validators.required],
 
       //mentor
-      dob: [name, Validators.required],
       location: [name, Validators.required],
       company: [name, Validators.required],
       title: [name, Validators.required],
       duration: [name, Validators.required],
       skills: [name, Validators.required],
 
-      //userprofile,
+      //userprofile
       image: [name, Validators.required],
       username: [name, Validators.required]
     })
@@ -92,34 +109,33 @@ export class UserComponent implements OnInit{
     }
   }
 
+  skipStepper() {
+    if(this.profileForm.value.role == "Student"){
+      this.enableStudent=true;
+      this.enableMentor=false;
+    }
+    if(this.profileForm.value.role == "Mentor"){
+      this.enableStudent=false;
+      this.enableMentor=true;
+    }
+      
+  }
+
+  registerProfile(){
+
+    console.log(this.profileForm.value);
+    
+    this.userService.createUser(this.profileForm.value, this.authenticated_user.uid)
+    .then(res => {
+      
+      this.toastr.success("Profile registration Successfull !!!","Notification");
+      //console.log(res);
+      this.router.navigate(['/dashboard']);
+    }, err => {
+      this.toastr.error(err.message, "Error", {enableHtml :  true });
+    });
+    
+  }
+
 
 }
-
-  //createForm(name) {
-    //this.displayprofileForm = this.fb.group({
-      
-      //image: [name, Validators.required ],
-      //name: [name, Validators.required ],
-     // email: [name, Validators.required ],
-      //dob: [name, Validators.required ],
-      //sex: [name, Validators.required ],
-      //role: [name, Validators.required ]
-    //});
-  //}
-
-  //save(value){
-    //this.userService.updateCurrentUser(value)
-    //.then(res => {
-     // this.router.navigate(['/new-profile']);
-    //}, err => console.log(err))
- // }
-
-  //logout(){
-    //this.authService.doLogout()
-    //.then((res) => {
-     // this.location.back();
-    //}, (error) => {
-    //  console.log("Logout error", error);
-    //});
-  //}
-//}

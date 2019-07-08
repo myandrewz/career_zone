@@ -4,10 +4,50 @@
 <div class="main-top-intro" (scroll)="onWindowScroll($event);">
   <div class="bg-layer">
       <!-- header -->
+      <div class="wrapper">
+          <header>
+            <div class="fancyFont">"
+            <div class="header-w3layouts">
+                <h1>
+                    <a class="navbar-brand logo" href="index.html">
+                   Utilizer 
+                    </a>
+                </h1>
+            </div>
+            <div class="nav_w3pvt">
+                <nav>
+                    <label for="drop" class="toggle mt-lg-0 mt-2"><span class="fa fa-bars" aria-hidden="true"></span></label>
+                    <input type="checkbox" id="drop" />
+                    <ul class="menu">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li class=""><a href="#">About</a></li>
+                        <li class=""><a href="#">Services</a></li>
+                        <li class="p-0">
+                            <!-- First Tier Drop Down -->
+                            <label for="drop-2" class="toggle">Pages <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                            <a href="#">Pages <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                            <input type="checkbox" id="drop-2" />
+                            <ul class="inner-dropdown">
+                                <li><a href="#">Error Page</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+           
+            <div class="clear"></div>
+          </div>
+  
+        </header>
+           
+
 
       <!-- //header -->
 
             <!---728x90--->
+
   
           <div class="fancyFont">
             <div>
@@ -19,7 +59,7 @@
                 <div class="content-w3layouts-main">
   
                     <div class="form-w3ls-left-info">
-                        <form class="ui form" [formGroup]="registerForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
+                        <form class="ui form myForm" id="myForm" [formGroup]="registerForm" (ngSubmit)="tryRegister(registerForm.value)" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
 
                             <div class ="_registerr">
                                 <p style="color: white"> EMAIL </p>
@@ -29,14 +69,12 @@
                                 <p style="color: white"> PASSWORD </p>
                               </div>
                             <input class="_h60 _fs20" type="password" placeholder="Password" required="" formControlName="password" /></div>
-                            <!--
-                            <label class="error">{{errorMessage}}</label>
-                            <label class="success">{{successMessage}}</label>
-                            -->
+                           
+                            
                             <div class="bottom _mt20">
 
-                              <button class="btn reg _h60 _w50 fancyFont" (click)="tryRegister(registerForm.value)" type="submit" [disabled]="!myForm.form.valid">
-                                <a href="/register">sign up</a> </button>
+                              <button class="btn reg _h60 _w50 fancyFont"  type="submit" [disabled]="!myForm.form.valid">
+                                sign up </button>
                             </div>
 
                                   <a style="color: white;padding-top: 18px" class = " links btn fancyFont password" 
@@ -47,23 +85,6 @@
                 </div>
 
             
-
-              <!-- <div class="_mt30">
-                <button class="ui blue button _h60 social_buttons">
-                  Use Facebook
-                </button>
-
-                <button class="ui  button _h60 social_buttons">
-                  Okay
-                </button>
-
-                <button class="ui  button _h60 social_buttons">
-                  Okay
-                </button>
-
-          </div> -->
-          <!-- copyright -->
-          <!---728x90--->
 
           
           <div class="content-outer-info ">

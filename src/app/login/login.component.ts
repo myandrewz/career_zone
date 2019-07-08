@@ -11,6 +11,13 @@ export interface IContext {
   data:string;
 }
 
+interface User {
+	id: string;
+	email: string;
+}
+
+type View = "loading" | "login" | "sent" | "authenticate" | "home";
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.component.html',
@@ -36,7 +43,10 @@ export class LoginComponent implements OnInit{
   isLoading = false;
   isForgotPassword: boolean;
   emailInput: string;
-  form: FormGroup;
+  resetPasswordForm: FormGroup;
+  user: any;
+  view: string;
+  is_resetting_password= false 
 
   
 
@@ -50,10 +60,24 @@ export class LoginComponent implements OnInit{
     ) 
   {
     this.createForm();
+    this.errorMessage = null;
+		this.user = null;
+		this.view = "loading";
+
+  }
+
+
+  public authenticate( email: string ) : void {
+
+
+
+
+
+
   }
 
   ngOnInit() {
-    this.form = this.fb.group({
+    this.resetPasswordForm = this.fb.group({
       email: ['', [Validators.required, Validators.email], this.checkValidEmail]
     }) }
 
@@ -68,6 +92,9 @@ export class LoginComponent implements OnInit{
        }
     }
 
+
+
+  
   createForm() {
     this.loginForm = this.fb.group({
       email: ['me@me.org', Validators.required ],
@@ -153,9 +180,26 @@ export class LoginComponent implements OnInit{
     this.modalService
         .open(config)
         .onApprove(result => { /* approve callback */ 
-          this.toastr.info("Check your email Inbox !!!","Info");
+        
           
         })
         .onDeny(result => { /* deny callback */});
-  }
+}
+
+resetPassword(){
+  this.is_resetting_password = true
+          console.log(this.resetPasswordForm.value)
+          this.authService.sendPasswordResetEmail(this.resetPasswordForm.value.email).then(
+            res =>{
+              console.log(res)
+              this. successMessage = 'Done';
+            },
+            err=>{
+              console.log(err)
+              this.errorMessage = ''
+            }
+          ) 
+          this.toastr.info("Check your email Inbox !!!","Info");
+          
+}
 }

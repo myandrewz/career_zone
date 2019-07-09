@@ -84,22 +84,22 @@
 <ng-template let-context let-modal="modal" #modalTemplate>
     <div class="header">Reset Password</div>
  <!-- <div class="content">
-        <p>{{ context.data }}</p>
+        <p>{{ context.data }}</p>''['']
     </div> -->  
     <div class="actions">
-            <form  [formGroup]="form" >
+            <form  [formGroup]="resetPasswordForm" class="ui form" [ngClass]="{'loading':is_resetting_password}" >
       <div class="form-w3ls-left-info"> 
          
         <p font size= "6" >Please Enter Your Email</p><br>
       
-        <input class="form-control" type="email" placeholder="Email Address" required="" formControlName="email"  required/>
+        <input class="form-control" type="email" placeholder="Email Address"  formControlName="email"  required/>
       </div><br>
     
         
-        <button class="ui green button" (click)="modal.approve('approved')"[disabled]="form.invalid">OK</button>
-        <div *ngIf="form.get('email').pending">
+        <button class="ui green button" (click)="resetPassword()"[disabled]="resetPasswordForm.invalid" >OK</button>
+        <!-- <div *ngIf="form.get('email').pending">
                 <img src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif" width="50px" alt="">
-              </div>
+              </div> -->
         <button class="ui red button" (click)="modal.deny('denied')">Cancel</button>
     </form>
     </div>

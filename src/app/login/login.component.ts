@@ -190,6 +190,7 @@ resetPassword(){
   this.is_resetting_password = true
           console.log(this.resetPasswordForm.value)
           this.authService.sendPasswordResetEmail(this.resetPasswordForm.value.email).then(
+            
             res =>{
               console.log(res)
               this. successMessage = 'Done';

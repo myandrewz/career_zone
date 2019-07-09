@@ -87,7 +87,7 @@ export class RegisterComponent implements OnInit{
    }
 
    tryRegister(value){
-    alert('i get here')
+   // alert('i get here')
 
     
      this.isLoading = true;

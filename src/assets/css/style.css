@@ -712,13 +712,14 @@ a {
     cursor: pointer;
     outline: none;
     border: none;
-    float: left;
+    float:left;
 }
 
 button.btn.reg {
-    margin-left: 2%;
+    margin-left:26%;
     background: #4cc2c4;
 }
+
 
 /*--  --*/
 .form-w3ls-left-info p {

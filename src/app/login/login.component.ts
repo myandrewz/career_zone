@@ -26,8 +26,8 @@ type View = "loading" | "login" | "sent" | "authenticate" | "home";
     trigger('fade',
     [ 
       state('void', style({ opacity : 0})),
-      transition(':enter',[ animate(200)]),
-      transition(':leave',[ animate(400)]),
+      transition(':enter',[ animate(300)]),
+      transition(':leave',[ animate(500)]),
     ]
 )]
 })
@@ -83,7 +83,7 @@ export class LoginComponent implements OnInit{
 
   @HostListener('window:scroll', ['$event'])
     onWindowScroll(e) {
-       if (window.pageYOffset > 50) {
+       if (window.pageYOffset > 60) {
          let element = document.getElementById('navbar');
          element.classList.add('sticky');
        } else {
@@ -190,6 +190,7 @@ resetPassword(){
   this.is_resetting_password = true
           console.log(this.resetPasswordForm.value)
           this.authService.sendPasswordResetEmail(this.resetPasswordForm.value.email).then(
+            
             res =>{
               console.log(res)
               this. successMessage = 'Done';

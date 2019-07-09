@@ -128,7 +128,7 @@ export class RegisterComponent implements OnInit{
 
       console.log(err);
        this.isLoading = false;
-       this.toastr.info(err.message, "Info", {enableHtml :  true });
+       this.toastr.error(err.message, "Info", {enableHtml :  true });
        
     
      })

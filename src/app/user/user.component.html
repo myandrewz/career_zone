@@ -1,13 +1,14 @@
 
-<p>{{authenticated_user.uid}}</p>
+<!--<p>{{authenticated_user.uid}}</p>--->
 <!--
 <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
     {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
 </button>
 -->
 
-<form class="ui form" [formGroup]="profileForm">
-  <mat-horizontal-stepper  class ="stepper" [linear]="isLinear" #stepper>
+<form class="ui form profileform" [formGroup]="profileForm">
+  <mat-horizontal-stepper  class ="stepper" [linear]="isLinear" class="
+  mat-horizontal-content-container" #stepper style="background:#DDD">
   <!--<mat-horizontal-stepper  class ="stepper" linear #stepper>-->
 
 
@@ -15,9 +16,9 @@
       <mat-step [stepControl]="firstFormGroup">
         <ng-template matStepLabel>CHOOSE</ng-template>
         
-
-        <h4 class="ui dividing header">Bio Data</h4>
-        <div class="ui form">
+        
+        <h1 class="ui dividing header">Bio Data</h1>
+        <div class="ui form enlarge">
           <div class="two fields">
             <div class="field">
               <label>First name</label>
@@ -30,7 +31,7 @@
           </div>
         </div>
 
-        <div class="ui form">
+        <div class="ui form enlarge">
           <div class="two fields">
             <div class="field">
               <label>Date Of Birth</label>
@@ -43,7 +44,7 @@
             </div>
         </div>
         
-        <div class="field">
+        <div class="field enlarge">
           <label>Gender :</label>
           <select class="form-control" formControlName="gender">
             <option>Male</option>
@@ -51,7 +52,7 @@
           </select>
         </div>
         
-        <div class="form-group">
+        <div class="form-group enlarge">
           <label>Role :</label>
           <select class="form-control" formControlName="role">
             <option>Student</option>
@@ -59,8 +60,9 @@
           </select>
         </div>
         
+
         <div>
-          <button mat-button matStepperNext (click)="skipStepper()" type="button">Next</button>
+          <button mat-button matStepperNext  class="ui secondary button" (click)="skipStepper()" type="button">Next</button>
         </div>
 
       </mat-step>
@@ -70,14 +72,14 @@
       <mat-step [stepControl]="secondFormGroup" *ngIf="enableStudent">
         <ng-template matStepLabel>STUDENT DETAILS</ng-template>
       
-        <h4 class="ui dividing header">Bio Data</h4>
+        <h1 class="ui dividing header">Bio Data</h1>
         
-        <div class="field">
+        <div class="field enlarge">
           <label>University</label>
           <input type="text" placeholder="University" formControlName="university">
         </div>
 
-        <div class="ui form">
+        <div class="ui form enlarge ">
             <div class="two fields">
               <div class="field">
                 <label>Course Of Study</label>
@@ -90,17 +92,17 @@
               </div>
             </div>
 
-        <h4 class="ui dividing header">Interests</h4>
-          <div class="field">
+        <h1 class="ui dividing header">Interests</h1>
+          <div class="field enlarge">
             <label>Select :</label>
-            <select class="form-control" formControlName="interests">
+            <select class="form-control enlarge" formControlName="interests">
               <option>Knowledge</option>
               <option>Hobby</option>
             </select>
           </div>
           <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button class="ui secondary button" mat-button matStepperPrevious>Back</button>
+          <button class="ui secondary button" mat-button matStepperNext>Next</button>
         </div>
       </mat-step>
 
@@ -111,8 +113,8 @@
         
         <!--<form class="ui form">-->
 
-          <h4 class="ui dividing header">Place Of Work</h4>
-          <div class="ui form">
+          <h1 class="ui dividing header">Place Of Work</h1>
+          <div class="ui form enlarge">
             <div class="four fields">
               <div class="field">
                 <label>Location</label>
@@ -134,8 +136,8 @@
               </div>
             </div>
 
-          <h4 class="ui dividing header">Skills</h4>
-          <div class="field">
+          <h1 class="ui dividing header">Skills</h1>
+          <div class="field enlarge">
             <label>Select</label>
             <select class="form-control" formControlName="skills">
               <option>Troubleshooting</option>
@@ -145,8 +147,8 @@
         <!--</form>-->
         
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button class="ui secondary button" mat-button matStepperPrevious>Back</button>
+          <button class="ui secondary button" mat-button matStepperNext>Next</button>
         </div>
       </mat-step>
         
@@ -158,7 +160,6 @@
         <section class="container">
             <section class="wrapper">
               <header>
-                
                 <h1> update profile picture </h1>
               </header>
               <section class="main-content">
@@ -168,29 +169,25 @@
                           <img *ngIf="!image" src="https://png.pngtree.com/svg/20161212/f93e57629c.svg" height="200" width="200" alt="User avatar">
                         </div>
                   </div>
-                  <div class="ui form">
+                  <div class="ui form enlarge">
                       <div class="field">
                         <label>IMAGE</label>
                         <input accept='image/*' type="file" name="image" formControlName="image"  (change)="detectFiles($event)">
                       </div>
                   </div>
-                  <div class="ui form">
+                  <div class="ui form enlarge">
                       <div class="field">
                         <label>USER NAME</label>
                         <input type="text" placeholder="Username" formControlName="username">
                       </div>
                   </div>
               </section>
-              <footer>
-                <button class="next">Next</button>
-                <button class="follow">Follow</button>
-              </footer>
             </section>
         </section>
 
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+        <div class="ng-star-inserted" style="padding-top:27px;">
+          <button class="ui secondary button" mat-button matStepperPrevious>Back</button>
+          <button class="ui secondary button " mat-button matStepperNext>Next</button>
         </div>
       </mat-step>
       
@@ -198,14 +195,15 @@
       <!---fifth input-->
       <mat-step>
         <ng-template matStepLabel>DONE</ng-template>
-        You are now done. Thank You!!!
-        <div class="bottom _mt20">
-          <button class="btn reg _h60 _w50" (click)="registerProfile()" type="submit">Submit</button>
-        </div>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
+       <h1>You are now done. Thank You!!!</h1> 
+        <div class="ng-star-inserted" style="margin-top:84px;">
+          <button  class="btn reg _h16 _w49 ui secondary button" (click)="registerProfile()" type="submit">Submit</button>
+          <button  class="btn reg _h16 _w49 ui secondary button" mat-button (click)="stepper.reset()">Reset</button>
         </div>
       </mat-step>
   </mat-horizontal-stepper>
 </form>
+
+
+<!----class="btn reg _h16 _w49"--->
+<!-- class="bottom_mt20"-->

@@ -37,6 +37,7 @@ import { LocationStrategy } from "@angular/common";
 import { DialogComponent } from './dialog/dialog.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 //import { DialogComponent } from './dialog/dialog.component';
 
 
@@ -59,7 +60,8 @@ import { FooterComponent } from './footer/footer.component';
     OverviewComponent,
     DialogComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    TermsAndConditionsComponent
   ],
   imports: [
     BrowserModule,

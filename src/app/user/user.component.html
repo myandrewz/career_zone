@@ -54,7 +54,7 @@
         
         <div class="form-group enlarge">
           <label>Role :</label>
-          <select class="form-control" formControlName="role">
+          <select class="form-control" formControlName="role" (change)="skipStepper()">
             <option>Student</option>
             <option>Mentor</option>
           </select>
@@ -62,7 +62,7 @@
         
 
         <div>
-          <button mat-button matStepperNext  class="ui secondary button" (click)="skipStepper()" type="button">Next</button>
+          <button mat-button matStepperNext  class="ui secondary button" type="button">Next</button>
         </div>
 
       </mat-step>

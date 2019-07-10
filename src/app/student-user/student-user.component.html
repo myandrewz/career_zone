@@ -1,20 +1,43 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
 
-  <title>LOGGED IN STUDENTS</title>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCEbvveB2Bn-zSpKaq7rxefwCOW0skUbhk",
+    authDomain: "career-zone.firebaseapp.com",
+    databaseURL: "https://career-zone.firebaseio.com",
+    projectId: "career-zone",
+    storageBucket: "career-zone.appspot.com",
+    messagingSenderId: "961093340080",
+    appId: "1:961093340080:web:d8fb96c94d617c80"
+  };
+  // Initialize Firebase 
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script src = "student-user.component.ts"></script>
+<script src = "https://code.jquery.com/jquery-3.1.0.js"></script>
+  
+  <h1>LOGGED IN STUDENTS</h1>
     
+  <div class = "graph">
+      <table>
 
-  <div class="graph">
-        <div class="tables">
-          <table class="ui striped table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Date of Account Creation</th>
-                <th>E-mail</th>
-                <th>Status</th>
-                <th>Action button</th>
-              </tr>
-            </thead>
+        <thead>
+        <tr id="tr">
+        <th>firstname</th>
+        <th>lastname</th>
+        <th>email</th>  
+        </tr>
+        </thead>
+
+        <tbody id="table_body">
+
+        </tbody>
             
-          </table>
-
-        
+      </table>
+  </div>

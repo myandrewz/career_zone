@@ -42,6 +42,9 @@ import { CareerEventsComponent } from './career-events/career-events.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
+
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+
 //import { DialogComponent } from './dialog/dialog.component';
 
 
@@ -65,11 +68,15 @@ import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
     DialogComponent,
     HeaderComponent,
     FooterComponent,
+
     HomeComponent,
     CareerEventsComponent,
     ContactUsComponent,
     BlogsUserComponent,
     MeetMentorComponent
+
+    TermsAndConditionsComponent
+
   ],
   imports: [
     BrowserModule,

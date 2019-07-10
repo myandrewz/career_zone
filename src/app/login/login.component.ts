@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, HostListener, Inject } from '@angular/core';
+import { Component, ViewChild, OnInit, Inject } from '@angular/core';
 import { AuthService } from '../core/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators ,AbstractControl} from '@angular/forms';
@@ -80,17 +80,6 @@ export class LoginComponent implements OnInit{
     this.resetPasswordForm = this.fb.group({
       email: ['', [Validators.required, Validators.email], this.checkValidEmail]
     }) }
-
-  @HostListener('window:scroll', ['$event'])
-    onWindowScroll(e) {
-       if (window.pageYOffset > 60) {
-         let element = document.getElementById('navbar');
-         element.classList.add('sticky');
-       } else {
-        let element = document.getElementById('navbar');
-          element.classList.remove('sticky'); 
-       }
-    }
 
 
 

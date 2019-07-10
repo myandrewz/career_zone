@@ -3,11 +3,6 @@
  
  <div class="main-top-intro" (scroll)="onWindowScroll($event);">
   <div class="bg-layer">
-      <!-- header -->
-    
-    <!-- //header -->
-
-          <!---728x90--->
 
         <div class="fancyFont">
           <div>
@@ -22,13 +17,15 @@
 
                       <form class="ui form" [formGroup]="loginForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
                           <div class ="_registerr">
-                              <p style="color: white"> EMAIL </p>
-                           </div>
-                          <input class="_h60 _fs20 " type="email" placeholder="Email Address" required="" formControlName="email" /><div class="inputs">
+                            <p style="color: white"> EMAIL </p>
+                          </div>
+                          <input class="_h60 _fs20 " type="email" placeholder="Email Address" required="" formControlName="email" />
+                          <div class="inputs">
                               <div class ="_registerr">
-                                  <p style="color: white"> PASSWORD </p>
-                               </div>
-                          <input class="_h60 _fs20" type="password" placeholder="Password" required="" formControlName="password" /></div>
+                                <p style="color: white"> PASSWORD </p>
+                              </div>
+                              <input class="_h60 _fs20" type="password" placeholder="Password" required="" formControlName="password" />
+                          </div>
                           <!--
                           <label class="error">{{errorMessage}}</label>
                           <label class="success">{{successMessage}}</label>
@@ -44,9 +41,9 @@
 
 
                           <div class="bottom _mt20">
-                              <button class="btn _h60 _w50" (click)="tryLogin()" type="submit" [disabled]="!myForm.form.valid">Log In</button>
+                            <button class="btn _h60 _w50" (click)="tryLogin()" type="submit" [disabled]="!myForm.form.valid">Log In</button>
 
-                              <button class="btn reg _h60 _w50" type="reset" [routerLink]="[ '/register']">sign up </button>
+                            <button class="btn reg _h60 _w50" type="reset" [routerLink]="[ '/register']">sign up </button>
 
                           </div>
 
@@ -55,31 +52,29 @@
 
               </div>
           
-          <div class="content-outer-info "><br>
-            <p style = "color: rgb(252, 250, 252)" class="_loginwith"> LOGIN WITH </p>
-            
-            <button class="ui facebook button" (click)="tryFacebookLogin()">
-              <i class="ui.facebook"></i>
-              Facebook
-            </button>
-           
-            <button class="ui twitter button" (click)="tryTwitterLogin()">
-              <i class="ui.twitter"></i>
-              Twitter
-            </button>
-            
-            <button class="ui google plus button" (click)="tryGoogleLogin()">
-              <i class="ui.google"></i>
-              Google Plus
-            </button>
-      
-        
-          <!--footer-->
-            
-          <!-- //footer -->
-      </div>
+              <div class="content-outer-info "><br>
+                <p style = "color: rgb(252, 250, 252)" class="_loginwith"> LOGIN WITH </p>
+                
+                <button class="ui facebook button" (click)="tryFacebookLogin()">
+                  <i class="ui.facebook"></i>
+                  Facebook
+                </button>
+              
+                <button class="ui twitter button" (click)="tryTwitterLogin()">
+                  <i class="ui.twitter"></i>
+                  Twitter
+                </button>
+                
+                <button class="ui google plus button" (click)="tryGoogleLogin()">
+                  <i class="ui.google"></i>
+                  Google Plus
+                </button>
+
+              </div>
+          </div>
+        </div>
   </div>
-</div>
+  </div>
 
 <ng-template let-context let-modal="modal" #modalTemplate>
     <div class="header">Reset Password</div>
@@ -107,3 +102,4 @@
 
 <!-- footer -->
 <app-footer></app-footer>
+

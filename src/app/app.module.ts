@@ -37,6 +37,11 @@ import { LocationStrategy } from "@angular/common";
 import { DialogComponent } from './dialog/dialog.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { CareerEventsComponent } from './career-events/career-events.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { BlogsUserComponent } from './blogs-user/blogs-user.component';
+import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 //import { DialogComponent } from './dialog/dialog.component';
 
 
@@ -59,7 +64,12 @@ import { FooterComponent } from './footer/footer.component';
     OverviewComponent,
     DialogComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    CareerEventsComponent,
+    ContactUsComponent,
+    BlogsUserComponent,
+    MeetMentorComponent
   ],
   imports: [
     BrowserModule,

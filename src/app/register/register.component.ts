@@ -9,6 +9,10 @@ import { DOCUMENT } from '@angular/common';
 
 import * as emailjs from 'emailjs-com';
 
+export interface IContext {
+  data:string;
+}
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -24,6 +28,9 @@ import * as emailjs from 'emailjs-com';
 })
 export class RegisterComponent implements OnInit{
 
+  @ViewChild('modalTemplate')
+  public modalTemplate:ModalTemplate<IContext, string, string>
+
   registerForm: FormGroup;
   errorMessage: string = '';
   successMessage: string = '';
@@ -36,6 +43,7 @@ export class RegisterComponent implements OnInit{
     private router: Router,
     private fb: FormBuilder,
     private toastr: ToastrService,
+    public modalService:SuiModalService,
     @Inject(DOCUMENT) document
   ) {
     this.createForm();
@@ -43,21 +51,12 @@ export class RegisterComponent implements OnInit{
 
    ngOnInit() {  }
 
-   @HostListener('window:scroll', ['$event'])
-  onWindowScroll(e) {
-     if (window.pageYOffset > 50) {
-       let element = document.getElementById('navbar');
-       element.classList.add('sticky');
-     } else {
-      let element = document.getElementById('navbar');
-        element.classList.remove('sticky'); 
-     }
-  }
-
    createForm() {
      this.registerForm = this.fb.group({
+       name: ['Muwonge Emmanuel', Validators.required ],
        email: ['me@me.org', Validators.required ],
-       password: ['Password1',Validators.required]
+       password: ['Password1',Validators.required],
+       terms_conditions: ['',Validators.required]
      });
    }
 
@@ -144,7 +143,6 @@ export class RegisterComponent implements OnInit{
           console.log('FAILED...', err);
         });
   }
-
    
 
 }

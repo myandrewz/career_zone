@@ -15,6 +15,7 @@ import { CareerJobsComponent } from './career-jobs/career-jobs.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { ImagesVideosComponent } from './images-videos/images-videos.component';
 import { OverviewComponent } from './overview/overview.component';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -34,6 +35,7 @@ export const rootRouterConfig: Routes = [
   { path: 'new-profile', component: NewProfileComponent, canActivate: [AuthGuard]},
   { path: 'new-student', component: NewStudentComponent},
   { path: 'new-mentor', component: NewMentorComponent},
+  { path: 'terms-and-conditions', component: TermsAndConditionsComponent},
 
 
 ];

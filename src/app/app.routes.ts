@@ -15,12 +15,12 @@ import { CareerJobsComponent } from './career-jobs/career-jobs.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { ImagesVideosComponent } from './images-videos/images-videos.component';
 import { OverviewComponent } from './overview/overview.component';
-<<<<<<< HEAD
+
 import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-=======
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
->>>>>>> 1e370fe41e972ae7a5b5a6d22fcb7e62560fa1e0
+
+
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -40,12 +40,8 @@ export const rootRouterConfig: Routes = [
   { path: 'new-profile', component: NewProfileComponent, canActivate: [AuthGuard]},
   { path: 'new-student', component: NewStudentComponent},
   { path: 'new-mentor', component: NewMentorComponent},
-<<<<<<< HEAD
   { path: 'blogs-user', component: BlogsUserComponent},
   { path: 'contact-us', component: ContactUsComponent},
-=======
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent},
->>>>>>> 1e370fe41e972ae7a5b5a6d22fcb7e62560fa1e0
-
 
 ];

@@ -66,11 +66,6 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     DialogComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
-    CareerEventsComponent,
-    ContactUsComponent,
-    BlogsUserComponent,
-    MeetMentorComponent,
     TermsAndConditionsComponent
   ],
   imports: [

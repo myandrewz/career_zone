@@ -80,6 +80,7 @@ export class RegisterComponent implements OnInit{
      this.authService.doGoogleLogin()
      .then(res =>{
         this.toastr.success("Registration Successful !!!","Notification");
+        localStorage.setItem('authenticated_user', JSON.stringify(res.user));
         this.router.navigate(['/user']);
      }, err => console.log(err)
      )

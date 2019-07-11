@@ -6,19 +6,12 @@ import { AppComponent } from '../app.component';
 import { environment } from '../../environments/environment';
 import { NgModule } from '@angular/core';
 import { AngularFireDatabase} from 'angularfire2/database';
- import * as firebase from 'firebase/app';
+import * as firebase from 'firebase/app';
 import * as $ from "jquery";
-
-@NgModule({
-  imports: [
-    AngularFireModule.initializeApp(environment.firebase, 'my-app-name'), // imports firebase/app needed for everything
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireStorageModule // imports firebase/storage only needed for storage features
-  ],
-  declarations: [ AppComponent ],
-  bootstrap: [ AppComponent ]
-})
-export class AppModule {}
+import { map} from 'rxjs/operators'
+import {FirebaseService} from '../services/firebase.service';
+import {Router} from '@angular/router';
+import { AngularFirestore} from "angularfire2/firestore";
 
 
 @Component({
@@ -27,20 +20,47 @@ export class AppModule {}
   styleUrls: ['./student-user.component.scss']
 })
 
-export class StudentUserComponent {}
-export var jQuery: any = window["jQuery"];
+/*from CRUD example*/
+export class StudentUserComponent implements OnInit{
+  students: any;
+  students_data :any
 
-$(document).ready(function(){
-  var rootRef =  firebase.database().ref().child("User");
+  constructor(
+    public firebaseService: FirebaseService,
+    private router: Router,
+    private db: AngularFirestore
+  ) { }
 
-  rootRef.on("child_added", snap => {
 
-    var firstname = snap.child("firstname").val();
-    var lastname = snap.child("lastname").val();
-    var email = snap.child ("email").val();
+ ngOnInit() {
 
-    $("#table_body").append("<tr><td>" + firstname + "</td><td>" + lastname + "</td><td>"
-     + email + "</td><td><button>Delete</button></td></tr>")  ;
-})
+  this.getStudents()
+  
+}
 
-})
+
+getStudents() {
+  this.students_data = this.db.collection('User').snapshotChanges().pipe(map(changes => {
+  
+  return changes.map(a => {
+  const data: any = a.payload.doc.data();
+  data.id = a.payload.doc.id;
+  return data;
+  });
+  })
+  );
+  
+  this.students_data.subscribe(
+  res => {
+  console.log(res);
+  this.students = res;
+  //this.blogs_snapshot = res;
+  }
+  );
+
+  
+  }
+
+
+
+} 

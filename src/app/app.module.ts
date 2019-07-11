@@ -44,7 +44,9 @@ import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 //import { DialogComponent } from './dialog/dialog.component';
-
+//import GoogleMaps
+import { HttpClientModule } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,11 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     DialogComponent,
     HeaderComponent,
     FooterComponent,
+    HomeComponent,
+    ContactUsComponent,
+    CareerEventsComponent,
+    BlogsUserComponent,
+    MeetMentorComponent,
     TermsAndConditionsComponent
   ],
   imports: [
@@ -74,6 +81,11 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     ReactiveFormsModule,
     MaterialModule,
     FormsModule,
+    HttpClientModule,
+
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCi3hSfPY4V_5h4XIBuAv13P7AQlwvIG6A'
+    }),
   
    
     

@@ -1,4 +1,20 @@
-<p>
-  contact-us works!
-  AIzaSyCi3hSfPY4V_5h4XIBuAv13P7AQlwvIG6A
-</p>
+
+<app-header></app-header>
+<div class="main-top-intro" (scroll)="onWindowScroll($event);">
+  <div class="bg-layer">
+    <div class="terms">
+        <p>
+            contact-us works!
+            AIzaSyCi3hSfPY4V_5h4XIBuAv13P7AQlwvIG6A
+          </p>
+          
+          <agm-map [latitude]="lat" [longitude]="lng" >
+          
+            <agm-marker [latitude]="lat" [longitude]="lat"></agm-marker>
+          </agm-map>
+
+    </div>
+  </div>
+</div>
+<!-- footer -->
+<app-footer></app-footer>

@@ -263,12 +263,12 @@ h1 {
 
 /*--header start here--*/
 header {
-    padding: 2em 0;
+    padding: 2em 2em;
 }
 
 /* header */
 .wrapper {
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     width: 90%;
 }
 

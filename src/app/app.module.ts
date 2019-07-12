@@ -85,9 +85,6 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
     ReactiveFormsModule,
     MaterialModule,
     FormsModule,
-  
-   
-    
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features

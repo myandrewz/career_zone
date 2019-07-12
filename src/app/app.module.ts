@@ -73,7 +73,7 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     CareerEventsComponent,
     ContactUsComponent,
     BlogsUserComponent,
-    MeetMentorComponent
+    MeetMentorComponent,
 
     TermsAndConditionsComponent
 

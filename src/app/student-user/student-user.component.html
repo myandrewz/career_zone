@@ -4,18 +4,18 @@
   
   <h1>LOGGED IN STUDENTS</h1>
 
-  <!-- <div style="padding: 40px !important ; background: white !important">
+   <div style="padding: 40px !important ; background: white !important">
       {{students|json}}
-    </div> -->
+    </div> 
     
     <table class="ui compact celled definition table" style="margin-left: 200px; width:700px">
         <thead class="full-width">
           <tr>
             <th></th>
             <th>Name</th>
-            <th>Registration Date</th>
+            <th>Date of Account creation</th>
             <th>E-mail address</th>
-            <th>Premium Plan</th>
+            <th>Gender</th>
           </tr>
         </thead>
         <tbody>
@@ -26,12 +26,12 @@
               </div>
             </td>
             <td>{{student.full_name}}</td>
-            <td>September 14, 2013</td>
-            <td>jhlilk22@yahoo.com</td>
-            <td>No</td>
+            <td>{{student.created_at}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.gender}}/td>
           </tr>
         </tbody>
-        
+
         <tfoot class="full-width">
           <tr>
             <th></th>

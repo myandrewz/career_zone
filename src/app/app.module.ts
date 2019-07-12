@@ -68,13 +68,11 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     DialogComponent,
     HeaderComponent,
     FooterComponent,
-
     HomeComponent,
     CareerEventsComponent,
     ContactUsComponent,
     BlogsUserComponent,
     MeetMentorComponent,
-
     TermsAndConditionsComponent
 
   ],
@@ -84,6 +82,7 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     ReactiveFormsModule,
     MaterialModule,
     FormsModule,
+    RouterModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features

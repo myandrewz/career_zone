@@ -149,7 +149,7 @@ export class LoginComponent implements OnInit{
       this.toastr.success("Login Successful !!!","Notification");
       //console.log(res);
       localStorage.setItem('authenticated_user', JSON.stringify(res.user));
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard/Overview']);
     }, err => {
       this.isLoading = false
       this.toastr.error(err.message, "Error", {enableHtml :  true });

@@ -20,7 +20,6 @@ import { AngularFirestore} from "angularfire2/firestore";
   styleUrls: ['./student-user.component.scss']
 })
 
-/*from CRUD example*/
 export class StudentUserComponent implements OnInit{
   students: any;
   students_data :any
@@ -37,6 +36,8 @@ export class StudentUserComponent implements OnInit{
   this.getStudents()
   
 }
+
+
 
 
 getStudents() {

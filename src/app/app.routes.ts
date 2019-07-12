@@ -19,6 +19,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 
 
 export const rootRouterConfig: Routes = [
@@ -44,6 +45,7 @@ export const rootRouterConfig: Routes = [
   { path: 'contact-us', component: ContactUsComponent},
 
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent},
+  { path: 'newsletter', component: NewsletterComponent},
 
 
 

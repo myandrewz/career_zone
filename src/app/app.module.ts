@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -29,6 +29,7 @@ import { ReportsComponent } from './reports/reports.component';
 import { OverviewComponent } from './overview/overview.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule} from './material'
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ToastrModule } from 'ngx-toastr';
 //import { FlexLayoutModule } from '@angular/flex-layout';
 import { HashLocationStrategy } from "@angular/common";
@@ -37,8 +38,14 @@ import { LocationStrategy } from "@angular/common";
 import { DialogComponent } from './dialog/dialog.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { SharedModule } from './shared/shared.module';
+import { PostsModule } from './posts/posts.module';
 //import { DialogComponent } from './dialog/dialog.component';
-
+const routes : Routes = [
+  {path : '',redirectTo: '/blog', pathMatch: 'full' },
+  {path : '',loadChildren: './posts/posts.modulePostModule' },
+  {path : '',redirectTo: '/blog', pathMatch: 'full' },
+]
 
 @NgModule({
   declarations: [
@@ -64,6 +71,7 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AngularFireStorageModule,
     ReactiveFormsModule,
     MaterialModule,
     FormsModule,
@@ -80,7 +88,9 @@ import { FooterComponent } from './footer/footer.component';
       timeOut: 10000,
       //positionClass: 'toast-bottom-right',
       preventDuplicates: true,
-    })
+    }),
+    SharedModule,
+    PostsModule
    // FlexLayoutModule
   ],
   

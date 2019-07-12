@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None
+  
 })
 export class AppComponent {
   title = 'angulartoastr';

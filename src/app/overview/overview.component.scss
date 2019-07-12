@@ -2698,9 +2698,9 @@ ul#menu-comunicacao-sub {
 	  transition-property: color;
 	  -webkit-transition-duration: 0.3s;
 	  transition-duration: 0.3s;
-	  background: url("../../assets/images/fb.png") no-repeat 20px 9px #3b5998;
+	  //background: url("../../assets/images/fb.png") no-repeat 20px 9px #3b5998;
 	  width:100%;
-	      font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	  padding:0.7em 1em;
 	  font-size: 1em;
 	  color: #fff;
@@ -2753,7 +2753,7 @@ ul#menu-comunicacao-sub {
 	  font-size: 1em;
 	  color: #fff;
 	      font-family: 'Roboto', sans-serif;
-	  background:url("../../assets/images/tw.png") no-repeat 20px 13px  #1ab2e8;
+	  //background:url("../../assets/images/tw.png") no-repeat 20px 13px  #1ab2e8;
 
 	}
 	a.hvr-sweep-to-left:before {
@@ -3377,7 +3377,7 @@ h4.title3{
 }
 .single-bottom ul li input[type="checkbox"]:checked+label span:first-child:before {
     content: "";
-    background: url(../../assets/images/tick1.png)no-repeat;
+    //background: url(../../assets/images/tick1.png)no-repeat;
     position: absolute;
     left: 1px;
     top: 2px;
@@ -3938,7 +3938,7 @@ Third button
 
 .a_demo_four::before {
 	background-color:#078792;
-	background-image:url(../../assets/images/right_arrow.png);
+	//background-image:url(../../assets/images/right_arrow.png);
 	background-repeat:no-repeat;
 	background-position:center center;
 	content:"";
@@ -5259,7 +5259,7 @@ footer  p a:hover ,.footer p a:hover{
 		float: none;
 	}
 	a.hvr-sweep-to-right {
-		background: url("../../assets/images/fb.png") no-repeat 15px 8px #3b5998;
+		//background: url("../../assets/images/fb.png") no-repeat 15px 8px #3b5998;
 		width: 100%;
 		padding: 0.7em 1em;
 		font-size: 1em;
@@ -5268,7 +5268,7 @@ footer  p a:hover ,.footer p a:hover{
 		width: 100%;
 		padding: 0.7em 1em;
 		font-size: 1em;
-		background: url("../../assets/images/tw.png") no-repeat 12px 13px #1ab2e8;
+		//background: url("../../assets/images/tw.png") no-repeat 12px 13px #1ab2e8;
 	}
 	.map iframe {
 		width: 100%;
@@ -6425,12 +6425,10 @@ footer  p a:hover ,.footer p a:hover{
 		outline: none;
 		font-weight: 400;
 		border: 1px solid #ddd;
-		background: url("../../assets/images/icons.png") no-repeat 14px 13px;
+		//background: url("../../assets/images/icons.png") no-repeat 14px 13px;
 		margin: 0.3em 0;
 	}
-	.login input[type="password"] {
-		background: url("../../assets/images/icons.png") no-repeat 13px -36px;
-	}
+
 	.tabs nav.second {
 		display: flex;
 		flex-wrap: wrap;
@@ -7507,7 +7505,7 @@ footer  p a:hover ,.footer p a:hover{
 		font-size: 2em;
 	}
 	.hvr-sweep-to-right {
-		background: url("../../assets/images/fb.png") no-repeat 7px 6px #3b5998;
+		//background: url("../../assets/images/fb.png") no-repeat 7px 6px #3b5998;
 		width: 100%;
 		padding: 0.7em 1em;
 		font-size: 0.9em;
@@ -7516,7 +7514,7 @@ footer  p a:hover ,.footer p a:hover{
 		width: 100%;
 		padding: 0.7em 1em;
 		font-size: 0.9em;
-		background: url("../../assets/images/tw.png") no-repeat 10px 11px #1ab2e8;
+		//background: url("../../assets/images/tw.png") no-repeat 10px 11px #1ab2e8;
 		    text-align: right;
 	}
 	.login input[type="submit"] {
@@ -7550,7 +7548,7 @@ footer  p a:hover ,.footer p a:hover{
 		font-size: 1.4em;
 	}
 	a.hvr-sweep-to-right {
-		background: url("../../assets/images/fb.png") no-repeat 3px 6px #3b5998;
+		//background: url("../../assets/images/fb.png") no-repeat 3px 6px #3b5998;
 		width: 100%;
 		padding: 0.7em 1em;
 		font-size: 0.9em;

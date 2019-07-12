@@ -254,9 +254,11 @@ h1 {
 }
 .terms {
     min-height: 10vh;
-    background-color: cornsilk;
+    background-color: #fff;
     padding: 30px;
     border-radius: 10px;
+    opacity: 0.8;
+    min-height: 60vh;
 }
 
 /*-- //slide --*/

@@ -44,6 +44,7 @@ import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 
 //import { DialogComponent } from './dialog/dialog.component';
 
@@ -73,9 +74,9 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     CareerEventsComponent,
     ContactUsComponent,
     BlogsUserComponent,
-    MeetMentorComponent
-
-    TermsAndConditionsComponent
+    MeetMentorComponent,
+    TermsAndConditionsComponent,
+    NewsletterComponent
 
   ],
   imports: [

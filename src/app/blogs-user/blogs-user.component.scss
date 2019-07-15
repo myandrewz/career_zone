@@ -1,12 +1,4 @@
-* {
-    box-sizing:border-box;
-  }
-  
-  .row:after {
-    content: "";
-    display: table;
-    clear: both
-  }
+
 
   .column-66 {
     float: left;
@@ -19,7 +11,7 @@
     width: 33.33333%;
     padding: 20px;
   }
-  
+
   .large-font {
     font-size: 48px;
   }
@@ -77,11 +69,12 @@
     .band {
       grid-template-columns: 1fr 1fr;
     }  
-
     .item-1 {
-        grid-column: 1/ span 2;
-      }
+      grid-column: 1/ span 2;
+    }
+
   }
+  
 
 
 
@@ -92,7 +85,7 @@
   }
 
   .card {
-    background: #c7c3c3;
+    background:black;
     text-decoration: none;
     color: #444;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -118,7 +111,7 @@
 .card h1 {
     font-size: 20px;
     margin: 0;
-    color: #333;
+    color:white;
   }
 
   .card p { 
@@ -128,7 +121,7 @@
   .card span {
     font-size: 12px;
     font-weight: bold;
-    color: #999;
+    color:white;
     text-transform: uppercase;
     letter-spacing: .05em;
     margin: 2em 0 0 0;
@@ -151,6 +144,9 @@
 
   .card p { 
     flex: 1; /* make p grow to fill available space*/
-    line-height: 1.4;
+    line-height: 2.4;
+    color:white;
+    letter-spacing: .08em;
   }
+
    

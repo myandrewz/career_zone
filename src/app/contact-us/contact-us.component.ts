@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MapsService } from '../maps.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor() { }
+  lat: string ='';
+  lng: string ='';
+
+location:object;
+  constructor(private maps:MapsService) { }
 
   ngOnInit() {
+    this.maps.getlocation().subscribe(data =>{
+      console.log(data);
+      this.lat = data.latitude;
+      this.lng = data.longitude;
+    })
   }
-
-}
+  }

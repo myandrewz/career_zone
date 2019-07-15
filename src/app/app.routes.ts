@@ -19,6 +19,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 
 
@@ -40,11 +41,10 @@ export const rootRouterConfig: Routes = [
   { path: 'new-profile', component: NewProfileComponent, canActivate: [AuthGuard]},
   { path: 'new-student', component: NewStudentComponent},
   { path: 'new-mentor', component: NewMentorComponent},
-
   { path: 'blogs-user', component: BlogsUserComponent},
   { path: 'contact-us', component: ContactUsComponent},
-
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent},
+  { path: 'meet-mentor', component: MeetMentorComponent},
   { path: 'newsletter', component: NewsletterComponent},
 
 

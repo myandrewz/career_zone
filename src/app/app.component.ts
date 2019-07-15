@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AppComponent {
   title = 'angulartoastr';
-  constructor(private toastr: ToastrService) {}
+  items: Observable<any[]>;
+  constructor(private toastr: ToastrService, db: AngularFirestore) {}
   showSuccess() {
     this.toastr.success('Hello world!', 'Toastr fun!',
     {timeOut: 2000});;

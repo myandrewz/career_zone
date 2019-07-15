@@ -43,6 +43,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+
 //import { DialogComponent } from './dialog/dialog.component';
 //import GoogleMaps
 import { HttpClientModule } from '@angular/common/http';
@@ -73,7 +75,8 @@ import { AgmCoreModule } from '@agm/core';
     CareerEventsComponent,
     BlogsUserComponent,
     MeetMentorComponent,
-    TermsAndConditionsComponent
+    TermsAndConditionsComponent,
+    NewsletterComponent
   ],
   imports: [
     BrowserModule,

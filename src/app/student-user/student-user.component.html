@@ -8,8 +8,17 @@
       {{students|json}}
     </div> 
   -->
-    
-    <table class="ui compact celled definition table" style="margin-left: 230px; width:700px">
+
+  <div>
+  <h1 class="ui center aligned icon header">
+    <i class="circular users icon"></i>
+    Students
+  </h1>
+   </div>
+
+   
+
+    <table class="ui compact celled definition table" style="margin-left: 230px; width:700px" id="studentstable">
         <thead class="full-width">
           <tr>
             <th></th>
@@ -61,6 +70,6 @@
         </tfoot>
       </table>
 
-
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 
   

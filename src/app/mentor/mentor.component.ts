@@ -21,7 +21,8 @@ import { AngularFirestore} from "angularfire2/firestore";
 })
 export class MentorComponent implements OnInit {
   students: any;
-  students_data :any
+  students_data :any;
+  public searchString: string;
 
   constructor(
     public firebaseService: FirebaseService,
@@ -55,3 +56,15 @@ getStudents() {
   }
 
 }
+
+/*
+this.db.collection('ideas', ref => ref.where('full_name', '==', this.authenticated_user.uid)).valueChanges().subscribe(
+  res => {
+  this.response = res;
+  console.log(this.response);
+  
+  this.ideas = res;
+  this.is_loading = false;
+  }
+  );
+  */

@@ -8,8 +8,25 @@
       {{students|json}}
     </div> 
   -->
+  <div>
+  <h1 class="ui center aligned icon header">
+    <i class="circular users icon"></i>
+    Mentors
+  </h1>
+  </div>
+
+  <div style = "padding-left: 18em">
+    <div class="ui category search">
+      <div class="ui icon input">
+        <input class="prompt" type="text" placeholder="Search...">
+        <i class="search icon"></i>
+      </div>
+      <div class="results"></div>
+    </div>
+      
+  </div>
     
-    <table class="ui compact celled definition table" style="margin-left: 230px; width:700px">
+    <table class="ui compact celled definition table" style="margin-left: 230px; width:700px" id="mentorstable">
         <thead class="full-width">
           <tr>
             <th></th>
@@ -22,11 +39,12 @@
             <th>Date of Birth</th>
             <th>Skills</th>
             <th>Experience (years)</th>
+            
           </tr>
         </thead>
 
         <tbody>
-          <tr *ngFor="let student of students ">
+          <tr *ngFor="let student of students">
             <td class="collapsing">
               <div class="ui fitted slider checkbox">
                 <input type="checkbox"> <label></label>

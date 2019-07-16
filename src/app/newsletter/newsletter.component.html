@@ -1,0 +1,26 @@
+<!-- header -->
+<app-header></app-header>
+<div class="main-top-intro" (scroll)="onWindowScroll($event);">
+  <div class="bg-layer">
+    <div class="terms">
+        <h3>Newsletter SignUp</h3>
+        <hr>
+        <form class="ui form" [formGroup]="newsletterForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
+          <div class ="_registerr">
+            <p style="color: white"> NAME </p>
+          </div>
+          <input class="_h60 _fs20" type="text" placeholder="Name" required="" formControlName="name" />
+          <div class ="_registerr">
+            <p style="color: white"> EMAIL </p>
+          </div>
+          <input class="_h60 _fs20 " type="email" placeholder="Email Address" required="" formControlName="email" />
+          <div class="bottom _mt20">
+            <button class="btn reg _h60 _w50" (click)="subscribeToNewsletter()" type="submit" [disabled]="!myForm.form.valid">sign up </button>
+          </div>
+        </form>
+
+    </div>
+  </div>
+</div>
+<!-- footer -->
+<app-footer></app-footer>

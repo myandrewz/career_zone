@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'; 
+import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
 import { AngularFireModule } from '@angular/fire';
@@ -82,6 +84,8 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    HttpModule,
     ReactiveFormsModule,
     MaterialModule,
     FormsModule,

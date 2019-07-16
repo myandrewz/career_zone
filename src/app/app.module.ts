@@ -43,9 +43,13 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+<<<<<<< HEAD
+import { SearchfilterPipe } from './pipes/searchfilter.pipe';
+=======
 
 import { SearchfilterPipe } from './pipes/searchfilter.pipe';
 
+>>>>>>> 98bf8452b7c879847b273aa9f03db6a56e31a8b1
 import { NewsletterComponent } from './newsletter/newsletter.component';
 
 //import { DialogComponent } from './dialog/dialog.component';
@@ -79,12 +83,18 @@ import { AgmCoreModule } from '@agm/core';
     BlogsUserComponent,
     MeetMentorComponent,
     TermsAndConditionsComponent,
+<<<<<<< HEAD
+    SearchfilterPipe,
+
+    NewsletterComponent
+=======
 
     SearchfilterPipe,
 
 
     NewsletterComponent
 
+>>>>>>> 98bf8452b7c879847b273aa9f03db6a56e31a8b1
   ],
 
   imports: [
@@ -93,9 +103,13 @@ import { AgmCoreModule } from '@agm/core';
     ReactiveFormsModule,
     MaterialModule,
     FormsModule,
+<<<<<<< HEAD
+    RouterModule,
+=======
 
     RouterModule,
 
+>>>>>>> 98bf8452b7c879847b273aa9f03db6a56e31a8b1
     HttpClientModule,
 
     AgmCoreModule.forRoot({
@@ -104,7 +118,10 @@ import { AgmCoreModule } from '@agm/core';
   
    
     
+<<<<<<< HEAD
+=======
 
+>>>>>>> 98bf8452b7c879847b273aa9f03db6a56e31a8b1
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features

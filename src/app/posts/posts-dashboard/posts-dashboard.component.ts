@@ -3,14 +3,28 @@ import { AuthService } from 'src/app/core/auth.service';
 import { PostService } from '../post.service';
 import { Observable } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
   selector: 'app-posts-dashboard',
   templateUrl: './posts-dashboard.component.html',
-  styleUrls: ['./posts-dashboard.component.scss']
+  styleUrls: ['./posts-dashboard.component.scss'],
+ 
 })
 export class PostsDashboardComponent implements OnInit {
+
+editorForm:FormGroup;
+
+
+ngOnInit() {
+  this.editorForm = new FormGroup({
+    'editor': new FormControl(null)
+  })
+
+
+}  
+
   image: string = null;
   content: any;
   title: any;
@@ -21,7 +35,7 @@ export class PostsDashboardComponent implements OnInit {
 
   constructor(private auth: AuthService, private postService: PostService,  private storage: AngularFireStorage) { }
 
-  ngOnInit() {}
+
 
   createPost(){
     const data = {

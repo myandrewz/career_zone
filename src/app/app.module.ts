@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
+import {QuillModule} from 'ngx-quill';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -33,10 +34,12 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ToastrModule } from 'ngx-toastr';
 //import { FlexLayoutModule } from '@angular/flex-layout';
 import { HashLocationStrategy } from "@angular/common";
+import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { Location } from "@angular/common";
 import { LocationStrategy } from "@angular/common";
 import { DialogComponent } from './dialog/dialog.component';
 import { HeaderComponent } from './header/header.component';
+import {WysiwygComponent} from './wysiwyg/wysiwyg.component';
 import { FooterComponent } from './footer/footer.component';
 import { SharedModule } from './shared/shared.module';
 import { PostsModule } from './posts/posts.module';
@@ -63,7 +66,7 @@ const routes : Routes = [
     BlogsComponent,
     ImagesVideosComponent,
     ReportsComponent,
-    OverviewComponent,
+    OverviewComponent,WysiwygComponent,
     DialogComponent,
     HeaderComponent,
     FooterComponent
@@ -73,7 +76,7 @@ const routes : Routes = [
     BrowserAnimationsModule,
     AngularFireStorageModule,
     ReactiveFormsModule,
-    MaterialModule,
+    MaterialModule,RichTextEditorAllModule,QuillModule,
     FormsModule,
   
    

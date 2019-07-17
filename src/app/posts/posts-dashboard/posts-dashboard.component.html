@@ -1,9 +1,12 @@
+
+<!--Creating a post-->
+
 <section>
   <mat-accordion>
   <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Create a Post
+         <button> Create a Post </button>
         </mat-panel-title>
 
         </mat-expansion-panel-header>
@@ -21,7 +24,7 @@
         </div>
 
 
- 
+      
 
 
 
@@ -29,9 +32,21 @@
 <input matInput placeholder="Post Title" [(ngModel)] = "title">
 </mat-form-field>
 
-<mat-form-field>
-  <textarea matInput placeholder="Post Content"  [(ngModel)] = "content" rows="10"></textarea>
-</mat-form-field>
+   <mat-form-field> 
+ 
+
+
+   <!--  <form [formGroup] = "editorForm" (ngSubmit) = "OnSubmit()">
+      <div class = "form-group">
+        <label for = "editor">Editor</label>
+  
+       
+      </div> </form> -->
+
+ <textarea matInput placeholder="Post Content"  [(ngModel)] = "content" rows="10">  <quill-editor></quill-editor> </textarea>  
+   </mat-form-field> 
+  
+ 
 
 <br>
 <button mat-raised-button color = "accent" (click) = "createPost()" [disabled] = "!title || !content">{{buttonText}}</button>

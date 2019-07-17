@@ -15,6 +15,12 @@ import { CareerJobsComponent } from './career-jobs/career-jobs.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { ImagesVideosComponent } from './images-videos/images-videos.component';
 import { OverviewComponent } from './overview/overview.component';
+import { SharedModule } from './shared/shared.module';
+//import { NavbarComponent } from './navbar/navbar.component';
+import { PostsDashboardComponent } from './posts/posts-dashboard/posts-dashboard.component';
+import {WysiwygComponent} from './wysiwyg/wysiwyg.component';
+import { PostsDetailComponent } from './posts/posts-detail/posts-detail.component';
+
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -34,6 +40,10 @@ export const rootRouterConfig: Routes = [
   { path: 'new-profile', component: NewProfileComponent, canActivate: [AuthGuard]},
   { path: 'new-student', component: NewStudentComponent},
   { path: 'new-mentor', component: NewMentorComponent},
+  {path: 'posts-dashboard',component: PostsDashboardComponent },
+  {path: 'posts-detail',component:  PostsDetailComponent },
+  {path: 'posts-detail',component:  PostsDetailComponent },
+  {path: 'wysiwyg',component:  WysiwygComponent }
 
 
 ];

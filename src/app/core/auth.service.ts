@@ -35,8 +35,10 @@ export class AuthService {
   return await this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail);
 }
 
+
 login(){
-  this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+ this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+ 
 }
 
 logout(){

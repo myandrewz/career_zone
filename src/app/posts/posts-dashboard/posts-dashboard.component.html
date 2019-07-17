@@ -6,7 +6,7 @@
   <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-         <button> Create a Post </button>
+         <button [routerLink] = "['/wysiwyg']"> Create a Post </button>
         </mat-panel-title>
 
         </mat-expansion-panel-header>
@@ -34,16 +34,10 @@
 
    <mat-form-field> 
  
+    
 
-
-   <!--  <form [formGroup] = "editorForm" (ngSubmit) = "OnSubmit()">
-      <div class = "form-group">
-        <label for = "editor">Editor</label>
-  
-       
-      </div> </form> -->
-
- <textarea matInput placeholder="Post Content"  [(ngModel)] = "content" rows="10">  <quill-editor></quill-editor> </textarea>  
+   
+ <textarea matInput placeholder="Post Content"  [(ngModel)] = "content" rows="10">   </textarea>  
    </mat-form-field> 
   
  

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
 import {QuillModule} from 'ngx-quill';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -14,6 +15,7 @@ import { UserResolver } from './user/user.resolver';
 import { AuthGuard } from './core/auth.guard'; 
 import { AuthService } from './core/auth.service';
 import { UserService } from './core/user.service';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
@@ -22,6 +24,8 @@ import { NewStudentComponent } from './new-student/new-student.component';
 import { NewMentorComponent } from './new-mentor/new-mentor.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentUserComponent } from './student-user/student-user.component';
+
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { MentorComponent } from './mentor/mentor.component';
 import { CareerJobsComponent } from './career-jobs/career-jobs.component';
 import { BlogsComponent } from './blogs/blogs.component';
@@ -76,15 +80,14 @@ const routes : Routes = [
     BrowserAnimationsModule,
     AngularFireStorageModule,
     ReactiveFormsModule,
-    MaterialModule,RichTextEditorAllModule,QuillModule,
+    MaterialModule,
+    RichTextEditorAllModule,
+    FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(),
     FormsModule,
-  
-   
-    
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    AngularFireAuthModule,AngularFireDatabaseModule, // imports firebase/auth, only needed for auth features
     SuiModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
@@ -93,11 +96,15 @@ const routes : Routes = [
       preventDuplicates: true,
     }),
     SharedModule,
-    PostsModule
+    PostsModule,
+    QuillModule.forRoot()
    // FlexLayoutModule
   ],
   
   providers: [AuthService, UserService, UserResolver,
+    
+                      
+       
     Location,
 		{
 			provide: LocationStrategy,

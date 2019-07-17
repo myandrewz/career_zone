@@ -14,16 +14,15 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class PostsDashboardComponent implements OnInit {
 
-editorForm:FormGroup;
+
 
 
 ngOnInit() {
-  this.editorForm = new FormGroup({
-    'editor': new FormControl(null)
-  })
+  
+  }
 
 
-}  
+  
 
   image: string = null;
   content: any;

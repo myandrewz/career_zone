@@ -27,6 +27,10 @@ export class UserService {
       })
     })
   }
+  getUserProfile(){
+    return this.db.collection("User", ref => ref.where('id', '==', 234344)).snapshotChanges();
+  }
+  
 
   updateCurrentUser(value){
     return new Promise<any>((resolve, reject) => {
@@ -57,6 +61,7 @@ export class UserService {
         date_joined:value.date_joined,
         interests:value.interests,
         is_approved:value.is_approved,
+        created_at:Date(),
       });
     }
     
@@ -73,7 +78,7 @@ export class UserService {
         experience:value.experience,
         skills:value.skills,
         profession:value.profession,
-        created_at:value.created_at,
+        created_at:Date(),
       });
     }
     

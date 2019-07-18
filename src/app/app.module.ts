@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core'; 
+import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
 import { AngularFireModule } from '@angular/fire';
@@ -92,6 +93,8 @@ import { AddmentorComponent } from './addmentor/addmentor.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    HttpModule,
     ReactiveFormsModule,
     MaterialModule,
     FormsModule,

@@ -1,13 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AppComponent } from '../app.component';
-import { environment } from '../../environments/environment';
-import { NgModule } from '@angular/core';
-import { AngularFireDatabase} from 'angularfire2/database';
-import * as firebase from 'firebase/app';
-import * as $ from "jquery";
 import { map} from 'rxjs/operators'
 import {FirebaseService} from '../services/firebase.service';
 import {Router} from '@angular/router';
@@ -43,8 +34,6 @@ export class StudentUserComponent implements OnInit{
 }
 
 
-
-
 getStudents() {
   this.students_data = this.db.collection('User').snapshotChanges().pipe(map(changes => {
   
@@ -61,10 +50,8 @@ getStudents() {
   console.log(res);
   this.students = res;
   //this.blogs_snapshot = res;
-  }
-  );
+  });
 
-  
   }
 
   searchStudents(event){

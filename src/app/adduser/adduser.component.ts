@@ -40,6 +40,7 @@ resetFields(){
     gender: [''],
     interests: [''],
     is_approved: ['True']
+  
     });
   }
 

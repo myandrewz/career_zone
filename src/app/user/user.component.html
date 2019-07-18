@@ -19,8 +19,8 @@
         
         <h1 class="ui dividing header">Bio Data</h1>
         <div class="field enlarge">
-          <label>Fullname</label>
-          <input type="text" placeholder="First Name" formControlName="full_name">
+          <label>Full name</label>
+          <input type="text" placeholder="Full Name" formControlName="full_name">
         </div>
 
         <div class="ui form enlarge">
@@ -29,6 +29,7 @@
               <label>Date Of Birth</label>
               <input type="date" placeholder="me@me.org" formControlName="dob">
             </div>
+
             <div class="field">
               <label>Email</label>
               <input type="email" placeholder="me@me.org" formControlName="email">
@@ -47,7 +48,7 @@
         <div class="form-group enlarge">
           <label>Role :</label>
           <select class="form-control" formControlName="role">
-            <option value="Student" selected>Student</option>
+            <option value="Student" selected></option>
           </select>
         </div>
         <!--
@@ -118,21 +119,20 @@
           <h1 class="ui dividing header">Place Of Work</h1>
           <div class="ui form enlarge">
             <div class="four fields">
-              <div class="field">
-                <label>Location</label>
-                <input type="text" placeholder="Location" formControlName="location">
-              </div>
+
               <div class="field">
                 <label>Company</label>
-                <input type="text" placeholder="Company" formControlName="company">
+                <input type="text" placeholder="Current Employer" formControlName="current_employer">
               </div>
+
               <div class="field">
                   <label>Profession</label>
-                  <input type="text" placeholder="Title" formControlName="title">
+                  <input type="text" placeholder="Profession" formControlName="profession">
               </div>
+
                   <div class="field">
                     <label>working Experience</label>
-                    <input type="text" placeholder="Duration" formControlName="duration">
+                    <input type="text" placeholder="Years 0f Experience" formControlName="experience">
                   </div>
                 
               </div>

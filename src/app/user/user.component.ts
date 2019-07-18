@@ -83,10 +83,9 @@ export class UserComponent implements OnInit{
       interests: [name, Validators.required],
 
       //mentor
-      location: [name, Validators.required],
-      company: [name, Validators.required],
-      title: [name, Validators.required],
-      duration: [name, Validators.required],
+      current_employer: [name, Validators.required],
+      profession: [name, Validators.required],
+      experience: [name, Validators.required],
       skills: [name, Validators.required],
 
       //userprofile

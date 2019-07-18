@@ -51,6 +51,7 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 //import GoogleMaps
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
+import { InternshipComponent } from './internship/internship.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,9 @@ import { AgmCoreModule } from '@agm/core';
     TermsAndConditionsComponent,
     SearchfilterPipe,
 
-    NewsletterComponent
+    NewsletterComponent,
+
+    InternshipComponent
   ],
 
   imports: [

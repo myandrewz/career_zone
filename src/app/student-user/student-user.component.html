@@ -40,6 +40,7 @@
             <th>Course</th>
             <th>Date of Birth</th>
             <th>Date joined University</th>
+            <th>Actions</th>
           </tr>
         </thead>
 
@@ -58,6 +59,13 @@
             <td>{{student.course}}</td>
             <td>{{student.dob}}</td>
             <td>{{student.date_joined}}</td>
+            <td><div class="dropdown"><button class="dropbtn">
+              <div class="dropdown-content">
+                <a href="#">View Profile</a>
+                <a href="#">Approve</a>
+                <a href="#">Edit</a>
+                <a (click)="deleteStudent(student.id)">Delete</a>
+              </div><i class="fa fa-ellipsis-v"></i></button></div></td>
 
           </tr>
         </tbody>
@@ -80,6 +88,6 @@
         </tfoot>
       </table>
 
-    
+      <p><strong>Item Key: </strong>{{item.$key}}</p>  
 
   

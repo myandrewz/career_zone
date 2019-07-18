@@ -124,58 +124,39 @@
   <div class="col-md-6 chrt-two">
   <h3 class="sub-title">Student users </h3>
 
+  <table class="ui compact celled definition table" >
+      <thead class="full-width">
+        <tr>
+          
+          <th>Name</th>
+          <th>Date of Account creation</th>
+          <th>E-mail address</th>
+          <th>Gender</th>
+          <th>Campus</th>
+        </tr>
+      </thead>
 
-        <table class="ui compact celled definition table" style="width:700px">
-        <thead class="full-width">
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Date of Account creation</th>
-            <th>E-mail address</th>
-            <th>Gender</th>
-            <th>Campus</th>
-            <th>Course</th>
-            <th>Date of Birth</th>
-            <th>Date joined University</th>
-          </tr>
-        </thead>
+      <tbody>
+        <tr *ngFor="let student of students ">
+         
+          <td>{{student.full_name}}</td>
+          <td>{{student.created_at}}</td>
+          <td>{{student.email}}</td>
+          <td>{{student.gender}}</td>
+          <td>{{student.campus}}</td>
+        </tr>
+      </tbody>
 
-        <tbody>
-          <tr *ngFor="let student of students ">
-            <td class="collapsing">
-              <div class="ui fitted slider checkbox">
-                <input type="checkbox"> <label></label>
-              </div>
-            </td>
-            <td>{{student.full_name}}</td>
-            <td>{{student.created_at}}</td>
-            <td>{{student.email}}</td>
-            <td>{{student.gender}}</td>
-            <td>{{student.campus}}</td>
-            <td>{{student.course}}</td>
-            <td>{{student.dob}}</td>
-            <td>{{student.date_joined}}</td>
-
-          </tr>
-        </tbody>
-
-        <tfoot class="full-width">
-          <tr>
-            <th></th>
-            <th colspan="4">
-
-              <button class="ui right floated small primary labeled icon button" [routerLink]="['../students']">
-                <i class="user icon"></i> View All
-              </button>
-              
-    
-            </th>
-          </tr>
-        </tfoot>
-      </table>
-                           
-
-
+      <tfoot class="full-width">
+        <tr>
+          <th colspan="4">
+            <button class="ui right floated small primary labeled icon button" [routerLink]="['../students']">
+              <i class="user icon"></i> View Students
+            </button>
+          </th>
+        </tr>
+      </tfoot>
+  </table>
 
   </div>
   </div>
@@ -189,49 +170,37 @@
         <table class="ui compact celled definition table">
             <thead class="full-width">
               <tr>
-                <th></th>
+                
                 <th>Name</th>
                 <th>Date of Account creation</th>
                 <th>E-mail address</th>
                 <th>Gender</th>
                 <th>Company</th>
                 <th>Profession</th>
-                <th>Date of Birth</th>
-                <th>Skills</th>
-                <th>Experience (years)</th>
               </tr>
             </thead>
     
             <tbody>
               <tr *ngFor="let student of students ">
-                <td class="collapsing">
-                  <div class="ui fitted slider checkbox">
-                    <input type="checkbox"> <label></label>
-                  </div>
-                </td>
                 <td>{{student.full_name}}</td>
                 <td>{{student.created_at}}</td>
                 <td>{{student.email}}</td>
                 <td>{{student.gender}}</td>
                 <td>{{student.company}}</td>
                 <td>{{student.profession}}</td>
-                <td>{{student.dob}}</td>
-                <td>{{student.skills}}</td>
-                <td>{{student.experience}}</td>
               </tr>
             </tbody>
     
             <tfoot class="full-width">
-              <tr>
-                <th></th>
-                <th colspan="4">
-                  <button class="ui right floated small primary labeled icon button" [routerLink]="['../Mentors']">
-                    <i class="user icon"></i> View All
-                  </button>
-                </th>
-              </tr>
+            <tr>
+            <th colspan="4">
+            <button class="ui right floated small primary labeled icon button" [routerLink]="['../Mentors']">
+            <i class="user icon"></i> View Mentors</button>
+            </th>
+            </tr>
             </tfoot>
-          </table>
+        </table>
+
     </div>
    <div class="clearfix"> </div>
   </div>

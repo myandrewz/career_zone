@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { map} from 'rxjs/operators'
+import { map, catchError} from 'rxjs/operators';
 import {FirebaseService} from '../services/firebase.service';
 import {Router} from '@angular/router';
 import { AngularFirestore} from "angularfire2/firestore";
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -56,17 +57,28 @@ getStudents() {
 
   searchStudents(event){
     if (event.key === "Enter"){
-  console.log(this.term)
-  this.db.collection('User', ref => ref.where('full_name', '==', this.term)).valueChanges().subscribe(
-  res => {
-  this.response = res;
-  console.log(this.response);
-    
-  this.ideas = res;
-  this.is_loading = false;
+      console.log(this.term)
+      this.db.collection('User', ref => ref.where('full_name', '==', this.term)).valueChanges().subscribe(
+      res => {
+      this.response = res;
+      console.log(this.response);
+        
+      this.ideas = res;
+      this.is_loading = false;
+        }
+        );
     }
-    );
   }
-}
-
+  
+  deleteStudent(value){
+    this.db.collection('User').doc(value).delete().then(function() {
+      console.log("Document successfully deleted!");
+    }).catch(function(error) {
+      console.error("Error removing document: ", error);
+  });
+  
+    //this.db.remove(id)
+  }
+  
 } 
+

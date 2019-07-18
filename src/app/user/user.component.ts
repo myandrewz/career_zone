@@ -28,7 +28,7 @@ export class UserComponent implements OnInit{
 
   urls = new Array<string>();
   image:any;
-  enableStudent = false;
+  enableStudent = true;
   enableMentor = false;
 
   constructor(
@@ -69,16 +69,17 @@ export class UserComponent implements OnInit{
     this.profileForm = this.fb.group({
       //general
       role: [name, Validators.required ],
-      firstname: [name, Validators.required],
-      lastname: [name, Validators.required],
+      full_name: [name, Validators.required],
       email: [name, Validators.required],
       dob: [name, Validators.required],
       gender: [name, Validators.required],
+      is_approved: ['false', Validators.required],
 
       //student
       university: [name, Validators.required],
+      campus: [name, Validators.required],
       course: [name, Validators.required],
-      yearOfJoining: [name, Validators.required],
+      date_joined: [name, Validators.required],
       interests: [name, Validators.required],
 
       //mentor

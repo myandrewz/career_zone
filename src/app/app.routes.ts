@@ -24,6 +24,8 @@ import { InternshipComponent } from './internship/internship.component';
 import { CareerEventsComponent } from './career-events/career-events.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { AddmentorComponent } from './addmentor/addmentor.component';
+import { EventsComponent } from './events/events.component';
+import { AddEventComponent } from './add-event/add-event.component';
 
 
 export const rootRouterConfig: Routes = [
@@ -39,6 +41,8 @@ export const rootRouterConfig: Routes = [
     { path: 'careerjobs', component: CareerJobsComponent},
     { path: 'Blogs', component: BlogsComponent},
     { path: 'imagesvideos', component: ImagesVideosComponent},
+    { path: 'events', component: EventsComponent},
+    { path: 'add-event', component: AddEventComponent},
   ]},
   
   { path: 'new-profile', component: NewProfileComponent, canActivate: [AuthGuard]},

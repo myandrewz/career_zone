@@ -55,6 +55,8 @@ import { AgmCoreModule } from '@agm/core';
 import { InternshipComponent } from './internship/internship.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { AddmentorComponent } from './addmentor/addmentor.component';
+import { EventsComponent } from './events/events.component';
+import { AddEventComponent } from './add-event/add-event.component';
 
 @NgModule({
   declarations: [
@@ -86,10 +88,14 @@ import { AddmentorComponent } from './addmentor/addmentor.component';
 
     NewsletterComponent,
 
-    InternshipComponent
+    InternshipComponent,
     AdduserComponent,
 
-    AddmentorComponent
+    AddmentorComponent,
+
+    EventsComponent,
+
+    AddEventComponent
   ],
 
   imports: [

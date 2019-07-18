@@ -1,13 +1,15 @@
-<!--<div *ngIf = "post">
+<div *ngIf = "post">
 <h3>{{post.title}}</h3>
 <p>posted by {{post.author}} &bull; {{post.published | date : 'fullDate'}}</p>
 <p>{{post.content}}</p>
 
-</div> -->
+</div> 
 
 <!--Post itself-->
+
+
 <ng-container *ngIf = "post">
-<div [hidden] = "!editing">
+<div [hidden] = "editing">
 
 <mat-card><h2>UpdatePost</h2>
 
@@ -22,10 +24,11 @@
     <button mat-raised-button color ="accent" (click)= "updatePost()" [disabled]="!title || !content">Save</button>
 </mat-card>
     <!--<h1> Edit mode</h1> -->
+
 </div>
 <div [hidden] ="editing">
         <mat-card >
-                <img src = "{{post.image}}"  alt = "{{ post.title}}">
+                <img src = "{{post.image}}"  alt = "{{post.title}}">
                 <p>Posted by {{post.author}} &bull; {{post.published | date: 'fullDate'}}</p>
                <mat-card-content>
                 <h2>{{post.title}}</h2>   
@@ -42,6 +45,6 @@
                 </button>
             </mat-card-actions>
             </mat-card>
-      <!-- <h1>View mode</h1>  -->   
+      <h1>View mode</h1>    
 </div>
 </ng-container>

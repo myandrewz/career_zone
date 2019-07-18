@@ -20,6 +20,7 @@ import { SharedModule } from './shared/shared.module';
 import { PostsDashboardComponent } from './posts/posts-dashboard/posts-dashboard.component';
 import {WysiwygComponent} from './wysiwyg/wysiwyg.component';
 import { PostsDetailComponent } from './posts/posts-detail/posts-detail.component';
+import  { PostsListComponent } from './posts/posts-list/posts-list.component'; 
 
 
 export const rootRouterConfig: Routes = [
@@ -42,7 +43,7 @@ export const rootRouterConfig: Routes = [
   { path: 'new-mentor', component: NewMentorComponent},
   {path: 'posts-dashboard',component: PostsDashboardComponent },
   {path: 'posts-detail',component:  PostsDetailComponent },
-  {path: 'posts-detail',component:  PostsDetailComponent },
+  {path: 'posts-list',component:  PostsListComponent },
   {path: 'wysiwyg',component:  WysiwygComponent }
 
 

@@ -4,6 +4,8 @@ import { PostService } from '../post.service';
 import { Observable } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { FormGroup, FormControl } from '@angular/forms';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { map} from 'rxjs/operators';
 
 
 @Component({
@@ -18,6 +20,7 @@ export class PostsDashboardComponent implements OnInit {
 
 
 ngOnInit() {
+  this.getBlogs()
   
   }
 
@@ -27,12 +30,14 @@ ngOnInit() {
   image: string = null;
   content: any;
   title: any;
+  blog_data:any;
+  blogs:any
 
   buttonText : string = "Create Post";
   uploadPercent : Observable<number>
   downloadURL : Observable<string>
 
-  constructor(private auth: AuthService, private postService: PostService,  private storage: AngularFireStorage) { }
+  constructor(private auth: AuthService, public db:AngularFirestore, private postService: PostService,  private storage: AngularFireStorage) { }
 
 
 
@@ -70,6 +75,25 @@ ngOnInit() {
 
   }
 
+  getBlogs() {
+    this.blog_data = this.db.collection('posts').snapshotChanges().pipe(map(changes => {
+     
+    return changes.map(a => {
+    const data: any = a.payload.doc.data();
+    data.id = a.payload.doc.id;
+    return data;
+     });
+     })
+     );
+     
+    this.blog_data.subscribe(
+     res => {
+    console.log(res);
+    this.blogs = res;
+    // this.blogs_snapshot = res;
+     }
+    );
+  }
 
   
 

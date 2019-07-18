@@ -26,7 +26,7 @@ export class PostService {
     } 
 
     getPostData(id: string){
-      this.postDoc = this.afs.doc<Post>('post/${id}')
+      this.postDoc = this.afs.doc<Post>('post/${id}') // data in the db
       return this.postDoc.valueChanges()
 
     }

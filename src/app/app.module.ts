@@ -50,7 +50,7 @@ import { PostsModule } from './posts/posts.module';
 //import { DialogComponent } from './dialog/dialog.component';
 const routes : Routes = [
   {path : '',redirectTo: '/blog', pathMatch: 'full' },
-  {path : '',loadChildren: './posts/posts.modulePostModule' },
+  {path : '',loadChildren: './posts/posts.module#PostModule' },
   {path : '',redirectTo: '/blog', pathMatch: 'full' },
 ]
 

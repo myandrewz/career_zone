@@ -3,6 +3,7 @@ import {Router, ActivatedRoute } from '@angular/router';
 import { PostService } from '../post.service';
 import { Post } from '../post';
 import { AuthService } from 'src/app/core/auth.service';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class PostsDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     public auth: AuthService,
-    private postService : PostService
+    private postService : PostService,
+    private db: AngularFirestoreModule
   ) { }
 
   ngOnInit() {
@@ -28,7 +30,16 @@ export class PostsDetailComponent implements OnInit {
 
   getPost(){
     const id = this.route.snapshot.paramMap.get('id')
-    return this.postService.getPostData(id).subscribe(data => this.post = data)
+
+    console.log(id)
+    this.postService.getPostData(id).subscribe(data => 
+      
+      {
+        console.log(data)
+        this.post = data
+      }
+      
+      )
   }
 
   updatePost(){

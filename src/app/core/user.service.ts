@@ -27,6 +27,10 @@ export class UserService {
       })
     })
   }
+  getUserProfile(){
+    return this.db.collection("User", ref => ref.where('id', '==', 234344)).snapshotChanges();
+  }
+  
 
   updateCurrentUser(value){
     return new Promise<any>((resolve, reject) => {
@@ -44,17 +48,19 @@ export class UserService {
       return this.db.collection('User').add({
         id:authenticated_user_uid,
         role: value.role,
-        firstname: value.firstname,
-        lastname: value.lastname,
+        full_name: value.full_name,
         email: value.email,
         dob: value.dob,
         gender: value.gender,
         image:value.image,
         username:value.username,
         university:value.university,
+        campus:value.campus,
         course:value.course,
-        yearOfJoining:value.yearOfJoining,
-        interests:value.interests
+        date_joined:value.date_joined,
+        interests:value.interests,
+        is_approved:value.is_approved,
+        created_at:Date()
       });
     }else{
       return this.db.collection('User').add({

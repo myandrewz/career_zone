@@ -21,6 +21,7 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
 import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { AdduserComponent } from './adduser/adduser.component';
+import { AddmentorComponent } from './addmentor/addmentor.component';
 
 
 export const rootRouterConfig: Routes = [
@@ -46,7 +47,8 @@ export const rootRouterConfig: Routes = [
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent},
   { path: 'meet-mentor', component: MeetMentorComponent},
   { path: 'newsletter', component: NewsletterComponent},
-  { path: 'adduser', component: AdduserComponent}
+  { path: 'adduser', component: AdduserComponent},
+  { path: 'addmentor', component: AddmentorComponent},
 
 
 

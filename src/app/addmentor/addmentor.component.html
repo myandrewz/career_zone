@@ -1,3 +1,97 @@
-<p>
-  addmentor works!
-</p>
+<div class="col col-md-8">
+  <form class="create-form" [formGroup]="exampleForm" novalidate (ngSubmit)="onSubmit(exampleForm.value)">
+  
+    <div class="form-group">
+      <mat-form-field class="input-style">
+        <input matInput placeholder="Name" class="form-control" formControlName="full_name">
+      </mat-form-field>
+      
+    </div>
+  
+    <div class="form-group">
+      <mat-form-field class="input-style">
+        <input matInput placeholder="Created at" class="form-control" formControlName="created_at">
+      </mat-form-field>
+      
+    </div>
+  
+    <div class="form-group">
+      <mat-form-field class="input-style">
+        <input matInput placeholder="Upload Image" class="form-control" formControlName="image">
+      </mat-form-field>
+      
+    </div>
+  
+    <div class="form-group">
+      <mat-form-field class="input-style">
+        <input matInput placeholder="Current Employer" class="form-control" formControlName="current_employer">
+      </mat-form-field>
+      
+    </div>
+  
+    <div class="form-group">
+      <mat-form-field class="input-style">
+        <input matInput placeholder="Years of Experience" class="form-control" formControlName="experience">
+      </mat-form-field>
+      
+    </div>
+  
+    <div class="form-group">
+      <mat-form-field class="input-style">
+        <input matInput placeholder="id" class="form-control" formControlName="id">
+      </mat-form-field>
+      
+    </div>
+  
+    <div class="form-group">
+      <mat-form-field class="input-style">
+        <input matInput placeholder="Date of Birth" class="form-control" formControlName="dob">
+      </mat-form-field>
+      
+    </div>
+  
+    <div class="form-group">
+      <mat-form-field class="input-style">
+        <input matInput placeholder="role" class="form-control" formControlName="role">
+      </mat-form-field>
+      
+    </div>
+  
+    <div class="form-group">
+      <mat-form-field class="input-style">
+        <input matInput placeholder="Profession" class="form-control" formControlName="profession">
+      </mat-form-field>
+      
+    </div>
+  
+    <div class="form-group">
+      <mat-form-field class="input-style">
+        <input matInput placeholder="Email" class="form-control" formControlName="email">
+      </mat-form-field>
+      
+    </div>
+  
+    <div class="form-group">
+      <mat-form-field class="input-style">
+        <input matInput placeholder="Gender" class="form-control" formControlName="gender">
+      </mat-form-field>
+      
+    </div>
+  
+    <div class="form-group">
+      <mat-form-field class="input-style">
+        <input matInput placeholder="Skills" class="form-control" formControlName="skills">
+      </mat-form-field>
+      
+    </div>
+  
+  
+    <div class="row submit-button-container">
+      <div class="col-md-4">
+        <button mat-raised-button class="submit-button" color="primary" type="submit">Create</button>
+      </div>
+    </div>
+  
+  </form>
+  
+  </div>

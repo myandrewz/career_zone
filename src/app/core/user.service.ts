@@ -64,18 +64,16 @@ export class UserService {
       return this.db.collection('User').add({
         id:authenticated_user_uid,
         role: value.role,
-        firstname: value.firstname,
-        lastname: value.lastname,
+        full_name: value.full_name,
         email: value.email,
         dob: value.dob,
         gender: value.gender,
         image:value.image,
-        username:value.username,
-        location:value.location,
-        company:value.company,
-        title:value.title,
-        duration:value.duration,
-        skills:value.skills
+        current_employer:value.current_employer,
+        experience:value.experience,
+        skills:value.skills,
+        profession:value.profession,
+        created_at:value.created_at,
       });
     }
     

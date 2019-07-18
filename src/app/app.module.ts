@@ -52,6 +52,7 @@ import {MatInputModule} from '@angular/material';
 //import GoogleMaps
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
+import { InternshipComponent } from './internship/internship.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { AddmentorComponent } from './addmentor/addmentor.component';
 
@@ -85,6 +86,7 @@ import { AddmentorComponent } from './addmentor/addmentor.component';
 
     NewsletterComponent,
 
+    InternshipComponent
     AdduserComponent,
 
     AddmentorComponent

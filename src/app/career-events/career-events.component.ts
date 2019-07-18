@@ -11,5 +11,6 @@ export class CareerEventsComponent implements OnInit {
 
   ngOnInit() {
   }
+  
 
 }

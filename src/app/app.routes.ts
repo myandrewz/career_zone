@@ -20,6 +20,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
+import { InternshipComponent } from './internship/internship.component';
+import { CareerEventsComponent } from './career-events/career-events.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { AddmentorComponent } from './addmentor/addmentor.component';
 
@@ -47,6 +49,8 @@ export const rootRouterConfig: Routes = [
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent},
   { path: 'meet-mentor', component: MeetMentorComponent},
   { path: 'newsletter', component: NewsletterComponent},
+  { path: 'internship', component: InternshipComponent},
+  { path: 'career-events', component: CareerEventsComponent},
   { path: 'adduser', component: AdduserComponent},
   { path: 'addmentor', component: AddmentorComponent},
 

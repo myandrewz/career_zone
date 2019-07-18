@@ -1,13 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AppComponent } from '../app.component';
-import { environment } from '../../environments/environment';
-import { NgModule } from '@angular/core';
-import { AngularFireDatabase} from 'angularfire2/database';
-import * as firebase from 'firebase/app';
-import * as $ from "jquery";
 import { map} from 'rxjs/operators'
 import {FirebaseService} from '../services/firebase.service';
 import {Router} from '@angular/router';
@@ -23,6 +14,11 @@ export class MentorComponent implements OnInit {
   students: any;
   students_data :any;
   public searchString: string;
+  response: any;
+  is_loading: any;
+  ideas; any;
+  term = '';
+  //event = '';
 
   constructor(
     public firebaseService: FirebaseService,
@@ -31,6 +27,7 @@ export class MentorComponent implements OnInit {
 
   ngOnInit() {
     this.getStudents()
+    this.searchStudents(event)
   }
 
 
@@ -51,20 +48,25 @@ getStudents() {
   console.log(res);
   this.students = res;
   //this.blogs_snapshot = res;
-  }
-  );
+  });
   }
 
-}
-
-/*
-this.db.collection('ideas', ref => ref.where('full_name', '==', this.authenticated_user.uid)).valueChanges().subscribe(
+  searchStudents(event){
+    if (event.key === "Enter"){
+  console.log(this.term)
+  this.db.collection('User', ref => ref.where('full_name', '==', this.term)).valueChanges().subscribe(
   res => {
   this.response = res;
   console.log(this.response);
-  
+    
   this.ideas = res;
   this.is_loading = false;
+    }
+    );
   }
-  );
-  */
+}
+}
+
+
+
+  

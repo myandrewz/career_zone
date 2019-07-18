@@ -45,13 +45,15 @@ import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { SearchfilterPipe } from './pipes/searchfilter.pipe';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { NewsletterComponent } from './newsletter/newsletter.component';
-
+import {MatInputModule} from '@angular/material';
 //import { DialogComponent } from './dialog/dialog.component';
 //import GoogleMaps
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
+import { AdduserComponent } from './adduser/adduser.component';
+import { AddmentorComponent } from './addmentor/addmentor.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +83,11 @@ import { AgmCoreModule } from '@agm/core';
     TermsAndConditionsComponent,
     SearchfilterPipe,
 
-    NewsletterComponent
+    NewsletterComponent,
+
+    AdduserComponent,
+
+    AddmentorComponent
   ],
 
   imports: [
@@ -94,13 +100,13 @@ import { AgmCoreModule } from '@agm/core';
     FormsModule,
     RouterModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
 
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCi3hSfPY4V_5h4XIBuAv13P7AQlwvIG6A'
     }),
   
-   
-    
 
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     AngularFireModule.initializeApp(environment.firebase),

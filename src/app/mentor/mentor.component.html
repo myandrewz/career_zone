@@ -18,7 +18,7 @@
   <div style = "padding-left: 18em">
     <div class="ui category search">
       <div class="ui icon input">
-        <input class="prompt" type="text" placeholder="Search...">
+<input class="prompt" type="text" placeholder="Search..." (keydown)="searchStudents($event)" name="searchString" [(ngModel)]="term">
         <i class="search icon"></i>
       </div>
       <div class="results"></div>
@@ -44,7 +44,7 @@
         </thead>
 
         <tbody>
-          <tr *ngFor="let student of students">
+          <tr *ngFor="let student of students ">
             <td class="collapsing">
               <div class="ui fitted slider checkbox">
                 <input type="checkbox"> <label></label>
@@ -66,9 +66,9 @@
           <tr>
             <th></th>
             <th colspan="4">
-              <div class="ui right floated small primary labeled icon button">
-                <i class="user icon"></i> Add User
-              </div>
+              <button class="ui right floated small primary labeled icon button">
+                <i class="user icon"></i> <a [routerLink] = "['/addmentor']">Add Mentor</a>
+              </button>
               <div class="ui small  button">
                 Approve
               </div>

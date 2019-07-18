@@ -16,15 +16,11 @@
                   <div class="form-w3ls-left-info">
 
                       <form class="ui form" [formGroup]="loginForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
-                          <div class ="_registerr">
-                            <p style="color: white"> EMAIL </p>
-                          </div>
+                          
                           <input class="_h60 _fs20 " type="email" placeholder="Email Address" required="" formControlName="email" />
                           <div class="inputs">
-                              <div class ="_registerr">
-                                <p style="color: white"> PASSWORD </p>
-                              </div>
-                              <input class="_h60 _fs20" type="password" placeholder="Password" required="" formControlName="password" />
+                              
+                          <input class="_h60 _fs20" type="password" placeholder="Password" required="" formControlName="password" />
                           </div>
                           <!--
                           <label class="error">{{errorMessage}}</label>

@@ -1,13 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AppComponent } from '../app.component';
-import { environment } from '../../environments/environment';
-import { NgModule } from '@angular/core';
-import { AngularFireDatabase} from 'angularfire2/database';
-import * as firebase from 'firebase/app';
-import * as $ from "jquery";
 import { map} from 'rxjs/operators'
 import {FirebaseService} from '../services/firebase.service';
 import {Router} from '@angular/router';
@@ -22,7 +13,12 @@ import { AngularFirestore} from "angularfire2/firestore";
 
 export class StudentUserComponent implements OnInit{
   students: any;
-  students_data :any
+  students_data :any;
+  public searchString: string;
+  response: any;
+  is_loading: any;
+  ideas; any;
+  term = '';
 
   constructor(
     public firebaseService: FirebaseService,
@@ -34,10 +30,8 @@ export class StudentUserComponent implements OnInit{
  ngOnInit() {
 
   this.getStudents()
-  
+  this.searchStudents(event)
 }
-
-
 
 
 getStudents() {
@@ -56,12 +50,23 @@ getStudents() {
   console.log(res);
   this.students = res;
   //this.blogs_snapshot = res;
-  }
-  );
+  });
 
-  
   }
 
-
+  searchStudents(event){
+    if (event.key === "Enter"){
+  console.log(this.term)
+  this.db.collection('User', ref => ref.where('full_name', '==', this.term)).valueChanges().subscribe(
+  res => {
+  this.response = res;
+  console.log(this.response);
+    
+  this.ideas = res;
+  this.is_loading = false;
+    }
+    );
+  }
+}
 
 } 

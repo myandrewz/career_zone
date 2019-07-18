@@ -22,6 +22,9 @@ import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { InternshipComponent } from './internship/internship.component';
 import { CareerEventsComponent } from './career-events/career-events.component';
+import { AdduserComponent } from './adduser/adduser.component';
+import { AddmentorComponent } from './addmentor/addmentor.component';
+
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -48,4 +51,9 @@ export const rootRouterConfig: Routes = [
   { path: 'newsletter', component: NewsletterComponent},
   { path: 'internship', component: InternshipComponent},
   { path: 'career-events', component: CareerEventsComponent},
+  { path: 'adduser', component: AdduserComponent},
+  { path: 'addmentor', component: AddmentorComponent},
+
+
+
 ];

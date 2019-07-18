@@ -16,7 +16,17 @@
   </h1>
    </div>
 
-   
+   <div style = "padding-left: 18em">
+    <div class="ui category search">
+      <div class="ui icon input">
+<input class="prompt" type="text" placeholder="Search..." (keydown)="searchStudents($event)" name="searchString" [(ngModel)]="term">
+        <i class="search icon"></i>
+      </div>
+      <div class="results"></div>
+    </div>
+      
+  </div>
+    
 
     <table class="ui compact celled definition table" style="margin-left: 230px; width:700px" id="studentstable">
         <thead class="full-width">
@@ -70,6 +80,6 @@
         </tfoot>
       </table>
 
-      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+    
 
   

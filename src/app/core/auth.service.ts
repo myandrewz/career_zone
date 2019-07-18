@@ -89,9 +89,8 @@ export class AuthService {
   }
 
 
-
-
-   
+  
+  
 
   doRegister(value){
     return new Promise<any>((resolve, reject) => {

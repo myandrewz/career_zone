@@ -22,7 +22,12 @@ import { AngularFirestore} from "angularfire2/firestore";
 
 export class StudentUserComponent implements OnInit{
   students: any;
-  students_data :any
+  students_data :any;
+  public searchString: string;
+  response: any;
+  is_loading: any;
+  ideas; any;
+  term = '';
 
   constructor(
     public firebaseService: FirebaseService,
@@ -34,7 +39,7 @@ export class StudentUserComponent implements OnInit{
  ngOnInit() {
 
   this.getStudents()
-  
+  this.searchStudents(event)
 }
 
 
@@ -62,6 +67,19 @@ getStudents() {
   
   }
 
-
+  searchStudents(event){
+    if (event.key === "Enter"){
+  console.log(this.term)
+  this.db.collection('User', ref => ref.where('full_name', '==', this.term)).valueChanges().subscribe(
+  res => {
+  this.response = res;
+  console.log(this.response);
+    
+  this.ideas = res;
+  this.is_loading = false;
+    }
+    );
+  }
+}
 
 } 

@@ -129,14 +129,11 @@ export class RegisterComponent implements OnInit{
       console.log(err);
        this.isLoading = false;
        this.toastr.error(err.message, "Info", {enableHtml :  true });
-       
-    
      })
    }
 
 
   sendWelcomeEmail(parameters) {
-    
         emailjs.send('gmail','template_k4ep89Si', parameters,  'user_4gGTxYufsWsj6crQu2fdt')
         .then((response) => {
           console.log('SUCCESS!', response.status, response.text);
@@ -144,6 +141,5 @@ export class RegisterComponent implements OnInit{
           console.log('FAILED...', err);
         });
   }
-   
-
 }
+

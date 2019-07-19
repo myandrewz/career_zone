@@ -1,22 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../core/user.service';
-import { AuthService } from '../core/auth.service';
-import { Router, Params } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
+import {FirebaseService} from '../services/firebase.service';
+import { AngularFirestore} from "angularfire2/firestore";
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import {Router} from '@angular/router';
+import {UserService} from '../core/user.service';
+import {AuthService} from '../core/auth.service';
 import { Location } from '@angular/common';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FirebaseUserModel } from '../core/user.model';
 import { ToastrService } from 'ngx-toastr';
-import { trigger, state, transition, style, animate } from '@angular/animations';
-
+import { Resolve, ActivatedRouteSnapshot} from "@angular/router";
 
 
 @Component({
-  selector: 'page-user',
-  templateUrl: 'user.component.html',
-  styleUrls: ['user.scss'],
+  selector: 'app-addmentor',
+  templateUrl: './addmentor.component.html',
+  styleUrls: ['./addmentor.component.scss']
 })
-export class UserComponent implements OnInit{
+export class AddmentorComponent implements OnInit {
+  
+  //exampleForm: FormGroup;
 
   isLinear = true;
   profileForm: FormGroup;
@@ -28,41 +29,29 @@ export class UserComponent implements OnInit{
 
   urls = new Array<string>();
   image:any;
-  enableStudent = true;
-  enableMentor = false;
+  enableStudent = false;
+  enableMentor = true;
 
   constructor(
-    private fb: FormBuilder,
-    public authService: AuthService,
-    private location : Location,
+    public firebaseService: FirebaseService,
     private router: Router,
-    public userService:UserService,
-    private toastr: ToastrService
-  ) {
+    private db: AngularFirestore,
+    private fb: FormBuilder,
+    public userService: UserService,
+    public authService: AuthService,
+    private toastr: ToastrService,
+  ) { 
     this.createForm();
   }
 
-
   ngOnInit() {
-    var _authuser  = localStorage.getItem('authenticated_user')
-    if(_authuser){
-      this.authenticated_user = JSON.parse(_authuser);
-      console.log(this.authenticated_user.uid)
-    }
-    /*
-      this.firstFormGroup = this.fb.group({
-        firstCtrl: ['', Validators.required]
-      });
-      this.secondFormGroup = this.fb.group({
-        secondCtrl: ['', Validators.required]
-      });
-      this.thirdFormGroup = this.fb.group({
-        thirdCtrl: ['', Validators.required]
-      });
-      this.thirdFormGroup = this.fb.group({
-        forthCtrl: ['', Validators.required]
-      });
-      */
+   // this.createForm();
+   var _authuser  = localStorage.getItem('authenticated_user')
+   if(_authuser){
+     this.authenticated_user = JSON.parse(_authuser);
+     console.log(this.authenticated_user.uid)
+   }
+
   }
 
   createForm() {
@@ -73,7 +62,7 @@ export class UserComponent implements OnInit{
       email: [name, Validators.required],
       dob: [name, Validators.required],
       gender: [name, Validators.required],
-      is_approved: ['false', Validators.required],
+      is_approved: ['true', Validators.required],
 
       //student
       university: [name, Validators.required],
@@ -138,4 +127,48 @@ export class UserComponent implements OnInit{
   }
 
 
+/*
+  resetFields(){
+    this.exampleForm = this.fb.group({
+      full_name: [''],
+      image: [''],
+      current_employer: [''],
+      experience: [''],
+      profession: [''],
+      dob: [''],
+      role: ['Mentor'],
+      created_at: [''],
+      email: [''],
+      gender: [''],
+      skills: ['']
+      });
+    }
+  
+  createForm() {
+    this.exampleForm = this.fb.group({
+      full_name: [''],
+      image: [''],
+      current_employer: [''],
+      experience: [''],
+      profession: [''],
+      dob: [''],
+      role: ['Mentor'],
+      created_at: [''],
+      email: [''],
+      gender: [''],
+      skills: ['']
+     });
+    }
+  
+  onSubmit(value){
+    this.userService.createUser(value, 23)
+    .then(
+       res => {
+        //console.log(res);
+         this.resetFields();
+         this.router.navigate(['/mentor']);
+       }
+     )
+   }
+  */
 }

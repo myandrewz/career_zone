@@ -11,19 +11,39 @@ import { Router } from "@angular/router";
   providedIn: 'root'
 })
 export class AuthService {
+  authState : any = null
   
 
   constructor(
    public afAuth: AngularFireAuth,
    public router: Router, 
    public ngZone: NgZone 
- ){}
+ ){
+   this.afAuth.authState.subscribe(data => this.authState = data)
+ }
+
+ get authenticated() : boolean{
+   return this.authState !== null 
+ }
+
+ get currentUserId() : string{
+   return this.authenticated? this.authState.uid : null 
+ }
 
 
  async sendPasswordResetEmail(passwordResetEmail: string) {
   return await this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail);
 }
 
+
+login(){
+ this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+ 
+}
+
+logout(){
+  this.afAuth.auth.signOut()
+}
 
 
 //  dosendWelcomeEmail = functions.auth.user().onCreate((user) => {

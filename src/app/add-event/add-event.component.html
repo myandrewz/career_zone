@@ -1,30 +1,81 @@
 
 <div class="main-top-intro" (scroll)="onWindowScroll($event);">
-    <div>
-      <h1 class="ui center aligned icon header" style="color: white">
-        <i class="circular users icon  fa fa-calendar"></i>
-        Events
-      </h1>
-    </div>
-    <div class="bg-layer">
-      <div class="terms">
-          <h3>Newsletter SignUp</h3>
-          <hr>
-          <form class="ui form" [formGroup]="newsletterForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
-            <div class ="_registerr">
-              <p style="color: white"> NAME </p>
+  <!-- <div>
+    <h1 class="ui center aligned icon header" style="color: white">
+      <i class="circular users icon  fa fa-calendar"></i>
+      Events
+    </h1>
+  </div> -->
+  <div class="bg-layer">
+    <div class="terms">
+        <form class="ui form" [formGroup]="addEventForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
+          <!-- <div class ="_registerr">
+            <p style="color: blue"> NAME </p>
+          </div>
+          <input style="border: 2px solid blue;color: black;" class=" _fs20" type="text" placeholder="Name" required="" formControlName="name" />
+          <div class ="_registerr">
+            <p style="color: blue"> EMAIL </p>
+          </div>
+          <input style="border: 2px solid blue;color: black;" class=" _fs20 " type="email" placeholder="Email Address" required="" formControlName="email" />
+          <div class="bottom _mt20">
+            <button class="btn reg _w50" (click)="subscribeToNewsletter()" type="submit" [disabled]="!myForm.form.valid">sign up </button>
+          </div> -->
+          <div class="ui form enlarge">
+            <div class="field">
+              <label>Title</label>
+              <input type="text" placeholder="Title" formControlName="title">
             </div>
-            <input class="_h60 _fs20" type="text" placeholder="Name" required="" formControlName="name" />
-            <div class ="_registerr">
-              <p style="color: white"> EMAIL </p>
+          </div>
+          <div class="ui form enlarge">
+            <div class="three fields">
+
+              <div class="field">
+                <label>Date</label>
+                <input type="date" placeholder="01/01/2019" formControlName="date">
+              </div>
+
+              <div class="field">
+                  <label>Location</label>
+                  <input type="text" placeholder="Location" formControlName="location">
+              </div>
+
+              <div class="field">
+                <label>Category</label>
+                <input type="text" placeholder="Category" formControlName="category">
+              </div>
+              
             </div>
-            <input class="_h60 _fs20 " type="email" placeholder="Email Address" required="" formControlName="email" />
-            <div class="bottom _mt20">
-              <button class="btn reg _h60 _w50" (click)="subscribeToNewsletter()" type="submit" [disabled]="!myForm.form.valid">sign up </button>
-            </div>
-          </form>
-  
-      </div>
+          </div>
+          <div class="ui form enlarge">
+              <div class="field">
+                <label>Description</label>
+                <textarea placeholder="Description here ..." formControlName="description"></textarea>
+              </div>
+          </div>
+          <section class="container">
+            <section class="wrapper">
+              <section class="main-content">
+                    <div class="profile-img-content">
+                        <div class="profile-img">
+                          <img *ngFor="let url of urls" [src]="url" height="200" width="200" alt="User avatar">
+                          <img *ngIf="!display_image" src="https://png.pngtree.com/svg/20161212/f93e57629c.svg" height="200" width="200" alt="User avatar">
+                        </div>
+                  </div>
+                  <div class="ui form enlarge">
+                      <div class="field">
+                        <label>IMAGE/VIDEO</label>
+                        <input accept='.gif|audio/*|video/*|image/*' type="file" name="image" formControlName="image"  (change)="detectFiles($event)">
+                      </div>
+                  </div>
+              </section>
+            </section>
+          </section>
+          <div (click)="addEvent()" class="ui small primary labeled icon button">
+            <i class="user icon fa fa-calendar"></i> Add
+          </div>
+        </form>
+
     </div>
   </div>
+</div>
   

@@ -14,7 +14,7 @@ export class EventsService {
     public afAuth: AngularFireAuth
   ) { }
   
-  createEvent(value, authenticated_user_uid){
+  createEvent(value, downlord_url, authenticated_user_uid){
     return this.db.collection('Event').add({
       created_by:authenticated_user_uid,
       title: value.title,
@@ -22,7 +22,7 @@ export class EventsService {
       location: value.location,
       category: value.category,
       description: value.description,
-      image_url: value.image
+      downlord_url: downlord_url
     });
   }
 }

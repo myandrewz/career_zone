@@ -1,4 +1,5 @@
-import { Component, ViewChild, OnInit, HostListener, Inject } from '@angular/core';
+import { Component, ViewChild, OnInit, Inject } from '@angular/core';
+import { UserService } from '../core/user.service';
 import { AuthService } from '../core/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators ,AbstractControl} from '@angular/forms';
@@ -47,11 +48,14 @@ export class LoginComponent implements OnInit{
   user: any;
   view: string;
   is_resetting_password= false 
+  //profile:any;
+  profile: Array<any>;
 
   
 
   constructor(
     public authService: AuthService,
+    public userService:UserService,
     private router: Router,
     private fb: FormBuilder,
     private toastr: ToastrService,
@@ -80,17 +84,6 @@ export class LoginComponent implements OnInit{
     this.resetPasswordForm = this.fb.group({
       email: ['', [Validators.required, Validators.email], this.checkValidEmail]
     }) }
-
-  @HostListener('window:scroll', ['$event'])
-    onWindowScroll(e) {
-       if (window.pageYOffset > 60) {
-         let element = document.getElementById('navbar');
-         element.classList.add('sticky');
-       } else {
-        let element = document.getElementById('navbar');
-          element.classList.remove('sticky'); 
-       }
-    }
 
 
 
@@ -164,9 +157,22 @@ export class LoginComponent implements OnInit{
       console.log(res);
       
       localStorage.setItem('authenticated_user', JSON.stringify(res.user));
+<<<<<<< HEAD
      // alert('haha')
       this.router.navigate(['/dashboard/Overview']);
       
+=======
+      //
+      // this.userService.getUserProfile()
+      //   .subscribe(result => {
+      //     console.log(JSON.stringify(result));
+      //     this.profile = result;
+      //   })
+      // this.profile = JSON.stringify(this.userService.getUserProfile());
+      // console.log(JSON.stringify(this.profile));
+      //
+      this.router.navigate(['/dashboard/Overview']);
+>>>>>>> 4d88233957c069851f9a464e1f76638a21b3b8fa
     }, err => {
       this.isLoading = false
       this.toastr.error(err.message, "Error", {enableHtml :  true });

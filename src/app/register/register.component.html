@@ -23,13 +23,24 @@
                         <form class="ui form myForm" id="myForm" [formGroup]="registerForm" (ngSubmit)="tryRegister(registerForm.value)" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
 
                             <div class ="_registerr">
-                                <p style="color: white"> EMAIL </p>
-                             </div>
-                            <input class="_h60 _fs20 " type="email" placeholder="Email Address" required="" formControlName="email" /><div class="inputs">
-                            <div class ="_registerr">
-                                <p style="color: white"> PASSWORD </p>
+                              <p style="color: white"> NAME </p>
+                            </div>
+                            <input class="_h60 _fs20 " type="text" placeholder="Your full name" required="" formControlName="name" />
+
+                            
+                            <input class="_h60 _fs20 " type="email" placeholder="Email Address" required="" formControlName="email" />
+                            <div class="inputs">
+                              
+                              <input class="_h60 _fs20" type="password" placeholder="Password" required="" formControlName="password" />
+                              <div class ="_registerr">
+                                <p style="color: white">
+                                  <input class="_fs20" type="checkbox" required="" formControlName="terms_conditions" value="yes" />
+                                  <a style="color: white;font-size: 12px" [routerLink]="[ '/terms-and-conditions']">
+                                    Accept Our Terms and Conditions
+                                  </a>
+                                </p>
                               </div>
-                            <input class="_h60 _fs20" type="password" placeholder="Password" required="" formControlName="password" /></div>
+                            </div>
                            
                             
                             <div class="bottom _mt20">
@@ -38,7 +49,7 @@
                                 sign up </button>
                             </div>
 
-                                  <a style="color: white;padding-top: 18px" class = " links btn fancyFont password" 
+                                  <a style="padding-top: 18px" class = " links btn fancyFont password" 
                                   (click)="tryLogin()" type="submit" href="/login"><u>LOGIN</u></a>
                             
                           </form>
@@ -48,29 +59,26 @@
             
 
           
-          <div class="content-outer-info ">
-            <p style = "color: rgb(252, 250, 252)" class="_loginwith"> REGISTER WITH </p>
+              <div class="content-outer-info ">
+                <p style = "color: rgb(252, 250, 252)" class="_loginwith"> REGISTER WITH </p>
+                
+                <button class="ui facebook button" (click)="tryFacebookLogin()">
+                  <i class="ui.facebook"></i>
+                  Facebook
+                </button>
+              
+                <button class="ui twitter button" (click)="tryTwitterLogin()">
+                  <i class="ui.twitter"></i>
+                  Twitter
+                </button>
+                
+                <button class="ui google plus button" (click)="tryGoogleLogin()">
+                  <i class="ui.google"></i>
+                  Google Plus
+                </button>
             
-            <button class="ui facebook button" (click)="tryFacebookLogin()">
-              <i class="ui.facebook"></i>
-              Facebook
-            </button>
-           
-            <button class="ui twitter button" (click)="tryTwitterLogin()">
-              <i class="ui.twitter"></i>
-              Twitter
-            </button>
-            
-            <button class="ui google plus button" (click)="tryGoogleLogin()">
-              <i class="ui.google"></i>
-              Google Plus
-            </button>
-        
-        <!--footer-->
-
-        <!-- //copyright -->
-      </div>
-          </div>
+              </div>
+            </div>
       </div>
  </div>
 

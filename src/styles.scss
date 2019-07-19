@@ -1,5 +1,5 @@
 @import '~ngx-toastr/toastr.css';
-
+@import '~bootstrap/dist/css/bootstrap.css';
 
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
@@ -61,6 +61,7 @@ $base-font-size:9px;
   top: 0;
   height: 120px;
   width: 100%;
+  background-color:rgba(5, 5, 5, 0.527);
 }
 
 html, body { height: 100%; }

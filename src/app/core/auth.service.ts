@@ -109,9 +109,8 @@ logout(){
   }
 
 
-
-
-   
+  
+  
 
   doRegister(value){
     return new Promise<any>((resolve, reject) => {

@@ -9,6 +9,10 @@ import { DOCUMENT } from '@angular/common';
 
 import * as emailjs from 'emailjs-com';
 
+export interface IContext {
+  data:string;
+}
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -24,6 +28,9 @@ import * as emailjs from 'emailjs-com';
 })
 export class RegisterComponent implements OnInit{
 
+  @ViewChild('modalTemplate')
+  public modalTemplate:ModalTemplate<IContext, string, string>
+
   registerForm: FormGroup;
   errorMessage: string = '';
   successMessage: string = '';
@@ -36,6 +43,7 @@ export class RegisterComponent implements OnInit{
     private router: Router,
     private fb: FormBuilder,
     private toastr: ToastrService,
+    public modalService:SuiModalService,
     @Inject(DOCUMENT) document
   ) {
     this.createForm();
@@ -43,21 +51,12 @@ export class RegisterComponent implements OnInit{
 
    ngOnInit() {  }
 
-   @HostListener('window:scroll', ['$event'])
-  onWindowScroll(e) {
-     if (window.pageYOffset > 50) {
-       let element = document.getElementById('navbar');
-       element.classList.add('sticky');
-     } else {
-      let element = document.getElementById('navbar');
-        element.classList.remove('sticky'); 
-     }
-  }
-
    createForm() {
      this.registerForm = this.fb.group({
+       name: ['Muwonge Emmanuel', Validators.required ],
        email: ['me@me.org', Validators.required ],
-       password: ['Password1',Validators.required]
+       password: ['Password1',Validators.required],
+       terms_conditions: ['',Validators.required]
      });
    }
 
@@ -81,6 +80,7 @@ export class RegisterComponent implements OnInit{
      this.authService.doGoogleLogin()
      .then(res =>{
         this.toastr.success("Registration Successful !!!","Notification");
+        localStorage.setItem('authenticated_user', JSON.stringify(res.user));
         this.router.navigate(['/user']);
      }, err => console.log(err)
      )
@@ -129,14 +129,11 @@ export class RegisterComponent implements OnInit{
       console.log(err);
        this.isLoading = false;
        this.toastr.error(err.message, "Info", {enableHtml :  true });
-       
-    
      })
    }
 
 
   sendWelcomeEmail(parameters) {
-    
         emailjs.send('gmail','template_k4ep89Si', parameters,  'user_4gGTxYufsWsj6crQu2fdt')
         .then((response) => {
           console.log('SUCCESS!', response.status, response.text);
@@ -144,7 +141,5 @@ export class RegisterComponent implements OnInit{
           console.log('FAILED...', err);
         });
   }
-
-   
-
 }
+

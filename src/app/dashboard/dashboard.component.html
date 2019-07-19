@@ -1,4 +1,4 @@
-<div class="page-container">
+<div class="page-container" style="float: right;">
 
   <router-outlet></router-outlet>
 
@@ -27,9 +27,9 @@
         <span class=" name-caret">Deborah Aanyu</span>
         <p>System Administrator, NSSF</p>
         <ul>
-          <li><a class="tooltips"><span>Profile</span>Profile</a></li>
-          <li><a class="tooltips"><span>Settings</span>Settings</a></li>
-          <li><a class="tooltips"><span>Log out</span>Log out</a></li>
+          <li><a class="tooltips" style="color: black"><span>Profile</span></a></li>
+          <li><a class="tooltips" style="color: black"><span>Settings</span></a></li>
+          <li><a class="tooltips" style="color: black"><span>Log out</span></a></li>
         </ul>
       </div>
 
@@ -37,27 +37,51 @@
       <div class="menu">
         <ul id="menu">
 
-		  <li><a [routerLink] = "['/dashboard/Overview']"><i class="fa fa-tachometer aria-hidden=" true></i> 
-			<span>Overview</span>
-		</a>
-		</li>
-		  
+          <li>
+            <a [routerLink] = "['/dashboard/Overview']"><i class="fa fa-tachometer aria-hidden=" true></i> 
+              <span>Overview</span>
+            </a>
+          </li>
+
           <li id="menu-academico">
-			<a  [routerLink] = "['/dashboard/students']" ><i class="fa fa-table"></i> 
-				<span> StudentUsers</span> 
-			</a>
-		</li>
-		  
-			<li id="menu-academico">
+            <a  [routerLink] = "['/dashboard/students']" ><i class="fa fa-table"></i> 
+              <span> Students</span> 
+            </a>
+          </li>
+
+          <li id="menu-academico">
             <a [routerLink] = "['/dashboard/Mentors']"><i class="fa fa-file-text-o"></i>
               <span>Mentors</span>
             </a>
-		  </li>
-		  
+          </li>
+
           <li>
-			<a [routerLink] = "['/dashboard/careerjobs']"><i class="lnr lnr-pencil"></i> 
-			<span>Careerjobs</span>
-		</a></li>
+            <a [routerLink] = "['/dashboard/careerjobs']"><i class="lnr lnr-pencil"></i> 
+              <span>Careerjobs</span>
+            </a>
+          </li>
+
+          <li id="menu-academico">
+            <a [routerLink] = "['/dashboard/Blogs']"><i class="lnr lnr-book"></i>
+              <span>Blogs</span>
+            </a>
+          </li>
+
+          <li id="menu-academico">
+            <a><i class="fa fa-calendar" aria-hidden="true"></i>
+              <span>Events</span>
+            </a>
+            <ul id="menu-academico-sub" >
+              <li id="menu-academico-avaliacoes" ><a [routerLink] = "['/dashboard/events']">View Events</a></li>
+              <li id="menu-academico-boletim" ><a [routerLink] = "['/dashboard/add-event']">Add Event</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a [routerLink] = "['/dashboard/imagesvideos']"><i class="lnr lnr-envelope"></i>
+              <span>Media</span>
+            </a>
+          </li>
 
           <li id="menu-academico">
 			<a [routerLink] = "['/posts-dashboard']"><i class="lnr lnr-book"></i>
@@ -71,10 +95,16 @@
           <li id="menu-academico"><a [routerLink] = "['/dashboard/reports']"><i class="lnr lnr-layers"></i>
 			  <span>Reports</span>
 			</a></li>
-			  
+            <a [routerLink] = "['/dashboard/reports']"><i class="lnr lnr-layers"></i>
+              <span>Reports</span>
+            </a>
+          </li>
           <!--for now, the add section option will redirect you to overview-->
-          <li id="menu-comunicacao"><a [routerLink] = "['/dashboard/AddSection']"><i class="fa fa-smile-o"></i>
-              <span>Add Section</span></a></li>
+          <li id="menu-comunicacao">
+            <a [routerLink] = "['/dashboard/AddSection']"><i class="fa fa-smile-o"></i>
+              <span>Add Section</span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

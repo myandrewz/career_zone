@@ -18,8 +18,41 @@
   <link href="node_modules/froala-editor/css/froala_editor.pkgd.min.css" >
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+
+  <style>
+    body {
+    background-image: url('../assets/images/banner.jpg');
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+  </style>
 </head>
 <body>
+    <script>
+        $('.carousel.carousel-multi-item.v-2 .carousel-item').each(function(){
+          var next = $(this).next();
+          if (!next.length) {
+            next = $(this).siblings(':first');
+          }
+          next.children(':first-child').clone().appendTo($(this));
+        
+          for (var i=0;i<4;i++) {
+            next=next.next();
+            if (!next.length) {
+              next=$(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+          }
+        });
+    </script>
   <app-root></app-root>
+
 </body>
 </html>

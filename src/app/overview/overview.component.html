@@ -13,55 +13,6 @@
            <!--/profile_details-->
            <div class="profile_details_left">
    <ul class="nofitications-dropdown">
-     <li class="dropdown note dra-down">
-                          
-       <script type="text/javascript">
-   
-                               function DropDown(el) {
-                                 this.dd = el;
-                                 this.placeholder = this.dd.children('span');
-                                 this.opts = this.dd.find('ul.dropdown > li');
-                                 this.val = '';
-                                 this.index = -1;
-                                 this.initEvents();
-                               }
-                               DropDown.prototype = {
-                                 initEvents : function() {
-                                   var obj = this;
-
-                                   obj.dd.on('click', function(event){
-                                     $(this).toggleClass('active');
-                                     return false;
-                                   });
-
-                                   obj.opts.on('click',function(){
-                                     var opt = $(this);
-                                     obj.val = opt.text();
-                                     obj.index = opt.index();
-                                     obj.placeholder.text(obj.val);
-                                   });
-                                 },
-                                 getValue : function() {
-                                   return this.val;
-                                 },
-                                 getIndex : function() {
-                                   return this.index;
-                                 }
-                               }
-
-                               $(function() {
-
-                                 var dd = new DropDown( $('#dd') );
-
-                                 $(document).click(function() {
-                                   // all dropdowns
-                                   $('.wrapper-dropdown-3').removeClass('active');
-                                 });
-
-                               });
-
-       </script>
-             </li>
                      
       <li class="dropdown note">
                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope-o"></i> 
@@ -75,41 +26,6 @@
                            </div>
                          </li>
                          
-                       <li><a href="#">
-                            <div class="user_img"><img src="../../assets/images/1.jpg" alt=""></div>
-                            <div class="notification_desc">
-                           <p>NSSF Mentor wants to chat</p>
-                           <p><span>1 hour ago</span></p>
-                           </div>
-                            <div class="clearfix"></div>	
-                          </a>
-                         </li>
-                          
-                       <li class="odd"><a href="#">
-                         <div class="user_img"><img src="../../assets/images/in.jpg" alt=""></div>
-                           <div class="notification_desc">
-                           <p>Storage needs monitoring </p>
-                           <p><span>1 hour ago</span></p>
-                           </div>
-                           <div class="clearfix"></div>	
-                          </a>
-                       </li>
-                          
-                       <li><a href="#">
-                            <div class="user_img"><img src="../../assets/images/in1.jpg" alt=""></div>
-                            <div class="notification_desc">
-                           <p>when can i get the reports? </p>
-                           <p><span>1 hour ago</span></p>
-                           </div>
-                            <div class="clearfix"></div>	
-                         </a>
-                       </li>
-                         
-                         <li>
-                           <div class="notification_bottom">
-                             <a href="#">See all messages</a>
-                           </div> 
-                         </li>
                          
                        </ul>
      </li>
@@ -123,104 +39,14 @@
                      <h3>You have 5 new notification</h3>
                    </div>
                  </li>
-                 
-                 <li><a href="#">
-                   <div class="user_img"><img src="../../assets/images/in.jpg" alt=""></div>
-                    <div class="notification_desc">
-                   <p>data missing in students table</p>
-                   <p><span>1 hour ago</span></p>
-                   </div>
-                   <div class="clearfix"></div>	
-                  </a></li>
-                  
-                 <li class="odd"><a href="#">
-                   <div class="user_img"><img src="../../assets/images/in5.jpg" alt=""></div>
-                    <div class="notification_desc">
-                   <p>Database almost full </p>
-                   <p><span>1 hour ago</span></p>
-                   </div>
-                    <div class="clearfix"></div>	
-                  </a>
-                 </li>
-                  
-                 <li>
-                    <a href="#">
-                   <div class="user_img"><img src="../../assets/images/in8.jpg" alt=""></div>
-                    <div class="notification_desc">
-                   <p>suspicious activity detected</p>
-                   <p><span>1 hour ago</span></p>
-                   </div>
-                    <div class="clearfix"></div>	
-                  </a>
-                 </li>
-                  
-                  <li>
-                   <div class="notification_bottom">
-                     <a href="#">See all notification</a>
-                   </div> 
-                 </li>
                </ul>
            </li>	
          
-        <!--task-progress-->
-     <li class="dropdown note">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i> <span class="badge blue1">9</span></a>
-                 <ul class="dropdown-menu two">
-                 <li>
-                   <div class="notification_header">
-                     <h3>You have 9 pending task</h3>
-                   </div>
-                 </li>
-                 
-                 <li><a href="#">
-                   <div class="task-info">
-                     <span class="task-desc">Database update</span><span class="percentage">40%</span>
-                     <div class="clearfix"></div>	
-                      </div>
-                   <div class="progress progress-striped active">
-                     <div class="bar yellow" style="width:40%;"></div>
-                   </div>
-                 </a></li>
-                 
-                 <li><a href="#">
-                   <div class="task-info">
-                     <span class="task-desc">Dashboard done</span><span class="percentage">90%</span>
-                      <div class="clearfix"></div>	
-                   </div>
-                   <div class="progress progress-striped active">
-                      <div class="bar green" style="width:90%;"></div>
-                   </div>
-                   
-                 </a></li>
-                 <li><a href="#">
-                   <div class="task-info">
-                     <span class="task-desc">Mobile App</span><span class="percentage">33%</span>
-                     <div class="clearfix"></div>	
-                   </div>
-                    <div class="progress progress-striped active">
-                      <div class="bar red" style="width: 33%;"></div>
-                   </div>
-                 </a></li>
-                 
-                 <li><a href="#">
-                   <div class="task-info">
-                     <span class="task-desc">Issues fixed</span><span class="percentage">80%</span>
-                      <div class="clearfix"></div>	
-                   </div>
-                   <div class="progress progress-striped active">
-                      <div class="bar  blue" style="width: 80%;"></div>
-                   </div>
-                 </a></li>
-                 
-                 <li>
-                   <div class="notification_bottom">
-                     <a href="#">See all pending task</a>
-                   </div> 
-                 </li>
-               </ul>
-           </li>		 
-                                  
-     <div class="clearfix"></div>	
+  <!--task-progress-->
+<li class="dropdown note">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i> <span class="badge blue1">9</span></a>
+</li>		 
+<div class="clearfix"></div>	
    </ul>
            </div>
            <div class="clearfix"></div>	
@@ -293,82 +119,123 @@
              <!--//custom-widgets-->
                    
                      <!--Tables-->
-                 <!--Students table-->
-           <div class="tables">
-                         <div class="col-md-6 chrt-two">
-                          <h3 class="sub-title">Student users </h3>
-                           <div class="tables">
-                               <table class="table table-bordered">
-                                <thead> 
-                                 <tr> 
-                                 <th>#</th> <th>First Name</th>
-                                  <th>Last Name</th> 
-                                  <th>User Name</th> 
-                                 </tr> 
-                                 </thead> 
-                     <tbody> 
-                           <tr> 
-                             <th scope="row">1</th> 
-                             <td>Mark</td> 
-                             <td>Otto</td> 
-                             <td>@mdo</td> 
-                           </tr> 
-                           <tr> 
-                             <th scope="row">2</th> 
-                             <td>Jacob</td> 
-                             <td>Thornton</td> 
-                             <td>@fat</td> 
-                           </tr>
-                           <tr> 
-                             <th scope="row">3</th> 
-                             <td>Larry</td> 
-                             <td>the Bird</td> 
-                             <td>@twitter</td> 
-                           </tr> 
-                     </tbody> 
-                             </table>
-                           </div>
-                         </div>
-                         </div>
-                     <!--students table-->
+  <!--Students table-->
+  <div class="tables">
+  <div class="col-md-6 chrt-two">
+  <h3 class="sub-title">Student users </h3>
+
+
+        <table class="ui compact celled definition table" style="width:700px">
+        <thead class="full-width">
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Date of Account creation</th>
+            <th>E-mail address</th>
+            <th>Gender</th>
+            <th>Campus</th>
+            <th>Course</th>
+            <th>Date of Birth</th>
+            <th>Date joined University</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let student of students ">
+            <td class="collapsing">
+              <div class="ui fitted slider checkbox">
+                <input type="checkbox"> <label></label>
+              </div>
+            </td>
+            <td>{{student.full_name}}</td>
+            <td>{{student.created_at}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.campus}}</td>
+            <td>{{student.course}}</td>
+            <td>{{student.dob}}</td>
+            <td>{{student.date_joined}}</td>
+
+          </tr>
+        </tbody>
+
+        <tfoot class="full-width">
+          <tr>
+            <th></th>
+            <th colspan="4">
+
+              <button class="ui right floated small primary labeled icon button" [routerLink]="['../students']">
+                <i class="user icon"></i> View All
+              </button>
+              
+    
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+                           
+
+
+
+  </div>
+  </div>
+  <!--students table-->
                          
-                       <!--Mentors table-->
-           <div class="col-md-6 chrt-three">
-                           <h3 class="sub-title">Mentors </h3>
-                             <div class="tables">
-                               <table class="table table-bordered">
-                                 <thead> 
-                                 <tr> 
-                                   <th>#</th> <th>First Name</th>
-                                   <th>Last Name</th> 
-                                   <th>User Name</th> 
-                                 </tr> 
-                                 </thead> 
-                               <tbody> 
-                                 <tr> 
-                                 <th scope="row">1</th> 
-                                 <td>Mark</td> 
-                                 <td>Otto</td> 
-                                 <td>@mdo</td> 
-                               </tr> 
-                               <tr> 
-                                 <th scope="row">2</th> 
-                                 <td>Jacob</td> 
-                                 <td>Thornton</td> 
-                                 <td>@fat</td> 
-                               </tr> 
-                               <tr> 
-                                 <th scope="row">3</th> 
-                                 <td>Larry</td> 
-                                 <td>the Bird</td> 
-                                 <td>@twitter</td> 
-                               </tr> 
-                             </tbody> 
-                             </table>
-                             </div>
-                             <div class="clearfix"> </div>
-                           </div>
-                       <!--mentors table-->	
+  <!--Mentors table-->
+  <div class="col-md-6 chrt-three">
+  <h3 class="sub-title">Mentors </h3>
+    <div class="tables">
+
+        <table class="ui compact celled definition table">
+            <thead class="full-width">
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Date of Account creation</th>
+                <th>E-mail address</th>
+                <th>Gender</th>
+                <th>Company</th>
+                <th>Profession</th>
+                <th>Date of Birth</th>
+                <th>Skills</th>
+                <th>Experience (years)</th>
+              </tr>
+            </thead>
+    
+            <tbody>
+              <tr *ngFor="let student of students ">
+                <td class="collapsing">
+                  <div class="ui fitted slider checkbox">
+                    <input type="checkbox"> <label></label>
+                  </div>
+                </td>
+                <td>{{student.full_name}}</td>
+                <td>{{student.created_at}}</td>
+                <td>{{student.email}}</td>
+                <td>{{student.gender}}</td>
+                <td>{{student.company}}</td>
+                <td>{{student.profession}}</td>
+                <td>{{student.dob}}</td>
+                <td>{{student.skills}}</td>
+                <td>{{student.experience}}</td>
+              </tr>
+            </tbody>
+    
+            <tfoot class="full-width">
+              <tr>
+                <th></th>
+                <th colspan="4">
+                  <button class="ui right floated small primary labeled icon button" [routerLink]="['../Mentors']">
+                    <i class="user icon"></i> View All
+                  </button>
+                </th>
+              </tr>
+            </tfoot>
+          </table>
+    </div>
+   <div class="clearfix"> </div>
+  </div>
+  <!--mentors table-->	
                                            
          <!--blog table-->
            <div class="col-md-5 chrt-two">

@@ -27,6 +27,10 @@ export class UserService {
       })
     })
   }
+  getUserProfile(){
+    return this.db.collection("User", ref => ref.where('id', '==', 234344)).snapshotChanges();
+  }
+  
 
   updateCurrentUser(value){
     return new Promise<any>((resolve, reject) => {
@@ -39,39 +43,42 @@ export class UserService {
       }, err => reject(err))
     })
   }
+
   createUser(value, authenticated_user_uid){
     if(value.role == "Student"){
       return this.db.collection('User').add({
         id:authenticated_user_uid,
         role: value.role,
-        firstname: value.firstname,
-        lastname: value.lastname,
+        full_name: value.full_name,
         email: value.email,
         dob: value.dob,
         gender: value.gender,
         image:value.image,
         username:value.username,
         university:value.university,
+        campus:value.campus,
         course:value.course,
-        yearOfJoining:value.yearOfJoining,
-        interests:value.interests
+        date_joined:value.date_joined,
+        interests:value.interests,
+        is_approved:value.is_approved,
+        created_at:Date(),
       });
-    }else{
+    }
+    
+    else{
       return this.db.collection('User').add({
         id:authenticated_user_uid,
         role: value.role,
-        firstname: value.firstname,
-        lastname: value.lastname,
+        full_name: value.full_name,
         email: value.email,
         dob: value.dob,
         gender: value.gender,
         image:value.image,
-        username:value.username,
-        location:value.location,
-        company:value.company,
-        title:value.title,
-        duration:value.duration,
-        skills:value.skills
+        current_employer:value.current_employer,
+        experience:value.experience,
+        skills:value.skills,
+        profession:value.profession,
+        created_at:Date(),
       });
     }
     

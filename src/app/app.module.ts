@@ -6,6 +6,7 @@ import { rootRouterConfig } from './app.routes';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './login/login.component'; 
 import { UserComponent } from './user/user.component';
@@ -120,6 +121,7 @@ import { AddEventComponent } from './add-event/add-event.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    AngularFireStorageModule,
     SuiModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({

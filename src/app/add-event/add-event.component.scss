@@ -1,4 +1,12 @@
-
+// form{
+//     width: 350px;
+// }
+.reg{
+    height: 50px;
+}
+.small{
+    margin-top: 20px;
+}
 .terms {
     background-color: #fff;
     padding: 30px;
@@ -6,8 +14,14 @@
     opacity: 1;
     min-height: 60vh;
     margin-left: 180px;
+    text-align: center;
 }
 .bg-layer {
     padding-top: 10px;
     
+}
+img{
+  border-radius: 15px;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }

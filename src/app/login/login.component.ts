@@ -157,6 +157,7 @@ export class LoginComponent implements OnInit{
       console.log(res);
       
       localStorage.setItem('authenticated_user', JSON.stringify(res.user));
+
       //
       // this.userService.getUserProfile()
       //   .subscribe(result => {
@@ -167,6 +168,7 @@ export class LoginComponent implements OnInit{
       // console.log(JSON.stringify(this.profile));
       //
       this.router.navigate(['/dashboard/Overview']);
+
     }, err => {
       this.isLoading = false
       this.toastr.error(err.message, "Error", {enableHtml :  true });

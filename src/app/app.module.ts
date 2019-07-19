@@ -8,7 +8,6 @@ import { rootRouterConfig } from './app.routes';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './login/login.component'; 
 import { UserComponent } from './user/user.component';

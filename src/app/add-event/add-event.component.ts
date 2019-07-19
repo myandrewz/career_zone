@@ -23,8 +23,10 @@ export class AddEventComponent implements OnInit {
   display_image:any;
   ref: AngularFireStorageReference;
   task: AngularFireUploadTask;
-  downloadURL: Observable<string>;
-  images: any;
+  downloadURL: any;
+  uploadState: Observable<string>;
+  uploadProgress: Observable<number>;
+  file: any;
 
   constructor(
     
@@ -69,25 +71,30 @@ export class AddEventComponent implements OnInit {
         reader.readAsDataURL(file);
       }
       this.display_image=true;
-      const id = Math.random().toString(36).substring(2);
-      this.ref = this.afStorage.ref(id);
-      this.task = this.ref.put(event.target.files[0]);
-      this.task.snapshotChanges().pipe(
-        finalize(() => {
-         this.ref.getDownloadURL().subscribe(url => {
-           console.log(url); // <-- do what ever you want with the url..
-         });
-       }))
-       .subscribe();
-      //console.log(this.downloadURL);
+      this.file = event.target.files[0];
     }
   }
 
   addEvent(){
-
-    console.log(this.addEventForm.value);
     
-    this.eventsService.createEvent(this.addEventForm.value, this.authenticated_user.uid)
+    const id = Math.random().toString(36).substring(2);
+    this.ref = this.afStorage.ref(id);
+    this.task = this.ref.put(this.file);
+    // this.uploadState = this.task.snapshotChanges().pipe(map(s => s.state));
+    // this.uploadProgress = this.task.percentageChanges();
+
+  
+    this.task.snapshotChanges().pipe(
+      finalize(() => {
+       this.ref.getDownloadURL().subscribe(url => {
+         console.log(url); // <-- do what ever you want with the url..
+         this.downloadURL = url;
+        //  console.log(this.downloadURL);
+       });
+     }))
+    .subscribe();
+    
+    this.eventsService.createEvent(this.addEventForm.value, this.downloadURL, this.authenticated_user.uid)
     .then(res => {
       
       this.toastr.success("Event Successfully Added !!!","Notification");

@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core'; 
-//import { HttpModule } from '@angular/http'
-import { RouterModule, Routes } from '@angular/router';
+import { HttpModule } from '@angular/http'
+import { RouterModule } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
-//import {QuillModule} from 'ngx-quill';
-//import { HttpClient, HttpHandler } from '@angular/common/http';
+import {QuillModule} from 'ngx-quill';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -26,7 +26,7 @@ import { NewMentorComponent } from './new-mentor/new-mentor.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentUserComponent } from './student-user/student-user.component';
 
-//import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { MentorComponent } from './mentor/mentor.component';
 import { CareerJobsComponent } from './career-jobs/career-jobs.component';
 import { BlogsComponent } from './blogs/blogs.component';
@@ -39,7 +39,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ToastrModule } from 'ngx-toastr';
 //import { FlexLayoutModule } from '@angular/flex-layout';
 import { HashLocationStrategy } from "@angular/common";
-//import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { Location } from "@angular/common";
 import { LocationStrategy } from "@angular/common";
 import { DialogComponent } from './dialog/dialog.component';
@@ -119,11 +119,11 @@ import { AddEventComponent } from './add-event/add-event.component';
     BrowserAnimationsModule,
     AngularFireStorageModule,
     HttpClientModule,
-   // HttpModule,
+    HttpModule,
     ReactiveFormsModule,
     MaterialModule,
-    //RichTextEditorAllModule,
-   // FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(),
+    RichTextEditorAllModule,
+    FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(),
     FormsModule,
     RouterModule,
     HttpClientModule,
@@ -148,7 +148,7 @@ import { AddEventComponent } from './add-event/add-event.component';
     }),
     SharedModule,
     PostsModule,
-   // QuillModule.forRoot()
+    QuillModule.forRoot()
    // FlexLayoutModule
   ],
   

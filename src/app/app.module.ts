@@ -26,7 +26,7 @@ import { NewMentorComponent } from './new-mentor/new-mentor.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentUserComponent } from './student-user/student-user.component';
 
-import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+//import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { MentorComponent } from './mentor/mentor.component';
 import { CareerJobsComponent } from './career-jobs/career-jobs.component';
 import { BlogsComponent } from './blogs/blogs.component';
@@ -123,7 +123,7 @@ import { AddEventComponent } from './add-event/add-event.component';
     ReactiveFormsModule,
     MaterialModule,
     //RichTextEditorAllModule,
-    FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(),
+   // FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(),
     FormsModule,
     RouterModule,
     HttpClientModule,

@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core'; 
 //import { HttpModule } from '@angular/http'
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
-import {QuillModule} from 'ngx-quill';
+//import {QuillModule} from 'ngx-quill';
 //import { HttpClient, HttpHandler } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -39,13 +39,21 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ToastrModule } from 'ngx-toastr';
 //import { FlexLayoutModule } from '@angular/flex-layout';
 import { HashLocationStrategy } from "@angular/common";
-import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+//import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { Location } from "@angular/common";
 import { LocationStrategy } from "@angular/common";
 import { DialogComponent } from './dialog/dialog.component';
 import { HeaderComponent } from './header/header.component';
 import {WysiwygComponent} from './wysiwyg/wysiwyg.component';
 import { FooterComponent } from './footer/footer.component';
+import { SharedModule } from './shared/shared.module';
+import { PostsModule } from './posts/posts.module';
+//import { DialogComponent } from './dialog/dialog.component';
+const routes : Routes = [
+  {path : '',redirectTo: '/blog', pathMatch: 'full' },
+  {path : '',loadChildren: './posts/posts.module#PostModule' },
+  {path : '',redirectTo: '/blog', pathMatch: 'full' },
+]
 import { HomeComponent } from './home/home.component';
 import { CareerEventsComponent } from './career-events/career-events.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -63,8 +71,8 @@ import { AgmCoreModule } from '@agm/core';
 import { InternshipComponent } from './internship/internship.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { AddmentorComponent } from './addmentor/addmentor.component';
-import { SharedModule } from './shared/shared.module';
-import { PostsModule } from './posts/posts.module';
+import { EventsComponent } from './events/events.component';
+import { AddEventComponent } from './add-event/add-event.component';
 
 @NgModule({
   declarations: [
@@ -99,17 +107,22 @@ import { PostsModule } from './posts/posts.module';
     InternshipComponent,
     AdduserComponent,
 
-    AddmentorComponent
+    AddmentorComponent,
+
+    EventsComponent,
+
+    AddEventComponent
   ],
 
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AngularFireStorageModule,
     HttpClientModule,
-    
+   // HttpModule,
     ReactiveFormsModule,
     MaterialModule,
-    RichTextEditorAllModule,
+    //RichTextEditorAllModule,
     FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(),
     FormsModule,
     RouterModule,
@@ -135,7 +148,7 @@ import { PostsModule } from './posts/posts.module';
     }),
     SharedModule,
     PostsModule,
-    QuillModule.forRoot()
+   // QuillModule.forRoot()
    // FlexLayoutModule
   ],
   

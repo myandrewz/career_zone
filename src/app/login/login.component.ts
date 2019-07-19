@@ -157,11 +157,7 @@ export class LoginComponent implements OnInit{
       console.log(res);
       
       localStorage.setItem('authenticated_user', JSON.stringify(res.user));
-<<<<<<< HEAD
-     // alert('haha')
-      this.router.navigate(['/dashboard/Overview']);
-      
-=======
+
       //
       // this.userService.getUserProfile()
       //   .subscribe(result => {
@@ -172,7 +168,7 @@ export class LoginComponent implements OnInit{
       // console.log(JSON.stringify(this.profile));
       //
       this.router.navigate(['/dashboard/Overview']);
->>>>>>> 4d88233957c069851f9a464e1f76638a21b3b8fa
+
     }, err => {
       this.isLoading = false
       this.toastr.error(err.message, "Error", {enableHtml :  true });

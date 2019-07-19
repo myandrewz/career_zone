@@ -1,0 +1,55 @@
+
+<div class="main-top-intro" (scroll)="onWindowScroll($event);">
+  <div>
+    <h1 class="ui center aligned icon header" style="color: white">
+      <i class="circular users icon  fa fa-calendar"></i>
+      Events
+    </h1>
+  </div>
+  <div class="bg-layer">
+    <div class="terms">
+      <table class="ui compact celled definition table" style=" width:100%" id="studentstable">
+        <thead class="full-width">
+          <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- <tr *ngFor="let student of students ">
+            <td class="collapsing">
+              <div class="ui fitted slider checkbox">
+                <input type="checkbox"> <label></label>
+              </div>
+            </td>
+            <td>{{student.full_name}}</td>
+            <td>{{student.created_at}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.campus}}</td>
+            <td>{{student.course}}</td>
+            <td>{{student.dob}}</td>
+            <td>{{student.date_joined}}</td>
+
+          </tr> -->
+        </tbody>
+
+        <tfoot class="full-width" style="text-align: center">
+          <tr>
+            <th colspan="6">
+              <div  [routerLink] = "['/dashboard/add-event']" class="ui small primary labeled icon button">
+                <i class="user icon"></i> Add Event
+              </div>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+
+    </div>
+  </div>
+</div>

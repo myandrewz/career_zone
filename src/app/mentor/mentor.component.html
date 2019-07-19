@@ -39,6 +39,7 @@
             <th>Date of Birth</th>
             <th>Skills</th>
             <th>Experience (years)</th>
+            <th>Actions</th>
             
           </tr>
         </thead>
@@ -59,6 +60,13 @@
             <td>{{student.dob}}</td>
             <td>{{student.skills}}</td>
             <td>{{student.experience}}</td>
+            <td><div class="dropdown"><button class="dropbtn">
+                <div class="dropdown-content">
+                  <a href="#">View Profile</a>
+                  <a href="#">Approve</a>
+                  <a href="#">Edit</a>
+                  <a href="#">Delete</a>
+                </div><i class="fa fa-ellipsis-v"></i></button></div></td>
           </tr>
         </tbody>
 
@@ -66,9 +74,9 @@
           <tr>
             <th></th>
             <th colspan="4">
-              <button class="ui right floated small primary labeled icon button">
-                <i class="user icon"></i> <a [routerLink] = "['/addmentor']">Add Mentor</a>
-              </button>
+              <div [routerLink] = "['/addmentor']" class="ui right floated small primary labeled icon button">
+                <i class="user icon"></i> Add Mentor
+              </div>
               <div class="ui small  button">
                 Approve
               </div>

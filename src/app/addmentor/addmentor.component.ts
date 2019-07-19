@@ -119,7 +119,7 @@ export class AddmentorComponent implements OnInit {
       
       this.toastr.success("Profile registration Successfull !!!","Notification");
       //console.log(res);
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard/Overview']);
     }, err => {
       this.toastr.error(err.message, "Error", {enableHtml :  true });
     });

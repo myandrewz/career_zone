@@ -25,4 +25,7 @@ export class EventsService {
       downlord_url: downlord_url
     });
   }
+  getEvent() { 
+    return this.db.collection('Event').snapshotChanges();
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventsService } from '../events.service'
+import { EventsService } from '../events.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, Params } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -16,7 +16,7 @@ import { finalize } from 'rxjs/operators';
 export class AddEventComponent implements OnInit {
 
   
-  addEventForm: FormGroup;;
+  addEventForm: FormGroup;
   authenticated_user: any;
 
   urls = new Array<string>();

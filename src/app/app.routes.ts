@@ -33,6 +33,8 @@ import { AdduserComponent } from './adduser/adduser.component';
 import { AddmentorComponent } from './addmentor/addmentor.component';
 import { EventsComponent } from './events/events.component';
 import { AddEventComponent } from './add-event/add-event.component';
+import { PartnersComponent } from './partners/partners.component';
+import { AddPartnerComponent } from './add-partner/add-partner.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -50,6 +52,8 @@ export const rootRouterConfig: Routes = [
     { path: 'imagesvideos', component: ImagesVideosComponent},
     { path: 'events', component: EventsComponent},
     { path: 'add-event', component: AddEventComponent},
+    { path: 'partners', component: PartnersComponent},
+    { path: 'add-partner', component: AddPartnerComponent},
   ]},
   
   { path: 'new-profile', component: NewProfileComponent, canActivate: [AuthGuard]},

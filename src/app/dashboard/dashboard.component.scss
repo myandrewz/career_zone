@@ -17,13 +17,15 @@ a {
 
 
 .sidebar-menu {
-     position: fixed;
+    position: fixed;
+    height:auto;
+    // overflow-x: hidden;
     float: left;
     width: 230px;
     top: 0;
     left: 0;
     bottom: 0;
-    background-color: #052963;
+    background-color: #03031f;
     color: #aaabae;
     box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
 	-o-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
@@ -41,8 +43,8 @@ a {
 #menu li {
   position: relative;
   margin: 0;
-      border-bottom: 1px ridge rgba(6, 26, 68, 0.96);
-    padding: 0;
+  border-bottom: 1px ridge rgba(6, 26, 68, 0.96);
+  padding: 0;
   padding: 0;
 }
 
@@ -60,18 +62,18 @@ a {
     color: #fff;
     white-space: nowrap;
     z-index: 2;
-    background-color: #021F4E;
+    background-color:  #03031f;
     font-size:0.9em;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'montserrat';
 	border:none;
 	    border-left: 4px solid #021F4E;
 }
 
 #menu li a:hover {
   color: #ffffff;
-  background-color:#002561;
+  background-color:#3c424b;
   transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
-   border-left: 4px solid #00C6D7;
+   border-left: 4px solid #768083;
 }
 
 #menu li.active > a {
@@ -79,7 +81,7 @@ a {
   color: #ffffff;
 }
 
-#menu ul li {background-color:#00C6D7; }
+#menu ul li {background-color:rgba(69, 74, 84, 0.7); }
 
 #menu ul {
   list-style-type: none;
@@ -104,7 +106,7 @@ a {
   opacity: 1;
 }
 li#menu-mensagens,li#menu-arquivos {
-background-color:#00C6D7!important;
+background-color:rgba(69, 74, 84, 0.7)!important;
 }
 #menu li li ul {
   right: 100%;
@@ -151,17 +153,16 @@ li#menu-academico{
 span.name-caret {
     margin: 10px 0px 3px 0px;
     font-size: 1.4em;
-    color: #00C6D7;
+    color: rgba(69, 74, 84, 0.7);
     display: block;
     text-align: center;
     font-weight: 400;
 }
 .down  a img {
-         border-radius: 50%;
-    -o-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border: 3px solid #002561;
+    border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
 }
 
 .down{
@@ -190,7 +191,7 @@ span.name-caret {
 }
 .down i {
     font-size: 1.2em;
-	color:#00C6D7;
+	color: #879498;
 	vertical-align: middle;
 }
 i.lnr.lnr-user {
@@ -215,10 +216,10 @@ i.lnr.lnr-power-switch {
     margin: 21em 0 2em 0;
 }
 footer {
-    background:rgb(10, 191, 207);
+    background: #6d7679;
     padding: 12px;
     width: 100%;
-    border-top: 1px solid #00C6D7;
+    border-top: 1px solid  #798285;
     text-align:center;
     position: fixed;
     bottom: 0;
@@ -236,7 +237,7 @@ footer  p {
 	    margin-top: 1em;
 }
 .footer p a{
-	color:#00C6D7;
+	color: #768083;
 }
 
 footer  p a{

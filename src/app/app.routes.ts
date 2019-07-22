@@ -15,6 +15,12 @@ import { CareerJobsComponent } from './career-jobs/career-jobs.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { ImagesVideosComponent } from './images-videos/images-videos.component';
 import { OverviewComponent } from './overview/overview.component';
+import { SharedModule } from './shared/shared.module';
+//import { NavbarComponent } from './navbar/navbar.component';
+import { PostsDashboardComponent } from './posts/posts-dashboard/posts-dashboard.component';
+import {WysiwygComponent} from './wysiwyg/wysiwyg.component';
+import { PostsDetailComponent } from './posts/posts-detail/posts-detail.component';
+import  { PostsListComponent } from './posts/posts-list/posts-list.component'; 
 import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
@@ -25,7 +31,10 @@ import { CareerEventsComponent } from './career-events/career-events.component';
 import { HomeComponent } from './home/home.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { AddmentorComponent } from './addmentor/addmentor.component';
-
+import { EventsComponent } from './events/events.component';
+import { AddEventComponent } from './add-event/add-event.component';
+import { PartnersComponent } from './partners/partners.component';
+import { AddPartnerComponent } from './add-partner/add-partner.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -41,11 +50,19 @@ export const rootRouterConfig: Routes = [
     { path: 'careerjobs', component: CareerJobsComponent},
     { path: 'Blogs', component: BlogsComponent},
     { path: 'imagesvideos', component: ImagesVideosComponent},
+    { path: 'events', component: EventsComponent},
+    { path: 'add-event', component: AddEventComponent},
+    { path: 'partners', component: PartnersComponent},
+    { path: 'add-partner', component: AddPartnerComponent},
   ]},
   
   { path: 'new-profile', component: NewProfileComponent, canActivate: [AuthGuard]},
   { path: 'new-student', component: NewStudentComponent},
   { path: 'new-mentor', component: NewMentorComponent},
+  {path: 'posts-dashboard',component: PostsDashboardComponent },
+  {path: 'posts-detail',component:  PostsDetailComponent },
+  {path: 'posts-list',component:  PostsListComponent },
+  {path: 'wysiwyg',component:  WysiwygComponent },
   { path: 'blogs-user', component: BlogsUserComponent},
   { path: 'contact-us', component: ContactUsComponent},
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent},
@@ -55,7 +72,6 @@ export const rootRouterConfig: Routes = [
   { path: 'career-events', component: CareerEventsComponent},
   { path: 'adduser', component: AdduserComponent},
   { path: 'addmentor', component: AddmentorComponent},
-
 
 
 ];

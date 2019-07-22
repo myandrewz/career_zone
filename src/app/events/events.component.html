@@ -19,31 +19,55 @@
             <th>Action</th>
           </tr>
         </thead>
-
+        
         <tbody>
-          <!-- <tr *ngFor="let student of students ">
-            <td class="collapsing">
-              <div class="ui fitted slider checkbox">
-                <input type="checkbox"> <label></label>
-              </div>
+          <tr *ngFor="let event of events">
+            <td>{{ event.payload.doc.data().title }}</td>
+            <td>{{ event.payload.doc.data().date }}</td>
+            <td>{{ event.payload.doc.data().location }}</td>
+            <td>{{ event.payload.doc.data().category }}</td>
+            <td>{{ event.payload.doc.data().description }}</td>
+            <!-- <td>{{ event.payload.doc.id }}</td> -->
+            
+            <td>
+              <!-- <div class="dropdown">
+                <button class="dropbtn">
+                  <div class="dropdown-content">
+                    <a href="#">View Profile</a>
+                    <a href="#">Approve</a>
+                    <a href="#">Edit</a>
+                    <a (click)="deleteStudent(student.id)">Delete</a>
+                  </div><i class="fa fa-ellipsis-v"></i>
+                </button>
+              </div> -->
+            
+            <td>
+              
+              <div class="ui small primary icon button emma">
+                <i class="fa fa-ellipsis-v" style="margin-right: 10px"></i> More
+              </div><div class="dropdown">
+                  <button class="dropbtn">
+                    <div class="dropdown-content">
+                      <a (click)="viewEvent(event.payload.doc.id)">View</a>
+                      <a (click)="editEvent(event.payload.doc.id)">Edit</a>
+                      <a (click)="deleteEvent(event.payload.doc.id)">Delete</a>
+                    </div>
+                  </button>
+                </div>
             </td>
-            <td>{{student.full_name}}</td>
-            <td>{{student.created_at}}</td>
-            <td>{{student.email}}</td>
-            <td>{{student.gender}}</td>
-            <td>{{student.campus}}</td>
-            <td>{{student.course}}</td>
-            <td>{{student.dob}}</td>
-            <td>{{student.date_joined}}</td>
-
-          </tr> -->
+            <!-- <td><span 
+                  *ngFor="let coffee of order.payload.doc.data().coffeeOrder">
+                {{ coffee }}
+                </span>
+            </td> -->
+          </tr>
         </tbody>
 
         <tfoot class="full-width" style="text-align: center">
           <tr>
             <th colspan="6">
               <div  [routerLink] = "['/dashboard/add-event']" class="ui small primary labeled icon button">
-                <i class="user icon"></i> Add Event
+                <i class="icon fa fa-calendar"></i> Add Event
               </div>
             </th>
           </tr>

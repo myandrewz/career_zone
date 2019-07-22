@@ -74,6 +74,8 @@ import { AddmentorComponent } from './addmentor/addmentor.component';
 import { EventsComponent } from './events/events.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import { AuditTrailComponent } from './audit-trail/audit-trail.component';
+import { PartnersComponent } from './partners/partners.component';
+import { AddPartnerComponent } from './add-partner/add-partner.component';
 
 @NgModule({
   declarations: [
@@ -114,7 +116,10 @@ import { AuditTrailComponent } from './audit-trail/audit-trail.component';
 
     AddEventComponent,
 
-    AuditTrailComponent
+    AuditTrailComponent,
+    PartnersComponent,
+
+    AddPartnerComponent
   ],
 
   imports: [

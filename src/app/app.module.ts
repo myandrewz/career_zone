@@ -73,6 +73,7 @@ import { AdduserComponent } from './adduser/adduser.component';
 import { AddmentorComponent } from './addmentor/addmentor.component';
 import { EventsComponent } from './events/events.component';
 import { AddEventComponent } from './add-event/add-event.component';
+import { AuditTrailComponent } from './audit-trail/audit-trail.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,9 @@ import { AddEventComponent } from './add-event/add-event.component';
 
     EventsComponent,
 
-    AddEventComponent
+    AddEventComponent,
+
+    AuditTrailComponent
   ],
 
   imports: [

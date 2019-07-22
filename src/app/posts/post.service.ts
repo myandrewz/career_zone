@@ -33,7 +33,7 @@ export class PostService {
 
 
     create(data : Post){
-      this.postsCollection.add(data)
+      return this.postsCollection.add(data);
     
     }
     getPost(id : string){

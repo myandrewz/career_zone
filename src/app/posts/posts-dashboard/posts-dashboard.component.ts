@@ -6,6 +6,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map} from 'rxjs/operators';
+import { AuditTrailService } from 'src/app/services/audit-trail/audit-trail.service';
 
 
 @Component({
@@ -37,7 +38,8 @@ ngOnInit() {
   uploadPercent : Observable<number>
   downloadURL : Observable<string>
 
-  constructor(private auth: AuthService, public db:AngularFirestore, private postService: PostService,  private storage: AngularFireStorage) { }
+  constructor(private auth: AuthService, public db:AngularFirestore, private postService: PostService, 
+     private storage: AngularFireStorage, public _auditTrailService:AuditTrailService) { }
 
 
 
@@ -51,7 +53,31 @@ ngOnInit() {
       title : this.title
     };
 
-    this.postService.create(data)
+    this.postService.create(data).then(
+      res =>{
+        console.log(res)
+
+        const _audit_trail = {
+          'action' : ' has created a new blog pots ',
+          'object': res.id,
+          'created_at': new Date(),
+          'user':{
+            'id': '4545454545454545454',
+            'email':'daanyu@gmail.com'
+          }
+        } 
+
+
+
+        console.log(_audit_trail)
+
+        this._auditTrailService.createAuditTrailLog(_audit_trail)
+        //this._createAuditTrailLog();
+      },
+      err=>{
+        console.log(err)
+      }
+    )
     this.title = ''
     this.content = ''
     this.buttonText = 'Post Created!'
@@ -96,5 +122,6 @@ ngOnInit() {
   }
 
   
+ 
 
 }

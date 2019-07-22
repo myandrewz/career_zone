@@ -33,6 +33,7 @@ import { AdduserComponent } from './adduser/adduser.component';
 import { AddmentorComponent } from './addmentor/addmentor.component';
 import { EventsComponent } from './events/events.component';
 import { AddEventComponent } from './add-event/add-event.component';
+import { AuditTrailComponent } from './audit-trail/audit-trail.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -68,6 +69,7 @@ export const rootRouterConfig: Routes = [
   { path: 'career-events', component: CareerEventsComponent},
   { path: 'adduser', component: AdduserComponent},
   { path: 'addmentor', component: AddmentorComponent},
+  { path: 'audit-trail', component: AuditTrailComponent},
 
 
 ];

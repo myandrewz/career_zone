@@ -4,31 +4,29 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class EventsService {
+export class PartnersService {
 
   constructor(
     public db: AngularFirestore,
     public afAuth: AngularFireAuth
   ) { }
   
-  createEvent(value, downlord_url, authenticated_user_uid){
-    return this.db.collection('Event').add({
+  createPartner(value, downlord_url, authenticated_user_uid){
+    return this.db.collection('Partner').add({
       created_by:authenticated_user_uid,
-      title: value.title,
-      date: value.date,
-      location: value.location,
-      category: value.category,
-      description: value.description,
+      name: value.name,
+      link: value.link,
       downlord_url: downlord_url
     });
   }
-  getEvent() { 
-    return this.db.collection('Event').snapshotChanges();
+  getPartner() { 
+    return this.db.collection('Partner').snapshotChanges();
   }
-  deleteEvent(doc_ID) {
-     return this.db.collection("Event").doc(doc_ID).delete();
+  deletePartner(doc_ID) {
+     return this.db.collection("Partner").doc(doc_ID).delete();
   }
 }

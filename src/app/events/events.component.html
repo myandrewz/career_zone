@@ -40,17 +40,18 @@
                   </div><i class="fa fa-ellipsis-v"></i>
                 </button>
               </div> -->
+            
+            <td>
               
-              <div (click)="addEvent()" class="ui small primary icon button emma">
+              <div class="ui small primary icon button emma">
                 <i class="fa fa-ellipsis-v" style="margin-right: 10px"></i> More
               </div><div class="dropdown">
                   <button class="dropbtn">
                     <div class="dropdown-content">
-                      <a href="#">View Profile</a>
-                      <a href="#">Approve</a>
-                      <a href="#">Edit</a>
-                      <a (click)="deleteStudent(student.id)">Delete</a>
-                    </div><i class="fa fa-ellipsis-v"></i>
+                      <a (click)="viewEvent(event.payload.doc.id)">View</a>
+                      <a (click)="editEvent(event.payload.doc.id)">Edit</a>
+                      <a (click)="deleteEvent(event.payload.doc.id)">Delete</a>
+                    </div>
                   </button>
                 </div>
             </td>
@@ -66,7 +67,7 @@
           <tr>
             <th colspan="6">
               <div  [routerLink] = "['/dashboard/add-event']" class="ui small primary labeled icon button">
-                <i class="user icon"></i> Add Event
+                <i class="icon fa fa-calendar"></i> Add Event
               </div>
             </th>
           </tr>

@@ -6,7 +6,7 @@
   <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-         <button [routerLink] = "['/wysiwyg']"> Create a Post </button>
+         <button [routerLink] = "['/wysiwyg']"> Create a Blog </button>
         </mat-panel-title>
 
         </mat-expansion-panel-header>
@@ -52,7 +52,7 @@
 <button [routerLink] = "['/posts-list']" >List of Posts</button>
 
 <!-- {{blogs|json}} -->
-<table class="ui celled table">
+<table class="ui celled table" style="width:100%"> 
   <thead>
     <tr>
       <th>Author</th>
@@ -60,6 +60,7 @@
       <th>Title</th>
       <th>Publish Date</th>
       <th>View Post</th>
+      <th>Trash Post</th>
     </tr>
   </thead>
   <tbody>
@@ -69,8 +70,11 @@
       <td class="negative">{{blog.title}}</td>
       <td class="negative">{{blog.published}}</td>
       <td>
-          <button [routerLink] = "['/posts-detail']" >See Post</button>
+          <button (click)="getThisBlog(blog.id)"  >See Post</button>
     </td>
+    <td>
+      <button (click)="getThisBlog(blog.id)"  >Delete Post</button>
+</td>
     
     </tr>
     

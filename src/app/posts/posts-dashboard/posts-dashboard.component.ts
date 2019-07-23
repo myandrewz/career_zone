@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/core/auth.service';
 import { PostService } from '../post.service';
 import { Observable } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/storage';
+import {Router,Params} from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map} from 'rxjs/operators';
@@ -31,13 +32,19 @@ ngOnInit() {
   content: any;
   title: any;
   blog_data:any;
-  blogs:any
+  blogs:any;
+  doc_ID: any;
 
   buttonText : string = "Create Post";
   uploadPercent : Observable<number>
   downloadURL : Observable<string>
 
-  constructor(private auth: AuthService, public db:AngularFirestore, private postService: PostService,  private storage: AngularFireStorage) { }
+  constructor(
+    private auth: AuthService, 
+    public db:AngularFirestore,
+     private postService: PostService, 
+      private storage: AngularFireStorage ,
+      private router : Router) { }
 
 
 
@@ -54,7 +61,7 @@ ngOnInit() {
     this.postService.create(data)
     this.title = ''
     this.content = ''
-    this.buttonText = 'Post Created!'
+    this.buttonText = 'Blog Created!'
     setTimeout(( )=> (this.buttonText = "Create Post"), 3000);
   }
    
@@ -72,6 +79,16 @@ ngOnInit() {
      this.downloadURL.subscribe(url => this.image = this.image = url)
 
     }
+
+  }
+
+  getThisBlog(doc_ID){
+    console.log(doc_ID);
+
+    localStorage.setItem('doc_ID', doc_ID);
+    this.router.navigate(['/posts-detail'])
+
+
 
   }
 

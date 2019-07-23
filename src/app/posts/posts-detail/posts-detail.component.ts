@@ -18,18 +18,24 @@ export class PostsDetailComponent implements OnInit {
   //post: Post;
 
   editing : boolean = false
- 
-
-  ngOnInit() {
-    this.getPost()
-    console.log(this)
-  }
-
   image: string = null;
   content: any;
   title: any;
   post_data:any;
-  post:any
+  post:any;
+  doc_ID: any;
+
+  ngOnInit() {
+    //   console.log(this)
+    var document = localStorage.getItem('doc_ID')
+    if(document){
+      this.doc_ID = document
+      console.log(this.doc_ID)
+    }
+    this.getPost()
+  }
+
+  
 
   constructor(
     private route: ActivatedRoute,
@@ -42,23 +48,38 @@ export class PostsDetailComponent implements OnInit {
 
   
   getPost(){
-      this.post_data = this.db.collection('posts').snapshotChanges().pipe(map(changes => {
+    //   this.post_data = this.db.collection('posts').doc(this.doc_ID).snapshotChanges().pipe(map(changes => {
      
-    return changes.map(a => {
-    const data: any = a.payload.doc.data();
-    data.id = a.payload.doc.id;
-    return data;
-     });
-     })
-     );
+    // return changes.map(a => {
+    // const data: any = a.payload.doc.data();
+    // data.id = a.payload.doc.id;
+    // return data;
+    //  });
+    //  })
+    //  );
      
-    this.post_data.subscribe(
-     res => {
-    console.log(res);
-    this.post = res;
-    // this.post_snapshot = res;
-     }
-    );
+    // this.post_data.subscribe(
+    //  res => {
+    // console.log(res);
+    // this.post = res;
+    // // this.post_snapshot = res;
+    //  }
+    // );   
+    this.db.collection('posts').doc(this.doc_ID).ref.get().then(function (doc) {
+      if (doc.exists) {
+        console.log(doc.data());
+        console.log(doc.data().author);
+        this.post_data = doc.data();
+        console.log(this.post_data)
+        return doc.data()
+      } else {
+        console.log("There is no document!");
+      }
+    })
+    .catch(function (error) {
+      console.log("There was an error getting your document:", error);
+    });
+    console.log(this.post_data)
   }
 
   updatePost(){
@@ -100,5 +121,4 @@ export class PostsDetailComponent implements OnInit {
   //    }
   //   );
   // }
-
 }

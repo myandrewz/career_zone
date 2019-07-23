@@ -1,0 +1,56 @@
+
+<div class="main-top-intro" (scroll)="onWindowScroll($event);">
+  <div>
+    <h1 class="ui center aligned icon header" style="color: white">
+      <i class="circular icon  fa-handshake-o"></i>
+      Partners
+    </h1>
+  </div>
+  <div class="bg-layer">
+    <div class="terms">
+      <table class="ui compact celled definition table" style=" width:100%" id="studentstable">
+        <thead class="full-width">
+          <tr>
+            <th>Name</th>
+            <th>Link</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr *ngFor="let partner of partners">
+            <td>{{ partner.payload.doc.data().name }}</td>
+            <td>{{ partner.payload.doc.data().link }}</td>
+            <!-- <td>{{ partner.payload.doc.id }}</td> -->
+            
+            <td>
+              
+              <div class="ui small primary icon button emma">
+                <i class="fa fa-ellipsis-v" style="margin-right: 10px"></i> More
+              </div><div class="dropdown">
+                  <button class="dropbtn">
+                    <div class="dropdown-content">
+                      <a (click)="viewPartner(partner.payload.doc.id)">View</a>
+                      <a (click)="editPartner(partner.payload.doc.id)">Edit</a>
+                      <a (click)="deletePartner(partner.payload.doc.id)">Delete</a>
+                    </div>
+                  </button>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+
+        <tfoot class="full-width" style="text-align: center">
+          <tr>
+            <th colspan="6">
+              <div  [routerLink] = "['/dashboard/add-partner']" class="ui small primary labeled icon button">
+                <i class="icon fa-handshake-o"></i> Add Partner
+              </div>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+
+    </div>
+  </div>
+</div>

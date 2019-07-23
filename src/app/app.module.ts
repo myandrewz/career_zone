@@ -73,6 +73,8 @@ import { AdduserComponent } from './adduser/adduser.component';
 import { AddmentorComponent } from './addmentor/addmentor.component';
 import { EventsComponent } from './events/events.component';
 import { AddEventComponent } from './add-event/add-event.component';
+import { PartnersComponent } from './partners/partners.component';
+import { AddPartnerComponent } from './add-partner/add-partner.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +113,11 @@ import { AddEventComponent } from './add-event/add-event.component';
 
     EventsComponent,
 
-    AddEventComponent
+    AddEventComponent,
+
+    PartnersComponent,
+
+    AddPartnerComponent
   ],
 
   imports: [
@@ -138,7 +144,9 @@ import { AddEventComponent } from './add-event/add-event.component';
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireAuthModule,AngularFireDatabaseModule, // imports firebase/auth, only needed for auth features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    AngularFireStorageModule,
+    AngularFireDatabaseModule, // imports firebase/auth, only needed for auth features
     SuiModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({

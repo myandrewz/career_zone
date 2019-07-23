@@ -25,7 +25,7 @@ export class UserComponent implements OnInit{
   thirdFormGroup: FormGroup;
   forthFormGroup: FormGroup;
   authenticated_user: any;
-
+  
   urls = new Array<string>();
   image:any;
   enableStudent = true;
@@ -130,7 +130,7 @@ export class UserComponent implements OnInit{
       
       this.toastr.success("Profile registration Successfull !!!","Notification");
       //console.log(res);
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard/Overview']);
     }, err => {
       this.toastr.error(err.message, "Error", {enableHtml :  true });
     });

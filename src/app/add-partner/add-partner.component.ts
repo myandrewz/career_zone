@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventsService } from '../events.service';
+import { PartnersService } from '../partners.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, Params } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -9,14 +9,14 @@ import { map } from 'rxjs/operators/map';
 import { finalize } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-add-event',
-  templateUrl: './add-event.component.html',
-  styleUrls: ['./add-event.component.scss']
+  selector: 'app-add-partner',
+  templateUrl: './add-partner.component.html',
+  styleUrls: ['./add-partner.component.scss']
 })
-export class AddEventComponent implements OnInit {
+export class AddPartnerComponent implements OnInit {
 
   
-  addEventForm: FormGroup;
+  addPartnerForm: FormGroup;
   authenticated_user: any;
 
   urls = new Array<string>();
@@ -32,7 +32,7 @@ export class AddEventComponent implements OnInit {
     
     private fb: FormBuilder,
     private router: Router,
-    public eventsService:EventsService,
+    public partnersService:PartnersService,
     private toastr: ToastrService,
     private afStorage: AngularFireStorage
   ) {
@@ -48,13 +48,9 @@ export class AddEventComponent implements OnInit {
   }
 
   createForm() {
-    this.addEventForm = this.fb.group({
-      //general
-      title: [name, Validators.required ],
-      date: [name, Validators.required ],
-      location: [name, Validators.required ],
-      category: [name, Validators.required ],
-      description: [name, Validators.required ],
+    this.addPartnerForm = this.fb.group({
+      name: [name, Validators.required ],
+      link: [name, Validators.required ],
       image: [name, Validators.required]
     })
   }
@@ -75,7 +71,7 @@ export class AddEventComponent implements OnInit {
     }
   }
 
-  addEvent(){
+  addPartner(){
     
     const id = Math.random().toString(36).substring(2);
     this.ref = this.afStorage.ref(id);
@@ -94,16 +90,17 @@ export class AddEventComponent implements OnInit {
      }))
     .subscribe();
     
-    this.eventsService.createEvent(this.addEventForm.value, this.downloadURL, this.authenticated_user.uid)
+    this.partnersService.createPartner(this.addPartnerForm.value, this.downloadURL, this.authenticated_user.uid)
     .then(res => {
       
-      this.toastr.success("Event Successfully Added !!!","Notification");
+      this.toastr.success("Partner Successfully Added !!!","Notification");
       //console.log(res);
-      this.router.navigate(['/dashboard/events']);
+      this.router.navigate(['/dashboard/partners']);
     }, err => {
       this.toastr.error(err.message, "Error", {enableHtml :  true });
     });
     
   }
+
 
 }

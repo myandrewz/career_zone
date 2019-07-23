@@ -28,13 +28,17 @@ import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { InternshipComponent } from './internship/internship.component';
 import { CareerEventsComponent } from './career-events/career-events.component';
+import { HomeComponent } from './home/home.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { AddmentorComponent } from './addmentor/addmentor.component';
 import { EventsComponent } from './events/events.component';
 import { AddEventComponent } from './add-event/add-event.component';
+import { PartnersComponent } from './partners/partners.component';
+import { AddPartnerComponent } from './add-partner/add-partner.component';
 
 export const rootRouterConfig: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'user', component: UserComponent},
@@ -48,6 +52,8 @@ export const rootRouterConfig: Routes = [
     { path: 'imagesvideos', component: ImagesVideosComponent},
     { path: 'events', component: EventsComponent},
     { path: 'add-event', component: AddEventComponent},
+    { path: 'partners', component: PartnersComponent},
+    { path: 'add-partner', component: AddPartnerComponent},
   ]},
   
   { path: 'new-profile', component: NewProfileComponent, canActivate: [AuthGuard]},

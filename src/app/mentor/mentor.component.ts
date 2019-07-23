@@ -33,7 +33,7 @@ export class MentorComponent implements OnInit {
 
 
 getStudents() {
-  this.students_data = this.db.collection('User').snapshotChanges().pipe(map(changes => {
+  this.students_data = this.db.collection('User', ref => ref.where('role', '==', 'mentor')).snapshotChanges().pipe(map(changes => {
   
   return changes.map(a => {
   const data: any = a.payload.doc.data();

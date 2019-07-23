@@ -31,4 +31,17 @@ export class EventsService {
   deleteEvent(doc_ID) {
      return this.db.collection("Event").doc(doc_ID).delete();
   }
+  
+  getCategories() { 
+    return this.db.collection('Category').snapshotChanges();
+  }
+  createCategory(value, authenticated_user_uid){
+    return this.db.collection('Category').add({
+      created_by:authenticated_user_uid,
+      category: value.category
+    });
+  }
+  deleteCategory(doc_ID) {
+    return this.db.collection("Category").doc(doc_ID).delete();
+  }
 }

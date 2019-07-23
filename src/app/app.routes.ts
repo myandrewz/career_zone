@@ -35,6 +35,8 @@ import { EventsComponent } from './events/events.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import { PartnersComponent } from './partners/partners.component';
 import { AddPartnerComponent } from './add-partner/add-partner.component';
+import { SkillsComponent } from './skills/skills.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -54,6 +56,8 @@ export const rootRouterConfig: Routes = [
     { path: 'add-event', component: AddEventComponent},
     { path: 'partners', component: PartnersComponent},
     { path: 'add-partner', component: AddPartnerComponent},
+    { path: 'skills', component: SkillsComponent},
+    { path: 'categories', component: CategoriesComponent},
   ]},
   
   { path: 'new-profile', component: NewProfileComponent, canActivate: [AuthGuard]},

@@ -75,6 +75,8 @@ import { EventsComponent } from './events/events.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import { PartnersComponent } from './partners/partners.component';
 import { AddPartnerComponent } from './add-partner/add-partner.component';
+import { SkillsComponent } from './skills/skills.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +119,11 @@ import { AddPartnerComponent } from './add-partner/add-partner.component';
 
     PartnersComponent,
 
-    AddPartnerComponent
+    AddPartnerComponent,
+
+    SkillsComponent,
+
+    CategoriesComponent
   ],
 
   imports: [

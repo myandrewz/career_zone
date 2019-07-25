@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../core/user.service';
+import { UserService } from '../../core/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, Params } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -13,7 +13,7 @@ export class SkillsComponent implements OnInit {
 
   addSkillForm: FormGroup;
   authenticated_user: any;
-  
+
   skills;
 
   constructor(
@@ -36,7 +36,7 @@ export class SkillsComponent implements OnInit {
 
   createForm() {
     this.addSkillForm = this.fb.group({
-      
+
       skill: [name, Validators.required ],
     })
   }
@@ -48,7 +48,7 @@ export class SkillsComponent implements OnInit {
 
   addSkill(){
     // console.log(this.addSkillForm.value)
-    
+
     this.userService.createSkill(this.addSkillForm.value, this.authenticated_user.uid)
     .then(res => {
       this.toastr.success("Skill added Successfull !!!","Notification");

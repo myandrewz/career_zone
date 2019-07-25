@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import {
   EventsService
-} from '../../events.service';
+} from '../../services/events/events.service';
 import {
   Router,
   Params

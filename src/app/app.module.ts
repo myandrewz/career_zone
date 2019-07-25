@@ -23,7 +23,7 @@ import { StudentUserComponent } from './dashboard/students/student-user/student-
 import { MentorComponent } from './dashboard/mentor/mentor.component';
 import { CareerJobsComponent } from './career-jobs/career-jobs.component';
 import { BlogsComponent } from './dashboard/blogs/blogs.component';
-import { ReportsComponent } from './reports/reports.component';
+import { ReportsComponent } from './dashboard/reports/reports.component';
 import { OverviewComponent } from './dashboard/overview/overview.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule} from './material';
@@ -40,7 +40,6 @@ import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { SearchfilterPipe } from './pipes/searchfilter.pipe';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { NewsletterComponent } from './newsletter/newsletter.component';
 import {MatInputModule, MatExpansionModule} from '@angular/material';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -52,7 +51,7 @@ import { EventsComponent } from './dashboard/events/events.component';
 import { AddEventComponent } from './dashboard/events/add-event/add-event.component';
 import { PartnersComponent } from './dashboard/partners/partners.component';
 import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
-import { SkillsComponent } from './skills/skills.component';
+import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
 
 @NgModule({
@@ -68,7 +67,6 @@ import { CategoriesComponent } from './dashboard/categories/categories.component
     BlogsComponent,
     ReportsComponent,
     OverviewComponent,
-
     HeaderComponent,
     FooterComponent,
     HomeComponent,
@@ -78,7 +76,6 @@ import { CategoriesComponent } from './dashboard/categories/categories.component
     MeetMentorComponent,
     TermsAndConditionsComponent,
     SearchfilterPipe,
-    NewsletterComponent,
     InternshipComponent,
     AdduserComponent,
     AddmentorComponent,

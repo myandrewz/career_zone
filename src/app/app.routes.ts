@@ -17,7 +17,6 @@ import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
-import { NewsletterComponent } from './newsletter/newsletter.component';
 import { InternshipComponent } from './internship/internship.component';
 import { CareerEventsComponent } from './career-events/career-events.component';
 import { HomeComponent } from './home/home.component';
@@ -27,7 +26,7 @@ import { EventsComponent } from './dashboard/events/events.component';
 import { AddEventComponent } from './dashboard/events/add-event/add-event.component';
 import { PartnersComponent } from './dashboard/partners/partners.component';
 import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
-import { SkillsComponent } from './skills/skills.component';
+import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
 
 export const rootRouterConfig: Routes = [
@@ -51,15 +50,10 @@ export const rootRouterConfig: Routes = [
     { path: 'categories', component: CategoriesComponent},
   ]},
 
-  // {path: 'posts-dashboard',component: PostsDashboardComponent },
-  // {path: 'posts-detail',component:  PostsDetailComponent },
-  // {path: 'posts-list',component:  PostsListComponent },
-
   { path: 'blogs-user', component: BlogsUserComponent},
   { path: 'contact-us', component: ContactUsComponent},
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent},
   { path: 'meet-mentor', component: MeetMentorComponent},
-  { path: 'newsletter', component: NewsletterComponent},
   { path: 'internship', component: InternshipComponent},
   { path: 'career-events', component: CareerEventsComponent},
   { path: 'adduser', component: AdduserComponent},

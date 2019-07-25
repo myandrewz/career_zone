@@ -196,7 +196,7 @@ span#logo h1 {
 }
 .srch button{
 cursor: pointer;
-    background: url('../../assets/images/search.png') no-repeat 26px 19px rgba(3, 182, 197, 0.68);
+    // background: url('assets/images/search.png') no-repeat 26px 19px rgba(3, 182, 197, 0.68);
     width: 80px;
     height:66px;
     display: block;
@@ -276,7 +276,7 @@ cursor: pointer;
 
 .progress .bar {
 		z-index: 2;
-		height:15px; 
+		height:15px;
 		font-size: 12px;
 		color: white;
 		text-align: center;
@@ -400,7 +400,7 @@ text.highcharts-title {
   display: table-cell;
   vertical-align: middle;
    padding: 0;
-	
+
 }
 .dev-col.mid {
     padding: 0 18px;
@@ -658,7 +658,7 @@ h4.timeline-title a:hover {
 
 .pie {
     margin: 2em 0;
-}	
+}
 tspan {
     fill: #414142!important;
     font-size: 13px;
@@ -692,7 +692,7 @@ h2.inner,h3.inner {
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
     -moz-box-shadow: 0 1px 1px rgba(0,0,0,.05);
     border: 1px solid #E7E7E8;
-}	
+}
 .grid-charts {
     margin: 1.5em 0;
 }
@@ -869,7 +869,7 @@ button.close.second {
     border: 1px solid #E7E7E8;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    
+
     margin: 0em 0em 2em;
 }
 
@@ -945,14 +945,14 @@ ul#menu-comunicacao-sub {
 
 .header-bottom1 {
     float: left;
-    width: 25%;  
+    width: 25%;
 }
 .header-head{
 	padding: 2em;
 	text-align:center;
 }
 .header-bottom2 {
-  background: #f1f1f1;  
+  background: #f1f1f1;
 }
 .header-bottom1:nth-child(3) {
     border-right: none;

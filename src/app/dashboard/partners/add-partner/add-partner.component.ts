@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PartnersService } from '../../../partners.service';
+import { PartnersService } from '../../../services/partners/partners.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, Params } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';

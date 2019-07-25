@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventsService } from '../../../events.service';
+import { EventsService } from '../../../services/events/events.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, Params } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';

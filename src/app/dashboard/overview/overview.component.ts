@@ -3,7 +3,7 @@ import { RouterModule, Routes, Router} from '@angular/router';
 import {StudentUserComponent} from '../student-user/student-user.component';
 import { AngularFirestore} from "angularfire2/firestore";
 import { map} from 'rxjs/operators';
-import {FirebaseService} from '../services/firebase.service';
+import {FirebaseService} from '../../services/firebase.service';
 
 @Component({
   selector: 'app-overview',
@@ -28,7 +28,7 @@ export class OverviewComponent implements OnInit {
 
   getStudents() {
     this.students_data = this.db.collection('User').snapshotChanges().pipe(map(changes => {
-    
+
     return changes.map(a => {
     const data: any = a.payload.doc.data();
     data.id = a.payload.doc.id;
@@ -36,14 +36,14 @@ export class OverviewComponent implements OnInit {
     });
     })
     );
-    
+
     this.students_data.subscribe(
     res => {
     console.log(res);
     this.students = res;
     //this.blogs_snapshot = res;
     });
-  
+
     }
 
 }

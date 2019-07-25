@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map} from 'rxjs/operators'
-import {FirebaseService} from '../services/firebase.service';
+import {FirebaseService} from '../../services/firebase.service';
 import {Router} from '@angular/router';
 import { AngularFirestore} from "angularfire2/firestore";
 
@@ -34,7 +34,7 @@ export class MentorComponent implements OnInit {
 
 getStudents() {
   this.students_data = this.db.collection('User', ref => ref.where('role', '==', 'mentor')).snapshotChanges().pipe(map(changes => {
-  
+
   return changes.map(a => {
   const data: any = a.payload.doc.data();
   data.id = a.payload.doc.id;
@@ -42,7 +42,7 @@ getStudents() {
   });
   })
   );
-  
+
   this.students_data.subscribe(
   res => {
   console.log(res);
@@ -58,7 +58,7 @@ getStudents() {
   res => {
   this.response = res;
   console.log(this.response);
-    
+
   this.ideas = res;
   this.is_loading = false;
     }
@@ -69,4 +69,4 @@ getStudents() {
 
 
 
-  
+

@@ -55,10 +55,10 @@ import { AgmCoreModule } from '@agm/core';
 import { InternshipComponent } from './internship/internship.component';
 import { AdduserComponent } from './adduser/adduser.component';
 import { AddmentorComponent } from './addmentor/addmentor.component';
-import { EventsComponent } from './events/events.component';
-import { AddEventComponent } from './add-event/add-event.component';
-import { PartnersComponent } from './partners/partners.component';
-import { AddPartnerComponent } from './add-partner/add-partner.component';
+import { EventsComponent } from './dashboard/events/events.component';
+import { AddEventComponent } from './dashboard/events/add-event/add-event.component';
+import { PartnersComponent } from './dashboard/partners/partners.component';
+import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
 import { SkillsComponent } from './skills/skills.component';
 import { CategoriesComponent } from './categories/categories.component';
 

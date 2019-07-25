@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventsService } from '../events.service';
+import { EventsService } from '../../../events.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, Params } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -15,7 +15,7 @@ import { finalize } from 'rxjs/operators';
 })
 export class AddEventComponent implements OnInit {
 
-  
+
   addEventForm: FormGroup;
   authenticated_user: any;
 
@@ -29,7 +29,7 @@ export class AddEventComponent implements OnInit {
   file: any;
 
   constructor(
-    
+
     private fb: FormBuilder,
     private router: Router,
     public eventsService:EventsService,
@@ -76,14 +76,14 @@ export class AddEventComponent implements OnInit {
   }
 
   addEvent(){
-    
+
     const id = Math.random().toString(36).substring(2);
     this.ref = this.afStorage.ref(id);
     this.task = this.ref.put(this.file);
     // this.uploadState = this.task.snapshotChanges().pipe(map(s => s.state));
     // this.uploadProgress = this.task.percentageChanges();
 
-  
+
     this.task.snapshotChanges().pipe(
       finalize(() => {
        this.ref.getDownloadURL().subscribe(url => {
@@ -93,17 +93,17 @@ export class AddEventComponent implements OnInit {
        });
      }))
     .subscribe();
-    
+
     this.eventsService.createEvent(this.addEventForm.value, this.downloadURL, this.authenticated_user.uid)
     .then(res => {
-      
+
       this.toastr.success("Event Successfully Added !!!","Notification");
       //console.log(res);
       this.router.navigate(['/dashboard/events']);
     }, err => {
       this.toastr.error(err.message, "Error", {enableHtml :  true });
     });
-    
+
   }
 
 }

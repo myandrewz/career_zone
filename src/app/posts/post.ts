@@ -1,7 +1,7 @@
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 
 export class Post {
-    id? : string
+    id ?: string
     title: string
     author: string
     authorId : string

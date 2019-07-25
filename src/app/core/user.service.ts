@@ -96,6 +96,19 @@ export class UserService {
     }
     
   }
+  
+  getSkills() { 
+    return this.db.collection('Skill').snapshotChanges();
+  }
+  createSkill(value, authenticated_user_uid){
+    return this.db.collection('Skill').add({
+      created_by:authenticated_user_uid,
+      skill: value.skill
+    });
+  }
+  deleteSkill(doc_ID) {
+    return this.db.collection("Skill").doc(doc_ID).delete();
+  }
   createStudent(value, authenticated_user_uid){
     return this.db.collection('Student').add({
       id:authenticated_user_uid,

@@ -76,6 +76,8 @@ import { AuditTrailComponent } from './audit-trail/audit-trail.component';
 import { PartnersComponent } from './partners/partners.component';
 import { AddPartnerComponent } from './add-partner/add-partner.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { SkillsComponent } from './skills/skills.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +113,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AddEventComponent,
     AuditTrailComponent,
     PartnersComponent,
-    AddPartnerComponent
+    AddPartnerComponent,
+    SkillsComponent,
+    CategoriesComponent
   ],
 
   imports: [

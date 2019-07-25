@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventsService } from '../events.service';
+import { EventsService } from '../../events.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, Params } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -13,7 +13,7 @@ export class CategoriesComponent implements OnInit {
 
   addCategoryForm: FormGroup;
   authenticated_user: any;
-  
+
   categories;
 
   constructor(
@@ -36,7 +36,7 @@ export class CategoriesComponent implements OnInit {
 
   createForm() {
     this.addCategoryForm = this.fb.group({
-      
+
       category: [name, Validators.required ],
     })
   }
@@ -48,7 +48,7 @@ export class CategoriesComponent implements OnInit {
 
   addCategory(){
     // console.log(this.addCategoryForm.value)
-    
+
     this.eventsService.createCategory(this.addCategoryForm.value, this.authenticated_user.uid)
     .then(res => {
       this.toastr.success("Skill added Successfull !!!","Notification");

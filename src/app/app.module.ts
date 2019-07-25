@@ -60,7 +60,7 @@ import { AddEventComponent } from './dashboard/events/add-event/add-event.compon
 import { PartnersComponent } from './dashboard/partners/partners.component';
 import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
 import { SkillsComponent } from './skills/skills.component';
-import { CategoriesComponent } from './categories/categories.component';
+import { CategoriesComponent } from './dashboard/categories/categories.component';
 
 @NgModule({
   declarations: [

@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { RegisterComponent } from './register/register.component';
@@ -12,11 +11,9 @@ import { StudentUserComponent } from './student-user/student-user.component';
 import {MentorComponent} from './mentor/mentor.component';
 import { CareerJobsComponent } from './career-jobs/career-jobs.component';
 import { BlogsComponent } from './blogs/blogs.component';
-import { ImagesVideosComponent } from './images-videos/images-videos.component';
 import { OverviewComponent } from './overview/overview.component';
 import { SharedModule } from './shared/shared.module';
 //import { NavbarComponent } from './navbar/navbar.component';
-import { PostsDashboardComponent } from './posts/posts-dashboard/posts-dashboard.component';
 import {WysiwygComponent} from './wysiwyg/wysiwyg.component';
 import { PostsDetailComponent } from './posts/posts-detail/posts-detail.component';
 import  { PostsListComponent } from './posts/posts-list/posts-list.component'; 
@@ -37,6 +34,8 @@ import { PartnersComponent } from './partners/partners.component';
 import { AddPartnerComponent } from './add-partner/add-partner.component';
 import { SkillsComponent } from './skills/skills.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { ReportsComponent} from './reports/reports.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -51,21 +50,23 @@ export const rootRouterConfig: Routes = [
     { path: 'Mentors', component: MentorComponent},
     { path: 'careerjobs', component: CareerJobsComponent},
     { path: 'Blogs', component: BlogsComponent},
-    { path: 'imagesvideos', component: ImagesVideosComponent},
     { path: 'events', component: EventsComponent},
     { path: 'add-event', component: AddEventComponent},
     { path: 'partners', component: PartnersComponent},
     { path: 'add-partner', component: AddPartnerComponent},
     { path: 'skills', component: SkillsComponent},
     { path: 'categories', component: CategoriesComponent},
+    { path: 'reports', component: ReportsComponent},
+    { path: 'adduser', component: AdduserComponent},
+    { path: 'addmentor', component: AddmentorComponent},
+    { path: 'timeline', component: TimelineComponent},
   ]},
   
   { path: 'new-profile', component: NewProfileComponent, canActivate: [AuthGuard]},
   { path: 'new-mentor', component: NewMentorComponent},
-  {path: 'posts-dashboard',component: PostsDashboardComponent },
-  {path: 'posts-detail',component:  PostsDetailComponent },
-  {path: 'posts-list',component:  PostsListComponent },
-  {path: 'wysiwyg',component:  WysiwygComponent },
+  { path: 'posts-detail',component:  PostsDetailComponent },
+  { path: 'posts-list',component:  PostsListComponent },
+  { path: 'wysiwyg',component:  WysiwygComponent },
   { path: 'blogs-user', component: BlogsUserComponent},
   { path: 'contact-us', component: ContactUsComponent},
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent},
@@ -74,7 +75,6 @@ export const rootRouterConfig: Routes = [
   { path: 'internship', component: InternshipComponent},
   { path: 'career-events', component: CareerEventsComponent},
   { path: 'adduser', component: AdduserComponent},
-  { path: 'addmentor', component: AddmentorComponent},
   { path: 'audit-trail', component: AuditTrailComponent},
 
 

@@ -24,12 +24,10 @@ import {SuiModule} from 'ng2-semantic-ui';
 import { NewMentorComponent } from './new-mentor/new-mentor.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentUserComponent } from './student-user/student-user.component';
-
 //import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { MentorComponent } from './mentor/mentor.component';
 import { CareerJobsComponent } from './career-jobs/career-jobs.component';
 import { BlogsComponent } from './blogs/blogs.component';
-import { ImagesVideosComponent } from './images-videos/images-videos.component';
 import { ReportsComponent } from './reports/reports.component';
 import { OverviewComponent } from './overview/overview.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -75,9 +73,13 @@ import { AddEventComponent } from './add-event/add-event.component';
 import { AuditTrailComponent } from './audit-trail/audit-trail.component';
 import { PartnersComponent } from './partners/partners.component';
 import { AddPartnerComponent } from './add-partner/add-partner.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SkillsComponent } from './skills/skills.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule } from '@angular/material';
+import { TimelineComponent } from './timeline/timeline.component';
+import { DropZoneDirective } from './timeline/drop-zone.directive';
+import { FileSizePipe } from './timeline/file-size.pipe';
 
 @NgModule({
   declarations: [
@@ -92,7 +94,6 @@ import { CategoriesComponent } from './categories/categories.component';
     MentorComponent,
     CareerJobsComponent,
     BlogsComponent,
-    ImagesVideosComponent,
     ReportsComponent,
     OverviewComponent,WysiwygComponent,
     DialogComponent,
@@ -115,13 +116,18 @@ import { CategoriesComponent } from './categories/categories.component';
     PartnersComponent,
     AddPartnerComponent,
     SkillsComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    TimelineComponent,
+    DropZoneDirective,
+    FileSizePipe
   ],
 
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebase),
     HttpClientModule,
    // HttpModule,
     ReactiveFormsModule,
@@ -134,17 +140,20 @@ import { CategoriesComponent } from './categories/categories.component';
     MatFormFieldModule,
     MatInputModule,
     NgbModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
 
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCi3hSfPY4V_5h4XIBuAv13P7AQlwvIG6A'
     }),
   
-
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
-    AngularFireStorageModule,
     AngularFireDatabaseModule, // imports firebase/auth, only needed for auth features
     SuiModule,
     BrowserAnimationsModule,
@@ -161,8 +170,6 @@ import { CategoriesComponent } from './categories/categories.component';
   
   providers: [AuthService, UserService, UserResolver,
     
-                      
-       
     Location,
 		{
 			provide: LocationStrategy,

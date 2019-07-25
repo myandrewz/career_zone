@@ -75,7 +75,6 @@ getStudents() {
   deleteStudent(value){
     this.db.collection('User').doc(value).delete()
      
-    
     //report audit trail
     const _audit_trail = {
       'action' : ' has deleted a user ',

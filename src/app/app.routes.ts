@@ -39,7 +39,7 @@ export const rootRouterConfig: Routes = [
    children: [
     { path: 'Overview', component: OverviewComponent},
     { path: 'students', component: StudentUserComponent},
-    { path: 'Mentors', component: MentorComponent},
+    { path: 'mentors', component: MentorComponent},
     { path: 'careerjobs', component: CareerJobsComponent},
     { path: 'Blogs', component: BlogsComponent},
     { path: 'events', component: EventsComponent},

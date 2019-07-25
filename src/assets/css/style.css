@@ -43,8 +43,6 @@ sup,
 tt,
 var,
 b,
-u,
-i,
 dl,
 dt,
 dd,
@@ -52,7 +50,6 @@ ol,
 nav ul,
 nav li,
 fieldset,
-form,
 label,
 legend,
 table,
@@ -238,40 +235,54 @@ h1 {
 }
 
 .main-top-intro {
-    background-image: url('../images/banner.jpg');
+    /*background-image: url('../images/banner.jpg');*/
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-attachment: fixed;
     position: relative;
-    min-height: 100vh;
+    min-height: 85vh;
 }
 
 .bg-layer {
-    background: rgba(0, 0, 0, 0.54);
-    min-height: 100vh;
+    background: rgba(0, 0, 0, 0);
+    padding-top: 150px;
+    padding-left: 70px;
+    padding-right: 70px;
+    margin: 0 auto;
+    
+}
+.terms {
+    min-height: 10vh;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    opacity: 0.8;
+    min-height: 60vh;
 }
 
 /*-- //slide --*/
 
 /*--header start here--*/
 header {
-    padding: 2em 0;
+    padding: 2em 2em;
 }
 
 /* header */
 .wrapper {
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     width: 90%;
 }
 
 .header-w3layouts {
     float: left;
+    padding-top: 6px;
 }
 
 .nav_w3pvt {
     float: left;
-    width: 50%;
+    width: 80%;
+    padding-bottom: 50px
 }
 
 .buttons {
@@ -289,7 +300,7 @@ a.navbar-brand {
     font-weight: 800;
 }
 
-a.navbar-brand.logo span.fa {
+a.navbar-brand.o span.fa {
     color: #fff;
 }
 
@@ -673,7 +684,7 @@ a {
 
 .form-w3ls-left-info input[type="email"] {
     outline: none;
-    font-size: 14px;
+    font-size: 50px;
     color: #888;
     border: none;
     width: 92%;
@@ -686,7 +697,7 @@ a {
 
 .form-w3ls-left-info input[type="password"] {
     outline: none;
-    font-size: 14px;
+    font-size: 50px;
     color: #888;
     border: none;
     width: 92%;
@@ -701,7 +712,7 @@ a {
 .form-w3ls-left-info button.btn {
     background: #f54785;
     color: #fff;
-    font-size: 14px;
+    font-size: 20px;
     text-transform: uppercase;
     padding: 0.8em 2em;
     letter-spacing: 1px;
@@ -713,13 +724,14 @@ a {
     cursor: pointer;
     outline: none;
     border: none;
-    float: left;
+    float:left;
 }
 
 button.btn.reg {
-    margin-left: 2%;
+    margin-left:1%;
     background: #4cc2c4;
 }
+
 
 /*--  --*/
 .form-w3ls-left-info p {
@@ -753,7 +765,7 @@ button.btn.reg {
 /*-- copyright --*/
 .copy-w3layouts-inf {
     margin-top: 2em;
-    padding: 2em 0;
+    padding: 10px 0;
 }
 
 .copy-w3layouts-inf p {
@@ -890,13 +902,9 @@ ul.w3layouts-icons li a.vk:hover {
 }
 
 
-@media(max-width:600px) {
+@media(max-width:400px) {
     .content-inner-info {
-        padding-top: 8em;
-    }
-
-    .content-inner-info {
-        padding-top: 8em;
+        padding-top: 3em;
     }
 
     .form-w3layouts-grid .search {
@@ -924,7 +932,7 @@ ul.w3layouts-icons li a.vk:hover {
 
     .form-w3ls-left-info input[type="email"],
     .form-w3ls-left-info input[type="password"] {
-        width: 91%;
+        width: 90%;
     }
 
     .nav_w3pvt {
@@ -934,7 +942,7 @@ ul.w3layouts-icons li a.vk:hover {
     }
 }
 
-@media(max-width:384px) {
+@media(max-width:370px) {
     body h2 {
         font-size: 1.75em;
         margin: 2em 0 0 0;
@@ -946,7 +954,7 @@ ul.w3layouts-icons li a.vk:hover {
     }
 
     .content-inner-info {
-        padding-top: 7em;
+        padding-top: 3em;
     }
 }
 

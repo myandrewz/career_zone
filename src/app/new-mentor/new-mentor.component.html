@@ -1,0 +1,113 @@
+<div class="main-top-intro">
+  <div class="bg-layer">
+      <!-- header -->
+      <div class="wrapper">
+          <header>
+              <div class="header-w3layouts">
+                  <h1>
+                      <a class="navbar-brand logo" href="index.html">
+                          NSSF CAREER <br>
+                      <br> EXPO
+                      </a>
+                  </h1>
+              </div>
+              <div class="nav_w3pvt">
+                  <nav>
+                      <label for="drop" class="toggle mt-lg-0 mt-2"><span class="fa fa-bars" aria-hidden="true"></span></label>
+                      <input type="checkbox" id="drop" />
+                      <ul class="menu">
+                          <li  (click)="logout()" class="active">
+                              <div class="container">
+                                <a (click)="logout()" class="navbar-text navbar-right navbar-link">Logout</a>
+                              </div>
+                          </li>
+                      </ul>
+                  </nav>
+              </div>
+              <div class="buttons mt-lg-0 mt-3 ml-auto">
+                  <div class="form-w3layouts-grid">
+                      <form  class="newsletter">
+                          <input class="search" type="search" placeholder="" required="">
+                          <button class="form-control btn" value=""><span class="fa fa-search"></span></button>
+                          <div class="clear"></div>
+                      </form>
+                  </div>
+              </div>
+              <div class="clear"></div>
+
+          </header>
+          <!-- //header -->
+          <!---728x90--->
+
+          <div class="content-inner-info">
+              <h2>MENTOR'S PROFILE</h2>
+              <p>{{authenticated_user.uid}}</p>
+              <!---728x90--->
+
+              <div class="content-w3layouts-main">
+
+                  <div class="form-w3ls-left-info">
+                      <form class="ui form" [formGroup]="mentorProfileForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
+
+                          <div class="form-group">
+                            <label>Current Employer</label>
+                            <input type="text" formControlName="employer" class="form-control">
+                          </div>
+                          <div class="form-group">
+                            <label>Profession</label>
+                            <input type="text" formControlName="profession" class="form-control">
+                          </div>
+                          <div class="form-group">
+                            <label for="sel1">Skills :</label>
+                            <select class="form-control" formControlName="skills" id="sel1">
+                              <option>MMA</option>
+                              <option>Troubleshooting</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" formControlName="email" class="form-control">
+                          </div>
+                          <div class="bottom">
+                              <button class="btn" (click)="newmentorprofile()" type="submit" [disabled]="!myForm.form.valid">Update</button>
+                          </div>
+
+                      </form>
+
+                  </div>
+
+              </div>
+
+          <div class="copy-w3layouts-inf">
+              <p>© 2019
+                  NSSF. All rights reserved |
+            
+              </p>
+              <ul class="list-unstyled w3layouts-icons">
+                  <li>
+                      <a href="#" class="face-b">
+                          <span class="fa fa-facebook-f"></span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" class="twit">
+                          <span class="fa fa-twitter"></span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" class="dribble">
+                          <span class="fa fa-dribbble"></span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#" class="vk">
+                          <span class="fa fa-vk"></span>
+                      </a>
+                  </li>
+              </ul>
+              <div class="clear"></div>
+          </div>
+          <!-- //copyright -->
+      </div>
+  </div>
+</div>

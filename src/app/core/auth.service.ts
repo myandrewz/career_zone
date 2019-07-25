@@ -1,14 +1,61 @@
-import { Injectable } from "@angular/core";
+import { Injectable,NgZone } from "@angular/core";
 import 'rxjs/add/operator/toPromise';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
+import { functions } from 'firebase/app';
+import { auth } from 'firebase';
+import { Router } from "@angular/router";
 
-@Injectable()
+
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
+  authState : any = null
+  
 
   constructor(
-   public afAuth: AngularFireAuth
- ){}
+   public afAuth: AngularFireAuth,
+   public router: Router, 
+   public ngZone: NgZone 
+ ){
+   this.afAuth.authState.subscribe(data => this.authState = data)
+ }
+
+ get authenticated() : boolean{
+   return this.authState !== null 
+ }
+
+ get currentUserId() : string{
+   return this.authenticated? this.authState.uid : null 
+ }
+
+
+ async sendPasswordResetEmail(passwordResetEmail: string) {
+  return await this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail);
+}
+
+
+login(){
+ this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+ 
+}
+
+logout(){
+  this.afAuth.auth.signOut()
+}
+
+
+//  dosendWelcomeEmail = functions.auth.user().onCreate((user) => {
+//   // [END onCreateTrigger]
+//     // [START eventAttributes]
+//     const email = user.email; // The email of the user.
+//     const displayName = user.displayName; // The display name of the user.
+//     // [END eventAttributes]
+  
+//     //return this.sendWelcomeEmail(email, displayName);
+//   });
+
 
   doFacebookLogin(){
     return new Promise<any>((resolve, reject) => {
@@ -24,6 +71,10 @@ export class AuthService {
     })
   }
 
+
+
+
+
   doTwitterLogin(){
     return new Promise<any>((resolve, reject) => {
       let provider = new firebase.auth.TwitterAuthProvider();
@@ -37,6 +88,9 @@ export class AuthService {
       })
     })
   }
+
+
+  
 
   doGoogleLogin(){
     return new Promise<any>((resolve, reject) => {
@@ -54,13 +108,43 @@ export class AuthService {
     })
   }
 
+
+  
+  
+
   doRegister(value){
     return new Promise<any>((resolve, reject) => {
       firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
+      //firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
       .then(res => {
+        //this.SendVerificationMail(); // Sending email verification notification, when new user registers
         resolve(res);
       }, err => reject(err))
     })
+  }
+
+
+  SignIn(email, password) {
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      .then((result) => {
+        if (result.user.emailVerified !== true) {
+          this.SendVerificationMail();
+          window.alert('Please validate your email address. Kindly check your inbox.');
+        } else {
+          this.ngZone.run(() => {
+            this.router.navigate(['<!-- enter your route name here -->']);
+          });
+        }
+        this.SetUserData(result.user);
+      }).catch((error) => {
+        window.alert(error.message)
+      })
+  }
+  SendVerificationMail() {
+    throw new Error("Method not implemented.");
+  }
+  SetUserData(user: firebase.User) {
+    throw new Error("Method not implemented.");
   }
 
   doLogin(value){

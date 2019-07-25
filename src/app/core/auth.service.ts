@@ -36,14 +36,14 @@ export class AuthService {
 }
 
 
-login(){
- this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+// login(){
+//  this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
  
-}
+// }
 
-logout(){
-  this.afAuth.auth.signOut()
-}
+// logout(){
+//   this.afAuth.auth.signOut()
+// }
 
 
 //  dosendWelcomeEmail = functions.auth.user().onCreate((user) => {

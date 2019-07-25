@@ -15,10 +15,8 @@ import { CareerJobsComponent } from './career-jobs/career-jobs.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { ImagesVideosComponent } from './images-videos/images-videos.component';
 import { OverviewComponent } from './overview/overview.component';
-import { SharedModule } from './shared/shared.module';
-//import { NavbarComponent } from './navbar/navbar.component';
+import { SharedModule } from './shared/shared.module';;
 import { PostsDashboardComponent } from './posts/posts-dashboard/posts-dashboard.component';
-import {WysiwygComponent} from './wysiwyg/wysiwyg.component';
 import { PostsDetailComponent } from './posts/posts-detail/posts-detail.component';
 import  { PostsListComponent } from './posts/posts-list/posts-list.component'; 
 import { BlogsUserComponent } from './blogs-user/blogs-user.component';
@@ -35,6 +33,9 @@ import { EventsComponent } from './events/events.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import { PartnersComponent } from './partners/partners.component';
 import { AddPartnerComponent } from './add-partner/add-partner.component';
+import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
+import { HelpComponent } from './components/dashboard/help/help.component';
+
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -62,7 +63,6 @@ export const rootRouterConfig: Routes = [
   {path: 'posts-dashboard',component: PostsDashboardComponent },
   {path: 'posts-detail',component:  PostsDetailComponent },
   {path: 'posts-list',component:  PostsListComponent },
-  {path: 'wysiwyg',component:  WysiwygComponent },
   { path: 'blogs-user', component: BlogsUserComponent},
   { path: 'contact-us', component: ContactUsComponent},
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent},
@@ -72,6 +72,23 @@ export const rootRouterConfig: Routes = [
   { path: 'career-events', component: CareerEventsComponent},
   { path: 'adduser', component: AdduserComponent},
   { path: 'addmentor', component: AddmentorComponent},
+  
+
+
+  // // { path: 'profile', component: ProfileComponent},
+  // { path: 'students/profile', component: StudentsProfileComponent,
+  //  children: [
+  //   { path: 'edit-profile', component: EditProfileComponent},
+  //   { path: 'help', component: HelpComponent},
+  // ]},
+  // { path: 'mentor/profile', component: ProfileComponent,
+  //  children: [
+  //   { path: 'edit-profile', component: EditProfileComponent},
+  //   { path: 'help', component: HelpComponent},
+  // ]},
+
+
+
 
 
 ];

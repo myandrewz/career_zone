@@ -21,7 +21,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NewProfileComponent } from './new-profile/new-profile.component';
 import {SuiModule} from 'ng2-semantic-ui';
-import { NewStudentComponent } from './new-student/new-student.component'; 
 import { NewMentorComponent } from './new-mentor/new-mentor.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentUserComponent } from './student-user/student-user.component';
@@ -76,6 +75,7 @@ import { AddEventComponent } from './add-event/add-event.component';
 import { AuditTrailComponent } from './audit-trail/audit-trail.component';
 import { PartnersComponent } from './partners/partners.component';
 import { AddPartnerComponent } from './add-partner/add-partner.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -85,7 +85,6 @@ import { AddPartnerComponent } from './add-partner/add-partner.component';
     RegisterComponent,
     NewProfileComponent,
     NewMentorComponent,
-    NewStudentComponent,
     DashboardComponent,
     StudentUserComponent,
     MentorComponent,
@@ -104,21 +103,14 @@ import { AddPartnerComponent } from './add-partner/add-partner.component';
     MeetMentorComponent,
     TermsAndConditionsComponent,
     SearchfilterPipe,
-
     NewsletterComponent,
-
     InternshipComponent,
     AdduserComponent,
-
     AddmentorComponent,
-
     EventsComponent,
-
     AddEventComponent,
-
     AuditTrailComponent,
     PartnersComponent,
-
     AddPartnerComponent
   ],
 
@@ -137,6 +129,7 @@ import { AddPartnerComponent } from './add-partner/add-partner.component';
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
+    NgbModule,
 
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCi3hSfPY4V_5h4XIBuAv13P7AQlwvIG6A'

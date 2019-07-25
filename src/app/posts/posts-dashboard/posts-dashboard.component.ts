@@ -17,16 +17,9 @@ import { AuditTrailService } from 'src/app/services/audit-trail/audit-trail.serv
 })
 export class PostsDashboardComponent implements OnInit {
 
-
-
-
 ngOnInit() {
   this.getBlogs()
-  
   }
-
-
-  
 
   image: string = null;
   content: any;
@@ -38,8 +31,12 @@ ngOnInit() {
   uploadPercent : Observable<number>
   downloadURL : Observable<string>
 
-  constructor(private auth: AuthService, public db:AngularFirestore, private postService: PostService, 
-     private storage: AngularFireStorage, public _auditTrailService:AuditTrailService) { }
+  constructor(
+    private auth: AuthService, 
+    public db:AngularFirestore, 
+    private postService: PostService, 
+    private storage: AngularFireStorage,
+    public _auditTrailService:AuditTrailService) { }
 
 
 
@@ -57,27 +54,28 @@ ngOnInit() {
       res =>{
         console.log(res)
 
+        //report audit trail
         const _audit_trail = {
-          'action' : ' has created a new blog pots ',
+          'action' : ' has created a new blog post ',
           'object': res.id,
           'created_at': new Date(),
           'user':{
             'id': '4545454545454545454',
-            'email':'daanyu@gmail.com'
-          }
-        } 
-
-
-
+            'email':'daanyu@gmail.com' }
+           } 
         console.log(_audit_trail)
 
         this._auditTrailService.createAuditTrailLog(_audit_trail)
         //this._createAuditTrailLog();
+      //audit trail
       },
+
       err=>{
         console.log(err)
       }
     )
+
+
     this.title = ''
     this.content = ''
     this.buttonText = 'Post Created!'
@@ -120,8 +118,4 @@ ngOnInit() {
      }
     );
   }
-
-  
- 
-
 }

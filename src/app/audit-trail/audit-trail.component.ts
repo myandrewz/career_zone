@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./audit-trail.component.scss']
 })
 export class AuditTrailComponent implements OnInit {
-  items: Observable<any[]>;
+
 
   constructor(
     private db: AngularFirestore

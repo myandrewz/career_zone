@@ -26,7 +26,7 @@
     "@angular/platform-browser": "7.2.13",
     "@angular/platform-browser-dynamic": "7.2.13",
     "@angular/router": "7.2.13",
-    "@ng-bootstrap/ng-bootstrap": "^5.0.0-rc.0",
+    "@ng-bootstrap/ng-bootstrap": "^4.2.1",
     "@types/bootstrap": "^4.3.1",
     "@types/signalr": "^2.2.35",
     "angular-froala-wysiwyg": "^3.0.3-1",

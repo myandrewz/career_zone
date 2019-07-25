@@ -17,28 +17,21 @@ import { UserService } from './core/user.service';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { NewProfileComponent } from './new-profile/new-profile.component';
 import {SuiModule} from 'ng2-semantic-ui';
-import { NewStudentComponent } from './new-student/new-student.component';
-import { NewMentorComponent } from './new-mentor/new-mentor.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { StudentUserComponent } from './student-user/student-user.component';
-import { MentorComponent } from './mentor/mentor.component';
+import { StudentUserComponent } from './dashboard/students/student-user/student-user.component';
+import { MentorComponent } from './dashboard/mentor/mentor.component';
 import { CareerJobsComponent } from './career-jobs/career-jobs.component';
-import { BlogsComponent } from './blogs/blogs.component';
-import { ImagesVideosComponent } from './images-videos/images-videos.component';
+import { BlogsComponent } from './dashboard/blogs/blogs.component';
 import { ReportsComponent } from './reports/reports.component';
-import { OverviewComponent } from './overview/overview.component';
+import { OverviewComponent } from './dashboard/overview/overview.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule} from './material';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ToastrModule } from 'ngx-toastr';
-import { DialogComponent } from './dialog/dialog.component';
 import { HeaderComponent } from './shared/header/header.component';
-import {WysiwygComponent} from './wysiwyg/wysiwyg.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { PostsModule } from './posts/posts.module';
 
+import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CareerEventsComponent } from './career-events/career-events.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -48,13 +41,13 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
 import { SearchfilterPipe } from './pipes/searchfilter.pipe';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { NewsletterComponent } from './newsletter/newsletter.component';
-import {MatInputModule} from '@angular/material';
+import {MatInputModule, MatExpansionModule} from '@angular/material';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { InternshipComponent } from './internship/internship.component';
 import { AdduserComponent } from './adduser/adduser.component';
-import { AddmentorComponent } from './addmentor/addmentor.component';
+import { AddmentorComponent } from './dashboard/addmentor/addmentor.component';
 import { EventsComponent } from './dashboard/events/events.component';
 import { AddEventComponent } from './dashboard/events/add-event/add-event.component';
 import { PartnersComponent } from './dashboard/partners/partners.component';
@@ -68,18 +61,14 @@ import { CategoriesComponent } from './dashboard/categories/categories.component
     LoginComponent,
     UserComponent,
     RegisterComponent,
-    NewProfileComponent,
-    NewMentorComponent,
-    NewStudentComponent,
     DashboardComponent,
     StudentUserComponent,
     MentorComponent,
     CareerJobsComponent,
     BlogsComponent,
-    ImagesVideosComponent,
     ReportsComponent,
-    OverviewComponent,WysiwygComponent,
-    DialogComponent,
+    OverviewComponent,
+
     HeaderComponent,
     FooterComponent,
     HomeComponent,
@@ -89,24 +78,15 @@ import { CategoriesComponent } from './dashboard/categories/categories.component
     MeetMentorComponent,
     TermsAndConditionsComponent,
     SearchfilterPipe,
-
     NewsletterComponent,
-
     InternshipComponent,
     AdduserComponent,
-
     AddmentorComponent,
-
     EventsComponent,
-
     AddEventComponent,
-
     PartnersComponent,
-
     AddPartnerComponent,
-
     SkillsComponent,
-
     CategoriesComponent
   ],
 
@@ -115,7 +95,6 @@ import { CategoriesComponent } from './dashboard/categories/categories.component
     BrowserAnimationsModule,
     AngularFireStorageModule,
     HttpClientModule,
-   // HttpModule,
     ReactiveFormsModule,
     MaterialModule,
     FormsModule,
@@ -123,11 +102,11 @@ import { CategoriesComponent } from './dashboard/categories/categories.component
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
+    MatExpansionModule,
 
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCi3hSfPY4V_5h4XIBuAv13P7AQlwvIG6A'
     }),
-
 
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     AngularFireModule.initializeApp(environment.firebase),
@@ -142,7 +121,7 @@ import { CategoriesComponent } from './dashboard/categories/categories.component
       preventDuplicates: true,
     }),
 
-    PostsModule,
+
 
   ],
 

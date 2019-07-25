@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {FirebaseService} from '../services/firebase.service';
+import {FirebaseService} from '../../services/firebase.service';
 import { AngularFirestore} from "angularfire2/firestore";
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import {Router} from '@angular/router';
-import {UserService} from '../core/user.service';
-import {AuthService} from '../core/auth.service';
+import {UserService} from '../../core/user.service';
+import {AuthService} from '../../core/auth.service';
 import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { Resolve, ActivatedRouteSnapshot} from "@angular/router";
@@ -16,7 +16,7 @@ import { Resolve, ActivatedRouteSnapshot} from "@angular/router";
   styleUrls: ['./addmentor.component.scss']
 })
 export class AddmentorComponent implements OnInit {
-  
+
   //exampleForm: FormGroup;
 
   isLinear = true;
@@ -40,7 +40,7 @@ export class AddmentorComponent implements OnInit {
     public userService: UserService,
     public authService: AuthService,
     private toastr: ToastrService,
-  ) { 
+  ) {
     this.createForm();
   }
 
@@ -107,23 +107,23 @@ export class AddmentorComponent implements OnInit {
       this.enableStudent=false;
       this.enableMentor=true;
     }
-      
+
   }
 
   registerProfile(){
 
     console.log(this.profileForm.value);
-    
+
     this.userService.createUser(this.profileForm.value, this.authenticated_user.uid)
     .then(res => {
-      
+
       this.toastr.success("Profile registration Successfull !!!","Notification");
       //console.log(res);
       this.router.navigate(['/dashboard/Overview']);
     }, err => {
       this.toastr.error(err.message, "Error", {enableHtml :  true });
     });
-    
+
   }
 
 
@@ -143,7 +143,7 @@ export class AddmentorComponent implements OnInit {
       skills: ['']
       });
     }
-  
+
   createForm() {
     this.exampleForm = this.fb.group({
       full_name: [''],
@@ -159,7 +159,7 @@ export class AddmentorComponent implements OnInit {
       skills: ['']
      });
     }
-  
+
   onSubmit(value){
     this.userService.createUser(value, 23)
     .then(

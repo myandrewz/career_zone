@@ -27,15 +27,16 @@
               
               <div class="ui small primary icon button emma">
                 <i class="fa fa-ellipsis-v" style="margin-right: 10px"></i> More
-              </div><div class="dropdown">
-                  <button class="dropbtn">
-                    <div class="dropdown-content">
-                      <a (click)="viewPartner(partner.payload.doc.id)">View</a>
-                      <a (click)="editPartner(partner.payload.doc.id)">Edit</a>
-                      <a (click)="deletePartner(partner.payload.doc.id)">Delete</a>
-                    </div>
-                  </button>
-                </div>
+              </div>
+              <div class="dropdown">
+                <button class="dropbtn">
+                  <div class="dropdown-content">
+                    <a (click)="viewPartner(partner.payload.doc.id)">View</a>
+                    <a (click)="editPartner(partner.payload.doc.id)">Edit</a>
+                    <a (click)="deletePartner(partner.payload.doc.id)">Delete</a>
+                  </div>
+                </button>
+              </div>
             </td>
           </tr>
         </tbody>

@@ -65,7 +65,7 @@ export class TimelineComponent implements OnInit{
 
     this.task.snapshotChanges().pipe(
     // The file's download URL
-    finalize(() => this.ref.getDownloadURL.subscribe(url => { 
+    finalize(() => this.ref.getDownloadURL().subscribe(url => { 
       console.log(url); // <-- do what ever you want with the url..
       this.downloadURL = url;})),
 

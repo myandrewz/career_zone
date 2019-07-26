@@ -2,25 +2,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule,Routes  } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { PostsDetailComponent } from './posts-detail/posts-detail.component';
-import { PostsListComponent } from './posts-list/posts-list.component';
-import {PostService} from './post.service';
-import {SharedModule} from '../shared/shared.module';
+import { PostService } from '../services/posts/posts.service';
 
-const routes: Routes = [
-  {path : 'blog',component: PostsListComponent},
-  {path : 'blog/:id',component: PostsDetailComponent},
-]
+
+const routes: Routes = []
+  
 
 @NgModule({
 
   declarations:
-   [PostsDetailComponent, 
-  PostsListComponent],
+   [],
 
   imports: 
-  [ SharedModule,
-    RouterModule.forChild(routes),
+  [ RouterModule.forChild(routes),
     CommonModule
   ],
 

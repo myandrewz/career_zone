@@ -4,6 +4,7 @@ import {FirebaseService} from '../../../services/firebase.service';
 import {Router} from '@angular/router';
 import { AngularFirestore} from "angularfire2/firestore";
 import { Observable } from 'rxjs';
+import { AuditTrailService } from 'src/app/services/audit-trail/audit-trail.service';
 
 
 @Component({
@@ -24,14 +25,15 @@ export class StudentUserComponent implements OnInit{
   constructor(
     public firebaseService: FirebaseService,
     private router: Router,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    public _auditTrailService:AuditTrailService
   ) { }
 
 
  ngOnInit() {
 
   this.getStudents()
-  this.searchStudents(event)
+  //this.searchStudents(event)
 }
 
 
@@ -71,13 +73,24 @@ getStudents() {
   }
 
   deleteStudent(value){
-    this.db.collection('User').doc(value).delete().then(function() {
-      console.log("Document successfully deleted!");
-    }).catch(function(error) {
-      console.error("Error removing document: ", error);
-  });
+    this.db.collection('User').doc(value).delete()
+     
+    //report audit trail
+    const _audit_trail = {
+      'action' : ' has deleted a user ',
+      'object': value,
+       'created_at': new Date(),
+       'user':{
+        'id': '4545454545454545454',
+        'email':'daanyu@gmail.com' }
+        } 
+    console.log(_audit_trail)
 
-  }
+   this._auditTrailService.createAuditTrailLog(_audit_trail)
+    
+  //audit trail);
+  
+} 
 
 }
 

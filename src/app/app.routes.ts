@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { RegisterComponent } from './register/register.component';
@@ -11,8 +10,6 @@ import {MentorComponent} from './dashboard/mentor/mentor.component';
 import { CareerJobsComponent } from './career-jobs/career-jobs.component';
 import { BlogsComponent } from './dashboard/blogs/blogs.component';
 import { OverviewComponent } from './dashboard/overview/overview.component';
-
-
 import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
@@ -28,6 +25,9 @@ import { PartnersComponent } from './dashboard/partners/partners.component';
 import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
+import { TimelineComponent } from './timeline/timeline.component';
+import { ReportsComponent} from './dashboard/reports/reports.component';
+import { AuditTrailComponent } from './audit-trail/audit-trail.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -48,8 +48,12 @@ export const rootRouterConfig: Routes = [
     { path: 'add-partner', component: AddPartnerComponent},
     { path: 'skills', component: SkillsComponent},
     { path: 'categories', component: CategoriesComponent},
+    { path: 'reports', component: ReportsComponent},
+    { path: 'adduser', component: AdduserComponent},
+    { path: 'addmentor', component: AddmentorComponent},
+    { path: 'timeline', component: TimelineComponent},
   ]},
-
+  
   { path: 'blogs-user', component: BlogsUserComponent},
   { path: 'contact-us', component: ContactUsComponent},
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent},
@@ -57,7 +61,7 @@ export const rootRouterConfig: Routes = [
   { path: 'internship', component: InternshipComponent},
   { path: 'career-events', component: CareerEventsComponent},
   { path: 'adduser', component: AdduserComponent},
-  { path: 'addmentor', component: AddmentorComponent},
+  { path: 'audit-trail', component: AuditTrailComponent},
 
 
 ];

@@ -50,6 +50,9 @@ import { PartnersComponent } from './dashboard/partners/partners.component';
 import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
+import { ProfileComponent } from './components/dashboard/profile/profile.component';
+import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
+import { HelpComponent } from './components/dashboard/help/help.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +83,10 @@ import { CategoriesComponent } from './dashboard/categories/categories.component
     PartnersComponent,
     AddPartnerComponent,
     SkillsComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    ProfileComponent,
+    EditProfileComponent,
+    HelpComponent
   ],
 
   imports: [

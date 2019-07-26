@@ -26,6 +26,9 @@ import { PartnersComponent } from './dashboard/partners/partners.component';
 import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
+import { ProfileComponent } from './components/dashboard/profile/profile.component';
+import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
+import { HelpComponent } from './components/dashboard/help/help.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -55,20 +58,15 @@ export const rootRouterConfig: Routes = [
   { path: 'career-events', component: CareerEventsComponent},
   { path: 'adduser', component: AdduserComponent},
   { path: 'addmentor', component: AddmentorComponent},
+  { path: 'edit', component: EditProfileComponent},
   
 
 
-  // // { path: 'profile', component: ProfileComponent},
-  // { path: 'students/profile', component: StudentsProfileComponent,
-  //  children: [
-  //   { path: 'edit-profile', component: EditProfileComponent},
-  //   { path: 'help', component: HelpComponent},
-  // ]},
-  // { path: 'mentor/profile', component: ProfileComponent,
-  //  children: [
-  //   { path: 'edit-profile', component: EditProfileComponent},
-  //   { path: 'help', component: HelpComponent},
-  // ]},
+   { path: 'profile', component: ProfileComponent,
+    children: [
+      { path: 'edit-profile', component: EditProfileComponent },
+      { path: 'help', component: HelpComponent },
+    ]},
 
 
 

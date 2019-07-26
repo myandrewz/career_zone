@@ -34,7 +34,8 @@ export class UserService {
     return this.db.collection("User", ref => ref.where('id', '==', authenticated_user_uid)).snapshotChanges();
   }
   sendMentorRequest(student_ID,mentor_ID){
-    return this.db.collection('Request').add({
+    return this.db.collection('Notification').add({
+      type:"request",
       student_ID:student_ID,
       mentor_ID:mentor_ID,
       status:"pending"

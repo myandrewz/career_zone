@@ -53,6 +53,7 @@ import { PartnersComponent } from './dashboard/partners/partners.component';
 import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { CategoriesComponent } from './dashboard/categories/categories.component
     PartnersComponent,
     AddPartnerComponent,
     SkillsComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    NotificationComponent
   ],
 
   imports: [

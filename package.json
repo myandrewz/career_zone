@@ -48,6 +48,7 @@
     "request": "^2.88.0",
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.3.3",
+    "semantic-ui-feed": "^2.3.1",
     "zone.js": "^0.8.29"
   },
   "devDependencies": {

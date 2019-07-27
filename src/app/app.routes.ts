@@ -28,6 +28,7 @@ import { PartnersComponent } from './dashboard/partners/partners.component';
 import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
+import { NotificationComponent } from './notification/notification.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -58,6 +59,7 @@ export const rootRouterConfig: Routes = [
   { path: 'career-events', component: CareerEventsComponent},
   { path: 'adduser', component: AdduserComponent},
   { path: 'addmentor', component: AddmentorComponent},
+  { path: 'notifications', component: NotificationComponent},
 
 
 ];

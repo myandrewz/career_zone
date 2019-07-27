@@ -27,8 +27,8 @@ export class UserService {
       })
     })
   }
-  getUserProfile(){
-    return this.db.collection("User", ref => ref.where('id', '==', 234344)).snapshotChanges();
+  getUserProfile(authenticated_user_uid){
+    return this.db.collection("User", ref => ref.where('id', '==', authenticated_user_uid)).snapshotChanges();
   }
   
 

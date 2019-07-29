@@ -38,7 +38,6 @@ import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { SearchfilterPipe } from './pipes/searchfilter.pipe';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule, MatExpansionModule} from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { InternshipComponent } from './internship/internship.component';
@@ -52,10 +51,30 @@ import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partne
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
-import { MatButtonModule, MatCardModule, MatProgressBarModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule } from '@angular/material';
+import { MatButtonModule,
+   MatCardModule, 
+   MatProgressBarModule, 
+   MatMenuModule, 
+   MatToolbarModule, 
+   MatDatepickerModule,
+   MatTabsModule,
+   MatInputModule,
+   MatNativeDateModule,
+   MatCheckboxModule,
+   MatExpansionModule,
+   MatRadioModule,
+   MatIconModule, 
+   MatSidenavModule, 
+   MatListModule } from '@angular/material';
 import { TimelineComponent } from './timeline/timeline.component';
 import { DropZoneDirective } from './timeline/drop-zone.directive';
 import { FileSizePipe } from './timeline/file-size.pipe';
+import { MglTimelineModule } from 'angular-mgl-timeline';
+import { ImageComponent } from './images/image/image.component';
+import { ImageListComponent } from './images/image-list/image-list.component';
+import { ImageService } from './images/image.service';
+
+
 
 @NgModule({
   declarations: [
@@ -91,7 +110,9 @@ import { FileSizePipe } from './timeline/file-size.pipe';
     CategoriesComponent,
     TimelineComponent,
     DropZoneDirective,
-    FileSizePipe
+    FileSizePipe,
+    ImageComponent,
+    ImageListComponent
   ],
 
   imports: [
@@ -118,6 +139,16 @@ import { FileSizePipe } from './timeline/file-size.pipe';
     MatListModule,
     MatExpansionModule,
     MatProgressBarModule,
+    MglTimelineModule,
+    MatToolbarModule,
+    MatTabsModule,
+    MatButtonModule, 
+    MatInputModule, 
+    MatDatepickerModule, 
+    MatNativeDateModule, 
+    MatCheckboxModule, 
+    MatRadioModule,
+    
 
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCi3hSfPY4V_5h4XIBuAv13P7AQlwvIG6A'

@@ -1,3 +1,117 @@
-<p>
-  blogs works!
-</p>
+
+<!--Creating a post-->
+
+<section>
+  <mat-accordion>
+  <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+         <button [routerLink] = "['/wysiwyg']"> Create a Post </button>
+        </mat-panel-title>
+
+        </mat-expansion-panel-header>
+
+        <div>
+          <input type = "file" name ="file" id= "file" (change)= "uploadImage($event)">
+
+            
+            <div [hidden] = "!uploadPercent"><mat-progress-bar mode="determinate" value="{{uploadPercent | async }}"></mat-progress-bar> </div>
+            <div>
+              <div [hidden] = "!image"> <img [src]= "image  || '//:0'"> </div>
+              
+            </div>
+
+        </div>
+
+
+      
+
+
+
+<mat-form-field>
+<input matInput placeholder="Post Title" [(ngModel)] = "title">
+</mat-form-field>
+
+   <mat-form-field> 
+ 
+    
+
+   
+ <textarea matInput placeholder="Post Content"  [(ngModel)] = "content" rows="10">   </textarea>  
+   </mat-form-field> 
+  
+ 
+
+<br>
+<button mat-raised-button color = "accent" (click) = "createPost()" [disabled] = "!title || !content"  >{{buttonText}}</button>
+
+</mat-expansion-panel>
+</mat-accordion>
+<br>
+<br>
+<button [routerLink] = "['/posts-list']" >List of Posts</button>
+
+<!-- {{blogs|json}} -->
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Notes</th>
+      <th>action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let blog of blogs">
+      <td> <a [routerLink] = "['/dashboard/Overview']">{{blog.author}}</a></td>
+      <td>{{blog.content}}</td>
+      <td class="negative">None</td>
+      <td>
+          <div class="ui dropdown" suiDropdown>
+              <div class="text">File</div>
+              <i class="dropdown icon"></i>
+              <div class="menu" suiDropdownMenu>
+                  <div class="item">New</div>
+                  <div class="item">
+                      <span class="description">ctrl + o</span>
+                      Open...
+                  </div>
+                  <div class="item">
+                      <span class="description">ctrl + s</span>
+                      Save as...
+                  </div>
+                  <div class="item">
+                      <span class="description">ctrl + r</span>
+                      Rename
+                  </div>
+                  <div class="item">Make a copy</div>
+                  <div class="item">
+                      <i class="folder icon"></i>
+                      Move to folder
+                  </div>
+                  <div class="item">
+                      <i class="trash icon"></i>
+                      Move to trash
+                  </div>
+                  <div class="divider"></div>
+                  <div class="item">Download As...</div>
+                  <div class="item" suiDropdown>
+                      <i class="dropdown icon"></i>
+                      Publish To Web
+                      <div class="menu" suiDropdownMenu>
+                          <div class="item">Google Docs</div>
+                          <div class="item">Google Drive</div>
+                          <div class="item">Dropbox</div>
+                          <div class="item">Another Service...</div>
+                      </div>
+                  </div>
+                  <div class="item">E-mail Collaborators</div>
+              </div>
+          </div>
+    </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+</section>

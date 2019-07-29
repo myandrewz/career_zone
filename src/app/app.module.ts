@@ -46,14 +46,20 @@ import { AdduserComponent } from './adduser/adduser.component';
 import { AddmentorComponent } from './dashboard/addmentor/addmentor.component';
 import { EventsComponent } from './dashboard/events/events.component';
 import { AddEventComponent } from './dashboard/events/add-event/add-event.component';
+import { AuditTrailComponent } from './audit-trail/audit-trail.component';
 import { PartnersComponent } from './dashboard/partners/partners.component';
 import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
 import { HelpComponent } from './components/dashboard/help/help.component';
 import { MentorsRequestComponent } from './components/dashboard/mentors-request/mentors-request.component';
+import { MatButtonModule, MatCardModule, MatProgressBarModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule } from '@angular/material';
+import { TimelineComponent } from './timeline/timeline.component';
+import { DropZoneDirective } from './timeline/drop-zone.directive';
+import { FileSizePipe } from './timeline/file-size.pipe';
 
 @NgModule({
   declarations: [
@@ -81,6 +87,7 @@ import { MentorsRequestComponent } from './components/dashboard/mentors-request/
     AddmentorComponent,
     EventsComponent,
     AddEventComponent,
+    AuditTrailComponent,
     PartnersComponent,
     AddPartnerComponent,
     SkillsComponent,
@@ -88,13 +95,18 @@ import { MentorsRequestComponent } from './components/dashboard/mentors-request/
     ProfileComponent,
     EditProfileComponent,
     HelpComponent,
-    MentorsRequestComponent
+    MentorsRequestComponent,
+    TimelineComponent,
+    DropZoneDirective,
+    FileSizePipe
   ],
 
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebase),
     HttpClientModule,
     ReactiveFormsModule,
     MaterialModule,
@@ -103,17 +115,22 @@ import { MentorsRequestComponent } from './components/dashboard/mentors-request/
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
+    NgbModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
     MatExpansionModule,
+    MatProgressBarModule,
 
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCi3hSfPY4V_5h4XIBuAv13P7AQlwvIG6A'
     }),
-
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
-    AngularFireStorageModule,
     AngularFireDatabaseModule, // imports firebase/auth, only needed for auth features
     SuiModule,
     BrowserAnimationsModule,

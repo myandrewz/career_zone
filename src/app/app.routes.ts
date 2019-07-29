@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { RegisterComponent } from './register/register.component';
@@ -30,6 +29,9 @@ import { ProfileComponent } from './components/dashboard/profile/profile.compone
 import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
 import { HelpComponent } from './components/dashboard/help/help.component';
 import { MentorsRequestComponent } from './components/dashboard/mentors-request/mentors-request.component';
+import { TimelineComponent } from './timeline/timeline.component';
+import { ReportsComponent} from './dashboard/reports/reports.component';
+import { AuditTrailComponent } from './audit-trail/audit-trail.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -50,7 +52,12 @@ export const rootRouterConfig: Routes = [
     { path: 'add-partner', component: AddPartnerComponent},
     { path: 'skills', component: SkillsComponent},
     { path: 'categories', component: CategoriesComponent},
+    { path: 'reports', component: ReportsComponent},
+    { path: 'adduser', component: AdduserComponent},
+    { path: 'addmentor', component: AddmentorComponent},
+    { path: 'timeline', component: TimelineComponent},
   ]},
+  
   { path: 'blogs-user', component: BlogsUserComponent},
   { path: 'contact-us', component: ContactUsComponent},
   { path: 'terms-and-conditions', component: TermsAndConditionsComponent},
@@ -71,6 +78,7 @@ export const rootRouterConfig: Routes = [
 
 
 
+  { path: 'audit-trail', component: AuditTrailComponent},
 
 
 ];

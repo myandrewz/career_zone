@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NotificationsService } from '../services/notifications/notifications.service';
+import { AuthService } from '../core/auth.service';
+import { Router, Params } from '@angular/router';
 
 @Component({
   selector: 'app-notification',
@@ -9,8 +12,12 @@ export class NotificationComponent implements OnInit {
   
   authenticated_user: any;
   user_profile: any;
+  notifications;
 
-  constructor() { }
+  constructor(
+    public notificationsService: NotificationsService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
     var _userprofile  = localStorage.getItem('user_profile')
@@ -21,6 +28,13 @@ export class NotificationComponent implements OnInit {
       console.log(this.authenticated_user.uid)
       console.log(this.user_profile.role)
     }
+    this.getNotifications();
   }
+  getNotifications(){
+    this.notificationsService.getUserNotifications(this.authenticated_user.uid, this.user_profile.role+"_ID")
+    .subscribe(res => (this.notifications = res));
+
+  }
+
 
 }

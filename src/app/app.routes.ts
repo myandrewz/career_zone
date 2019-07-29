@@ -29,6 +29,7 @@ import { CategoriesComponent } from './dashboard/categories/categories.component
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
 import { HelpComponent } from './components/dashboard/help/help.component';
+import { MentorsRequestComponent } from './components/dashboard/mentors-request/mentors-request.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -59,7 +60,7 @@ export const rootRouterConfig: Routes = [
   { path: 'adduser', component: AdduserComponent},
   { path: 'addmentor', component: AddmentorComponent},
   { path: 'edit', component: EditProfileComponent},
-  
+  { path: 'mentors-request', component: MentorsRequestComponent},
 
 
    { path: 'profile', component: ProfileComponent,

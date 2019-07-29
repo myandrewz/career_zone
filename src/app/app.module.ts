@@ -53,6 +53,7 @@ import { CategoriesComponent } from './dashboard/categories/categories.component
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
 import { HelpComponent } from './components/dashboard/help/help.component';
+import { MentorsRequestComponent } from './components/dashboard/mentors-request/mentors-request.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { HelpComponent } from './components/dashboard/help/help.component';
     CategoriesComponent,
     ProfileComponent,
     EditProfileComponent,
-    HelpComponent
+    HelpComponent,
+    MentorsRequestComponent
   ],
 
   imports: [

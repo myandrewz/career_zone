@@ -27,9 +27,23 @@ export class UserService {
       })
     })
   }
+  getMentor(role){
+    return this.db.collection("User", ref => ref.where('role', '==', role)).snapshotChanges();
+  }
   getUserProfile(authenticated_user_uid){
     return this.db.collection("User", ref => ref.where('id', '==', authenticated_user_uid)).snapshotChanges();
   }
+  sendMentorRequest(student_ID,mentor_ID){
+    return this.db.collection('Notification').add({
+      type:"request",
+      student_ID:student_ID,
+      mentor_ID:mentor_ID,
+      status:"pending"
+    });
+  }
+  // getUserProfile(authenticated_user_uid){
+  //   return this.db.collection("User", ref => ref.orderBy('id').isEqual(authenticated_user_uid).snapshotChanges();
+  // }
   
 
   updateCurrentUser(value){

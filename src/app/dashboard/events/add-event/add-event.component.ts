@@ -15,10 +15,8 @@ import { finalize } from 'rxjs/operators';
 })
 export class AddEventComponent implements OnInit {
 
-
   addEventForm: FormGroup;
   authenticated_user: any;
-
   urls = new Array<string>();
   display_image:any;
   ref: AngularFireStorageReference;
@@ -35,7 +33,8 @@ export class AddEventComponent implements OnInit {
     public eventsService:EventsService,
     private toastr: ToastrService,
     private afStorage: AngularFireStorage
-  ) {
+  ) 
+  {
     this.createForm()
    }
 

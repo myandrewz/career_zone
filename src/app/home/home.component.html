@@ -1,12 +1,51 @@
 <app-header></app-header>
 <div class="main-top-intro" (scroll)="onWindowScroll($event);">
   <div class="bg-layer">
-     <div class="terms">
+     <div id = "intro" >
 
-              <div id="intro" class="slide">
-                <h1>NSSF CAREER EXPO</h1>
-              </div>
+                    
+
+<div>
+    
+    <ngb-carousel *ngIf="images">
+  
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="images[0]" alt="Random first slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </ng-template>
+    
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="images[1]" alt="Random second slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </ng-template>
+    
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="images[2]" alt="Random third slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </ng-template>
+    
+      </ngb-carousel>
+      
+  
+  </div>
+
                    <!--Events-->
+            <div class="terms">
               <div id="slide1" class="slide">
                   <h1 class="xlarge-font"><b>Events</b></h1>
                   <ul class="grid">
@@ -265,7 +304,7 @@
             </div>
             <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[6]='MMERGE6';ftypes[6]='address';fnames[7]='MMERGE7';ftypes[7]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
             <!--End mc_embed_signup-->
-            </div>
+             </div>
 
               <!--Partners-->
               <div id="slide4" class="slide">
@@ -439,11 +478,7 @@
 
 
 
-
-
-
-
-    </div>
+</div>
   </div>
 </div>
 <!-- footer -->

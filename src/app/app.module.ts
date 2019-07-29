@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
-
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -30,7 +29,6 @@ import { MaterialModule} from './material';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ToastrModule } from 'ngx-toastr';
 import { HeaderComponent } from './shared/header/header.component';
-
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CareerEventsComponent } from './career-events/career-events.component';
@@ -38,10 +36,9 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
-import { SearchfilterPipe } from './pipes/searchfilter.pipe';
+//import { SearchfilterPipe } from './pipes/searchfilter.pipe';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule, MatExpansionModule} from '@angular/material';
-
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { InternshipComponent } from './internship/internship.component';
@@ -49,11 +46,21 @@ import { AdduserComponent } from './adduser/adduser.component';
 import { AddmentorComponent } from './dashboard/addmentor/addmentor.component';
 import { EventsComponent } from './dashboard/events/events.component';
 import { AddEventComponent } from './dashboard/events/add-event/add-event.component';
+import { AuditTrailComponent } from './audit-trail/audit-trail.component';
 import { PartnersComponent } from './dashboard/partners/partners.component';
 import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
 import { NotificationComponent } from './notification/notification.component';
+import { ProfileComponent } from './components/dashboard/profile/profile.component';
+import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
+import { HelpComponent } from './components/dashboard/help/help.component';
+import { MentorsRequestComponent } from './components/dashboard/mentors-request/mentors-request.component';
+import { MatButtonModule, MatCardModule, MatProgressBarModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule } from '@angular/material';
+import { TimelineComponent } from './timeline/timeline.component';
+import { DropZoneDirective } from './timeline/drop-zone.directive';
+import { FileSizePipe } from './timeline/file-size.pipe';
 
 @NgModule({
   declarations: [
@@ -76,23 +83,32 @@ import { NotificationComponent } from './notification/notification.component';
     BlogsUserComponent,
     MeetMentorComponent,
     TermsAndConditionsComponent,
-    SearchfilterPipe,
     InternshipComponent,
     AdduserComponent,
     AddmentorComponent,
     EventsComponent,
     AddEventComponent,
+    AuditTrailComponent,
     PartnersComponent,
     AddPartnerComponent,
     SkillsComponent,
     CategoriesComponent,
-    NotificationComponent
+    NotificationComponent,
+    ProfileComponent,
+    EditProfileComponent,
+    HelpComponent,
+    MentorsRequestComponent,
+    TimelineComponent,
+    DropZoneDirective,
+    FileSizePipe
   ],
 
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebase),
     HttpClientModule,
     ReactiveFormsModule,
     MaterialModule,
@@ -101,17 +117,22 @@ import { NotificationComponent } from './notification/notification.component';
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
+    NgbModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
     MatExpansionModule,
+    MatProgressBarModule,
 
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCi3hSfPY4V_5h4XIBuAv13P7AQlwvIG6A'
     }),
-
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
-    AngularFireStorageModule,
     AngularFireDatabaseModule, // imports firebase/auth, only needed for auth features
     SuiModule,
     BrowserAnimationsModule,

@@ -25,6 +25,10 @@ import { PartnersComponent } from './dashboard/partners/partners.component';
 import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
+import { ProfileComponent } from './components/dashboard/profile/profile.component';
+import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
+import { HelpComponent } from './components/dashboard/help/help.component';
+import { MentorsRequestComponent } from './components/dashboard/mentors-request/mentors-request.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { ReportsComponent} from './dashboard/reports/reports.component';
 import { AuditTrailComponent } from './audit-trail/audit-trail.component';
@@ -61,6 +65,19 @@ export const rootRouterConfig: Routes = [
   { path: 'internship', component: InternshipComponent},
   { path: 'career-events', component: CareerEventsComponent},
   { path: 'adduser', component: AdduserComponent},
+  { path: 'addmentor', component: AddmentorComponent},
+  { path: 'edit', component: EditProfileComponent},
+  { path: 'mentors-request', component: MentorsRequestComponent},
+
+
+   { path: 'profile', component: ProfileComponent,
+    children: [
+      { path: 'edit-profile', component: EditProfileComponent },
+      { path: 'help', component: HelpComponent },
+    ]},
+
+
+
   { path: 'audit-trail', component: AuditTrailComponent},
 
 

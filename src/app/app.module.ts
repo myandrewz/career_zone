@@ -36,7 +36,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
-import { SearchfilterPipe } from './pipes/searchfilter.pipe';
+//import { SearchfilterPipe } from './pipes/searchfilter.pipe';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule, MatExpansionModule} from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
@@ -52,6 +52,10 @@ import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partne
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
+import { ProfileComponent } from './components/dashboard/profile/profile.component';
+import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
+import { HelpComponent } from './components/dashboard/help/help.component';
+import { MentorsRequestComponent } from './components/dashboard/mentors-request/mentors-request.component';
 import { MatButtonModule, MatCardModule, MatProgressBarModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule } from '@angular/material';
 import { TimelineComponent } from './timeline/timeline.component';
 import { DropZoneDirective } from './timeline/drop-zone.directive';
@@ -78,7 +82,6 @@ import { FileSizePipe } from './timeline/file-size.pipe';
     BlogsUserComponent,
     MeetMentorComponent,
     TermsAndConditionsComponent,
-    SearchfilterPipe,
     InternshipComponent,
     AdduserComponent,
     AddmentorComponent,
@@ -89,6 +92,10 @@ import { FileSizePipe } from './timeline/file-size.pipe';
     AddPartnerComponent,
     SkillsComponent,
     CategoriesComponent,
+    ProfileComponent,
+    EditProfileComponent,
+    HelpComponent,
+    MentorsRequestComponent,
     TimelineComponent,
     DropZoneDirective,
     FileSizePipe

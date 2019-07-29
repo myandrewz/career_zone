@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Routes, Router} from '@angular/router';
+// import { StudentUserComponent } from '../student-user/student-user.component';
 import { AngularFirestore} from "angularfire2/firestore";
 import { map} from 'rxjs/operators';
 import {FirebaseService} from '../../services/firebase.service';

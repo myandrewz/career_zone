@@ -8,7 +8,9 @@ import { NewStudentComponent } from './new-student/new-student.component';
 import { NewMentorComponent } from './new-mentor/new-mentor.component';
 import { UserResolver } from './user/user.resolver';
 import { AuthGuard } from './core/auth.guard';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';/
+import { ManageBlogsComponent } from './manage-blogs/manage-blogs.component';
+import { ViewBlogsComponent } from './view-blogs/view-blogs.component';
 import { StudentUserComponent } from './student-user/student-user.component';
 import {MentorComponent} from './mentor/mentor.component';
 import { CareerJobsComponent } from './career-jobs/career-jobs.component';
@@ -75,6 +77,8 @@ export const rootRouterConfig: Routes = [
   { path: 'internship', component: InternshipComponent},
   { path: 'career-events', component: CareerEventsComponent},
   { path: 'adduser', component: AdduserComponent},
+  { path: 'manage-blogs', component: ManageBlogsComponent},
+  { path: 'view-blogs', component: ViewBlogsComponent},
   { path: 'addmentor', component: AddmentorComponent},
 
 

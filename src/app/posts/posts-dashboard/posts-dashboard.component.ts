@@ -3,7 +3,8 @@
   import { PostService } from '../post.service';
   import { Observable } from 'rxjs';
   import { AngularFireStorage } from '@angular/fire/storage';
-  import {Router,Params} from '@angular/router';
+  import {Router, ActivatedRoute } from '@angular/router';
+ // import {Router,Params} from '@angular/router';
   import { FormGroup, FormControl } from '@angular/forms';
   import { AngularFirestore } from '@angular/fire/firestore';
   import { map} from 'rxjs/operators';
@@ -43,6 +44,7 @@
     constructor(
       private auth: AuthService, 
       public db:AngularFirestore,
+      private route: ActivatedRoute,
       private postService: PostService, 
         private storage: AngularFireStorage ,
         private router : Router) { }
@@ -90,8 +92,14 @@
       this.router.navigate(['/posts-detail'])
 
 
-
     }
+
+    delete(){
+      const id = this.route.snapshot.paramMap.get('id')
+      this.postService.delete(id)
+      this.router.navigate(["/blog"])
+    }
+
 
     getBlogs() {
       this.blog_data = this.db.collection('posts').snapshotChanges().pipe(map(changes => {

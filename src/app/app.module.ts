@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core'; 
-//import { HttpModule } from '@angular/http'
+
 import { RouterModule, Routes } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
-//import {QuillModule} from 'ngx-quill';
-//import { HttpClient, HttpHandler } from '@angular/common/http';
+
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -37,9 +36,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule} from './material'
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ToastrModule } from 'ngx-toastr';
-//import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { HashLocationStrategy } from "@angular/common";
-//import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+
 import { Location } from "@angular/common";
 import { LocationStrategy } from "@angular/common";
 import { DialogComponent } from './dialog/dialog.component';
@@ -48,7 +47,7 @@ import {WysiwygComponent} from './wysiwyg/wysiwyg.component';
 import { FooterComponent } from './footer/footer.component';
 import { SharedModule } from './shared/shared.module';
 import { PostsModule } from './posts/posts.module';
-//import { DialogComponent } from './dialog/dialog.component';
+
 const routes : Routes = [
   {path : '',redirectTo: '/blog', pathMatch: 'full' },
   {path : '',loadChildren: './posts/posts.module#PostModule' },
@@ -77,12 +76,17 @@ import { PartnersComponent } from './partners/partners.component';
 import { AddPartnerComponent } from './add-partner/add-partner.component';
 import { SkillsComponent } from './skills/skills.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { ManageBlogsComponent } from './manage-blogs/manage-blogs.component';
+import { ViewBlogsComponent } from './view-blogs/view-blogs.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UserComponent,
+    ManageBlogsComponent,
+ ViewBlogsComponent ,
     RegisterComponent,
     NewProfileComponent,
     NewMentorComponent,

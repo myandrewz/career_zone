@@ -1,0 +1,161 @@
+<div class ='view'>
+
+<div>
+  <h1 class="ui center aligned icon header">
+    <i class="file image icon"></i>
+    Timeline
+  </h1>
+</div>
+
+
+
+<mat-toolbar>
+  <button mat-raised-button (click)="addEntry()">Add Entry</button>
+  <button mat-raised-button (click)="removeEntry()">Remove Entry</button>
+</mat-toolbar>
+
+
+<mgl-timeline [toggle]="toggle" [alternate]="alternate" [side]="side">
+  <mgl-timeline-entry *ngFor="let entry of entries; let i = index;" (expand)="onExpandEntry($event, i)">
+    <mgl-timeline-entry-header (click)="onHeaderClick($event)">
+      
+      <div class="ui sizer vertical segment">
+      <div class="ui large header">2017</div>
+      </div>
+      
+  </mgl-timeline-entry-header>
+<mgl-timeline-entry-content>
+
+
+  <div>
+
+  <ngb-carousel *ngIf="images">
+  
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[0]" alt="Random first slide">
+    </div>
+    <div class="carousel-caption">
+
+<div class="ui form">
+  <div class="field">
+    <label>Brief Description</label>
+    <textarea rows="3"></textarea>
+  </div>
+</div>
+
+  </div>
+  </ng-template>
+  
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[1]" alt="Random second slide">
+    </div>
+    <div class="carousel-caption">
+
+        <div class="ui form">
+            <div class="field">
+              <label>Brief Description</label>
+              <textarea rows="3"></textarea>
+            </div>
+        </div>
+
+    </div>
+  </ng-template>
+  
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[2]" alt="Random third slide">
+    </div>
+    <div class="carousel-caption">
+
+        <div class="ui form">
+            <div class="field">
+              <label>Brief Description</label>
+              <textarea rows="3"></textarea>
+            </div>
+        </div>
+
+    </div>
+  </ng-template>
+  
+  </ngb-carousel>
+  
+  
+  </div>
+
+    </mgl-timeline-entry-content>
+    <mgl-timeline-entry-dot [class]="color ? 'primary' : 'accent'" 
+                            [size]="size"
+                            (click)="onDotClick($event)"></mgl-timeline-entry-dot>
+    <mgl-timeline-entry-side>2018</mgl-timeline-entry-side>
+  </mgl-timeline-entry>
+</mgl-timeline>
+
+
+</div>
+
+
+
+<!--upload image starts here-->
+<div class="dropzone" 
+     dropZone
+     (hovered)="toggleHover($event)"
+   
+     [class.hovering]="isHovering">
+
+
+
+     <h3>AngularFire Drop Zone</h3>
+
+     <p>Drag and Drop a File</p>
+
+     <div class="file">
+        <label class="file-label">
+
+
+        <input class="file-input" type="file" (change)="uploadFile($event)">
+
+
+          <span class="file-cta">
+
+            <span class="file-icon">
+              <i class="fa fa-upload"></i>
+            </span>
+
+            <span class="file-label">
+              or choose a file…
+            </span>
+
+          </span>
+          
+        </label>
+      </div>
+</div>
+<!-- 
+<div *ngIf="percentage | async as pct">
+
+  <progress class="progress is-info" 
+            [value]="pct" 
+            max="100">        
+  </progress>
+
+  {{ pct | number }}%
+
+</div>
+
+
+<div *ngIf="snapshot | async as snap">
+  {{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes | fileSize }} 
+
+  <div *ngIf="downloadURL | async as url">
+    <h3>Results!</h3>
+    <img [src]="url"><br>
+    <a [href]="url" target="_blank" rel="noopener">Download Me!</a>
+  </div> 
+
+  <button (click)="task.pause()" class="button is-warning" [disabled]="!isActive(snap)">Pause</button>
+  <button (click)="task.cancel()" class="button is-danger" [disabled]="!isActive(snap)">Cancel</button>
+  <button (click)="task.resume()" class="button is-info"   [disabled]="!(snap?.state === 'paused')">Resume</button>
+
+</div> -->

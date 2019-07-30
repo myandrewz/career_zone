@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <blockquote class="blockquote">
+      <p class="mb-0 h3 display-4">Image Gallery</p>
+      <footer class="blockquote-footer">with <cite title="Source Title">Firebase Storage</cite> and <cite
+          title="Source Title">Angular 7</cite></footer>
+    </blockquote>
+    
+  </div>
+</div>
+
+
+<table *ngIf="imageList">
+  <tr *ngFor="let i of rowIndexArray">
+    <td>
+
+      <div class="imagebox" *ngIf="i==0">
+        <a [routerLink] ="['/image']">
+          <img src="../img/new_image.jpg" class="img-fluid">
+          <span class="imagebox-desc">Insert New Image</span></a>
+      </div>
+
+      <div class="imagebox" *ngIf="i!=0">
+        <img [src]="imageList[3*i-1].imageUrl" class="img-fluid">
+        <span class="imagebox-desc">{{imageList[3*i-1].caption}}</span>
+      </div>
+
+    </td>
+
+    <td *ngIf="imageList[3*i]">
+      <div class="imagebox">
+        <img [src]="imageList[3*i].imageUrl" class="img-fluid">
+        <span class="imagebox-desc">{{imageList[3*i].caption}}</span>
+      </div>
+    </td>
+    
+    <td *ngIf="imageList[3*i+1]">
+      <div class="imagebox">
+        <img [src]="imageList[3*i+1].imageUrl" class="img-fluid">
+        <span class="imagebox-desc">{{imageList[3*i+1].caption}}</span>
+      </div>
+    </td>
+  </tr>
+</table>

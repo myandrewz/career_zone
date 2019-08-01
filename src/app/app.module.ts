@@ -50,6 +50,7 @@ import { PartnersComponent } from './dashboard/partners/partners.component';
 import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SkillsComponent } from './dashboard/skills/skills.component';
+import { PostsDetailComponent } from './posts/posts-detail/posts-detail.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
 import {  
    MatDatepickerModule,
@@ -86,6 +87,7 @@ import { ImageService } from './images/image.service';
   //  ManageBlogsComponent,
 // ViewBlogsComponent ,
     RegisterComponent,
+    PostsDetailComponent,
     DashboardComponent,
     StudentUserComponent,
     MentorComponent,

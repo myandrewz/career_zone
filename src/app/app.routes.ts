@@ -34,6 +34,8 @@ import { ReportsComponent} from './dashboard/reports/reports.component';
 import { AuditTrailComponent } from './audit-trail/audit-trail.component';
 import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
+//import { PostsDashboardComponent } from './posts/posts-dashboard/posts-dashboard.component';
+import { PostsDetailComponent } from './posts/posts-detail/posts-detail.component';
 
 
 export const rootRouterConfig: Routes = [
@@ -68,8 +70,8 @@ export const rootRouterConfig: Routes = [
   { path: 'internship', component: InternshipComponent},
   { path: 'career-events', component: CareerEventsComponent},
   { path: 'adduser', component: AdduserComponent},
- // { path: 'manage-blogs', component: ManageBlogsComponent},
- // { path: 'view-blogs', component: ViewBlogsComponent},
+ //{ path: 'posts-dashboard', component: PostsDashboardComponent},
+ { path: 'posts-detail', component: PostsDetailComponent},
   { path: 'addmentor', component: AddmentorComponent},
   { path: 'edit', component: EditProfileComponent},
   { path: 'mentors-request', component: MentorsRequestComponent},

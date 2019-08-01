@@ -1,6 +1,6 @@
   import { Component, OnInit } from '@angular/core';
   import {Router, ActivatedRoute } from '@angular/router';
-  import { PostService } from '../post.service';
+  import { PostService } from '../../services/posts/posts.service';
   //import {FirebaseService} from '../firebase.service';
   import { Post } from '../post';
   import { AuthService } from 'src/app/core/auth.service';
@@ -12,7 +12,7 @@
   @Component({
     selector: 'app-posts-detail',
     templateUrl: './posts-detail.component.html',
-    styleUrls: ['./posts-detail.component.scss']
+   // styleUrls: ['./posts-detail.component.scss']
   })
   export class PostsDetailComponent implements OnInit {
     //post: Post;

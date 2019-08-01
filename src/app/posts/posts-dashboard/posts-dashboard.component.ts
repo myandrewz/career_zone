@@ -1,6 +1,6 @@
   import { Component, OnInit } from '@angular/core';
   import { AuthService } from 'src/app/core/auth.service';
-  import { PostService } from '../post.service';
+  import { PostService } from '../../services/posts/posts.service';
   import { Observable } from 'rxjs';
   import { AngularFireStorage } from '@angular/fire/storage';
   import {Router, ActivatedRoute } from '@angular/router';
@@ -13,7 +13,7 @@
   @Component({
     selector: 'app-posts-dashboard',
     templateUrl: './posts-dashboard.component.html',
-    styleUrls: ['./posts-dashboard.component.scss'],
+   styleUrls: ['./posts-dashboard.component.scss'],
   
   })
   export class PostsDashboardComponent implements OnInit {

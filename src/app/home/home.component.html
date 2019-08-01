@@ -46,46 +46,35 @@
 
 <!--Events-->
 <div class="terms">
-<div id="slide1" class="slide">
-<h1 class="xlarge-font"><b>Events</b></h1>
-<ul class="grid">
-<li>
-<figure class="grid__figure">
-<img src="https://mdbootstrap.com/img/Photos/Others/img (36).jpg" alt="">
-<figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
-</figure>
-</li>
-<li>
-<figure class="grid__figure">
-<img src="https://mdbootstrap.com/img/Photos/Others/img (34).jpg" alt="">
-<figcaption>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</figcaption>
-</figure>
-</li>
-<li>
-<figure class="grid__figure">
-<img src="https://picsum.photos/200/300/?random" alt="">
-<figcaption>Parturient Mollis Malesuada Tristique Inceptos.</figcaption>
-</figure>
-</li>
-<li>
-<figure class="grid__figure">
-<img src="https://picsum.photos/400/200/?random" alt="">
-<figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
-</figure>
-</li>
-<li>
-<figure class="grid__figure">
-<img src="https://picsum.photos/200/300/?random" alt="">
-<figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
-</figure>
-</li>
-<li>
-<figure class="grid__figure">
-<img src="https://mdbootstrap.com/img/Photos/Others/img (36).jpg" alt="">
-<figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
-</figure>
-</li>
-</ul>
+
+
+  <div id="slide1" class="slide"  >
+    <h1 class="xlarge-font"><b>Events</b></h1>
+
+    
+    <ul class="grid">
+    <div *ngFor ="let event of events">
+    <li>
+    <figure class="grid__figure">
+    <img src="https://mdbootstrap.com/img/Photos/Others/img (36).jpg" alt="">
+    <figcaption>{{ event.payload.doc.data().title }} : {{ event.payload.doc.data().description }}  in {{ event.payload.doc.data().location }}, this was on {{ event.payload.doc.data().date }}</figcaption>
+    </figure>
+    </li>
+  </div>
+
+    <div *ngFor ="let event of events">
+    <li>
+    <figure class="grid__figure">
+    <img src="https://mdbootstrap.com/img/Photos/Others/img (34).jpg" alt="">
+    <figcaption>{{ event.payload.doc.data().title }} : {{ event.payload.doc.data().description }}  in {{ event.payload.doc.data().location }}, this was on {{ event.payload.doc.data().date }}</figcaption>
+    </figure>
+    </li>
+  </div>
+
+    </ul>
+  
+    
+    </div>
 </div>
 
 
@@ -411,69 +400,79 @@
 
               <!--Mentors-->
               <div id="slide5" class="slide">
-                  <h1 class="xlarge-font"><b>Meet Mentor</b></h1>
 
-                  <!-- horizontal -->
                   
-                  <div class="flip">
-                      <div class="front" style="background-image: url('../assets/images/entertainment.jpeg');">
-                         
-                      </div>
-                      <div class="back">
-                          <h2 style="text-align: center;">Portfolio</h2>
-                         <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
-                      </div>
-                  </div>
-                  <div class="flip">
-                      <div class="front" style="background-image: url('../assets/images/banner.jpg');">
-                         
-                      </div>
-                      <div class="back">
-                          <h2 style="text-align: center;">Portfolio</h2>
-                         <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
-                      </div>
-                  </div>
+
+                      <h1 class="xlarge-font"><b>Meet Mentor</b></h1>
                   
-                  <div class="flip">
-                      <div class="front" style="background-image: url('../assets/images/Sudir.jpg');">
-                         <!----<h1 class="text-shadow">OCEAN</h1>--->
+                      <!-- horizontal -->
+                      <div *ngFor="let mentor of mentors">
+                      <div class="flip">
+                          <div class="front" style="background-image: url('../assets/images/entertainment.jpeg');">
+                             
+                          </div>
+                          <div class="back">
+                              <h2 style="text-align: center;">Portfolio</h2>
+                             <p>{{mentor.payload.doc.data().full_name}}</p>
+                             <p>{{mentor.payload.doc.data().current_employer}}</p>
+                             <p>{{mentor.payload.doc.data().profession}}</p>
+                          </div>
                       </div>
-                      <div class="back">
-                          <h2 style="text-align: center;">Portfolio</h2>
-                         <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+                    </div>
+
+                      <!-- <div class="flip">
+                          <div class="front" style="background-image: url('../assets/images/banner.jpg');">
+                             
+                          </div>
+                          <div class="back">
+                              <h2 style="text-align: center;">Portfolio</h2>
+                             <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+                          </div>
+                      </div> -->
+                      
+                      <div class="flip">
+                          <div class="front" style="background-image: url('../assets/images/Sudir.jpg');">
+                             <!----<h1 class="text-shadow">OCEAN</h1>--->
+                          </div>
+                          <div class="back">
+                              <h2 style="text-align: center;">Portfolio</h2>
+                             <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+                          </div>
                       </div>
-                  </div>
+                      
+                      <div class="flip">
+                          <div class="front" style="background-image: url('../assets/images/Mutebile.jpg');">
+                             <!----<h1 class="text-shadow">OCEAN</h1>--->
+                          </div>
+                          <div class="back">
+                              <h2 style="text-align: center;">Portfolio</h2>
+                             <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+                          </div>
+                      </div>
+                      
+                      <div class="flip">
+                          <div class="front" style="background-image: url('../assets/images/museveni.jpg');">
+                             <!----<h1 class="text-shadow">OCEAN</h1>--->
+                          </div>
+                          <div class="back">
+                              <h2 style="text-align: center;">Portfolio</h2>
+                             <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+                          </div>
+                      </div>
+                      
+                      <div class="flip">
+                          <div class="front" style="background-image: url('../assets/images/Richard.jpg');">
+                             <!----<h1 class="text-shadow">OCEAN</h1>--->
+                          </div>
+                          <div class="back">
+                              <h2 style="text-align: center;">Portfolio</h2>
+                             <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
+                          </div>
+                      </div>
+                      <button class="button">View More</button>
                   
-                  <div class="flip">
-                      <div class="front" style="background-image: url('../assets/images/Mutebile.jpg');">
-                         <!----<h1 class="text-shadow">OCEAN</h1>--->
-                      </div>
-                      <div class="back">
-                          <h2 style="text-align: center;">Portfolio</h2>
-                         <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
-                      </div>
-                  </div>
+                  <!-- </div> -->
                   
-                  <div class="flip">
-                      <div class="front" style="background-image: url('../assets/images/museveni.jpg');">
-                         <!----<h1 class="text-shadow">OCEAN</h1>--->
-                      </div>
-                      <div class="back">
-                          <h2 style="text-align: center;">Portfolio</h2>
-                         <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
-                      </div>
-                  </div>
-                  
-                  <div class="flip">
-                      <div class="front" style="background-image: url('../assets/images/Richard.jpg');">
-                         <!----<h1 class="text-shadow">OCEAN</h1>--->
-                      </div>
-                      <div class="back">
-                          <h2 style="text-align: center;">Portfolio</h2>
-                         <p>Good tools make application development quicker and easier to maintain than if you did everything by hand..</p>
-                      </div>
-                  </div>
-                  <button class="button">View More</button>
               </div>
 
 

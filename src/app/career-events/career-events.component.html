@@ -7,12 +7,17 @@
       <h1 class="xlarge-font"><b>Events</b></h1>
 
       <ul class="grid">
+
+          <div *ngFor ="let event of events">
           <li>
             <figure class="grid__figure">
               <img src="https://mdbootstrap.com/img/Photos/Others/img (36).jpg" alt="">
-              <figcaption>Vehicula Quam Nibh</figcaption>
+              <figcaption>{{ event.payload.doc.data().title }} : {{ event.payload.doc.data().description }}  in {{ event.payload.doc.data().location }}, this was on {{ event.payload.doc.data().date }}</figcaption>
             </figure>
           </li>
+          </div>
+
+
           <li>
             <figure class="grid__figure">
               <img src="https://mdbootstrap.com/img/Photos/Others/img (34).jpg" alt="">

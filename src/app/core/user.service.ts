@@ -27,7 +27,7 @@ export class UserService {
       })
     })
   }
-  getMentor(role){
+  getMentors(role){
     return this.db.collection("User", ref => ref.where('role', '==', role)).snapshotChanges();
   }
   getUserProfile(authenticated_user_uid){

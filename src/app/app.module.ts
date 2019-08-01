@@ -52,7 +52,7 @@ import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partne
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
-import { NotificationComponent } from './notification/notification.component';
+import { NotificationComponent } from './components/dashboard/notification/notification.component';
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
 import { HelpComponent } from './components/dashboard/help/help.component';

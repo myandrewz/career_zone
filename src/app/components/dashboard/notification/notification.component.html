@@ -1,0 +1,56 @@
+<div class="container">
+  <h1>Notifications</h1>
+  <hr>
+  <div class="row">
+    <div class="container" *ngIf="user_profile.role == 'mentor'">
+      <div class="ui feed"  *ngFor="let notification of notifications">
+        <div class="event">
+          <div class="label">
+            <img src="../assets/images/banner.jpg">
+          </div>
+          <div class="content">
+            <div class="summary">
+              <a class="user">
+                  {{ notification.payload.doc.data().student_ID }}
+              </a>sent you a mentorship request
+              <div class="date">
+                1 Hour Ago
+              </div>
+            </div>
+            <div class="meta">
+              <a class="like">
+                <i class="like icon"></i> 4 Likes
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" *ngIf="user_profile.role == 'student'">
+      <div class="ui feed"  *ngFor="let notification of notifications">
+        <div class="event">
+          <div class="label">
+            <img src="../assets/images/banner.jpg">
+          </div>
+          <div class="content">
+            <div class="summary">
+                you have sent a mentorship request to
+              <a class="user">
+                  {{ notification.payload.doc.data().mentor_ID }}
+              </a>
+              <div class="date">
+                1 Hour Ago
+              </div>
+            </div>
+            <div class="meta">
+              <a class="like">
+                <i class="like icon"></i> 4 Likes
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

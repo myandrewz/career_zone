@@ -4,26 +4,39 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-$base-font-size:9px;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600");
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&display=swap');
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+$base-font-size:1em;
+$base-blue:#4cc2c4;
+
+._bg-base{
+  background: $base-blue !important;
+}
 
 ._fqsand{
   font-family: 'quicksand' !important
 }
-
+._fthick{
+  font-weight:600 !important
+}
 ._fs20{
-  font-size: $base-font-size*2 !important;
+  font-size: $base-font-size + 0.5 !important;
 }
 
 ._h60{
   height: 60px !important;
-  
 }
 
-.password{
-  letter-spacing: 1px;
-  font-size: 13px
-
+._lspace05{
+  letter-spacing: 0.5px !important;
 }
+
 
 ._mt10{
   margin-top: 10px !important
@@ -35,6 +48,67 @@ $base-font-size:9px;
 
 ._mt30{
   margin-top: 30px !important
+}
+
+._pt10{
+  padding-top: 10px !important;
+}
+
+._pt20{
+  padding-top: 20px !important;
+}
+
+._mb10{
+  margin-bottom: 10px !important;
+}
+
+._mb20{
+  margin-bottom: 20px !important;
+}
+
+._ml0{
+  margin-left: 0 !important;
+}
+
+._ml10{
+  margin-left: 10px !important;
+}
+
+._ml20{
+  margin-left: 20px !important;
+}
+
+._mt20{
+  margin-top: 20px !important;
+}
+
+._mt30{
+  margin-top: 30px !important;
+}
+
+._mt50{
+  margin-top: 50px !important;
+}
+
+.password{
+  letter-spacing: 1px;
+  font-size: 13px
+
+}
+
+._p030{
+  padding: 0 30px !important;
+}
+._tuppercase{
+  text-transform: uppercase !important;
+}
+
+._tcenter{
+  text-align: center !important;
+}
+
+._tdark{
+  color: black !important
 }
 
 ._loginwith{
@@ -51,9 +125,18 @@ $base-font-size:9px;
   padding-top:10px
 }
 
+._w30{
+  width: 30% !important;
+}
+
+._w40{
+  width: 40% !important;
+}
+
 ._w50{
   width: 49% !important;
 }
+
 .sticky {
   background: rgba(255, 255, 255, 0);
   box-shadow: 0 3px 12px 0 rgba(0,0,0,.08);
@@ -64,9 +147,6 @@ $base-font-size:9px;
   background-color:rgba(5, 5, 5, 0.527);
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600");
 .fancyFont {
   font-family: 'Montserrat';
   font-weight: 500;
@@ -105,4 +185,5 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .imagebox:hover .imagebox-desc {
   padding-bottom: 10%;
 }
+
 

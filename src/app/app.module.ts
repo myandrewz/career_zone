@@ -36,7 +36,6 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { BlogsUserComponent } from './blogs-user/blogs-user.component';
 import { MeetMentorComponent } from './meet-mentor/meet-mentor.component';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
-//import { SearchfilterPipe } from './pipes/searchfilter.pipe';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
@@ -52,10 +51,10 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
 import { MatButtonModule,
-   MatCardModule, 
-   MatProgressBarModule, 
-   MatMenuModule, 
-   MatToolbarModule, 
+   MatCardModule,
+   MatProgressBarModule,
+   MatMenuModule,
+   MatToolbarModule,
    MatDatepickerModule,
    MatTabsModule,
    MatInputModule,
@@ -63,16 +62,14 @@ import { MatButtonModule,
    MatCheckboxModule,
    MatExpansionModule,
    MatRadioModule,
-   MatIconModule, 
-   MatSidenavModule, 
+   MatIconModule,
+   MatSidenavModule,
    MatListModule } from '@angular/material';
 
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
 import { HelpComponent } from './components/dashboard/help/help.component';
 import { MentorsRequestComponent } from './components/dashboard/mentors-request/mentors-request.component';
-import { MatButtonModule, MatCardModule, MatProgressBarModule, MatMenuModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule } from '@angular/material';
-
 import { TimelineComponent } from './timeline/timeline.component';
 import { DropZoneDirective } from './timeline/drop-zone.directive';
 import { FileSizePipe } from './timeline/file-size.pipe';
@@ -80,6 +77,8 @@ import { MglTimelineModule } from 'angular-mgl-timeline';
 import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 import { ImageService } from './images/image.service';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -152,13 +151,13 @@ import { ImageService } from './images/image.service';
     MglTimelineModule,
     MatToolbarModule,
     MatTabsModule,
-    MatButtonModule, 
-    MatInputModule, 
-    MatDatepickerModule, 
-    MatNativeDateModule, 
-    MatCheckboxModule, 
+    MatButtonModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
     MatRadioModule,
-    
+    FlexLayoutModule,
 
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCi3hSfPY4V_5h4XIBuAv13P7AQlwvIG6A'

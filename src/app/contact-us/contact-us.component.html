@@ -1,0 +1,31 @@
+
+<app-header></app-header>
+<div class="main-top-intro" (scroll)="onWindowScroll($event);">
+  <div class="bg-layer">
+   <div class="terms">
+        
+      <div class="row">
+      <div class="column-33">
+       
+          <h1 class="xlarge-font" style="color:#5e5e5f;"><b>About the Expo</b></h1>
+            <p style="font-size:18px">
+This is an initiative that is meant to enable students get the right technical and professional career advice, engage with potential employers in one place as well as register University finalists who are preparing to enter the job market. The theme will still revolve around guiding students on corporate employment and imparting entrepreneurial skills.
+            </p>
+      </div>
+
+
+
+
+        <agm-map class="map" [latitude]="lat" [longitude]="lng" >
+          
+            <agm-marker [latitude]="lat" [longitude]="lat"></agm-marker>
+          </agm-map>
+       </div>
+
+
+
+    </div>
+  </div>
+</div>
+<!-- footer -->
+<app-footer></app-footer>

@@ -1,0 +1,88 @@
+<!-- header -->
+<app-header></app-header>
+
+<div class="main-top-intro" (scroll)="onWindowScroll($event);">
+  <div class="bg-layer">
+      <!-- header -->
+
+      <!-- //header -->
+
+            <!---728x90--->
+
+  
+          <div class="fancyFont">
+            <div>
+              <div>
+                <h2> Create an Account with us.</h2>
+                </div>
+                <!---728x90--->
+  
+                <div class="content-w3layouts-main">
+  
+                    <div class="form-w3ls-left-info">
+                        <form class="ui form myForm" id="myForm" [formGroup]="registerForm" (ngSubmit)="tryRegister(registerForm.value)" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
+
+                            <div class ="_registerr">
+                              <p style="color: white"> NAME </p>
+                            </div>
+                            <input class="_h60 _fs20 " type="text" placeholder="Your full name" required="" formControlName="name" />
+
+                            
+                            <input class="_h60 _fs20 " type="email" placeholder="Email Address" required="" formControlName="email" />
+                            <div class="inputs">
+                              
+                              <input class="_h60 _fs20" type="password" placeholder="Password" required="" formControlName="password" />
+                              <div class ="_registerr">
+                                <p style="color: white">
+                                  <input class="_fs20" type="checkbox" required="" formControlName="terms_conditions" value="yes" />
+                                  <a style="color: white;font-size: 12px" [routerLink]="[ '/terms-and-conditions']">
+                                    Accept Our Terms and Conditions
+                                  </a>
+                                </p>
+                              </div>
+                            </div>
+                           
+                            
+                            <div class="bottom _mt20">
+
+                              <button class="btn reg _h60 _w50 fancyFont"  type="submit" [disabled]="!myForm.form.valid">
+                                sign up </button>
+                            </div>
+
+                                  <a style="padding-top: 18px" class = " links btn fancyFont password" 
+                                  (click)="tryLogin()" type="submit" href="/login"><u>LOGIN</u></a>
+                            
+                          </form>
+                        </div>
+                </div>
+
+            
+
+          
+              <div class="content-outer-info ">
+                <p style = "color: rgb(252, 250, 252)" class="_loginwith"> REGISTER WITH </p>
+                
+                <button class="ui facebook button" (click)="tryFacebookLogin()">
+                  <i class="ui.facebook"></i>
+                  Facebook
+                </button>
+              
+                <button class="ui twitter button" (click)="tryTwitterLogin()">
+                  <i class="ui.twitter"></i>
+                  Twitter
+                </button>
+                
+                <button class="ui google plus button" (click)="tryGoogleLogin()">
+                  <i class="ui.google"></i>
+                  Google Plus
+                </button>
+            
+              </div>
+            </div>
+      </div>
+ </div>
+
+</div>
+
+<!-- footer -->
+<app-footer></app-footer>

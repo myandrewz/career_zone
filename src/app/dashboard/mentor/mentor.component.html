@@ -1,0 +1,93 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+<script src = "mentor.component.ts"></script>
+  
+
+  <!--
+   <div style="padding: 40px !important ; background: white !important">
+      {{students|json}}
+    </div> 
+  -->
+  <div>
+  <h1 class="ui center aligned icon header">
+    <i class="circular users icon"></i>
+    Mentors
+  </h1>
+  </div>
+
+  <div style = "padding-left: 18em">
+    <div class="ui category search">
+      <div class="ui icon input">
+<input class="prompt" type="text" placeholder="Search..." (keydown)="searchStudents($event)" name="searchString" [(ngModel)]="term">
+        <i class="search icon"></i>
+      </div>
+      <div class="results"></div>
+    </div>
+      
+  </div>
+    
+    <table class="ui compact celled definition table" style="margin-left: 230px; width:700px" id="mentorstable">
+        <thead class="full-width">
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Date of Account creation</th>
+            <th>E-mail address</th>
+            <th>Gender</th>
+            <th>Company</th>
+            <th>Profession</th>
+            <th>Date of Birth</th>
+            <th>Skills</th>
+            <th>Experience (years)</th>
+            <th>Actions</th>
+            
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let student of students ">
+            <td class="collapsing">
+              <div class="ui fitted slider checkbox">
+                <input type="checkbox"> <label></label>
+              </div>
+            </td>
+            <td>{{student.full_name}}</td>
+            <td>{{student.created_at}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.company}}</td>
+            <td>{{student.profession}}</td>
+            <td>{{student.dob}}</td>
+            <td>{{student.skills}}</td>
+            <td>{{student.experience}}</td>
+            <td><div class="dropdown"><button class="dropbtn">
+                <div class="dropdown-content">
+                  <a href="#">View Profile</a>
+                  <a href="#">Approve</a>
+                  <a href="#">Edit</a>
+                  <a href="#">Delete</a>
+                </div><i class="fa fa-ellipsis-v"></i></button></div></td>
+          </tr>
+        </tbody>
+
+        <tfoot class="full-width">
+          <tr>
+            <th></th>
+            <th colspan="4">
+              <div [routerLink] = "['/dashboard/addmentor']" class="ui right floated small primary labeled icon button">
+                <i class="user icon"></i> Add Mentor
+              </div>
+              <div class="ui small  button">
+                Approve
+              </div>
+              <div class="ui small  disabled button">
+                Approve All
+              </div>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+
+
+
+  

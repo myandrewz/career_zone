@@ -1,0 +1,211 @@
+
+<!--<p>{{authenticated_user.uid}}</p>--->
+<!--
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button>
+-->
+
+<form class="ui form profileform" [formGroup]="profileForm">
+  <mat-horizontal-stepper  class ="stepper" [linear]="isLinear" class="
+  mat-horizontal-content-container" #stepper style="background:#DDD">
+  <!--<mat-horizontal-stepper  class ="stepper" linear #stepper>-->
+
+
+      <!---first input-->
+      <mat-step [stepControl]="firstFormGroup">
+        <ng-template matStepLabel>CHOOSE</ng-template>
+        
+        
+        <h1 class="ui dividing header">Bio Data</h1>
+        <div class="field enlarge">
+          <label>Full name</label>
+          <input type="text" placeholder="Full Name" formControlName="full_name">
+        </div>
+
+        <div class="ui form enlarge">
+          <div class="two fields">
+            <div class="field">
+              <label>Date Of Birth</label>
+              <input type="date" placeholder="me@me.org" formControlName="dob">
+            </div>
+
+            <div class="field">
+              <label>Email</label>
+              <input type="email" placeholder="me@me.org" formControlName="email">
+            </div>
+            </div>
+        </div>
+        
+        <div class="field enlarge">
+          <label>Gender :</label>
+          <select class="form-control" formControlName="gender">
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+        
+        <div class="form-group enlarge">
+          <label>Role :</label>
+          <select class="form-control" formControlName="role">
+            <option value="student" selected>student</option>
+          </select>
+        </div>
+        <!--
+          hidden input
+        -->
+        <input type="text" value="false" hidden formControlName="is_approved">
+        
+
+        <div>
+          <button mat-button matStepperNext  class="ui secondary button" type="button">Next</button>
+        </div>
+
+      </mat-step>
+      
+      
+      <!---second input-->
+      <mat-step [stepControl]="secondFormGroup" *ngIf="enableStudent">
+        <ng-template matStepLabel>STUDENT DETAILS</ng-template>
+      
+        <h1 class="ui dividing header">Bio Data</h1>
+        <div class="ui form enlarge">
+          <div class="two fields">
+            <div class="field">
+              <label>University</label>
+              <input type="text" placeholder="University" formControlName="university">
+            </div>
+            <div class="field">
+              <label>Campus</label>
+              <input type="text" placeholder="Campus" formControlName="campus">
+            </div>
+          </div>
+        </div>
+
+        <div class="ui form enlarge ">
+            <div class="two fields">
+              <div class="field">
+                <label>Course Of Study</label>
+                <input type="text" placeholder="Course Of Study" formControlName="course">
+              </div>
+              <div class="field">
+                  <label>Date Of Joining</label>
+                  <input type="date" placeholder="Year" formControlName="date_joined">
+                </div>
+              </div>
+            </div>
+
+        <h1 class="ui dividing header">Interests</h1>
+          <div class="field enlarge">
+            <label>Select :</label>
+            <select class="form-control enlarge" formControlName="interests">
+              <option>Knowledge</option>
+              <option>Hobby</option>
+            </select>
+          </div>
+          <div>
+          <button class="ui secondary button" mat-button matStepperPrevious>Back</button>
+          <button class="ui secondary button" mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+
+
+      <!---third input-->
+      <mat-step [stepControl]="thirdFormGroup" *ngIf="enableMentor">
+        <ng-template matStepLabel>MENTOR DETAILS</ng-template>
+        
+        <!--<form class="ui form">-->
+
+          <h1 class="ui dividing header">Place Of Work</h1>
+          <div class="ui form enlarge">
+            <div class="four fields">
+
+              <div class="field">
+                <label>Company</label>
+                <input type="text" placeholder="Current Employer" formControlName="current_employer">
+              </div>
+
+              <div class="field">
+                  <label>Profession</label>
+                  <input type="text" placeholder="Profession" formControlName="profession">
+              </div>
+
+                  <div class="field">
+                    <label>working Experience</label>
+                    <input type="text" placeholder="Years 0f Experience" formControlName="experience">
+                  </div>
+                
+              </div>
+            </div>
+
+          <h1 class="ui dividing header">Skills</h1>
+          <div class="field enlarge">
+            <label>Select</label>
+            <select class="form-control" formControlName="skills">
+              <option>Troubleshooting</option>
+              <option>Programming</option>
+            </select>
+          </div>
+        <!--</form>-->
+        
+        <div>
+          <button class="ui secondary button" mat-button matStepperPrevious>Back</button>
+          <button class="ui secondary button" mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+        
+
+      <!---fourth input-->
+      <mat-step [stepControl]="forthFormGroup">
+        <ng-template matStepLabel>USER PROFILE</ng-template>
+      
+        <section class="container">
+            <section class="wrapper">
+              <header>
+                <h1> update profile picture </h1>
+              </header>
+              <section class="main-content">
+                    <div class="profile-img-content">
+                        <div class="profile-img">
+                          <img *ngFor="let url of urls" [src]="url" height="200" width="200" alt="User avatar">
+                          <img *ngIf="!image" src="https://png.pngtree.com/svg/20161212/f93e57629c.svg" height="200" width="200" alt="User avatar">
+                        </div>
+                  </div>
+                  <div class="ui form enlarge">
+                      <div class="field">
+                        <label>IMAGE</label>
+                        <input accept='image/*' type="file" name="image" formControlName="image"  (change)="detectFiles($event)">
+                      </div>
+                  </div>
+                  <div class="ui form enlarge">
+                      <div class="field">
+                        <label>USER NAME</label>
+                        <input type="text" placeholder="Username" formControlName="username">
+                      </div>
+                  </div>
+              </section>
+            </section>
+        </section>
+
+        <div class="ng-star-inserted" style="padding-top:27px;">
+          <button class="ui secondary button" mat-button matStepperPrevious>Back</button>
+          <button class="ui secondary button " mat-button matStepperNext>Next</button>
+        </div>
+      </mat-step>
+      
+      
+      <!---fifth input-->
+      <mat-step>
+        <ng-template matStepLabel>DONE</ng-template>
+       <h1>You are now done. Thank You!!!</h1> 
+        <div class="ng-star-inserted" style="margin-top:84px;">
+          <button  class="btn reg _h16 _w49 ui secondary button" (click)="registerProfile()" type="submit">Submit</button>
+          <button  class="btn reg _h16 _w49 ui secondary button" mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+  </mat-horizontal-stepper>
+</form>
+
+
+<!----class="btn reg _h16 _w49"--->
+<!-- class="bottom_mt20"-->

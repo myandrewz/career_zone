@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="main-top-intro" (scroll)="onWindowScroll($event);">
+  <div class="bg-layer">
+    <div class="terms" style="padding-left:180px;">
+            
+        <h1 class="xlarge-font"><b>Meet Mentor</b></h1>
+
+        <!-- horizontal -->
+        <div  *ngFor="let mentor of mentors">
+
+            <div class="flip">
+                <div class="front" style="background-image: url('../assets/images/entertainment.jpeg');">
+                
+                </div>
+                <div class="back">
+                    <h2 style="text-align: center;">Portfolio</h2>
+                    <p>{{mentor.payload.doc.data().full_name}}</p>
+                    <p>{{mentor.payload.doc.data().current_employer}}</p>
+                    <p>{{mentor.payload.doc.data().profession}}</p>
+                    <button class="button" (click)="sendRequest(mentor.payload.doc.data().id)">Send Request</button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+  </div>
+</div>
+
+<!-- footer -->
+<app-footer></app-footer>
+
+

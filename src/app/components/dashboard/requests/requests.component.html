@@ -9,7 +9,7 @@
             <img src="../assets/images/banner.jpg">
           </div>
           <div class="content">
-            <a [routerLink] = "['/profile/view-request']">
+            <a [routerLink] = "['/profile/view-request']" [queryParams]="{user_ID:request.payload.doc.data().student_ID, doc_ID:request.payload.doc.id}">
               <div class="summary">
                 <a class="user">
                     {{ request.payload.doc.data().student.full_name }}
@@ -36,7 +36,7 @@
             <img src="../assets/images/banner.jpg">
           </div>
           <div class="content">
-            <a [routerLink] = "['/profile/view-request']">
+            <a [routerLink] = "['/profile/view-request']" [queryParams]="{user_ID:request.payload.doc.data().mentor_ID, doc_ID:request.payload.doc.id}">
             <div class="summary">
                 you have sent a mentorship request to
               <a class="user">

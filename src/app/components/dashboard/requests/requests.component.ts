@@ -28,9 +28,9 @@ export class RequestsComponent implements OnInit {
       console.log(this.authenticated_user.uid)
       console.log(this.user_profile.role)
     }
-    this.getNotifications();
+    this.getRequests();
   }
-  getNotifications(){
+  getRequests(){
     this.requestsService.getUserRequests(this.authenticated_user.uid, this.user_profile.role+"_ID")
     .subscribe(res => (this.requests = res));
 

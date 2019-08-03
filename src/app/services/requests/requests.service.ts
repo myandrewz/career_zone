@@ -39,4 +39,9 @@ export class RequestsService {
       status:"pending"
     });
   }
+  acceptMentorshipRequest(doc_ID) {
+   return this.db.collection("Requests")
+          .doc(doc_ID)
+          .set({ status: "accepted" }, { merge: true });
+  }
 }

@@ -11,8 +11,8 @@
           <div *ngFor ="let event of events">
           <li>
             <figure class="grid__figure">
-              <img src="https://mdbootstrap.com/img/Photos/Others/img (36).jpg" alt="">
-              <figcaption>{{ event.payload.doc.data().title }} : {{ event.payload.doc.data().description }}  in {{ event.payload.doc.data().location }}, this was on {{ event.payload.doc.data().date }}</figcaption>
+              <img  src="{{event.payload.doc.downlord_url}}" alt="">
+              <figcaption>{{ event.title }} : {{ event.description }}  in {{ event.location }}, this was on {{ event.date }}</figcaption>
             </figure>
           </li>
           </div>

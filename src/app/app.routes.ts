@@ -30,6 +30,8 @@ import { ProfileComponent } from './components/dashboard/profile/profile.compone
 import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
 import { HelpComponent } from './components/dashboard/help/help.component';
 import { MentorsRequestComponent } from './components/dashboard/mentors-request/mentors-request.component';
+import { RequestsComponent } from './components/dashboard/requests/requests.component';
+import { ViewRequestComponent } from './components/dashboard/view-request/view-request.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { ReportsComponent} from './dashboard/reports/reports.component';
 import { AuditTrailComponent } from './audit-trail/audit-trail.component';
@@ -77,6 +79,8 @@ export const rootRouterConfig: Routes = [
       { path: 'edit-profile', component: EditProfileComponent },
       { path: 'help', component: HelpComponent },
       { path: 'notifications', component: NotificationComponent},
+      { path: 'requests', component: RequestsComponent},
+      { path: 'view-request', component: ViewRequestComponent},
       { path: 'mentors-request', component: MentorsRequestComponent},
     ]},
 

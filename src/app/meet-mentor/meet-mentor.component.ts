@@ -18,7 +18,9 @@ export class MeetMentorComponent implements OnInit {
   authenticated_user:any;
   user_profile:any;
   mentor;
+  _mentor;
   student;
+  _student;
 
   constructor(
     public userService:UserService,
@@ -43,9 +45,9 @@ export class MeetMentorComponent implements OnInit {
     .subscribe(res=>(this.mentors=res));
     // console.log(role)
   }
-  sendRequest(mentor_ID){
-    this.userService.getUserProfile(mentor_ID).subscribe(res=>(this.mentor=res));
-    this.userService.getUserProfile(this.authenticated_user.uid).subscribe(res=>(this.student=res));
+  sendRequest(mentor_ID, mentor){
+    // this.userService.getUserProfile(mentor_ID).subscribe(res=>(this.mentor=res));
+    // this.userService.getUserProfile(this.authenticated_user.uid).subscribe(res=>(this.student=res));
     // this.requestsService
     // .sendMentorRequest(this.authenticated_user.uid, this.mentor, mentor_ID, this.student)
     // .then(res => {
@@ -53,18 +55,52 @@ export class MeetMentorComponent implements OnInit {
     // }, err => {
     //   this.toastr.error(err.message, "Error", {enableHtml :  true });
     // });
+    // (async () => { 
+    //   // Do something before delay
+    //   console.log('before delay')
+  
+    //   await delay(10000);
+  
+    //   // Do something after
+
+    //   for (var m of this.mentor) {
+    //     console.log(m.payload.doc.data().full_name);
+    //     this._mentor.full_name = m.payload.doc.data().full_name
+    //     this._mentor.id = m.payload.doc.data().id
+    //     this._mentor.image = m.payload.doc.data().image
+    //   }      
+    //   for (var s of this.student) {
+    //     console.log(s.payload.doc.data().full_name);
+    //   }
+
+    //   console.log('after delay')
+    //   console.log(mentor_ID)
+    //   console.log(this.mentor)
+    //   console.log(this._mentor)
+    //   console.log(this.student)
+    //   console.log(this.authenticated_user.uid)
+    // })();
+    this.userService.getUserProfile(this.authenticated_user.uid).subscribe(res=>(this._student=res));
     (async () => { 
       // Do something before delay
       console.log('before delay')
   
       await delay(10000);
   
-      // Do something after
-      console.log('after delay')
-      console.log(mentor_ID)
-      console.log(this.mentor)
+      // Do something after    
+      for (var s of this._student) {
+        this.student = s.payload.doc.data();
+      }
       console.log(this.student)
-      console.log(this.authenticated_user.uid)
+      console.log(mentor)
+      this.requestsService
+      .sendMentorRequest(this.authenticated_user.uid, this.student, mentor_ID, mentor)
+      .then(res => {
+        this.toastr.success("Your request has been sent !!!","Notification");
+      }, err => {
+        this.toastr.error(err.message, "Error", {enableHtml :  true });
+      });
+      this.requestsService.createNotification(this.authenticated_user.uid, this.student, mentor_ID, mentor)
     })();
   }
 

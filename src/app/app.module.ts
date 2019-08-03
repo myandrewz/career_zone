@@ -61,6 +61,8 @@ import { MatButtonModule, MatCardModule, MatProgressBarModule, MatMenuModule, Ma
 import { TimelineComponent } from './timeline/timeline.component';
 import { DropZoneDirective } from './timeline/drop-zone.directive';
 import { FileSizePipe } from './timeline/file-size.pipe';
+import { RequestsComponent } from './components/dashboard/requests/requests.component';
+import { ViewRequestComponent } from './components/dashboard/view-request/view-request.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +102,9 @@ import { FileSizePipe } from './timeline/file-size.pipe';
     MentorsRequestComponent,
     TimelineComponent,
     DropZoneDirective,
-    FileSizePipe
+    FileSizePipe,
+    RequestsComponent,
+    ViewRequestComponent
   ],
 
   imports: [

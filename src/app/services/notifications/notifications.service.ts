@@ -15,7 +15,7 @@ export class NotificationsService {
    ){
    }
 
-   getUserNotifications(authenticated_user_uid, role){
-     return this.db.collection("Notification", ref => ref.where(role, '==', authenticated_user_uid)).snapshotChanges();
+   getUserNotifications(authenticated_user_uid, role_ID){
+     return this.db.collection("Notifications", ref => ref.where(role_ID, '==', authenticated_user_uid)).snapshotChanges();
    }
 }

@@ -41,7 +41,10 @@
 
               <div class="field">
                 <label>Category</label>
-                <input type="text" placeholder="Category" formControlName="category">
+                <!-- <input type="text" placeholder="Category" formControlName="category"> -->
+                <select class="form-control" formControlName="category">
+                  <option *ngFor="let category of categories">{{category.payload.doc.data().category}}</option>
+                </select>
               </div>
               
             </div>

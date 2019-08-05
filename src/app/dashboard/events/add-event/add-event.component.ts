@@ -25,6 +25,7 @@ export class AddEventComponent implements OnInit {
   uploadState: Observable<string>;
   uploadProgress: Observable<number>;
   file: any;
+  categories;
 
   constructor(
 
@@ -44,6 +45,7 @@ export class AddEventComponent implements OnInit {
       this.authenticated_user = JSON.parse(_authuser);
       console.log(this.authenticated_user.uid)
     }
+    this.getCategories();
   }
 
   createForm() {
@@ -103,6 +105,11 @@ export class AddEventComponent implements OnInit {
       this.toastr.error(err.message, "Error", {enableHtml :  true });
     });
 
+  }
+
+  getCategories(){
+    this.eventsService.getCategories()
+    .subscribe(res =>(this.categories = res));
   }
 
 }

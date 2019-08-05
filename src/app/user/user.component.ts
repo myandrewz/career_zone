@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../core/user.service';
 import { AuthService } from '../core/auth.service';
+import { EventsService } from '../services/events/events.service';
 import { Router, Params } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -30,6 +31,7 @@ export class UserComponent implements OnInit{
   image:any;
   enableStudent = true;
   enableMentor = false;
+  skills;
 
   constructor(
     private fb: FormBuilder,
@@ -37,7 +39,8 @@ export class UserComponent implements OnInit{
     private location : Location,
     private router: Router,
     public userService:UserService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    public eventsService:EventsService,
   ) {
     this.createForm();
   }
@@ -49,6 +52,7 @@ export class UserComponent implements OnInit{
       this.authenticated_user = JSON.parse(_authuser);
       console.log(this.authenticated_user.uid)
     }
+    this.getSkills();
     /*
       this.firstFormGroup = this.fb.group({
         firstCtrl: ['', Validators.required]
@@ -135,6 +139,11 @@ export class UserComponent implements OnInit{
       this.toastr.error(err.message, "Error", {enableHtml :  true });
     });
     
+  }
+
+  getSkills(){
+    this.userService.getSkills()
+    .subscribe(res =>(this.skills = res));
   }
 
 

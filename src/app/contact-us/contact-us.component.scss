@@ -1,18 +1,146 @@
-agm-map{
-    height:300px;
-   
+.probootstrap-footer {
+  padding: 5em 0 0;
+  background: #01408f;
+  color: rgba(255,255,255,.9);
 }
 
-.xlarge-font {
-    font-size: 64px
-  }
+*{
+  box-sizing: border-box;
+}
 
-  .column-33 {
-    float: left;
-    width: 33.33333%;
-    padding: 20px;
-  }
+div{
+  display: block;
+}
 
-  .map{
-      padding-top: 20px;
-  }
+
+
+@media (min-width: 992px){
+.col-md-3 {
+    width: 25%;
+    float:left;
+}
+}
+
+span{
+ padding-left: 12px;
+}
+
+.icon-location2:before {
+  content: "\eac8";
+}
+
+.icon-mail:before {
+  content: "\e9da";
+}
+
+:before {
+  box-sizing: border-box;
+}
+
+.probootstrap-footer .probootstrap-footer-widget .probootstrap-contact-info li i {
+  display: table-cell;
+  vertical-align: top;
+  width: 40px;
+  color: rgba(255,255,255,.3);
+}
+
+#forfooter {
+  max-height: 480px;
+  margin-bottom:90px;
+}
+
+img {
+  vertical-align: middle;
+}
+
+img {
+  border: 0;
+}
+
+.probootstrap-contact-info li>i {
+  font-size: 20px;
+  position: relative;
+  top: 2px;
+}
+
+.probootstrap-footer .probootstrap-footer-widget .probootstrap-contact-info li span {
+  vertical-align: top;
+  display: table-cell;
+}
+
+.col-md-3{
+  position: relative;
+  min-height:1px;
+  padding-left:15px;
+  padding-right:15px;
+}
+
+.probootstrap-footer .probootstrap-footer-widget {
+  float: left;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+
+.probootstrap-footer .probootstrap-footer-widget .probootstrap-contact-info li {
+  display: block;
+}
+
+.probootstrap-footer .probootstrap-footer-widget ul {
+  margin: 0;
+  padding: 0 0 20px;
+  font-size: 16px;
+}
+
+.probootstrap-footer .probootstrap-footer-widget ul li {
+  margin: 0 0 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.probootstrap-contact-info li {
+  line-height: 24px;
+}
+
+li{
+  text-align: -webkit-match-parent;
+}
+
+
+
+.probootstrap-footer .probootstrap-footer-widget h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0 0 30px;
+  line-height: 1.5;
+  font-family: inherit;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+p{
+  margin-bottom:30px;
+  display: block;
+  font-size: 15px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin: 0 0 10px;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  // speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

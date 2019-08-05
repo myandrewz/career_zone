@@ -67,6 +67,8 @@ export class ViewRequestComponent implements OnInit {
 
   acceptMentorshipRequest(){
     this.requestsService.acceptMentorshipRequest(this.request_doc_ID);
+    this.toastr.info("Request accepted !!!","Notification");
+    this.router.navigate(['/profile/requests']);
   }
 
   denyMentorshipRequest(){
@@ -85,7 +87,9 @@ export class ViewRequestComponent implements OnInit {
         .open(config)
         .onApprove(result => {
           /* approve callback */ 
-          this.denyMentorshipRequest();
+          this.denyMentorshipRequest()
+          this.toastr.error("Request denied or cancelled !!!","Notification");
+          this.router.navigate(['/profile/requests']);
         })
         .onDeny(result => { /* deny callback */});
   }

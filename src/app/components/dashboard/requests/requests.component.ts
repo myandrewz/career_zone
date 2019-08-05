@@ -1,21 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestsService } from '../../../services/requests/requests.service';
 import { AuthService } from '../../../core/auth.service';
-import { ToastrService } from 'ngx-toastr';
+import { Router, Params } from '@angular/router'
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  selector: 'app-requests',
+  templateUrl: './requests.component.html',
+  styleUrls: ['./requests.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class RequestsComponent implements OnInit {
   
   authenticated_user: any;
   user_profile: any;
+  requests;
 
   constructor(
-    public authService: AuthService,
-    private toastr: ToastrService
-  ) {}
+    public requestsService: RequestsService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
     var _userprofile  = localStorage.getItem('user_profile')
@@ -26,19 +28,13 @@ export class ProfileComponent implements OnInit {
       console.log(this.authenticated_user.uid)
       console.log(this.user_profile.role)
     }
+    this.getRequests();
   }
+  getRequests(){
+    this.requestsService.getUserRequests(this.authenticated_user.uid, this.user_profile.role+"_ID")
+    .subscribe(res => (this.requests = res));
 
-signOut(){
-  this.authService.doLogout()
-  .then(res => {
-    this.toastr.success("log out successful !!!","Notification");
-  }, err => {
-    this.toastr.error(err.message, "Error", {enableHtml :  true });
-  });
-  
-}
-
-
+  }
 
 
 }

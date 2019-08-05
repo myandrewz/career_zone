@@ -17,7 +17,7 @@
                     <p>{{mentor.payload.doc.data().full_name}}</p>
                     <p>{{mentor.payload.doc.data().current_employer}}</p>
                     <p>{{mentor.payload.doc.data().profession}}</p>
-                    <button class="button" (click)="sendRequest(mentor.payload.doc.data().id)">Send Request</button>
+                    <button class="button" (click)="sendRequest(mentor.payload.doc.data().id, mentor.payload.doc.data())">Send Request</button>
                 </div>
             </div>
 

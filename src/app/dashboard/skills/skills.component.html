@@ -55,9 +55,9 @@
                       <input type="text" placeholder="Skill" formControlName="skill">
                     </div>
                   </div>
-                  <div style="margin-top: 5px;" (click)="addSkill()" class="ui small primary labeled icon button">
+                  <button style="margin-top: 5px;" (click)="addSkill()" class="ui small primary labeled icon button" type="submit" [disabled]="!myForm.form.valid">
                     <i class="icon fa fa-calendar"></i> Add
-                  </div>
+                  </button>
                 </form>
               </div>
               <!--Add skill form-->

@@ -52,23 +52,14 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
 import { NotificationComponent } from './components/dashboard/notification/notification.component';
-import { 
-  // MatButtonModule,
-  //  MatCardModule, 
-  //  MatProgressBarModule, 
-  //  MatMenuModule, 
-  //  MatToolbarModule, 
+import {  
    MatDatepickerModule,
    MatTabsModule,
    MatInputModule,
    MatNativeDateModule,
    MatCheckboxModule,
    MatExpansionModule,
-   MatRadioModule,
-  //  MatIconModule, 
-  //  MatSidenavModule, 
-  //  MatListModule 
-  } from '@angular/material';
+   MatRadioModule} from '@angular/material';
 
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
@@ -81,7 +72,7 @@ import { DropZoneDirective } from './timeline/drop-zone.directive';
 import { FileSizePipe } from './timeline/file-size.pipe';
 import { RequestsComponent } from './components/dashboard/requests/requests.component';
 import { ViewRequestComponent } from './components/dashboard/view-request/view-request.component';
-// import { MglTimelineModule } from 'angular-mgl-timeline';
+import { MglTimelineModule } from 'angular-mgl-timeline';
 import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 import { ImageService } from './images/image.service';
@@ -157,7 +148,7 @@ import { ImageService } from './images/image.service';
     MatListModule,
     MatExpansionModule,
     MatProgressBarModule,
-    // MglTimelineModule,
+    MglTimelineModule,
     MatToolbarModule,
     MatTabsModule,
     MatButtonModule, 

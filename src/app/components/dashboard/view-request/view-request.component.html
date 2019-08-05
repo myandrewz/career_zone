@@ -1,0 +1,44 @@
+<div class="container"  *ngFor="let req_user of request_user">
+  <div class="row">
+      <h1><i class="fa fa-lock" aria-hidden="true"></i> Approval</h1>     
+  </div><br /><br />
+    <img src='../assets/images/banner.jpg'>
+
+  <div class="input-group">
+    <p>{{req_user.payload.doc.data().full_name}}</p>
+  </div><br />
+
+  <div class="input-group">
+    <p>{{req_user.payload.doc.data().email}}</p>
+  </div>
+  <br/>
+
+  <div class="input-group">
+      <p>{{req_user.payload.doc.data().skills}}</p>
+  </div><br />
+  <div>
+    <button *ngIf="user_profile.role == 'mentor'" type="submit" class="btn btn-success" (click)="acceptMentorshipRequest()">
+      <span class="glyphicon glyphicon-off"></span> Accept Request
+    </button>
+    <button type="submit" class="btn btn-info" (click)=" openCancelRequestModal()">
+      <span class="glyphicon glyphicon-remove"></span>Deny Request
+    </button><br />
+  </div>
+</div>
+
+<ng-template let-context let-modal="modal" #modalTemplate>
+    <div class="header">Reason for Denial or Cancellation</div>
+    <div class="actions">
+      <form  [formGroup]="cancelRequestForm" class="ui form" [ngClass]="{'loading':is_resetting_password}" >
+        <div class="form-w3ls-left-info">
+          <p font size= "6" >Please Enter Your Reason</p><br>
+          <textarea placeholder="Reason here..."  formControlName="reason"  required>
+
+          </textarea>
+
+        </div><br>
+        <button class="ui green button" (click)="modal.approve('approved')" [disabled]="cancelRequestForm.invalid" >OK</button>
+        <button class="ui red button" (click)="modal.deny('denied')">Cancel</button>
+      </form>
+    </div>
+</ng-template>

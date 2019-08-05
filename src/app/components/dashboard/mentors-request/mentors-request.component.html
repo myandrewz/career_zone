@@ -1,58 +1,39 @@
+<div class="container">
+  <div class="row">
+      <h1><i class="fa fa-lock" aria-hidden="true"></i> Approval</h1>     
+  </div><br /><br />
 
-<!-- header -->
-<app-header></app-header>
-<div class="main-top-intro" (scroll)="onWindowScroll($event);">
-  <div class="bg-layer">
-    <div class="terms">
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+    </div>
+    <input type="text" name="" class="form-control" placeholder="Name of student"/>
+  </div><br />
 
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><i class="fa fa-key icon"></i></span>
+    </div>
+    <input type="email" name="" class="form-control" placeholder="email"/>
+  </div>
+  <br/>
 
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+    </div>
+    <input type="text" name="" class="form-control" placeholder="university of student"/>
+  </div><br />
 
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+    </div>
+    <input type="text" name="" class="form-control" placeholder="interested Skill"/>
+  </div><br />
 
-      <div class="container">
-        <div class="row">
-           <h1><i class="fa fa-lock" aria-hidden="true"></i> Approval</h1>
-             
-              </div><br /><br />
-               
-              
-                        <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
-                      </div>
-                      <input type="text" name="" class="form-control" placeholder="Name of student"/>
-                    </div><br />
-               
-                        <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fa fa-key icon"></i></span>
-                      </div>
-                        <input type="email" name="" class="form-control" placeholder="email"/>
-                    </div>
-                    <br/>
+  <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-off"></span> Accept Request</button>
 
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
-                      </div>
-                      <input type="text" name="" class="form-control" placeholder="university of student"/>
-                    </div><br />
-
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
-                      </div>
-                      <input type="text" name="" class="form-control" placeholder="interested Skill"/>
-                    </div><br />
-            
-                    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-off"></span> Accept Request</button>
-               
-              <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-remove"></span>Deny Request </button><br />
-           
-
-
+  <button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-remove"></span>Deny Request </button><br />
 
 </div>
-</div>
-</div>
-<!-- footer -->
-<app-footer></app-footer>

@@ -41,7 +41,10 @@
 
               <div class="field">
                 <label>Category</label>
-                <input type="text" placeholder="Category" formControlName="category">
+                <!-- <input type="text" placeholder="Category" formControlName="category"> -->
+                <select class="form-control" formControlName="category">
+                  <option *ngFor="let category of categories">{{category.payload.doc.data().category}}</option>
+                </select>
               </div>
               
             </div>
@@ -70,9 +73,9 @@
               </section>
             </section>
           </section>
-          <div (click)="addEvent()" class="ui small primary labeled icon button">
+          <button style="margin-top: 5px;" (click)="addEvent()" class="ui small primary labeled icon button" type="submit" [disabled]="!myForm.form.valid">
             <i class="icon fa fa-calendar"></i> Add
-          </div>
+          </button>
         </form>
     </div>
   </div>

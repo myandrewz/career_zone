@@ -25,10 +25,13 @@ import { PartnersComponent } from './dashboard/partners/partners.component';
 import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
+import { NotificationComponent } from './components/dashboard/notification/notification.component';
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
 import { HelpComponent } from './components/dashboard/help/help.component';
 import { MentorsRequestComponent } from './components/dashboard/mentors-request/mentors-request.component';
+import { RequestsComponent } from './components/dashboard/requests/requests.component';
+import { ViewRequestComponent } from './components/dashboard/view-request/view-request.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { ReportsComponent} from './dashboard/reports/reports.component';
 import { AuditTrailComponent } from './audit-trail/audit-trail.component';
@@ -73,14 +76,19 @@ export const rootRouterConfig: Routes = [
  //{ path: 'posts-dashboard', component: PostsDashboardComponent},
  { path: 'posts-detail', component: PostsDetailComponent},
   { path: 'addmentor', component: AddmentorComponent},
+  // { path: 'notifications', component: NotificationComponent},
   { path: 'edit', component: EditProfileComponent},
-  { path: 'mentors-request', component: MentorsRequestComponent},
+  // { path: 'mentors-request', component: MentorsRequestComponent},
 
 
    { path: 'profile', component: ProfileComponent,
     children: [
       { path: 'edit-profile', component: EditProfileComponent },
       { path: 'help', component: HelpComponent },
+      { path: 'notifications', component: NotificationComponent},
+      { path: 'requests', component: RequestsComponent},
+      { path: 'view-request', component: ViewRequestComponent},
+      { path: 'mentors-request', component: MentorsRequestComponent},
     ]},
 
 

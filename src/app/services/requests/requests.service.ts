@@ -44,4 +44,9 @@ export class RequestsService {
           .doc(doc_ID)
           .set({ status: "accepted" }, { merge: true });
   }
+  denyMentorshipRequest(doc_ID, formValue) {
+   return this.db.collection("Requests")
+          .doc(doc_ID)
+          .set({ status: "denied", reason: formValue.reason }, { merge: true });
+  }
 }

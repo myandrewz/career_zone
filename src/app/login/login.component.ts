@@ -192,7 +192,7 @@ export class LoginComponent implements OnInit{
           
         })
         .onDeny(result => { /* deny callback */});
-}
+  }
 
 resetPassword(){
   this.is_resetting_password = true

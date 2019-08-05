@@ -1,8 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
+import {SuiModalService, TemplateModalConfig, ModalTemplate} from 'ng2-semantic-ui';
+import { FormBuilder, FormGroup, Validators ,AbstractControl} from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { trigger, state, transition, style, animate } from '@angular/animations';
 import { AuthService } from '../../../core/auth.service';
 import { Router, Params, ActivatedRoute } from '@angular/router'
 import { UserService } from '../../../core/user.service';
 import { RequestsService } from '../../../services/requests/requests.service';
+
+export interface IContext {
+  data:string;
+}
 
 @Component({
   selector: 'app-view-request',
@@ -10,7 +18,11 @@ import { RequestsService } from '../../../services/requests/requests.service';
   styleUrls: ['./view-request.component.scss']
 })
 export class ViewRequestComponent implements OnInit {
-  
+
+  @ViewChild('modalTemplate')
+  public modalTemplate:ModalTemplate<IContext, string, string>
+
+  cancelRequestForm: FormGroup;
   authenticated_user: any;
   user_profile: any;
   request_user_ID;
@@ -21,7 +33,10 @@ export class ViewRequestComponent implements OnInit {
     private router: Router,
     private route : ActivatedRoute,
     public userService:UserService,
+    private fb: FormBuilder,
+    private toastr: ToastrService,
     public requestsService: RequestsService,
+    public modalService:SuiModalService,
   ) { }
 
   ngOnInit() {
@@ -40,6 +55,9 @@ export class ViewRequestComponent implements OnInit {
       console.log(this.request_doc_ID)
     })
     this.getUserprofile();
+    this.cancelRequestForm = this.fb.group({
+      reason: ['', [Validators.required]]
+    })
   }
 
   getUserprofile(){
@@ -49,6 +67,27 @@ export class ViewRequestComponent implements OnInit {
 
   acceptMentorshipRequest(){
     this.requestsService.acceptMentorshipRequest(this.request_doc_ID);
+  }
+
+  denyMentorshipRequest(){
+    this.requestsService.denyMentorshipRequest(this.request_doc_ID,this.cancelRequestForm.value);
+  }
+
+  openCancelRequestModal(dynamicContent:string = "Example") {
+    const config = new TemplateModalConfig<IContext, string, string>(this.modalTemplate);
+
+    config.closeResult = "closed!";
+    config.context = { data: dynamicContent };
+    config.size = 'tiny'
+    config.mustScroll = true;
+
+    this.modalService
+        .open(config)
+        .onApprove(result => {
+          /* approve callback */ 
+          this.denyMentorshipRequest();
+        })
+        .onDeny(result => { /* deny callback */});
   }
 
 

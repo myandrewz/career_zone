@@ -70,9 +70,10 @@ import { MatButtonModule, MatCardModule, MatProgressBarModule, MatMenuModule, Ma
 import { TimelineComponent } from './timeline/timeline.component';
 import { DropZoneDirective } from './timeline/drop-zone.directive';
 import { FileSizePipe } from './timeline/file-size.pipe';
+import { ElearningComponent } from './elearning/elearning.component';
 import { RequestsComponent } from './components/dashboard/requests/requests.component';
 import { ViewRequestComponent } from './components/dashboard/view-request/view-request.component';
-import { MglTimelineModule } from 'angular-mgl-timeline';
+// import { MglTimelineModule } from 'angular-mgl-timeline';
 import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 import { ImageService } from './images/image.service';
@@ -118,6 +119,7 @@ import { ImageService } from './images/image.service';
     TimelineComponent,
     DropZoneDirective,
     FileSizePipe,
+    ElearningComponent,
     RequestsComponent,
     ViewRequestComponent,
     ImageComponent,
@@ -148,7 +150,7 @@ import { ImageService } from './images/image.service';
     MatListModule,
     MatExpansionModule,
     MatProgressBarModule,
-    MglTimelineModule,
+    // MglTimelineModule,
     MatToolbarModule,
     MatTabsModule,
     MatButtonModule, 

@@ -39,9 +39,9 @@
               </section>
             </section>
           </section>
-          <div (click)="addPartner()" class="ui small primary labeled icon button">
-            <i class="user icon fa fa-handshake-o"></i> Add
-          </div>
+          <button style="margin-top: 5px;" (click)="addPartner()" class="ui small primary labeled icon button" type="submit" [disabled]="!myForm.form.valid">
+            <i class="icon fa fa-handshake-o"></i> Add
+          </button>
         </form>
     </div>
   </div>

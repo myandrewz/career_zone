@@ -99,8 +99,7 @@
           <div class="field enlarge">
             <label>Select :</label>
             <select class="form-control enlarge" formControlName="interests">
-              <option>Knowledge</option>
-              <option>Hobby</option>
+              <option *ngFor="let skill of skills">{{skill.payload.doc.data().skill}}</option>
             </select>
           </div>
           <div>
@@ -142,8 +141,7 @@
           <div class="field enlarge">
             <label>Select</label>
             <select class="form-control" formControlName="skills">
-              <option>Troubleshooting</option>
-              <option>Programming</option>
+              <option *ngFor="let skill of skills">{{skill.payload.doc.data().skill}}</option>
             </select>
           </div>
         <!--</form>-->

@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import {SuiModalService, TemplateModalConfig, ModalTemplate} from 'ng2-semantic-ui';
 import { trigger, state, transition, style, animate } from '@angular/animations';
 import { DOCUMENT } from '@angular/common';
+import { delay } from 'rxjs/internal/operators';
 
 export interface IContext {
   data:string;
@@ -47,9 +48,10 @@ export class LoginComponent implements OnInit{
   resetPasswordForm: FormGroup;
   user: any;
   view: string;
-  is_resetting_password= false 
-  //profile:any;
-  profile: Array<any>;
+  is_resetting_password= false;
+  role:any; 
+  profile;
+  // profile: Array<any>;
 
   
 
@@ -153,22 +155,20 @@ export class LoginComponent implements OnInit{
       
       this.isLoading = false;
       this.toastr.success("Login Successful !!!","Notification");
-      
-      console.log(res);
-      
-      localStorage.setItem('authenticated_user', JSON.stringify(res.user));
 
-      //
-      // this.userService.getUserProfile()
-      //   .subscribe(result => {
-      //     console.log(JSON.stringify(result));
-      //     this.profile = result;
-      //   })
-      // this.profile = JSON.stringify(this.userService.getUserProfile());
-      // console.log(JSON.stringify(this.profile));
-      //
-      this.router.navigate(['/dashboard/Overview']);
-
+      this.userService.getUserProfile(res.user.uid)
+      .subscribe(resProfile => {
+        resProfile.forEach(profileSet => {
+          this.profile = profileSet.payload.doc.data();
+          this.role = this.profile.role;
+          console.log(this.profile);
+          console.log(res);
+      
+          localStorage.setItem('user_profile', JSON.stringify(this.profile));
+          localStorage.setItem('authenticated_user', JSON.stringify(res.user));
+          this.router.navigate(['/dashboard/Overview']);
+        });
+      });
     }, err => {
       this.isLoading = false
       this.toastr.error(err.message, "Error", {enableHtml :  true });
@@ -192,7 +192,7 @@ export class LoginComponent implements OnInit{
           
         })
         .onDeny(result => { /* deny callback */});
-}
+  }
 
 resetPassword(){
   this.is_resetting_password = true

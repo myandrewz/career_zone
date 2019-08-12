@@ -10,7 +10,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 })
 
 @NgModule({
-  imports: [BrowserModule, NgbModule],
+  imports: [
+  BrowserModule, 
+  NgbModule
+],
   //declarations: [NgbdCarouselBasic],
   //exports: [NgbdCarouselBasic],
   //bootstrap: [NgbdCarouselBasic]

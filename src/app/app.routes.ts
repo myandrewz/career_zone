@@ -25,14 +25,18 @@ import { PartnersComponent } from './dashboard/partners/partners.component';
 import { AddPartnerComponent } from './dashboard/partners/add-partner/add-partner.component';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
+import { NotificationComponent } from './components/dashboard/notification/notification.component';
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';
 import { HelpComponent } from './components/dashboard/help/help.component';
 import { MentorsRequestComponent } from './components/dashboard/mentors-request/mentors-request.component';
+import { RequestsComponent } from './components/dashboard/requests/requests.component';
+import { ViewRequestComponent } from './components/dashboard/view-request/view-request.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { ReportsComponent} from './dashboard/reports/reports.component';
 import { AuditTrailComponent } from './audit-trail/audit-trail.component';
-import { ElearningComponent } from './elearning/elearning.component';
+import { ImageComponent } from './images/image/image.component';
+import { ImageListComponent } from './images/image-list/image-list.component';
 
 
 export const rootRouterConfig: Routes = [
@@ -68,17 +72,26 @@ export const rootRouterConfig: Routes = [
   { path: 'career-events', component: CareerEventsComponent},
   { path: 'adduser', component: AdduserComponent},
   { path: 'addmentor', component: AddmentorComponent},
+  // { path: 'notifications', component: NotificationComponent},
   { path: 'edit', component: EditProfileComponent},
-  { path: 'mentors-request', component: MentorsRequestComponent},
+  // { path: 'mentors-request', component: MentorsRequestComponent},
 
 
    { path: 'profile', component: ProfileComponent,
     children: [
       { path: 'edit-profile', component: EditProfileComponent },
       { path: 'help', component: HelpComponent },
+      { path: 'notifications', component: NotificationComponent},
+      { path: 'requests', component: RequestsComponent},
+      { path: 'view-request', component: ViewRequestComponent},
+      { path: 'mentors-request', component: MentorsRequestComponent},
     ]},
-    
-  { path: 'audit-trail', component: AuditTrailComponent},    
-  { path: 'elearning', component: ElearningComponent},
+
+
+
+  { path: 'audit-trail', component: AuditTrailComponent},
+  { path: 'image', component: ImageComponent},
+  { path: 'image-list', component: ImageListComponent},
+
 
 ];

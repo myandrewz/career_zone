@@ -1,6 +1,7 @@
 <app-header></app-header>
 <div class="main-top-intro" (scroll)="onWindowScroll($event);">
   <div class="bg-layer">
+<<<<<<< HEAD
     
       <div class="terms">
        <div id="slide1" class="slide">
@@ -70,154 +71,242 @@
                           </li>
                     </ul>
               </div>
+=======
+     <div id = "intro" >
+
+                    
+
+<div>
+
+<ngb-carousel *ngIf="images">
+
+<ng-template ngbSlide>
+  <div class="picsum-img-wrapper">
+    <img [src]="images[0]" alt="Random first slide">
+  </div>
+  <div class="carousel-caption">
+    <h3>First slide label</h3>
+    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+  </div>
+</ng-template>
+
+<ng-template ngbSlide>
+  <div class="picsum-img-wrapper">
+    <img [src]="images[1]" alt="Random second slide">
+  </div>
+  <div class="carousel-caption">
+    <h3>Second slide label</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+</ng-template>
+>>>>>>> cc0b3384cbd9dbcf295c1036d065ea6246febf30
+
+<ng-template ngbSlide>
+  <div class="picsum-img-wrapper">
+    <img [src]="images[2]" alt="Random third slide">
+  </div>
+  <div class="carousel-caption">
+    <h3>Third slide label</h3>
+    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+  </div>
+</ng-template>
+
+</ngb-carousel>
 
 
-                    <!--Blogs-->
-              <div id="slide2" class="slide">
-                  <h1 class="xlarge-font"><b>Blogs</b></h1>
-                  <div class="band">
- 
-                      <!-- grid item, containing a card -->
-                      <div class="item-1">
-                            <a href="" class="card">
-                              <div class="thumb" style="background-image: url('../assets/images/technology.jpeg');"></div>
-                              <article>
-                                <h1>Technology</h1>
-                                 <!--<span>Author</span>-->
-                                <p>
-                                      What is Lorem Ipsum?
-                                      What is Lorem Ipsum? What is Lorem Ipsum? What is Lorem Ipsum? What is Lorem Ipsum?
-                                      What is Lorem Ipsum? What is Lorem Ipsum? What is Lorem Ipsum?
-                                      What is Lorem Ipsum? What is Lorem Ipsum? What is Lorem Ipsum?
-                                      ldus PageMaker including versions of Lorem Ipsum.
-                                </p>
-                              </article>
-                            </a>
-                      </div>
-                       
-                      <!-- grid item, containing a card -->
-                      <div class="item-2">
-                              <a href="" class="card">
-                                      <div class="thumb" style="background-image: url('../assets/images/education.jpeg');"></div>
-                                      <article>
-                                        <h1>Education</h1>
-                                        <!-- <span>Author</span>-->
-                                        <p>
-                                              What is Lorem Ipsum?
-                                              What is Lorem Ipsum?
-                                              ldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?
-                                              ldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?
-                                              ldus PageMaker including versions of Lorem Ipsum.
-                                              ldus PageMaker including versions of Lorem Ipsum.
-                                        </p>
-                                      </article>
-                              </a>
-                      </div>
-                       
-                      <!-- grid item, containing a card -->
-                      <div class="item-3">
-                              <a href="" class="card">
-                                      <div class="thumb" style="background-image: url('../assets/images/business-1031754_640.jpg');"></div>
-                                      <article>
-                                        <h1>Business</h1>
-                                         <!--<span>Author</span>-->
-                                        <p>
-                                              What is Lorem Ipsum?
-                                              What is Lorem Ipsum?
-                                              ldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?
-                                              ldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?
-                                              ldus PageMaker including versions of Lorem Ipsum.
-                                              ldus PageMaker including versions of Lorem Ipsum.
-                                        </p>
-                                      </article>
-                               </a>
-                      </div>
+</div>
+
+<!--Events-->
+<div class="terms">
+<div id="slide1" class="slide">
+<h1 class="xlarge-font"><b>Events</b></h1>
+<ul class="grid">
+<li>
+<figure class="grid__figure">
+<img src="https://mdbootstrap.com/img/Photos/Others/img (36).jpg" alt="">
+<figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
+</figure>
+</li>
+<li>
+<figure class="grid__figure">
+<img src="https://mdbootstrap.com/img/Photos/Others/img (34).jpg" alt="">
+<figcaption>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</figcaption>
+</figure>
+</li>
+<li>
+<figure class="grid__figure">
+<img src="https://picsum.photos/200/300/?random" alt="">
+<figcaption>Parturient Mollis Malesuada Tristique Inceptos.</figcaption>
+</figure>
+</li>
+<li>
+<figure class="grid__figure">
+<img src="https://picsum.photos/400/200/?random" alt="">
+<figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
+</figure>
+</li>
+<li>
+<figure class="grid__figure">
+<img src="https://picsum.photos/200/300/?random" alt="">
+<figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
+</figure>
+</li>
+<li>
+<figure class="grid__figure">
+<img src="https://mdbootstrap.com/img/Photos/Others/img (36).jpg" alt="">
+<figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
+</figure>
+</li>
+</ul>
+</div>
+
+
+<!--Blogs-->
+<div id="slide2" class="slide">
+<h1 class="xlarge-font"><b>Blogs</b></h1>
+<div class="band">
+
+<!-- grid item, containing a card -->
+<div class="item-1">
+<a href="" class="card">
+<div class="thumb" style="background-image: url('../assets/images/technology.jpeg');"></div>
+<article>
+<h1>Technology</h1>
+<!--<span>Author</span>-->
+<p>
+    What is Lorem Ipsum?
+    What is Lorem Ipsum? What is Lorem Ipsum? What is Lorem Ipsum? What is Lorem Ipsum?
+    What is Lorem Ipsum? What is Lorem Ipsum? What is Lorem Ipsum?
+    What is Lorem Ipsum? What is Lorem Ipsum? What is Lorem Ipsum?
+    ldus PageMaker including versions of Lorem Ipsum.
+</p>
+</article>
+</a>
+</div>
+
+<!-- grid item, containing a card -->
+<div class="item-2">
+<a href="" class="card">
+    <div class="thumb" style="background-image: url('../assets/images/education.jpeg');"></div>
+    <article>
+      <h1>Education</h1>
+      <!-- <span>Author</span>-->
+      <p>
+            What is Lorem Ipsum?
+            What is Lorem Ipsum?
+            ldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?
+            ldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?
+            ldus PageMaker including versions of Lorem Ipsum.
+            ldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    </article>
+</a>
+</div>
+
+<!-- grid item, containing a card -->
+<div class="item-3">
+<a href="" class="card">
+    <div class="thumb" style="background-image: url('../assets/images/business-1031754_640.jpg');"></div>
+    <article>
+      <h1>Business</h1>
+        <!--<span>Author</span>-->
+      <p>
+            What is Lorem Ipsum?
+            What is Lorem Ipsum?
+            ldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?
+            ldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?
+            ldus PageMaker including versions of Lorem Ipsum.
+            ldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    </article>
+</a>
+</div>
+
+    <!-- grid item, containing a card -->
+<div class="item-3">
+<a href="" class="card">
+<div class="thumb" style="background-image: url('../assets/images/business-1031754_640.jpg');"></div>
+<article>
+  <h1>Business</h1>
+    <!--<span>Author</span>-->
+  <p>
+        What is Lorem Ipsum?
+        What is Lorem Ipsum?
+        ldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?
+        ldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?
+        ldus PageMaker including versions of Lorem Ipsum.
+        ldus PageMaker including versions of Lorem Ipsum.
+  </p>
+</article>
+</a>
+</div>  
   
-                                     <!-- grid item, containing a card -->
-                      <div class="item-3">
-                          <a href="" class="card">
-                                  <div class="thumb" style="background-image: url('../assets/images/business-1031754_640.jpg');"></div>
-                                  <article>
-                                    <h1>Business</h1>
-                                     <!--<span>Author</span>-->
-                                    <p>
-                                          What is Lorem Ipsum?
-                                          What is Lorem Ipsum?
-                                          ldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?
-                                          ldus PageMaker including versions of Lorem Ipsum.What is Lorem Ipsum?
-                                          ldus PageMaker including versions of Lorem Ipsum.
-                                          ldus PageMaker including versions of Lorem Ipsum.
-                                    </p>
-                                  </article>
-                           </a>
-                    </div>  
-  
-                        <!-- grid item, containing a card -->
-                        <div class="item-4">
-                              <a href="" class="card">
-                                      <div class="thumb" style="background-image: url('../assets/images/basketball.jpeg');"></div>
-                                      <article>
-                                        <h1>Interview types</h1>
-                                         <!--<span>Author</span>--->
-                                        <p>
-                                              What is Lorem Ipsum?
-                                              What is Lorem Ipsum?
-                                              What is Lorem Ipsum?  What is Lorem Ipsum?  What is Lorem Ipsum?
-                                              ldus PageMaker including versions of Lorem Ipsum.
-                                        </p>
-                                      </article>
-                              </a>
-                      </div>
-                      
-                      <div class="item-5">
-                              <a href="" class="card">
-                                      <div class="thumb" style="background-image: url('../assets/images/entertainment.jpeg');"></div>
-                                      <article>
-                                        <h1>Career tips</h1>
-                                         <!--<span>Author</span>-->
-                                        <p>
-                                             Can You Make a living Freelancing?
-                                        </p>
-                                      </article>
-                              </a>
-                      </div>
-  
-  
-                      <div class="item-6">
-                              <a href="" class="card">
-                                      <div class="thumb" style="background-image: url('../assets/images/motivational.jpeg');"></div>
-                                      <article>
-                                        <h1>Motivational</h1>
-                                         <!--<span>Author</span>-->
-                                        <p>
-                                              What is Lorem Ipsum?
-                                              What is Lorem Ipsum?
-                                              What is Lorem Ipsum?  What is Lorem Ipsum?  What is Lorem Ipsum?
-                                              ldus PageMaker including versions of Lorem Ipsum.
-                                        </p>
-                                      </article>
-                              </a>
-                      </div>
-  
-                      <div class="item-7">
-                              <a href="" class="card">
-                                      <div class="thumb" style="background-image: url('../assets/images/music.jpeg');"></div>
-                                      <article>
-                                        <h1>Music</h1>
-                                         <!--<span>Author</span>-->
-                                        <p>
-                                              What is Lorem Ipsum?
-                                              What is Lorem Ipsum?
-                                              What is Lorem Ipsum?  What is Lorem Ipsum?  What is Lorem Ipsum?
-                                              ldus PageMaker including versions of Lorem Ipsum.
-                                        </p>
-                                      </article>
-                              </a>
-                      </div>      
-                      <button class="button" style="background-color:red">Read More</button>
-  
-              </div>
-              </div>
+<!-- grid item, containing a card -->
+<div class="item-4">
+<a href="" class="card">
+        <div class="thumb" style="background-image: url('../assets/images/basketball.jpeg');"></div>
+        <article>
+          <h1>Interview types</h1>
+            <!--<span>Author</span>--->
+          <p>
+                What is Lorem Ipsum?
+                What is Lorem Ipsum?
+                What is Lorem Ipsum?  What is Lorem Ipsum?  What is Lorem Ipsum?
+                ldus PageMaker including versions of Lorem Ipsum.
+          </p>
+        </article>
+</a>
+</div>
+
+<div class="item-5">
+<a href="" class="card">
+        <div class="thumb" style="background-image: url('../assets/images/entertainment.jpeg');"></div>
+        <article>
+          <h1>Career tips</h1>
+            <!--<span>Author</span>-->
+          <p>
+                Can You Make a living Freelancing?
+          </p>
+        </article>
+</a>
+</div>
+
+
+<div class="item-6">
+<a href="" class="card">
+        <div class="thumb" style="background-image: url('../assets/images/motivational.jpeg');"></div>
+        <article>
+          <h1>Motivational</h1>
+            <!--<span>Author</span>-->
+          <p>
+                What is Lorem Ipsum?
+                What is Lorem Ipsum?
+                What is Lorem Ipsum?  What is Lorem Ipsum?  What is Lorem Ipsum?
+                ldus PageMaker including versions of Lorem Ipsum.
+          </p>
+        </article>
+</a>
+</div>
+
+<div class="item-7">
+<a href="" class="card">
+        <div class="thumb" style="background-image: url('../assets/images/music.jpeg');"></div>
+        <article>
+          <h1>Music</h1>
+            <!--<span>Author</span>-->
+          <p>
+                What is Lorem Ipsum?
+                What is Lorem Ipsum?
+                What is Lorem Ipsum?  What is Lorem Ipsum?  What is Lorem Ipsum?
+                ldus PageMaker including versions of Lorem Ipsum.
+          </p>
+        </article>
+</a>
+</div>      
+<button class="button" style="background-color:red">Read More</button>
+
+</div>
+</div>
 
 
               

@@ -79,7 +79,7 @@ export class HomeComponent {
 //meet mentor functions
 
   getMentor(role){
-    this.userService.getMentor(role)
+    this.userService.getMentors(role)
     .subscribe(res=>(this.mentors=res));
     // console.log(role)
   }

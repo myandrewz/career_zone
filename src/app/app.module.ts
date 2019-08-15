@@ -52,10 +52,7 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SkillsComponent } from './dashboard/skills/skills.component';
 import { PostsDetailComponent } from './posts/posts-detail/posts-detail.component';
 import { CategoriesComponent } from './dashboard/categories/categories.component';
-<<<<<<< HEAD
-=======
 import { NotificationComponent } from './components/dashboard/notification/notification.component';
->>>>>>> cc0b3384cbd9dbcf295c1036d065ea6246febf30
 import {  
    MatDatepickerModule,
    MatTabsModule,
@@ -63,13 +60,7 @@ import {
    MatNativeDateModule,
    MatCheckboxModule,
    MatExpansionModule,
-<<<<<<< HEAD
-   MatRadioModule,
-   
-    } from '@angular/material';
-=======
    MatRadioModule} from '@angular/material';
->>>>>>> cc0b3384cbd9dbcf295c1036d065ea6246febf30
 
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { EditProfileComponent } from './components/dashboard/edit-profile/edit-profile.component';

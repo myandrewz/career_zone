@@ -11,3 +11,63 @@
 .error{
   color: red;
 }
+
+._social_buttons{
+  width: 21% !important
+}
+
+.ui.active.modal {
+  display: block;
+  
+}
+
+element {
+  margin-top: -49px;
+}
+
+ .ui.modal {
+  width: 600px;
+  margin: 0 0 0 -450px;
+
+}
+r {
+  margin-bottom:42%;
+  width:73%;
+}
+
+::ng-deep .ui.modal > .actions {
+  text-align: left;
+}
+
+::ng-deep .form-w3ls-left-info input[type="email"] {
+  outline: none;
+  font-size: 14px;
+  color: #888;
+  border: solid;
+  width: 92%;
+  display: inline-block;
+  letter-spacing: 2px;
+  margin: 0 0 1em;
+  padding: 1em 1em;
+  background: #fff;
+
+
+}
+
+::ng-deep.form-w3ls-left-info p {
+  color: #000;
+  display: inline-block;
+  margin: 20px 0;
+  letter-spacing: 1px;
+  font-size: medium;
+}
+
+.footer{
+  text-align: center;
+  top: 6px;
+  position: relative;
+  width: 94%;
+  z-index: 1;
+  padding-left:98px;
+  padding-right:20px;
+}

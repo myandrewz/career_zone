@@ -1,0 +1,72 @@
+
+<div class="main-top-intro">
+    <div>
+      <h1 class="ui center aligned icon header" style="color: white">
+        <i class="circular users icon  fa fa-calendar"></i>
+        Skills/Interests
+      </h1>
+    </div>
+    <div class="bg-layer">
+      <div class="terms">
+        <div class="left-content ui container">
+          <div class="inner-content">
+
+            <div class="outter-wp">
+
+              <!--Tables-->
+              <!--skills set-->
+              <div class="col-md-6 chrt-two">
+                <h3 class="sub-title">Skill Set</h3>
+
+                <table class="ui compact celled definition table" style=" width:100%" id="studentstable">
+                  <thead class="full-width">
+                    <tr>
+                      <th>Name</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr *ngFor="let skill of skills">
+                      <td>{{skill.payload.doc.data().skill}}</td>
+                      <td>
+                        <!-- <div style="margin-top: 5px;" (click)="deleteSkill(skill.payload.doc.id)" class="ui small primary labeled icon button">
+                          <i class="icon fa fa-calendar"></i> Add
+                        </div> -->
+                        <div class="ui small primary icon button emma" (click)="deleteSkill(skill.payload.doc.id)">
+                          <i class="fa fa-ellipsis-v" style="margin-right: 10px"></i> Delete
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+              
+              <!--skills set-->
+
+              <!--Add skill form-->
+              <div class="col-md-6 chrt-three">
+                <h3 class="sub-title">Add skill form</h3>
+                <form class="ui form" [formGroup]="addSkillForm" [ngClass]="{'loading': isLoading}" #myForm="ngForm">
+                  <div class="ui form enlarge">
+                    <div class="field">
+                      <label>Skill</label>
+                      <input type="text" placeholder="Skill" formControlName="skill">
+                    </div>
+                  </div>
+                  <button style="margin-top: 5px;" (click)="addSkill()" class="ui small primary labeled icon button" type="submit" [disabled]="!myForm.form.valid">
+                    <i class="icon fa fa-calendar"></i> Add
+                  </button>
+                </form>
+              </div>
+              <!--Add skill form-->
+
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+</div>

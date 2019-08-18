@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    padding-left:226px;
+    margin-left:-95px;
+}
+
+.probootstrap-service-2 .image {
+    width: 40%;
+    overflow: hidden;
+    position: relative;
+}
+
+.enrolled-count {
+    display: block;
+    margin-top: 10px;
+    font-size: 15px;
+    color:#000;
+    font-family: "Open Sans",Arial,sans-serif;
+    font-weight: bolder;
+}
+
+.probootstrap-animate {
+    opacity: 1.0;
+    visibility:inherit;
+}
+
+
+.probootstrap-service-2 {
+    box-shadow:0 0 5px #888;
+    display: -webkit-box;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.probootstrap-service-2 .text {
+    width: 60%;
+    padding: 20px;
+}
+
+@media (min-width: 992px) {
+    .col-md-6 {
+        width: 50%;
+    }
+    }
+
+.xlarge-font {
+    font-size: 64px
+}
+
+.ui.primary.button{
+font-size: 23px;
+opacity: 0.7;
+font-weight:900;
+margin-top:23px;
+}
+
+
+
+    

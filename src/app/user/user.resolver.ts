@@ -19,6 +19,7 @@ export class UserResolver implements Resolve<FirebaseUserModel> {
           user.image = 'https://via.placeholder.com/400x300';
           user.name = res.displayName;
           user.provider = res.providerData[0].providerId;
+          user.id = res.uid;
           return resolve(user);
         }
         else{

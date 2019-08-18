@@ -37,7 +37,7 @@ import { ReportsComponent} from './dashboard/reports/reports.component';
 import { AuditTrailComponent } from './audit-trail/audit-trail.component';
 import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
-
+import { ElearningComponent } from './elearning/elearning.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -87,11 +87,10 @@ export const rootRouterConfig: Routes = [
       { path: 'mentors-request', component: MentorsRequestComponent},
     ]},
 
-
-
   { path: 'audit-trail', component: AuditTrailComponent},
   { path: 'image', component: ImageComponent},
   { path: 'image-list', component: ImageListComponent},
+  { path: 'elearning', component: ElearningComponent},
 
 
 ];

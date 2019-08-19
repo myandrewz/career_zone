@@ -769,7 +769,7 @@ button.btn.reg {
 }
 
 .copy-w3layouts-inf p {
-    font-size: 0.85em;
+    font-size: 1.85em;
     letter-spacing: 1px;
     color: #fff;
     line-height: 1.8em;
@@ -789,6 +789,7 @@ button.btn.reg {
 /* social-icons footer */
 ul.w3layouts-icons {
     float: right;
+    font-size: 27px;
 }
 
 ul.w3layouts-icons li {
@@ -797,9 +798,9 @@ ul.w3layouts-icons li {
 }
 
 ul.w3layouts-icons li a {
-    height: 40px;
+    height: 38px;
     width: 40px;
-    line-height: 2.5;
+    /* line-height: 2.5; */
     background: none;
     background: transparent;
     color: #fff;

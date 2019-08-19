@@ -472,25 +472,31 @@ text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px r
   0%{
     left:0;
   }
-
-
-
+  20%{
+    left:0;
+  }
+  25%{
+    left:-100%;
+  }
+  45%{
+    left:-100%;
+  }
+  50%{
+    left:-200%;
+  }
+  70%{
+    left:-200%;
+  }
+  75%{
+    left:-300%;
+  }
+  95%{
+    left:-300%;
+  }
+  100%{
+    left:-400%;
+  }
 }
-
-  //carousel classes
-  
-  // .ngb-carousel .picsum-img-wrapper {
-  //   position: relative;
-  //   height: 0;
-  //   padding-top: 55%; /* Keep ratio for 900x500 images */
-  // }
-  // 95%{
-  //   left:-300%;
-  // }
-  // 100%{
-  //   left:-400%;
-  // }
-// }
 
 // E-Learning
 .gallery{

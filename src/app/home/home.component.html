@@ -21,54 +21,15 @@
               <div id="slide1" class="slide">
                   <h1 class="xlarge-font"><b>Events</b></h1>
                   <ul class="grid">
+                      <div *ngFor ="let event of events">
                       <li>
                         <figure class="grid__figure">
-                          <img src="https://mdbootstrap.com/img/Photos/Others/img (36).jpg" alt="">
-                          <figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
+                          <img src="{{event.payload.doc.data().downlord_url}}" alt="">
+                          <figcaption>{{ event.payload.doc.data().title }} : {{ event.payload.doc.data().description }}  in {{ event.payload.doc.data().location }}, this was on {{ event.payload.doc.data().date }}</figcaption>
                         </figure>
                       </li>
-                      <li>
-                        <figure class="grid__figure">
-                          <img src="https://mdbootstrap.com/img/Photos/Others/img (34).jpg" alt="">
-                          <figcaption>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</figcaption>
-                        </figure>
-                      </li>
-                      <li>
-                        <figure class="grid__figure">
-                          <img src="https://picsum.photos/200/300/?random" alt="">
-                          <figcaption>Parturient Mollis Malesuada Tristique Inceptos.</figcaption>
-                        </figure>
-                      </li>
-                      <li>
-                          <figure class="grid__figure">
-                            <img src="https://picsum.photos/200/300/?random" alt="">
-                            <figcaption>Parturient Mollis Malesuada Tristique Inceptos.</figcaption>
-                          </figure>
-                        </li>
-                        <li>
-                            <figure class="grid__figure">
-                              <img src="https://picsum.photos/200/300/?random" alt="">
-                              <figcaption>Parturient Mollis Malesuada Tristique Inceptos.</figcaption>
-                            </figure>
-                          </li>
-                      <li>
-                        <figure class="grid__figure">
-                          <img src="https://picsum.photos/400/200/?random" alt="">
-                          <figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
-                        </figure>
-                      </li>
-                      <li>
-                          <figure class="grid__figure">
-                            <img src="https://picsum.photos/200/300/?random" alt="">
-                            <figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
-                          </figure>
-                        </li>
-                        <li>
-                            <figure class="grid__figure">
-                              <img src="https://mdbootstrap.com/img/Photos/Others/img (36).jpg" alt="">
-                              <figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
-                            </figure>
-                          </li>
+                      </div>
+                     
                     </ul>
               </div>
 
@@ -87,49 +48,6 @@
 
 </div>
 
-<!--Events-->
-<div class="terms">
-<div id="slide1" class="slide">
-<h1 class="xlarge-font"><b>Events</b></h1>
-<ul class="grid">
-<li>
-<figure class="grid__figure">
-<img src="https://mdbootstrap.com/img/Photos/Others/img (36).jpg" alt="">
-<figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
-</figure>
-</li>
-<li>
-<figure class="grid__figure">
-<img src="https://mdbootstrap.com/img/Photos/Others/img (34).jpg" alt="">
-<figcaption>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</figcaption>
-</figure>
-</li>
-<li>
-<figure class="grid__figure">
-<img src="https://picsum.photos/200/300/?random" alt="">
-<figcaption>Parturient Mollis Malesuada Tristique Inceptos.</figcaption>
-</figure>
-</li>
-<li>
-<figure class="grid__figure">
-<img src="https://picsum.photos/400/200/?random" alt="">
-<figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
-</figure>
-</li>
-<li>
-<figure class="grid__figure">
-<img src="https://picsum.photos/200/300/?random" alt="">
-<figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
-</figure>
-</li>
-<li>
-<figure class="grid__figure">
-<img src="https://mdbootstrap.com/img/Photos/Others/img (36).jpg" alt="">
-<figcaption>Vehicula Quam NibhVehicula Quam NibhVehicula Quam Nibh</figcaption>
-</figure>
-</li>
-</ul>
-</div>
 
 
 <!--Blogs-->

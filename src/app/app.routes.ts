@@ -37,13 +37,8 @@ import { ReportsComponent} from './dashboard/reports/reports.component';
 import { AuditTrailComponent } from './audit-trail/audit-trail.component';
 import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
-<<<<<<< HEAD
-//import { PostsDashboardComponent } from './posts/posts-dashboard/posts-dashboard.component';
-import { PostsDetailComponent } from './posts/posts-detail/posts-detail.component';
-
-=======
 import { ElearningComponent } from './elearning/elearning.component';
->>>>>>> 006ee66f43994f0f0930f5f5f88ce46c9a05b72d
+import { PostsDetailComponent } from './posts/posts-detail/posts-detail.component';
 
 export const rootRouterConfig: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

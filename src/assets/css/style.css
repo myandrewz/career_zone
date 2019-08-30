@@ -799,7 +799,6 @@ ul.w3layouts-icons li {
 ul.w3layouts-icons li a {
     height: 38px;
     width: 40px;
-    /* line-height: 2.5; */
     background: none;
     background: transparent;
     color: #fff;
@@ -836,9 +835,7 @@ ul.w3layouts-icons li a.vk:hover {
     border-color: #45668e;
 }
 
-/* //social-icons footer */
-/*-- //copyright --*/
-/*-- //main --*/
+
 
 /*-- responsive-design --*/
 

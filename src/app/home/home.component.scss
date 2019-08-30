@@ -176,8 +176,6 @@ figcaption { font-style: normal; font-size: 20px; font-weight:500; color: grey; 
   }
   
 
-
-
   @media only screen and (min-width: 850px) {
     .band {
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -667,3 +665,96 @@ p{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+// footer
+.footer{
+    text-align: center;
+    top: 6px;
+    position: relative;
+    width: 94%;
+    z-index: 1;
+    padding-left:98px;
+    padding-right:20px;
+}
+
+/*-- copyright --*/
+.copy-w3layouts-inf {
+  margin-top: 2em;
+  padding: 10px 0;
+}
+
+.copy-w3layouts-inf p {
+  font-size: 1.85em;
+  letter-spacing: 1px;
+  color: #fff;
+  line-height: 1.8em;
+  float: left;
+
+}
+
+.copy-w3layouts-inf p a {
+  color: #fff;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+/* social-icons footer */
+ul.w3layouts-icons {
+  float: right;
+  font-size: 27px;
+}
+
+ul.w3layouts-icons li {
+  display: inline-block;
+  margin: 0 0.3em;
+}
+
+ul.w3layouts-icons li a {
+  height: 38px;
+  width: 40px;
+  background: none;
+  background: transparent;
+  color: #fff;
+  text-align: center;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+  display: inline-block;
+}
+
+ul.w3layouts-icons li a.face-b:hover {
+  background: #3b5998;
+  color: #fff;
+  border-color: #3b5998;
+}
+
+ul.w3layouts-icons li a.twit:hover {
+  background: #55acee;
+  color: #fff;
+  border-color: #55acee;
+}
+
+ul.w3layouts-icons li a.dribble:hover {
+  background: #f26522;
+  color: #fff;
+  border-color: #f26522;
+}
+
+ul.w3layouts-icons li a.vk:hover {
+  background: #45668e;
+  color: #fff;
+  border-color: #45668e;
+}
+
+@media(max-width:400px) {
+  .copy-w3layouts-inf {
+      margin-top: 1em;
+      padding: 1em 0;
+  }
+}
+
